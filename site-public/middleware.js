@@ -1,5 +1,3 @@
-import { NextResponse } from 'next/server';
-
 function unauthorized() {
   return new Response('Authentication required', {
     status: 401,
@@ -10,21 +8,24 @@ function unauthorized() {
   });
 }
 
-export function middleware(req) {
+export default function middleware(request) {
   const user = process.env.BASIC_AUTH_USER;
   const pass = process.env.BASIC_AUTH_PASS;
 
   // Fail closed if env is missing
   if (!user || !pass) return unauthorized();
 
-  const auth = req.headers.get('authorization') || '';
+  const auth = request.headers.get('authorization') || '';
   if (!auth.startsWith('Basic ')) return unauthorized();
 
   try {
-    const base64 = auth.split(' ')[1] || '';
+    const base64 = auth.slice(6);
     const [u, p] = atob(base64).split(':');
-    if (u === user && p === pass) return NextResponse.next();
-  } catch (_) {
+    if (u === user && p === pass) {
+      // allow request to continue
+      return;
+    }
+  } catch (_e) {
     // ignore parse errors
   }
 
@@ -32,5 +33,5 @@ export function middleware(req) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)']
+  matcher: '/:path*'
 };
