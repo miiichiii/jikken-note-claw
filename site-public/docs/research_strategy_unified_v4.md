@@ -11,7 +11,8 @@
 
 - **Supervisor (Cloud: Gemini)**: 
     - 日本時間 03:00 - 06:00 の間にタスクを開始。
-    - 最新論文の検索、URL収集、タスク全体の進行管理。
+    - **直近1週間以内**に公開された最新論文を検索、URL収集。
+    - タスク全体の進行管理。
 - **Builder (Local: DeepSeek-R1-70B)**: 
     - **モデル**: `lmstudio/deepseek-r1-distill-llama-70b` (M4 Pro 128GB 環境)
     - 論文の詳細解析、センセイの研究プロジェクトとの関連性考察。

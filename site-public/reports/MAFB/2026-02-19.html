@@ -3,58 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
     <title>MAFB Research Report - 2026-02-19</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .card { transition: transform 0.2s; }
+        .card:hover { transform: translateY(-4px); }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen p-8">
-    <div class="max-w-4xl mx-auto">
-        <nav class="mb-8">
-            <a href="index.html" class="text-blue-600 hover:underline"><i class="fa-solid fa-arrow-left"></i> 戻る</a>
-        </nav>
-        <header class="mb-12">
-            <h1 class="text-4xl font-extrabold text-slate-800 mb-2">MAFB Research Report</h1>
-            <p class="text-slate-500 font-medium">Generation Date: 2026-02-19 <span class="mx-2">|</span> Model: Gemini 3 Flash</p>
+<body class="p-4 md:p-8">
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-12 border-b border-gray-200 pb-6">
+            <a href="index.html" class="text-blue-600 hover:underline mb-4 inline-block">&larr; Back to List</a>
+            <h1 class="text-3xl font-bold text-gray-900">MAFB Research Report</h1>
+            <p class="text-gray-500 mt-2">Date: 2026-02-19</p>
         </header>
 
         <section class="mb-12">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
-                <div class="flex items-start justify-between mb-4">
-                    <h2 class="text-2xl font-bold text-slate-800 leading-tight">MAFB: a key regulator of myeloid commitment involved in hematological diseases</h2>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Review Article</span>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mb-6 text-sm text-slate-500">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-calendar"></i>
-                        <span>2025-06-12</span>
+            <div class="flex items-center mb-6">
+                <span class="w-2 h-8 bg-blue-600 rounded-full mr-3"></span>
+                <h2 class="text-2xl font-bold text-gray-800">MAFB</h2>
+            </div>
+            <div class="grid grid-cols-1 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 card">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-0.5 rounded">Review Article</span>
+                        <span class="text-sm text-gray-500 font-medium">IF: 7.0 (2024)</span>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-book"></i>
-                        <span>Cell Death Discovery</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                        MAFB: a key regulator of myeloid commitment involved in hematological diseases
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-4 font-medium italic">Cell Death Discovery | 2025-06-12</p>
+                    <div class="space-y-4 text-gray-700 text-sm leading-relaxed">
+                        <p><strong>背景:</strong> MAFBは単球・マクロファージ系への分化を決定づけるマスター転写因子である。本レビューでは、正常な骨髄系細胞の分化過程における役割と、血液疾患（骨髄腫、白血病）や希少疾患（MCTO）における機能を整理している。</p>
+                        <p><strong>手法:</strong> 最近の研究成果、特にMafBの翻訳後修飾（SUMO化）が前駆細胞の増殖と分化のバランスをどのように制御しているかに焦点を当て、その分子メカニズムを詳細に分析した。</p>
+                        <p><strong>結果:</strong> MafBのSUMO化（K32およびK297）がCSF1受容体依存的な増殖と、マクロファージへの終末分化の切り替えを制御していることが示された。また、MCTOに関与するMAFB変異が、破骨細胞分化や骨吸収調節に与える影響についても言及されている。</p>
+                        <p><strong>結論:</strong> MAFBの制御メカニズムを理解することは、MCTOのような骨吸収異常を伴う疾患や、骨髄系白血病の分化誘導療法の新たなターゲット開発に繋がる。</p>
+                    </div>
+                    <div class="mt-6">
+                        <a href="https://www.nature.com/articles/s41420-025-02551-4" target="_blank" class="text-blue-600 hover:text-blue-800 font-semibold text-sm inline-flex items-center">
+                            View Paper <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
                     </div>
                 </div>
-                <div class="prose prose-slate max-w-none mb-8">
-                    <h3 class="text-lg font-bold text-slate-700 mb-2">背景</h3>
-                    <p class="text-slate-600 mb-4">MAFBは単球・マクロファージの分化に不可欠な転写因子であるが、他の骨髄系因子（MYB等）との相互作用の詳細は不明であった。本レビューでは最新の分子メカニズムを整理している。</p>
-                    
-                    <h3 class="text-lg font-bold text-slate-700 mb-2">手法・成果</h3>
-                    <p class="text-slate-600 mb-4">TillmannsらによるMafBのSUMO化（K32, K297）が前駆細胞の増殖とマクロファージ分化のバランスを制御する重要なメカニズムであることを強調している。MAFBの異常は多発性骨髄腫、急性骨髄性白血病（AML）、多中心性手根足根骨溶解症（MCTO）などの血液疾患や希少疾患に関与する。</p>
-                    
-                    <h3 class="text-lg font-bold text-slate-700 mb-2">プロジェクトへの示唆</h3>
-                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
-                        <p class="text-blue-800 text-sm italic font-medium">MCTOマウス解析において、MAFBの下流シグナルやSUMO化などの翻訳後修飾が骨吸収・破骨細胞分化にどう影響するかを再考する一助となる。</p>
-                    </div>
-                </div>
-                <a href="https://www.nature.com/articles/s41420-025-02551-4" target="_blank" class="inline-flex items-center gap-2 bg-slate-800 text-white px-6 py-2 rounded-xl font-bold hover:bg-slate-700 transition">
-                    <i class="fa-solid fa-up-right-from-square"></i>
-                    論文を読む
-                </a>
             </div>
         </section>
 
-        <footer class="mt-16 text-center text-slate-400 text-sm">
-            <p>&copy; 2026 Hamada Lab - Generated by macstudio-bot</p>
+        <footer class="mt-16 text-center text-gray-400 text-xs border-t border-gray-100 pt-8">
+            <p>&copy; 2026 Clawd Research Lab | High-Quality Edition</p>
         </footer>
     </div>
 </body>
