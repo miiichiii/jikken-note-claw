@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Memory Browser - Mission Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        /* Hide scrollbar for clean look in preview */
+        .preview-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+    
+    <!-- Sticky Header with Search -->
+    <header class="sticky top-0 z-50 glass-header px-6 py-4 shadow-sm">
+        <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <h1 class="text-xl font-bold tracking-tight text-slate-900 flex items-center gap-2">
+                    <i class="fa-solid fa-brain text-rose-500"></i> Memory Browser
+                </h1>
+            </div>
+            
+            <div class="flex-1 max-w-xl relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="searchInput" 
+                    class="w-full pl-10 pr-4 py-2 rounded-full bg-slate-100 border-none focus:ring-2 focus:ring-rose-500 focus:bg-white transition-all text-sm"
+                    placeholder="Search memories..." autofocus>
+            </div>
+            
+            <div class="text-xs text-slate-500 font-mono hidden sm:block" id="countDisplay">Loading...</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-8">
+        <div id="memoryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Cards will be injected here -->
+            <div class="col-span-full text-center py-12 text-slate-400">
+                <i class="fa-solid fa-circle-notch fa-spin text-2xl mb-2"></i>
+                <p>Loading neural pathways...</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const memoryGrid = document.getElementById('memoryGrid');
+        const searchInput = document.getElementById('searchInput');
+        const countDisplay = document.getElementById('countDisplay');
+        let memories = [];
+
+        // Fetch Data
+        fetch('memory.json')
+            .then(response => response.json())
+            .then(data => {
+                memories = data;
+                renderMemories(memories);
+                countDisplay.textContent = `${memories.length} files indexed`;
+            })
+            .catch(err => {
+                console.error('Error loading memory index:', err);
+                memoryGrid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-rose-500">
+                        <i class="fa-solid fa-triangle-exclamation text-2xl mb-2"></i>
+                        <p>Failed to load memory index. Run the indexer script.</p>
+                    </div>
+                `;
+            });
+
+        // Render Function
+        function renderMemories(items) {
+            if (items.length === 0) {
+                memoryGrid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-slate-400">
+                        <p>No memories found matching your search.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            memoryGrid.innerHTML = items.map(item => {
+                // Format date: YYYY-MM-DD
+                const date = new Date(item.mtime).toISOString().split('T')[0];
+                const relativePath = item.path; // Assuming path is relative to root like 'memory/...'
+                
+                // Determine icon based on filename
+                let icon = 'fa-file-lines';
+                if (item.filename.includes('project')) icon = 'fa-folder-open';
+                if (item.filename.includes('prompt')) icon = 'fa-terminal';
+                if (item.filename.match(/\d{4}-\d{2}-\d{2}/)) icon = 'fa-calendar-day';
+
+                return `
+                    <a href="../${relativePath}" target="_blank" class="glass-card rounded-xl p-5 flex flex-col h-full group hover:border-rose-200 block no-underline text-inherit">
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex items-center gap-2 text-slate-800 font-semibold truncate pr-2">
+                                <i class="fa-solid ${icon} text-slate-400 group-hover:text-rose-500 transition-colors"></i>
+                                <span class="truncate" title="${item.filename}">${item.filename}</span>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400 whitespace-nowrap bg-slate-100 px-2 py-1 rounded">${date}</span>
+                        </div>
+                        
+                        <p class="text-slate-500 text-sm mb-4 preview-text flex-grow leading-relaxed">
+                            ${escapeHtml(item.preview)}
+                        </p>
+                        
+                        <div class="mt-auto flex justify-between items-center pt-3 border-t border-slate-100 text-xs text-slate-400">
+                            <span class="font-mono truncate max-w-[70%]">${relativePath}</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square opacity-0 group-hover:opacity-100 transition-opacity text-rose-400"></i>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+        }
+
+        // Search Filter
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = memories.filter(item => 
+                item.filename.toLowerCase().includes(query) || 
+                item.preview.toLowerCase().includes(query) ||
+                item.path.toLowerCase().includes(query)
+            );
+            renderMemories(filtered);
+            countDisplay.textContent = `${filtered.length} / ${memories.length} files`;
+        });
+
+        // Utility: Escape HTML to prevent XSS in preview
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+    </script>
+</body>
+</html>

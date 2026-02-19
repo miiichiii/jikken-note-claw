@@ -1,0 +1,284 @@
+[
+  {
+    "filename": "todo.md",
+    "path": "memory/todo.md",
+    "mtime": "2026-02-19T09:25:20.333Z",
+    "preview": "TODO A (最優先) - [x] 高橋先生退官記念：工藤先生・井田さんへ共有メール送信（共有用Word送付済み、2/16 16:00打合せ確定） - [ ] 高橋先生退官記念：2/16会議内容の反映（体制・シンポ案・リスト確認） - [ ] 高橋先生退官記念：高橋先生へシンポジウム演者・テーマの意向確認 - [ ] 高橋先生退官記念：事務（1階）へ連絡先リスト使用の相談（担当交代に注意） B "
+  },
+  {
+    "filename": "mission_control_sop.md",
+    "path": "memory/mission_control_sop.md",
+    "mtime": "2026-02-19T06:46:49.393Z",
+    "preview": "Mission Control SOP (Standard Operating Procedure) Project: Mission Control (Professor Hamada's Dashboard) Goal: Modular, Token-Efficient, Safety-First Development Loop: A (Builder) -> B (Critic) -> C"
+  },
+  {
+    "filename": "mission_control_critic_prompt.md",
+    "path": "memory/mission_control_critic_prompt.md",
+    "mtime": "2026-02-19T06:46:49.387Z",
+    "preview": "Mission Control Critic (QA/Security) Prompt You are the Critic agent for Professor Hamada's \"Mission Control\" web app. Role: Gatekeeper of Quality, Security, and Token Efficiency. 🔍 Audit Checklist ("
+  },
+  {
+    "filename": "mission_control_builder_prompt.md",
+    "path": "memory/mission_control_builder_prompt.md",
+    "mtime": "2026-02-19T06:46:49.380Z",
+    "preview": "Mission Control Builder (Engineer) Prompt You are the Builder agent for Professor Hamada's \"Mission Control\" web app. Role: Implement features surgically, efficiently, and safely. 🛠 Core Directives ("
+  },
+  {
+    "filename": "interview_questions_2026.md",
+    "path": "memory/interview_questions_2026.md",
+    "mtime": "2026-02-19T06:33:26.538Z",
+    "preview": "入試面接用 質問リスト (2026年版) 初めての面接官として、受験生の「数値化できない適性（職業倫理・対人能力・自己管理能力）」を引き出すための質問集です。 1. 定番・基本質問 (ビジョンと基礎素養) 他の先生と重なる可能性がありますが、比較の軸として有効です。 ビジョン: 「本学で学ぶことで、将来どんな医療人になりたいと考えていますか？」 レジリエンス: 「これまでの人生で、一番『壁』にぶつ"
+  },
+  {
+    "filename": "2026-02-19.md",
+    "path": "memory/2026-02-19.md",
+    "mtime": "2026-02-19T03:30:12.762Z",
+    "preview": "2026-02-19 - 高橋智先生の退官記念式典に関する打ち合わせ日程が決定。 - 日時: 3月4日（水）13:00〜 - 場所: 高橋先生の研究室 - 退官記念式典の進捗状況（高橋先生よりOKが出た事項）: - 企業協賛の取り扱い（ブース出展や広告掲載）: OK - 運営費の公費支出（シンポジウム形式による支出）: OK（トランスボーダー運営委員会で承認予定） - 外部招待演者・来賓については"
+  },
+  {
+    "filename": "report-bot-site-public-rules.md",
+    "path": "memory/report-bot-site-public-rules.md",
+    "mtime": "2026-02-18T22:36:14.691Z",
+    "preview": "Report Bot & site-public Rules 最終更新: 2026-02-18 A. レポートボット運用ルール 1) 調査範囲・フィルタ - 直近24時間 (newer_than:1d) に公開された論文のみを対象とする。 - 新着がない場合は「新着なし」レポートを作成する。 2) 対象カテゴリ - MAFB - マクロファージと神経 - Natto Project 2) 実行スケ"
+  },
+  {
+    "filename": "2026-02-18.md",
+    "path": "memory/2026-02-18.md",
+    "mtime": "2026-02-18T11:09:13.803Z",
+    "preview": "2026-02-18 💼 作業ログ - clawd フォルダの整理: - query.json, query_90.json, query_reset.json, sessions.json を tmp/ へ移動。 - tmp_ibaraki240924.txt を archive/ へ移動。 - robots.txt (直下および site-public/) を archive/ へ移動し、s"
+  },
+  {
+    "filename": "email_rules.md",
+    "path": "memory/email_rules.md",
+    "mtime": "2026-02-18T11:04:21.364Z",
+    "preview": "メール運用ルール 優先・無視リスト - facebook, change, LinkedIn, rakuten を含む件名／送信者は低優先／無視対象にする。 - 「予約の受付（筑波大学オープンファシリティー推進機構）」のような案内も無視でよい。 - それ以外の hamamichi@md.tsukuba.ac.jp 宛メールは重要度が高い可能性があるため、積極的にチェックする。 - 最優先チェック対"
+  },
+  {
+    "filename": "lmstudio-terminal-switch-guide.md",
+    "path": "memory/lmstudio-terminal-switch-guide.md",
+    "mtime": "2026-02-18T03:16:30.865Z",
+    "preview": "LMStudio モデル切替ガイド（UI不要 / Terminal運用） 最終更新: 2026-02-18 目的 外出先などでLMStudioのUIに触れない状況でも、Terminal経由でモデルを切替・実質Ejectする。 --- 1) モデル状態を確認 bash curl -s http://127.0.0.1:1234/api/v0/models | jq -r '.data[] | \"\\("
+  },
+  {
+    "filename": "mafb_report_protocol.md",
+    "path": "memory/mafb_report_protocol.md",
+    "mtime": "2026-02-17T16:58:23.743Z",
+    "preview": "MafB Research Report Protocol (Sub-Agent Instructions) あなたは、濱田理人（センセイ）のためにMafBに関する最新論文を調査し、報告する専門のサブエージェントです。 以下のプロトコルを厳守してタスクを遂行してください。 1. 調査対象 - キーワード: MafB, MAFB transcription factor - 期間: 直近1週間以内（"
+  },
+  {
+    "filename": "preferences.md",
+    "path": "memory/preferences.md",
+    "mtime": "2026-02-17T16:29:44.620Z",
+    "preview": "Email Preferences - No Self-Introduction: Do NOT start emails with \"I am Hamada\" (濱田です) or similar self-introductions. The recipient knows who the sender is. - Signature: Use \"濱田 理人\" (Michito Hamada) "
+  },
+  {
+    "filename": "2026-02-17.md",
+    "path": "memory/2026-02-17.md",
+    "mtime": "2026-02-17T00:38:20.193Z",
+    "preview": "2026-02-17 - Gmail Label Cleanup: センセイ requested a cleanup of his \"chaotic\" label list. - Created a parent label [Archive] (ID: Label_35) to house old projects. - Identified 7 labels with zero message"
+  },
+  {
+    "filename": "2026-02-16.md",
+    "path": "memory/2026-02-16.md",
+    "mtime": "2026-02-16T10:22:09.174Z",
+    "preview": "2026-02-16 - Project Research Hearing: センセイ successfully completed the University Project Research Hearing (プロジェクト研究 新規ヒアリング審査会). He strategically performed a presentation on a TV monitor, which set h"
+  },
+  {
+    "filename": "plan_v7_final.md",
+    "path": "memory/plan_v7_final.md",
+    "mtime": "2026-02-16T08:26:57.984Z",
+    "preview": "高橋智教授 退官記念事業 実行計画（案）v7 - 開催日: 2027年3月13日（土） [確定] - 会場: つくば国際会議場（エポカルつくば） - シンポジウム: 多目的ホール（正方形、200〜300名収容） - 祝賀会: 同会場（ケータリング）または隣接会場 - 目標規模: 250〜300名（企業・動物関係者、OB/OG含む） - 予算規模: 300万円（会費＋企業協賛） - 形式: 記念シン"
+  },
+  {
+    "filename": "2026-02-16_meeting_notes_v3.md",
+    "path": "memory/2026-02-16_meeting_notes_v3.md",
+    "mtime": "2026-02-16T08:24:37.882Z",
+    "preview": "2026-02-16 会議メモ（高橋先生退官記念）その3 1. シンポジウムと企業協賛・展示 - 企業ブース/ポスター: - シンポジウム会場（国際会議場 多目的ホールなど）の受付付近やホールの壁際を活用して、企業パンフレットの設置や簡単な説明ブースを設ける。 - これにより「協賛費」として運営資金を得るスキームを検討。 - 学生のポスター発表（解剖発生やセンター関連）も併設し、コーヒーブレーク時"
+  },
+  {
+    "filename": "2026-02-16_meeting_notes_v2.md",
+    "path": "memory/2026-02-16_meeting_notes_v2.md",
+    "mtime": "2026-02-16T08:23:53.618Z",
+    "preview": "2026-02-16 会議メモ（高橋先生退官記念）その2 1. 体制と承認フロー - 承認順序: 高橋先生 → 川口先生 → 水野先生 の順番で合意を取り、オフィシャルな決定とする。 - センターへの相談: 設営費や公費の支出について、川口先生や水野先生に「相談があります」とアポを取り、センセイと井田さんの二人で説明に行く。 2. シンポジウムの演者・人選 - 候補: - 篠原先生（東京科学大学？"
+  },
+  {
+    "filename": "2026-02-16_meeting_notes.md",
+    "path": "memory/2026-02-16_meeting_notes.md",
+    "mtime": "2026-02-16T08:23:30.844Z",
+    "preview": "2026-02-16 会議メモ（高橋先生退官記念） 1. 体制・メンバーについて - 水野先生: 実行委員会メンバーとして内定。 - ラボ内: - 現在のラボメンバー（解剖発生）は高橋先生の直系ルールに慣れているわけではないため、実務（当日支援など）はお願いするが、企画の中心はセンセイと井田さんで進める。 - 藤野君: 当日の手伝いなど、具体的な役割を相談する可能性あり。 - 吉原君: 来年3月に"
+  },
+  {
+    "filename": "review_result_260216_v2.md",
+    "path": "memory/review_result_260216_v2.md",
+    "mtime": "2026-02-16T01:54:11.986Z",
+    "preview": "Critical Review Report (鬼審査員レビュー：修正版) 🔴 Fatal Flaws (致命的な欠点) - なし: 現時点でのドラフトは、制限時間内（10分）に要点を凝縮しており、論理構成も明確である。 🟡 Improvements (改善すべき点) - Slide 8: 空白スライドの扱いが未確定。「重要な動画やデータ」がなければ、スライド自体を削除して、Slide 7から"
+  },
+  {
+    "filename": "review_result_260216.md",
+    "path": "memory/review_result_260216.md",
+    "mtime": "2026-02-16T01:53:26.868Z",
+    "preview": "Critical Review Report (鬼審査員レビュー) 🔴 Fatal Flaws (致命的な欠点) - 導入のパンチ力不足: スライド1（納豆の写真）での導入が少し「食品機能学」寄りになっている。「なぜ今、肝臓病治療に納豆なのか？」という意外性と必然性の対比が弱い。聴衆は医学部教授や製薬企業かもしれない。「健康食品の話か」と舐められたら終わりだ。 - メカニズムの説明がくどい: ス"
+  },
+  {
+    "filename": "critical_grant_reviewer.md",
+    "path": "memory/critical_grant_reviewer.md",
+    "mtime": "2026-02-16T01:45:33.736Z",
+    "preview": "Role: Critical Grant Reviewer (鬼審査員) Context: Research Funding Presentation (10 min, Hamada Style) あなたは国家プロジェクト級の研究費審査員（AMED/JSPS相当）です。 数多くの申請書を見てきた経験から、以下の観点で発表原稿を極めて厳しく審査し、容赦ない指摘を行ってください。 目的は「不採択理由を"
+  },
+  {
+    "filename": "research_presentation_style.md",
+    "path": "memory/research_presentation_style.md",
+    "mtime": "2026-02-16T01:39:00.442Z",
+    "preview": "Hamada Style: Research Funding Presentation Prompt Keywords: 研究費獲得, プレゼン, 科研費, 予算申請, 納豆プロジェクト This prompt is designed to generate presentation structures that match Professor Hamada's narrative style:"
+  },
+  {
+    "filename": "2026-02-15.md",
+    "path": "memory/2026-02-15.md",
+    "mtime": "2026-02-15T13:22:15.673Z",
+    "preview": "2026-02-15 - Communication Issues: Connectivity was unstable earlier today; WhatsApp gateway timed out (408). センセイ inquired about offline capabilities. - Offline Mode: Confirmed that local models (LMS"
+  },
+  {
+    "filename": "2026-02-14.md",
+    "path": "memory/2026-02-14.md",
+    "mtime": "2026-02-13T16:47:27.355Z",
+    "preview": "2026-02-14 - Task/Schedule: - 17:00 Tsukuba Univ. (Colony count / Fertilized egg storage check) reminder set. - User explicitly requested active emoji reactions in all group chats as a sign of \"seen/u"
+  },
+  {
+    "filename": "2026-02-13.md",
+    "path": "memory/2026-02-13.md",
+    "mtime": "2026-02-13T11:35:55.137Z",
+    "preview": "2026-02-13 - FCM-app (CellQuest-style browser app) project is actively in Iteration 2 under strict A/B/C loop governance with no-stop confirmation style requested by センセイ. - Repo/context established a"
+  },
+  {
+    "filename": "lessons.md",
+    "path": "memory/lessons.md",
+    "mtime": "2026-02-13T06:29:00.342Z",
+    "preview": "lessons - Telegramグループに追加されても反応しない時は、設定ファイル（openclaw.json）の channels.telegram.groups にそのグループIDが含まれているか確認し、なければ追加して openclaw gateway restart する。 - TelegramグループIDを追加する際は、requireMention: false, groupPoli"
+  },
+  {
+    "filename": "2026-02-13-http-401-authentication-error-.md",
+    "path": "memory/2026-02-13-http-401-authentication-error-.md",
+    "mtime": "2026-02-13T05:40:22.110Z",
+    "preview": "Session: 2026-02-13 05:40:21 UTC - Session Key: agent:main:main - Session ID: 089aee35-5e8f-4815-b2a9-b786c59f3a6f - Source: webchat Conversation Summary user: [Queued messages while agent was busy] -"
+  },
+  {
+    "filename": "dm_repair.md",
+    "path": "memory/dm_repair.md",
+    "mtime": "2026-02-13T04:23:27.154Z",
+    "preview": "DM Session Repair I am restarting the gateway to clear in-memory session caches. The user reported the DM session is stuck in English. After restart, I will send a proactive message to the DM session "
+  },
+  {
+    "filename": "2026-02-12.md",
+    "path": "memory/2026-02-12.md",
+    "mtime": "2026-02-12T13:05:23.020Z",
+    "preview": "- iScienceの同一著者のレビューをすでに3回担当。レビューワー3はセンセイ。今回は抽象的かつ厳しめにコメントし、全改訂で良いレビューになることを期待。今後別誌で同内容のレビューが回る可能性あり（記録しておく）。 - センセイ希望：今後、メール通知はTelegramチャンネル「メール（chat:-5200373277）」へ送る。 - 工藤先生コメント反映のv6ドラフト、2/16会議用決定シー"
+  },
+  {
+    "filename": "index.md",
+    "path": "memory/projects/index.md",
+    "mtime": "2026-02-11T13:08:01.296Z",
+    "preview": "projects index - hamada_grants_publications.md — 濱田理人の科研費・助成金と原著論文（タイトル・年・雑誌・著者・DOI欄） - hamada_representative_papers.md — 代表論文（責任著者／筆頭著者を最大限抽出）"
+  },
+  {
+    "filename": "hamada_representative_papers.md",
+    "path": "memory/projects/hamada_representative_papers.md",
+    "mtime": "2026-02-11T13:07:54.550Z",
+    "preview": "濱田理人：代表論文（責任著者／筆頭著者を最大限抽出） - MAFB in Macrophages Regulates Prostaglandin E2–Mediated Lipid Mediator Class Switch through ALOX15 in Ischemic Acute Kidney Injury. - 著者: Maho Kanai, Teppei Nishino, Dhouh"
+  },
+  {
+    "filename": "hamada_grants_publications.md",
+    "path": "memory/projects/hamada_grants_publications.md",
+    "mtime": "2026-02-11T13:03:04.990Z",
+    "preview": "濱田理人：科研費・助成金と原著論文（出典：茨城県立医療大学240924.docx） 科研費・助成金（代表） - 2023年～2025年｜武田科学振興財団 / 2023年度医学系研究助成（基礎） / 代表｜マクロファージと自律神経の相互作用による肥満抑制メカニズムの解明 - 2023年～2025年｜日本学術振興会 / 基盤研究(C) / 代表｜転写因子MAFBは脂肪組織マクロファージにおいて交感神経"
+  },
+  {
+    "filename": "2026-02-11.md",
+    "path": "memory/2026-02-11.md",
+    "mtime": "2026-02-11T12:56:55.182Z",
+    "preview": "- センセイは hamamichi@md.tsukuba.ac.jp 宛のメールを積極的にチェックしてほしい（重要メールが多い）。 - Gmail重要通知（過去1時間/未読）6件：PayPayカード(Apple/Google Payキャンペーン)、imToken月次更新、ResearchGate引用通知、iScience査読decision letter、Facebookコメント通知、Fronti"
+  },
+  {
+    "filename": "2026-02-10.md",
+    "path": "memory/2026-02-10.md",
+    "mtime": "2026-02-10T10:04:01.885Z",
+    "preview": "- User’s name is 濱田理人 (Michito Hamada); address as センセイ."
+  },
+  {
+    "filename": "MCTO_analysis_plan.md",
+    "path": "memory/MCTO_analysis_plan.md",
+    "mtime": "2026-02-10T04:26:05.610Z",
+    "preview": "MCTO RNA-seq解析：現状整理と今後の進め方（引き継ぎ用） 1. 目的 - MCTO（Mafb変異）で生じる骨溶解の分子機構を、RNA-seqのDEG/GSEAから説明できる形にまとめる。 - cKO（Mafb欠損）との比較で、MCTO特異的な変化・逆転を抽出し、Baron教授に説明可能な論理を構築する。 --- 2. データ フォルダ /Users/michito/Library/Clo"
+  },
+  {
+    "filename": "2026-02-09.md",
+    "path": "memory/2026-02-09.md",
+    "mtime": "2026-02-09T03:41:42.597Z",
+    "preview": "- 退官記念で予定を確保する人：病院長、学長。"
+  },
+  {
+    "filename": "Baron_Defense_Report_v2_JP.md",
+    "path": "memory/Baron_Defense_Report_v2_JP.md",
+    "mtime": "2026-02-08T15:51:57.578Z",
+    "preview": "Baron 対策レポート v2：「炎症‐ミトコンドリア軸」 エグゼクティブサマリー Roland Baron は「RNA-seq はノイズが多く、破骨細胞マーカーも一定しない」と批判してくるはずです。そこで論点をずらします。 MCTO の破骨細胞は「生理的に活性化した破骨細胞」ではなく、脂質‐補体系‐ミトコンドリア軸により再配線された 病的な炎症性破骨細胞である――という主張で防御します。 これに"
+  },
+  {
+    "filename": "Baron_Defense_Report_v2.md",
+    "path": "memory/Baron_Defense_Report_v2.md",
+    "mtime": "2026-02-08T15:40:36.418Z",
+    "preview": "Baron Defense Report v2: The \"Inflammatory-Mitochondrial\" Axis Executive Summary Roland Baron will argue that our RNAseq data is \"noisy\" or \"contradictory\" because standard osteoclast markers might be"
+  },
+  {
+    "filename": "Baron_Deep_Miner_Protocol.md",
+    "path": "memory/Baron_Deep_Miner_Protocol.md",
+    "mtime": "2026-02-08T15:37:42.827Z",
+    "preview": "Deep GSEA Miner + Skeptic Review (Protocol) Mission To identify \"ironclad\" pathogenic mechanisms in MCTO mice by exhaustively screening GSEA data, subjecting findings to rigorous skeptical review, and"
+  },
+  {
+    "filename": "Baron_Defense_Report.md",
+    "path": "memory/Baron_Defense_Report.md",
+    "mtime": "2026-02-08T15:33:20.891Z",
+    "preview": "Baron Defense Report: The \"Gain of Dysfunction\" Hypothesis To: Roland Baron (Harvard) From: Scientific Advisory Board (Internal) Subject: Resolving the MCTO Paradox: In Vitro Block vs. In Vivo Osteoly"
+  },
+  {
+    "filename": "Baron_Defense_Plan.md",
+    "path": "memory/Baron_Defense_Plan.md",
+    "mtime": "2026-02-08T15:31:50.887Z",
+    "preview": "Baron対策・鉄壁論理構築プロジェクト ミッション ハーバード大学 Roland Baron 教授を納得させるため、MCTOマウスの骨溶解メカニズムに関する「文献的証拠に基づいた」鉄壁の仮説を構築する。 Inputs - MCTO vs WT: C1q↑, Cd36↑, Pf4↑, Lars2↓ - cKO vs WT: C1q↓, Cd36↓ (MCTOとは逆方向) - Clinical Ph"
+  },
+  {
+    "filename": "MCTO_meeting_summary.md",
+    "path": "memory/MCTO_meeting_summary.md",
+    "mtime": "2026-02-08T14:41:55.087Z",
+    "preview": "ミーティング議事録サマリー：MCTO研究の不一致解消に向けて 参加者: 濱田教授 (Hamada Lab) vs Bjorn教授 (Harvard/Baron Lab) 目的: データの不一致解消、共同研究・論文投稿方針の協議 1. In Vivo (生体内) データ - 一致点: MCTOマウスは遺伝子量依存的に低骨密度 (BV/TV低下) を示す。 - Bjorn側の発見 (骨形成): 骨形成"
+  },
+  {
+    "filename": "MCTO_research_context.md",
+    "path": "memory/MCTO_research_context.md",
+    "mtime": "2026-02-08T14:36:08.711Z",
+    "preview": "研究背景：MAFB変異によるMCTO発症メカニズムの解明 1. 研究の対象と目的 - 対象: 超希少な骨吸収疾患「多中心性手根足根骨溶解症 (MCTO)」 - 原因: 転写因子 MAFB の酸性転写活性化ドメイン（TAD）における変異。 - 目的: 詳細な分子メカニズムの解明（現状は未解明）。 2. 使用しているモデル系 - MCTO KIマウス: - 患者と同様の変異（Mafb MCTO変異）を"
+  },
+  {
+    "filename": "2026-02-08.md",
+    "path": "memory/2026-02-08.md",
+    "mtime": "2026-02-08T10:22:39.719Z",
+    "preview": "- モデル運用方針: 基本はGemini、コード作業時のみCodexに切替。 - marp-cliをHomebrewでインストール。 - pandocをHomebrewでインストール。 - 「2027高橋先生退官記念/outputs」のextract_log.mdとplan.mdをdocx化してTelegram送付（PDFはmarpで途中切れ）。 - gog定期チェック: 07:00 JSTに当日"
+  },
+  {
+    "filename": "2026-02-07.md",
+    "path": "memory/2026-02-07.md",
+    "mtime": "2026-02-07T01:05:21.213Z",
+    "preview": "- ElevenLabs Sarah（voice_id: EXAVITQu4vr4xnSDxMaL）でTTS生成→ffmpegでopus化→Telegramにvoice送信する手順を今後のデフォルトとして記憶。"
+  },
+  {
+    "filename": "2026-02-05.md",
+    "path": "memory/2026-02-05.md",
+    "mtime": "2026-02-05T13:36:08.046Z",
+    "preview": "- Telegram連携を有効化（bot token/allowlist設定、config.patch反映） - Telegramで /start 受信確認 → テキスト返信テストOK - Telegramで音声送信テスト（TTS→VOICEVOX）成功 - VOICEVOX日本語音声（speaker=2）でTelegram音声送信＆再生確認 - 今後は Telegram音声（VOICEVOX）優"
+  },
+  {
+    "filename": "2026-01-28.md",
+    "path": "memory/2026-01-28.md",
+    "mtime": "2026-01-27T22:34:17.835Z",
+    "preview": "- User will use topic tags in messages when changing topics. RNAseq topic tags: 【RNAseq-MCTO】 or 【MCTO】."
+  }
+]
