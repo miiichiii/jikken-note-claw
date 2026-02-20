@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Digital Office - Mission Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Work Area / Desk Styles */
+        .desk {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background: rgba(241, 245, 249, 0.5);
+            border-radius: 20px;
+            border: 2px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .desk.working {
+            background: rgba(224, 231, 255, 0.4);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.1);
+        }
+
+        /* Avatar Animation */
+        .avatar {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .desk.idle .avatar {
+            bottom: 80px; /* Away from computer */
+            opacity: 0.6;
+            filter: grayscale(0.5);
+        }
+
+        .desk.working .avatar {
+            bottom: 30px; /* At computer */
+            opacity: 1;
+            filter: grayscale(0);
+        }
+
+        .computer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 40px;
+            background: #cbd5e1;
+            border-radius: 4px;
+            border-bottom: 4px solid #94a3b8;
+        }
+
+        .screen-on {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            background: #1e293b;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .desk.working .screen-on::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, rgba(56, 189, 248, 0.2), transparent);
+            animation: scan 2s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        .status-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+    
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <nav class="mb-8 flex justify-between items-center">
+            <a href="index.html" class="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2 text-sm font-medium">
+                <i class="fa-solid fa-chevron-left"></i> Back to Dashboard
+            </a>
+            <div id="liveClock" class="font-mono text-xs text-slate-400"></div>
+        </nav>
+
+        <header class="mb-16 text-center">
+            <h1 class="text-4xl font-bold tracking-tight text-slate-900 mb-2">Digital Office</h1>
+            <p class="text-slate-500">Real-time activity monitor for the AI Team</p>
+        </header>
+
+        <!-- Office Floor Plan -->
+        <div class="grid grid-cols-1 gap-12">
+            
+            <!-- Executive Suite -->
+            <section>
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-6 text-center">Executive Suite</h2>
+                <div class="flex justify-center">
+                    <div id="leader-desk" class="desk idle max-w-xs p-6 shadow-sm">
+                        <div class="avatar">
+                            <div class="w-16 h-16 bg-indigo-500 text-white rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fa-solid fa-crown text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="computer"><div class="screen-on"></div></div>
+                        <div class="absolute top-4 left-4 text-left">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase">macstudio-bot</p>
+                            <div class="flex items-center gap-1.5">
+                                <span class="status-dot w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                                <span class="status-text text-[10px] font-bold text-slate-500 uppercase">Idle</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Work Floor -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Dev & Design Lab -->
+                <section class="space-y-6">
+                    <h2 class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] flex items-center gap-2">
+                        <i class="fa-solid fa-vial-circle-check"></i> Dev Lab
+                    </h2>
+                    <div id="designer-desk" class="desk idle p-6 shadow-sm">
+                        <div class="avatar"><div class="w-12 h-12 bg-sky-400 text-white rounded-xl flex items-center justify-center shadow-md"><i class="fa-solid fa-palette"></i></div></div>
+                        <div class="computer"><div class="screen-on"></div></div>
+                        <div class="absolute top-4 left-4 text-left">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase">UI Designer</p>
+                            <div class="flex items-center gap-1.5"><span class="status-dot w-1.5 h-1.5 rounded-full bg-slate-300"></span><span class="status-text text-[10px] font-bold text-slate-500 uppercase">Idle</span></div>
+                        </div>
+                    </div>
+                    <div id="developer-desk" class="desk idle p-6 shadow-sm">
+                        <div class="avatar"><div class="w-12 h-12 bg-sky-500 text-white rounded-xl flex items-center justify-center shadow-md"><i class="fa-solid fa-laptop-code"></i></div></div>
+                        <div class="computer"><div class="screen-on"></div></div>
+                        <div class="absolute top-4 left-4 text-left">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase">Developer</p>
+                            <div class="flex items-center gap-1.5"><span class="status-dot w-1.5 h-1.5 rounded-full bg-slate-300"></span><span class="status-text text-[10px] font-bold text-slate-500 uppercase">Idle</span></div>
+                        </div>
+                    </div>
+                    <div id="reviewer-desk" class="desk idle p-6 shadow-sm">
+                        <div class="avatar"><div class="w-12 h-12 bg-sky-600 text-white rounded-xl flex items-center justify-center shadow-md"><i class="fa-solid fa-shield-halved"></i></div></div>
+                        <div class="computer"><div class="screen-on"></div></div>
+                        <div class="absolute top-4 left-4 text-left">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase">Reviewer</p>
+                            <div class="flex items-center gap-1.5"><span class="status-dot w-1.5 h-1.5 rounded-full bg-slate-300"></span><span class="status-text text-[10px] font-bold text-slate-500 uppercase">Idle</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Research Wing -->
+                <section class="space-y-6">
+                    <h2 class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] flex items-center gap-2">
+                        <i class="fa-solid fa-microscope"></i> Research Wing
+                    </h2>
+                    <div id="writer-desk" class="desk idle p-6 shadow-sm">
+                        <div class="avatar"><div class="w-12 h-12 bg-emerald-500 text-white rounded-xl flex items-center justify-center shadow-md"><i class="fa-solid fa-pen-nib"></i></div></div>
+                        <div class="computer"><div class="screen-on"></div></div>
+                        <div class="absolute top-4 left-4 text-left">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase">Writer</p>
+                            <div class="flex items-center gap-1.5"><span class="status-dot w-1.5 h-1.5 rounded-full bg-slate-300"></span><span class="status-text text-[10px] font-bold text-slate-500 uppercase">Idle</span></div>
+                        </div>
+                    </div>
+                    <div id="analyst-desk" class="desk idle p-6 shadow-sm">
+                        <div class="avatar"><div class="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center shadow-md"><i class="fa-solid fa-chart-line"></i></div></div>
+                        <div class="computer"><div class="screen-on"></div></div>
+                        <div class="absolute top-4 left-4 text-left">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase">Analyst</p>
+                            <div class="flex items-center gap-1.5"><span class="status-dot w-1.5 h-1.5 rounded-full bg-slate-300"></span><span class="status-text text-[10px] font-bold text-slate-500 uppercase">Idle</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Operations Hub -->
+                <section class="space-y-6">
+                    <h2 class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] flex items-center gap-2">
+                        <i class="fa-solid fa-gears"></i> Ops Center
+                    </h2>
+                    <div id="email-desk" class="desk idle p-6 shadow-sm">
+                        <div class="avatar"><div class="w-12 h-12 bg-amber-500 text-white rounded-xl flex items-center justify-center shadow-md"><i class="fa-solid fa-envelope-open-text"></i></div></div>
+                        <div class="computer"><div class="screen-on"></div></div>
+                        <div class="absolute top-4 left-4 text-left">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase">Email Clerk</p>
+                            <div class="flex items-center gap-1.5"><span class="status-dot w-1.5 h-1.5 rounded-full bg-slate-300"></span><span class="status-text text-[10px] font-bold text-slate-500 uppercase">Idle</span></div>
+                        </div>
+                    </div>
+                    <div id="archivist-desk" class="desk idle p-6 shadow-sm">
+                        <div class="avatar"><div class="w-12 h-12 bg-amber-600 text-white rounded-xl flex items-center justify-center shadow-md"><i class="fa-solid fa-box-archive"></i></div></div>
+                        <div class="computer"><div class="screen-on"></div></div>
+                        <div class="absolute top-4 left-4 text-left">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase">Archivist</p>
+                            <div class="flex items-center gap-1.5"><span class="status-dot w-1.5 h-1.5 rounded-full bg-slate-300"></span><span class="status-text text-[10px] font-bold text-slate-500 uppercase">Idle</span></div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <footer class="mt-24 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
+            <p>&copy; 2026 miiichiii Research Lab. Digital Office View Powered by OpenClaw.</p>
+        </footer>
+    </div>
+
+    <script>
+        async function updateOffice() {
+            try {
+                const res = await fetch('office.json');
+                const roles = await res.json();
+                
+                Object.keys(roles).forEach(id => {
+                    const desk = document.getElementById(`${id}-desk`);
+                    if (!desk) return;
+
+                    const status = roles[id].status;
+                    const task = roles[id].task;
+                    const dot = desk.querySelector('.status-dot');
+                    const text = desk.querySelector('.status-text');
+
+                    if (status === 'working') {
+                        desk.classList.remove('idle');
+                        desk.classList.add('working');
+                        dot.className = 'status-dot w-1.5 h-1.5 rounded-full bg-emerald-500 status-pulse';
+                        text.textContent = 'Working';
+                        text.className = 'status-text text-[10px] font-bold text-emerald-600 uppercase';
+                        if (task) desk.title = `Current Task: ${task}`;
+                    } else if (status === 'active') {
+                        desk.classList.remove('idle', 'working');
+                        dot.className = 'status-dot w-1.5 h-1.5 rounded-full bg-indigo-500';
+                        text.textContent = 'Active';
+                        text.className = 'status-text text-[10px] font-bold text-indigo-600 uppercase';
+                    } else {
+                        desk.classList.add('idle');
+                        desk.classList.remove('working');
+                        dot.className = 'status-dot w-1.5 h-1.5 rounded-full bg-slate-300';
+                        text.textContent = 'Idle';
+                        text.className = 'status-text text-[10px] font-bold text-slate-500 uppercase';
+                    }
+                });
+            } catch (err) {
+                console.error('Office sync failed:', err);
+            }
+        }
+
+        function updateClock() {
+            document.getElementById('liveClock').textContent = new Date().toLocaleString('ja-JP');
+        }
+
+        setInterval(updateClock, 1000);
+        setInterval(updateOffice, 5000); // Poll every 5s
+        updateOffice();
+        updateClock();
+    </script>
+</body>
+</html>
