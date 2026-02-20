@@ -25,6 +25,12 @@
   - 分注: 500 µL/tube (Sample×7 + Control×1)
 - **ステータス**: 測定準備完了 (Ready for FACS)
 
+## 測定ログ (Instrument Settings)
+- **Voltage調整**:
+  - **APC (CD115)**: シグナル微弱のため、Voltageを上げて調整。
+  - **その他**: 変更なし（Default/維持）。
+  - ヒストグラムでSaturation（振り切れ）がないことを確認済み。
+
 ## 方法 (2) コロニーアッセイ
 - **培地調製**:
   - Total: 8 mL
