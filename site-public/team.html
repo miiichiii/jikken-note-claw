@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Mission Control: AI Team - miiichiii</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <nav class="mb-8">
+            <a href="index.html" class="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2 text-sm font-medium">
+                <i class="fa-solid fa-chevron-left"></i> Back to Dashboard
+            </a>
+        </nav>
+
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-bold tracking-tight text-slate-900 mb-4">AI Team Members</h1>
+            <p class="text-lg text-slate-600">Specialized Agents for Research & Operations</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Main Assistant -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col items-center text-center border-t-4 border-indigo-500">
+                <div class="w-20 h-20 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mb-4 shadow-sm">
+                    <i class="fa-solid fa-robot text-3xl"></i>
+                </div>
+                <h2 class="text-lg font-bold text-slate-800">Main Assistant</h2>
+                <p class="text-xs font-mono text-indigo-500 mb-4 bg-indigo-50 px-2 py-1 rounded">macstudio-bot</p>
+                
+                <div class="w-full text-left space-y-3 text-sm">
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold tracking-wider">Model</p>
+                        <p class="text-slate-700 font-medium">Gemini 3 Pro / Flash</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold tracking-wider">Specialty</p>
+                        <p class="text-slate-600 leading-relaxed">Context management, Scheduling, Overall orchestration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Builder -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col items-center text-center border-t-4 border-emerald-500">
+                <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4 shadow-sm">
+                    <i class="fa-solid fa-microscope text-3xl"></i>
+                </div>
+                <h2 class="text-lg font-bold text-slate-800">Research Builder</h2>
+                <p class="text-xs font-mono text-emerald-500 mb-4 bg-emerald-50 px-2 py-1 rounded">Local Agent</p>
+                
+                <div class="w-full text-left space-y-3 text-sm">
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold tracking-wider">Model</p>
+                        <p class="text-slate-700 font-medium">DeepSeek-R1-70B (Local)</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold tracking-wider">Specialty</p>
+                        <p class="text-slate-600 leading-relaxed">Scientific paper analysis, Complex coding, Strategic DB updates.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Clerk -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col items-center text-center border-t-4 border-amber-500">
+                <div class="w-20 h-20 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-4 shadow-sm">
+                    <i class="fa-solid fa-envelope-open-text text-3xl"></i>
+                </div>
+                <h2 class="text-lg font-bold text-slate-800">Email Clerk</h2>
+                <p class="text-xs font-mono text-amber-500 mb-4 bg-amber-50 px-2 py-1 rounded">Local Agent</p>
+                
+                <div class="w-full text-left space-y-3 text-sm">
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold tracking-wider">Model</p>
+                        <p class="text-slate-700 font-medium">GPT-OSS 20B (Local)</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold tracking-wider">Specialty</p>
+                        <p class="text-slate-600 leading-relaxed">Hourly Gmail check, Priority sorting, Newsletter cleanup.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Critic -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col items-center text-center border-t-4 border-rose-500">
+                <div class="w-20 h-20 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center mb-4 shadow-sm">
+                    <i class="fa-solid fa-shield-halved text-3xl"></i>
+                </div>
+                <h2 class="text-lg font-bold text-slate-800">System Critic</h2>
+                <p class="text-xs font-mono text-rose-500 mb-4 bg-rose-50 px-2 py-1 rounded">Security Agent</p>
+                
+                <div class="w-full text-left space-y-3 text-sm">
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold tracking-wider">Model</p>
+                        <p class="text-slate-700 font-medium">Gemini 3 Flash</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold tracking-wider">Specialty</p>
+                        <p class="text-slate-600 leading-relaxed">Code review, Security audit, Error detection.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
+            <p>&copy; 2026 miiichiii Research Lab. Powered by OpenClaw & AI Team.</p>
+        </footer>
+    </div>
+</body>
+</html>
