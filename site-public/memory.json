@@ -2,8 +2,14 @@
   {
     "filename": "todo.md",
     "path": "memory/todo.md",
-    "mtime": "2026-02-20T12:11:51.779Z",
-    "preview": "TODO A (最優先) - [ ] 高橋先生退官記念：3/4(水)13:00〜ミーティング準備（工藤先生・井田さん） - [ ] 高橋先生退官記念：2/16会議内容の反映（体制・シンポ案・リスト確認） - [ ] 高橋先生退官記念：事務（1階）へ連絡先リスト使用の相談（担当交代に注意） B (今週〜近日) - [ ] 2025年度 医科学センター研究業績集作成（目標：3月中に完了） - [x] "
+    "mtime": "2026-02-20T22:49:08.709Z",
+    "preview": "TODO A (最優先) - [ ] 高橋先生退官記念：3/4(水)13:00〜ミーティング準備（工藤先生・井田さん） @濱田 - [ ] 高橋先生退官記念：2/16会議内容の反映（体制・シンポ案・リスト確認） @Bot - [ ] 高橋先生退官記念：事務（1階）へ連絡先リスト使用の相談（担当交代に注意） @濱田 B (今週〜近日) - [ ] 2025年度 医科学センター研究業績集作成（目標：3"
+  },
+  {
+    "filename": "email_rules.md",
+    "path": "memory/email_rules.md",
+    "mtime": "2026-02-20T22:34:02.492Z",
+    "preview": "メール運用ルール 優先・無視リスト - facebook, change, LinkedIn, rakuten を含む件名／送信者は低優先／無視対象にする。 - 「予約の受付（筑波大学オープンファシリティー推進機構）」のような案内も無視でよい。 - それ以外の hamamichi@md.tsukuba.ac.jp 宛メールは重要度が高い可能性があるため、積極的にチェックする。 - 最優先チェック対"
   },
   {
     "filename": "MCTO_research_context.md",
@@ -58,12 +64,6 @@
     "path": "memory/2026-02-18.md",
     "mtime": "2026-02-18T11:09:13.803Z",
     "preview": "2026-02-18 💼 作業ログ - clawd フォルダの整理: - query.json, query_90.json, query_reset.json, sessions.json を tmp/ へ移動。 - tmp_ibaraki240924.txt を archive/ へ移動。 - robots.txt (直下および site-public/) を archive/ へ移動し、s"
-  },
-  {
-    "filename": "email_rules.md",
-    "path": "memory/email_rules.md",
-    "mtime": "2026-02-18T11:04:21.364Z",
-    "preview": "メール運用ルール 優先・無視リスト - facebook, change, LinkedIn, rakuten を含む件名／送信者は低優先／無視対象にする。 - 「予約の受付（筑波大学オープンファシリティー推進機構）」のような案内も無視でよい。 - それ以外の hamamichi@md.tsukuba.ac.jp 宛メールは重要度が高い可能性があるため、積極的にチェックする。 - 最優先チェック対"
   },
   {
     "filename": "lmstudio-terminal-switch-guide.md",
