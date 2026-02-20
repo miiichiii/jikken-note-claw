@@ -2,8 +2,20 @@
   {
     "filename": "todo.md",
     "path": "memory/todo.md",
-    "mtime": "2026-02-19T23:54:29.331Z",
-    "preview": "TODO A (最優先) - [ ] 高橋先生退官記念：3/4(水)13:00〜ミーティング準備（工藤先生・井田さん） - [ ] 高橋先生退官記念：2/16会議内容の反映（体制・シンポ案・リスト確認） - [ ] 高橋先生退官記念：事務（1階）へ連絡先リスト使用の相談（担当交代に注意） B (今週〜近日) - [x] つくば市役所で子ども支援の書類を提出（完了） - [x] 松坂先生メール対応（"
+    "mtime": "2026-02-20T12:11:51.779Z",
+    "preview": "TODO A (最優先) - [ ] 高橋先生退官記念：3/4(水)13:00〜ミーティング準備（工藤先生・井田さん） - [ ] 高橋先生退官記念：2/16会議内容の反映（体制・シンポ案・リスト確認） - [ ] 高橋先生退官記念：事務（1階）へ連絡先リスト使用の相談（担当交代に注意） B (今週〜近日) - [ ] 2025年度 医科学センター研究業績集作成（目標：3月中に完了） - [x] "
+  },
+  {
+    "filename": "MCTO_research_context.md",
+    "path": "memory/MCTO_research_context.md",
+    "mtime": "2026-02-20T03:17:27.738Z",
+    "preview": "研究背景：MAFB変異によるMCTO発症メカニズムの解明 1. 研究の対象と目的 - 対象: 超希少な骨吸収疾患「多中心性手根足根骨溶解症 (MCTO)」 - 原因: 転写因子 MAFB の酸性転写活性化ドメイン（TAD）における変異。 - 目的: 詳細な分子メカニズムの解明（現状は未解明）。 2. 使用しているモデル系 - MCTO KIマウス: - 患者と同様の変異（Mafb MCTO変異）を"
+  },
+  {
+    "filename": "2026-02-20.md",
+    "path": "memory/2026-02-20.md",
+    "mtime": "2026-02-20T03:17:27.714Z",
+    "preview": "2026-02-20 - MCTO/MAFB Research: - Colony Assay Result (Day 4): - Source: 2026-02-13_MCTOコロニー観察_Day4.md (GitHub). - MCTO (Avg 35.0) vs WT (Avg 12.7). MCTO showed ~2.8x increase. - Bone Marrow Cell Cou"
   },
   {
     "filename": "mission_control_sop.md",
@@ -91,31 +103,31 @@
   },
   {
     "filename": "2026-02-16_meeting_notes_v3.md",
-    "path": "memory/2026-02-16_meeting_notes_v3.md",
+    "path": "memory/archive/2026-02-16_meeting_notes_v3.md",
     "mtime": "2026-02-16T08:24:37.882Z",
     "preview": "2026-02-16 会議メモ（高橋先生退官記念）その3 1. シンポジウムと企業協賛・展示 - 企業ブース/ポスター: - シンポジウム会場（国際会議場 多目的ホールなど）の受付付近やホールの壁際を活用して、企業パンフレットの設置や簡単な説明ブースを設ける。 - これにより「協賛費」として運営資金を得るスキームを検討。 - 学生のポスター発表（解剖発生やセンター関連）も併設し、コーヒーブレーク時"
   },
   {
     "filename": "2026-02-16_meeting_notes_v2.md",
-    "path": "memory/2026-02-16_meeting_notes_v2.md",
+    "path": "memory/archive/2026-02-16_meeting_notes_v2.md",
     "mtime": "2026-02-16T08:23:53.618Z",
     "preview": "2026-02-16 会議メモ（高橋先生退官記念）その2 1. 体制と承認フロー - 承認順序: 高橋先生 → 川口先生 → 水野先生 の順番で合意を取り、オフィシャルな決定とする。 - センターへの相談: 設営費や公費の支出について、川口先生や水野先生に「相談があります」とアポを取り、センセイと井田さんの二人で説明に行く。 2. シンポジウムの演者・人選 - 候補: - 篠原先生（東京科学大学？"
   },
   {
     "filename": "2026-02-16_meeting_notes.md",
-    "path": "memory/2026-02-16_meeting_notes.md",
+    "path": "memory/archive/2026-02-16_meeting_notes.md",
     "mtime": "2026-02-16T08:23:30.844Z",
     "preview": "2026-02-16 会議メモ（高橋先生退官記念） 1. 体制・メンバーについて - 水野先生: 実行委員会メンバーとして内定。 - ラボ内: - 現在のラボメンバー（解剖発生）は高橋先生の直系ルールに慣れているわけではないため、実務（当日支援など）はお願いするが、企画の中心はセンセイと井田さんで進める。 - 藤野君: 当日の手伝いなど、具体的な役割を相談する可能性あり。 - 吉原君: 来年3月に"
   },
   {
     "filename": "review_result_260216_v2.md",
-    "path": "memory/review_result_260216_v2.md",
+    "path": "memory/archive/review_result_260216_v2.md",
     "mtime": "2026-02-16T01:54:11.986Z",
     "preview": "Critical Review Report (鬼審査員レビュー：修正版) 🔴 Fatal Flaws (致命的な欠点) - なし: 現時点でのドラフトは、制限時間内（10分）に要点を凝縮しており、論理構成も明確である。 🟡 Improvements (改善すべき点) - Slide 8: 空白スライドの扱いが未確定。「重要な動画やデータ」がなければ、スライド自体を削除して、Slide 7から"
   },
   {
     "filename": "review_result_260216.md",
-    "path": "memory/review_result_260216.md",
+    "path": "memory/archive/review_result_260216.md",
     "mtime": "2026-02-16T01:53:26.868Z",
     "preview": "Critical Review Report (鬼審査員レビュー) 🔴 Fatal Flaws (致命的な欠点) - 導入のパンチ力不足: スライド1（納豆の写真）での導入が少し「食品機能学」寄りになっている。「なぜ今、肝臓病治療に納豆なのか？」という意外性と必然性の対比が弱い。聴衆は医学部教授や製薬企業かもしれない。「健康食品の話か」と舐められたら終わりだ。 - メカニズムの説明がくどい: ス"
   },
@@ -157,7 +169,7 @@
   },
   {
     "filename": "2026-02-13-http-401-authentication-error-.md",
-    "path": "memory/2026-02-13-http-401-authentication-error-.md",
+    "path": "memory/archive/2026-02-13-http-401-authentication-error-.md",
     "mtime": "2026-02-13T05:40:22.110Z",
     "preview": "Session: 2026-02-13 05:40:21 UTC - Session Key: agent:main:main - Session ID: 089aee35-5e8f-4815-b2a9-b786c59f3a6f - Source: webchat Conversation Summary user: [Queued messages while agent was busy] -"
   },
@@ -217,13 +229,13 @@
   },
   {
     "filename": "Baron_Defense_Report_v2_JP.md",
-    "path": "memory/Baron_Defense_Report_v2_JP.md",
+    "path": "memory/archive/Baron_Defense_Report_v2_JP.md",
     "mtime": "2026-02-08T15:51:57.578Z",
     "preview": "Baron 対策レポート v2：「炎症‐ミトコンドリア軸」 エグゼクティブサマリー Roland Baron は「RNA-seq はノイズが多く、破骨細胞マーカーも一定しない」と批判してくるはずです。そこで論点をずらします。 MCTO の破骨細胞は「生理的に活性化した破骨細胞」ではなく、脂質‐補体系‐ミトコンドリア軸により再配線された 病的な炎症性破骨細胞である――という主張で防御します。 これに"
   },
   {
     "filename": "Baron_Defense_Report_v2.md",
-    "path": "memory/Baron_Defense_Report_v2.md",
+    "path": "memory/archive/Baron_Defense_Report_v2.md",
     "mtime": "2026-02-08T15:40:36.418Z",
     "preview": "Baron Defense Report v2: The \"Inflammatory-Mitochondrial\" Axis Executive Summary Roland Baron will argue that our RNAseq data is \"noisy\" or \"contradictory\" because standard osteoclast markers might be"
   },
@@ -235,7 +247,7 @@
   },
   {
     "filename": "Baron_Defense_Report.md",
-    "path": "memory/Baron_Defense_Report.md",
+    "path": "memory/archive/Baron_Defense_Report.md",
     "mtime": "2026-02-08T15:33:20.891Z",
     "preview": "Baron Defense Report: The \"Gain of Dysfunction\" Hypothesis To: Roland Baron (Harvard) From: Scientific Advisory Board (Internal) Subject: Resolving the MCTO Paradox: In Vitro Block vs. In Vivo Osteoly"
   },
@@ -250,12 +262,6 @@
     "path": "memory/MCTO_meeting_summary.md",
     "mtime": "2026-02-08T14:41:55.087Z",
     "preview": "ミーティング議事録サマリー：MCTO研究の不一致解消に向けて 参加者: 濱田教授 (Hamada Lab) vs Bjorn教授 (Harvard/Baron Lab) 目的: データの不一致解消、共同研究・論文投稿方針の協議 1. In Vivo (生体内) データ - 一致点: MCTOマウスは遺伝子量依存的に低骨密度 (BV/TV低下) を示す。 - Bjorn側の発見 (骨形成): 骨形成"
-  },
-  {
-    "filename": "MCTO_research_context.md",
-    "path": "memory/MCTO_research_context.md",
-    "mtime": "2026-02-08T14:36:08.711Z",
-    "preview": "研究背景：MAFB変異によるMCTO発症メカニズムの解明 1. 研究の対象と目的 - 対象: 超希少な骨吸収疾患「多中心性手根足根骨溶解症 (MCTO)」 - 原因: 転写因子 MAFB の酸性転写活性化ドメイン（TAD）における変異。 - 目的: 詳細な分子メカニズムの解明（現状は未解明）。 2. 使用しているモデル系 - MCTO KIマウス: - 患者と同様の変異（Mafb MCTO変異）を"
   },
   {
     "filename": "2026-02-08.md",
