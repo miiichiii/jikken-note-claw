@@ -117,7 +117,7 @@
                 if (item.filename.match(/\d{4}-\d{2}-\d{2}/)) icon = 'fa-calendar-day';
 
                 return `
-                    <a href="../${relativePath}" target="_blank" class="glass-card rounded-xl p-5 flex flex-col h-full group hover:border-rose-200 block no-underline text-inherit">
+                    <a href="viewer.html?file=${item.path}" class="glass-card rounded-xl p-5 flex flex-col h-full group hover:border-rose-200 block no-underline text-inherit">
                         <div class="flex justify-between items-start mb-3">
                             <div class="flex items-center gap-2 text-slate-800 font-semibold truncate pr-2">
                                 <i class="fa-solid ${icon} text-slate-400 group-hover:text-rose-500 transition-colors"></i>
