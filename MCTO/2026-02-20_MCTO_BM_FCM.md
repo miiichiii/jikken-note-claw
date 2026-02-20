@@ -8,14 +8,14 @@
 - **サンプル**: 骨髄 (Bone Marrow) 7検体 (Ctrl n=4, MCTO n=3)
 - **解析手法**: FACS (Flow Cytometry)
 
-### 抗体パネル
-- **Positive Markers**:
+### 抗体パネル (確定)
+- **Dump (Lineage)**: PE
+  - CD3, B220, Ter119, Gr-1
+- **Stem/Progenitor**:
+  - **Sca-1**: PerCP-Cy5.5
+  - **CD117 (c-Kit)**: PE-Cy7
+- **Macrophage Lineage**:
   - **CD115 (M-CSFR)**: APC
-  - **CD117 (c-Kit)**: APC-Cy7
-- **Negative (Lineage/Dump)**:
-  - CD3
-  - B220
-  - (推奨: Gr-1, Ter119)
 
 ## 方法 (2) コロニーアッセイ
 - **培地調製**:
