@@ -1,20 +1,31 @@
-# 2026-02-20 MCTO 骨髄FCM解析
+# 2026-02-20 MCTO 骨髄FCM解析 & コロニーアッセイ
 
 ## 目的
-MCTOマウス骨髄におけるマクロファージ系プロジェニター（MDP/cMoP等）の解析。
+1. MCTOマウス骨髄におけるマクロファージ系プロジェニター（MDP/cMoP等）のFCM解析。
+2. M-CSFコロニーアッセイによる増殖能の再確認。
 
-## 方法
-- **サンプル**: 骨髄 (Bone Marrow)
+## 方法 (1) FACS
+- **サンプル**: 骨髄 (Bone Marrow) 7検体 (Ctrl n=4, MCTO n=3)
 - **解析手法**: FACS (Flow Cytometry)
 
-### 抗体パネル (予定)
+### 抗体パネル
 - **Positive Markers**:
   - **CD115 (M-CSFR)**: APC
   - **CD117 (c-Kit)**: APC-Cy7
 - **Negative (Lineage/Dump)**:
   - CD3
   - B220
-  - *(推奨: Gr-1, Ter119 を追加して顆粒球・赤血球を除去)*
+  - (推奨: Gr-1, Ter119)
+
+## 方法 (2) コロニーアッセイ
+- **培地調製**:
+  - Total: 8 mL
+  - M-CSF (10 ng/µL stock): **80 µL** (Final 100 ng/mL)
+  - Penicillin/Streptomycin (100x): **80 µL** (1/100)
+- **播種**:
+  - 密度: 1×10^4 cells / well
+  - 手順: 10倍希釈液から微量を分取
+- **ステータス**: 播種完了 (Maki-owatta)
 
 ## 結果
 ### 骨髄細胞数 (濃度: cells/ml)
