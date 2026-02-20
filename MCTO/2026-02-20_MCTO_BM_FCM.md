@@ -17,6 +17,14 @@
 - **Macrophage Lineage**:
   - **CD115 (M-CSFR)**: APC
 
+### 染色・測定準備 (Staining & Prep)
+- **Wash**: 完了
+- **DAPI染色 (Live/Dead)**:
+  - バッファー: 4% FBS/PBS
+  - 希釈: 1/3000 (DAPI 2 µL / Buffer 6 mL)
+  - 分注: 500 µL/tube (Sample×7 + Control×1)
+- **ステータス**: 測定準備完了 (Ready for FACS)
+
 ## 方法 (2) コロニーアッセイ
 - **培地調製**:
   - Total: 8 mL
