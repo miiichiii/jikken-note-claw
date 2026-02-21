@@ -1,15 +1,21 @@
 [
   {
-    "filename": "todo.md",
-    "path": "memory/todo.md",
-    "mtime": "2026-02-20T22:49:08.709Z",
-    "preview": "TODO A (最優先) - [ ] 高橋先生退官記念：3/4(水)13:00〜ミーティング準備（工藤先生・井田さん） @濱田 - [ ] 高橋先生退官記念：2/16会議内容の反映（体制・シンポ案・リスト確認） @Bot - [ ] 高橋先生退官記念：事務（1階）へ連絡先リスト使用の相談（担当交代に注意） @濱田 B (今週〜近日) - [ ] 2025年度 医科学センター研究業績集作成（目標：3"
-  },
-  {
     "filename": "email_rules.md",
     "path": "memory/email_rules.md",
-    "mtime": "2026-02-20T22:34:02.492Z",
-    "preview": "メール運用ルール 優先・無視リスト - facebook, change, LinkedIn, rakuten を含む件名／送信者は低優先／無視対象にする。 - 「予約の受付（筑波大学オープンファシリティー推進機構）」のような案内も無視でよい。 - それ以外の hamamichi@md.tsukuba.ac.jp 宛メールは重要度が高い可能性があるため、積極的にチェックする。 - 最優先チェック対"
+    "mtime": "2026-02-21T13:33:22.393Z",
+    "preview": "メール運用ルール (Unified & Definitive) 最終更新: 2026-02-21 💼 基本方針 - ハイブリッド運用: Gmailの検索・接続（gogツールの実行）はGemini Flash (Cloud)が行い、その後の内容精査、要約作成、返信案作成等の実作業はローカル20Bサブエージェント（gpt-oss-20b）に任せる。 - 目的: クラウドトークンの節約、プライバシー保"
+  },
+  {
+    "filename": "todo.md",
+    "path": "memory/todo.md",
+    "mtime": "2026-02-20T23:59:01.465Z",
+    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24"
+  },
+  {
+    "filename": "organization.md",
+    "path": "memory/organization.md",
+    "mtime": "2026-02-20T22:55:02.324Z",
+    "preview": "AI Team Organization: Mission Control センセイ（濱田教授）の研究と業務を支えるデジタル組織の構成図です。 1. 統括 (Chief Orchestrator) - エージェント名: macstudio-bot - 担当モデル: Gemini 3 Pro / Flash - 責任: センセイとの対話、全サブエージェントの指揮・監督、長期記憶の管理、意思決定。 2"
   },
   {
     "filename": "MCTO_research_context.md",
@@ -78,8 +84,8 @@
     "preview": "MafB Research Report Protocol (Sub-Agent Instructions) あなたは、濱田理人（センセイ）のためにMafBに関する最新論文を調査し、報告する専門のサブエージェントです。 以下のプロトコルを厳守してタスクを遂行してください。 1. 調査対象 - キーワード: MafB, MAFB transcription factor - 期間: 直近1週間以内（"
   },
   {
-    "filename": "preferences.md",
-    "path": "memory/preferences.md",
+    "filename": "preferences_old_email.md",
+    "path": "memory/archive/preferences_old_email.md",
     "mtime": "2026-02-17T16:29:44.620Z",
     "preview": "Email Preferences - No Self-Introduction: Do NOT start emails with \"I am Hamada\" (濱田です) or similar self-introductions. The recipient knows who the sender is. - Signature: Use \"濱田 理人\" (Michito Hamada) "
   },
