@@ -1,0 +1,16 @@
+[
+  {
+    "id": "task-0",
+    "title": "コロニーをカウントする  2026-02-24",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "task-1",
+    "title": "買い物リストを確認・購入する (隙間用LANケーブル)",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  }
+]

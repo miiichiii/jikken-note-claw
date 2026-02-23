@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>AI Team Map - Mission Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <nav class="mb-8">
+            <a href="index.html" class="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2 text-sm font-medium">
+                <i class="fa-solid fa-chevron-left"></i> Back to Dashboard
+            </a>
+        </nav>
+
+        <header class="mb-12">
+            <h1 class="text-4xl font-bold tracking-tight text-slate-900 mb-2">AI Team Map</h1>
+            <p class="text-lg text-slate-600">Visual hierarchy of agents and specialized roles</p>
+        </header>
+
+        <main class="space-y-8">
+            <!-- Mermaid Diagram -->
+            <div class="glass-panel rounded-3xl p-8 overflow-hidden flex justify-center">
+                <div class="mermaid">
+                graph TD
+                    subgraph Leadership
+                        Root["macstudio-bot<br/>(Gemini 3 Pro/Flash)"]
+                    end
+
+                    Root --> DEPT_DEV["Development & Design"]
+                    Root --> DEPT_RES["Research & Content"]
+                    Root --> DEPT_OPS["Operations"]
+
+                    subgraph DEPT_DEV
+                        Designer["UI/UX Designer<br/>(Gemini 3 Pro)"]
+                        Developer["Frontend Developer<br/>(Gemini 3 Pro)"]
+                        Critic["System Reviewer<br/>(Gemini 3 Flash)"]
+                    end
+
+                    subgraph DEPT_RES
+                        Writer["Scientific Writer<br/>(DeepSeek-70B)"]
+                        Analyst["Database Analyst<br/>(DeepSeek-70B)"]
+                    end
+
+                    subgraph DEPT_OPS
+                        Email["Email Clerk<br/>(20B + Gemini)"]
+                        Archivist["Memory Archivist<br/>(Gemini 3 Flash)"]
+                    end
+
+                    %% Styling
+                    style Root fill:#6366f1,stroke:#4338ca,color:#fff,stroke-width:4px
+                    style DEPT_DEV fill:#f0f9ff,stroke:#0ea5e9,stroke-dasharray: 5 5
+                    style DEPT_RES fill:#f0fdf4,stroke:#10b981,stroke-dasharray: 5 5
+                    style DEPT_OPS fill:#fffbeb,stroke:#f59e0b,stroke-dasharray: 5 5
+                    
+                    classDef default font-family:Inter,font-size:12px;
+                </div>
+            </div>
+
+            <!-- Active Status Placeholder -->
+            <div class="glass-panel rounded-2xl p-6">
+                <h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Active Sub-agents
+                </h2>
+                <div id="activeAgents" class="space-y-3">
+                    <p class="text-xs text-slate-400 italic">Listening for neural activity...</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
+            <p>&copy; 2026 miiichiii Research Lab. Powered by OpenClaw Hierarchy.</p>
+        </footer>
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    </script>
+</body>
+</html>

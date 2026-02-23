@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Mission Control Dashboard - miiichiii</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+    <div class="max-w-5xl mx-auto px-6 py-12">
+        <header class="mb-16 text-center">
+            <h1 class="text-4xl font-bold tracking-tight text-slate-900 mb-4">Mission Control</h1>
+            <p class="text-lg text-slate-600">Central Hub for Research & Operations</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Research Reports (New Consolidated Card) -->
+            <a href="research.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-book-journal-whills text-2xl"></i>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-slate-800">研究レポート</h2>
+                <p class="text-slate-500 text-sm mb-6">Research Reports</p>
+                <p class="text-slate-500 text-xs mb-6">MAFB, Neuro, Natto Project...</p>
+                <span class="text-slate-600 text-sm font-semibold mt-auto">プロジェクト一覧 <i class="fa-solid fa-arrow-right ml-1"></i></span>
+            </a>
+
+            <!-- Mission Control Tasks -->
+            <a href="tasks.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-full flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-list-check text-2xl"></i>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-slate-800">Tasks</h2>
+                <p class="text-slate-500 text-sm mb-6">タスク管理, 進捗状況, 開発ロードマップ</p>
+                <span class="text-violet-600 text-sm font-semibold mt-auto">タスクボードを表示 <i class="fa-solid fa-arrow-right ml-1"></i></span>
+            </a>
+
+            <!-- Mission Control Calendar -->
+            <a href="calendar.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-calendar-days text-2xl"></i>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-slate-800">Calendar</h2>
+                <p class="text-slate-500 text-sm mb-6">スケジュール確認, Google Calendar連携</p>
+                <span class="text-sky-600 text-sm font-semibold mt-auto">カレンダーを表示 <i class="fa-solid fa-arrow-right ml-1"></i></span>
+            </a>
+
+            <!-- Memory Bank -->
+            <a href="memory.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-brain text-2xl"></i>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-slate-800">Memory Bank</h2>
+                <p class="text-slate-500 text-sm mb-6">Internal Knowledge Base & Logs</p>
+                <span class="text-rose-600 text-sm font-semibold mt-auto">アクセス <i class="fa-solid fa-arrow-right ml-1"></i></span>
+            </a>
+
+            <!-- Digital Office (V2) -->
+            <a href="office.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-building-user text-2xl"></i>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-slate-800">Digital Office</h2>
+                <p class="text-slate-500 text-sm mb-6">Real-time AI Team Monitor (v2)</p>
+                <span class="text-indigo-600 text-sm font-semibold mt-auto">オフィスに入る <i class="fa-solid fa-arrow-right ml-1"></i></span>
+            </a>
+
+            <!-- AI Team -->
+            <a href="team.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-sitemap text-2xl"></i>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-slate-800">AI Team Structure</h2>
+                <p class="text-slate-500 text-sm mb-6">Roles & Responsibilities Map</p>
+                <span class="text-amber-600 text-sm font-semibold mt-auto">構成図を表示 <i class="fa-solid fa-arrow-right ml-1"></i></span>
+            </a>
+        </main>
+
+        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
+            <p>&copy; 2026 miiichiii Research Lab. Powered by OpenClaw & MacStudio-bot.</p>
+        </footer>
+    </div>
+</body>
+</html>

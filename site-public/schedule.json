@@ -1,0 +1,96 @@
+[
+  {
+    "id": "7794682d-7456-4cd2-86a0-d5abe421d42d",
+    "name": "Daily review-request digest (24h) to Discord DM",
+    "enabled": true,
+    "nextRunAt": 1771628400000,
+    "lastStatus": "ok",
+    "expr": "0 8 * * *",
+    "target": "isolated"
+  },
+  {
+    "id": "904f9981-2255-4b84-af46-1743a467f25f",
+    "name": "daily-todo-reminder-8am",
+    "enabled": true,
+    "nextRunAt": 1771628400000,
+    "lastStatus": "ok",
+    "expr": "0 8 * * *",
+    "target": "main"
+  },
+  {
+    "id": "c9e96a07-a038-436c-b45f-0dc4ae47bf35",
+    "name": "Hourly Email Check (Hamada)",
+    "enabled": true,
+    "nextRunAt": 1771628400000,
+    "lastStatus": "ok",
+    "expr": "0 7-21 * * *",
+    "target": "main"
+  },
+  {
+    "id": "85ab3588-1e36-492e-bf50-509c7fd14fe8",
+    "name": "gmail-night-cleanup",
+    "enabled": true,
+    "nextRunAt": 1771689600000,
+    "lastStatus": "ok",
+    "expr": "0 1 * * *",
+    "target": "main"
+  },
+  {
+    "id": "6711c3d4-7858-4197-a871-2c8e309fd024",
+    "name": "Nightly Research Report & DB Update",
+    "enabled": true,
+    "nextRunAt": 1771696800000,
+    "lastStatus": "error",
+    "expr": "0 3 * * *",
+    "target": "isolated"
+  },
+  {
+    "id": "a84dd287-93f1-4125-b816-235e38972f2a",
+    "name": "Nightly Memory Sync & Deploy",
+    "enabled": true,
+    "nextRunAt": 1771704000000,
+    "lastStatus": "ok",
+    "expr": "0 5 * * *",
+    "target": "isolated"
+  },
+  {
+    "id": "a4d009f3-2780-4ae3-a72e-66ab7c95e46e",
+    "name": "Daily gog calendar check (07:00 JST)",
+    "enabled": true,
+    "nextRunAt": 1771711200000,
+    "lastStatus": "ok",
+    "expr": "0 7 * * *",
+    "target": "isolated"
+  },
+  {
+    "id": "3de13987-e957-42f8-8fb7-7380f884d3f2",
+    "name": "Weekly Research Project Reports (oss-120B)",
+    "enabled": true,
+    "nextRunAt": 1771804800000,
+    "lastStatus": "ok",
+    "expr": "0 9 * * 1",
+    "target": "isolated"
+  },
+  {
+    "id": "6148e3df-8888-46b1-931b-c3ba3d8952c2",
+    "name": "memory-maintenance-every-10-days",
+    "enabled": true,
+    "nextRunAt": 1772462198555,
+    "lastStatus": "ok",
+    "target": "isolated"
+  },
+  {
+    "id": "0dd9c533-6fe9-4032-a9f4-a00ad83a6ad9",
+    "name": "DPチェック表 入力リマインダー (3/9)",
+    "enabled": true,
+    "nextRunAt": 1773014400000,
+    "target": "isolated"
+  },
+  {
+    "id": "4230c4f4-d272-4606-8754-dbb2c3527385",
+    "name": "DPチェック表 入力リマインダー (3/11)",
+    "enabled": true,
+    "nextRunAt": 1773187200000,
+    "target": "isolated"
+  }
+]
