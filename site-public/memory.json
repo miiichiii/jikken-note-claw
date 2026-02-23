@@ -1,15 +1,39 @@
 [
   {
-    "filename": "email_rules.md",
-    "path": "memory/email_rules.md",
-    "mtime": "2026-02-21T13:33:22.393Z",
-    "preview": "メール運用ルール (Unified & Definitive) 最終更新: 2026-02-21 💼 基本方針 - ハイブリッド運用: Gmailの検索・接続（gogツールの実行）はGemini Flash (Cloud)が行い、その後の内容精査、要約作成、返信案作成等の実作業はローカル20Bサブエージェント（gpt-oss-20b）に任せる。 - 目的: クラウドトークンの節約、プライバシー保"
+    "filename": "todo.md",
+    "path": "memory/projects/mission_control_v2/todo.md",
+    "mtime": "2026-02-23T15:10:24.482Z",
+    "preview": "Mission Control V2 Implementation Plan Goal: Evolve the current research dashboard into a high-performance, secure, and visually stunning \"Cockpit\" for Professor Hamada. 🛠 Specifications (Target V2) "
   },
   {
     "filename": "todo.md",
     "path": "memory/todo.md",
-    "mtime": "2026-02-20T23:59:01.465Z",
-    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24"
+    "mtime": "2026-02-23T06:23:31.794Z",
+    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24 - [ ] 買い物リストを確認・購入する (隙間用LANケーブル) @濱田"
+  },
+  {
+    "filename": "shopping_list.md",
+    "path": "memory/shopping_list.md",
+    "mtime": "2026-02-23T06:23:20.953Z",
+    "preview": "Shopping List - [ ] KB-FL6ASTP-EX 隙間用LANケーブル カテゴリ6A 44cm PoE対応 (サンワダイレクト) - URL: https://direct.sanwa.co.jp/ItemPage/KB-FL6ASTP-EX?ref=web - [ ] サンワダイレクト フラットLANケーブル 隙間 LANケーブル 44cm CAT5e (500-LAN5E-F"
+  },
+  {
+    "filename": "lessons.md",
+    "path": "memory/lessons.md",
+    "mtime": "2026-02-23T06:21:09.120Z",
+    "preview": "lessons - Telegramグループに追加されても反応しない時は、設定ファイル（openclaw.json）の channels.telegram.groups にそのグループIDが含まれているか確認し、なければ追加して openclaw gateway restart する。 - TelegramグループIDを追加する際は、requireMention: false, groupPoli"
+  },
+  {
+    "filename": "2026-02-23_Natto_HCD_Start.md",
+    "path": "memory/natto_project/2026-02-23_Natto_HCD_Start.md",
+    "mtime": "2026-02-23T05:54:34.487Z",
+    "preview": "納豆プロジェクト実験ノート (2026-02-23) 概要 - 2026-02-09の開始から2週間が経過したため、本日からHCD（高コレステロール食）の投与を開始。 - 飼育条件: 2匹 / ケージ 投与群 1. HCD群 (High Cholesterol Diet) 2. HCD + Natto群 給餌設計 - 古谷先生の情報に基づき、マウス1匹あたり1週間で約57gを摂取すると想定。 - "
+  },
+  {
+    "filename": "email_rules.md",
+    "path": "memory/email_rules.md",
+    "mtime": "2026-02-21T13:33:22.393Z",
+    "preview": "メール運用ルール (Unified & Definitive) 最終更新: 2026-02-21 💼 基本方針 - ハイブリッド運用: Gmailの検索・接続（gogツールの実行）はGemini Flash (Cloud)が行い、その後の内容精査、要約作成、返信案作成等の実作業はローカル20Bサブエージェント（gpt-oss-20b）に任せる。 - 目的: クラウドトークンの節約、プライバシー保"
   },
   {
     "filename": "organization.md",
@@ -166,12 +190,6 @@
     "path": "memory/2026-02-13.md",
     "mtime": "2026-02-13T11:35:55.137Z",
     "preview": "2026-02-13 - FCM-app (CellQuest-style browser app) project is actively in Iteration 2 under strict A/B/C loop governance with no-stop confirmation style requested by センセイ. - Repo/context established a"
-  },
-  {
-    "filename": "lessons.md",
-    "path": "memory/lessons.md",
-    "mtime": "2026-02-13T06:29:00.342Z",
-    "preview": "lessons - Telegramグループに追加されても反応しない時は、設定ファイル（openclaw.json）の channels.telegram.groups にそのグループIDが含まれているか確認し、なければ追加して openclaw gateway restart する。 - TelegramグループIDを追加する際は、requireMention: false, groupPoli"
   },
   {
     "filename": "2026-02-13-http-401-authentication-error-.md",
