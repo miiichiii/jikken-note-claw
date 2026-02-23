@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Mission Control: Dynamic Task Board</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .task-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .badge-bot { background-color: #e0e7ff; color: #4338ca; }
+        .badge-me { background-color: #f1f5f9; color: #475569; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <nav class="mb-8">
+            <a href="index.html" class="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2 text-sm font-medium">
+                <i class="fa-solid fa-chevron-left"></i> Back to Dashboard
+            </a>
+        </nav>
+
+        <header class="mb-12 flex justify-between items-end">
+            <div>
+                <h1 class="text-4xl font-bold tracking-tight text-slate-900 mb-2">Task Board</h1>
+                <p class="text-lg text-slate-600">Dynamic Task Management & Assignees</p>
+            </div>
+            <div id="lastUpdated" class="text-xs text-slate-400 font-mono mb-1">Syncing...</div>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+            <!-- To Do Column -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 mb-4 px-2">
+                    <span class="w-3 h-3 bg-amber-400 rounded-full"></span>
+                    <h2 class="font-bold text-slate-700 uppercase tracking-wider text-sm">To Do</h2>
+                </div>
+                <div id="todoList" class="space-y-4"></div>
+            </div>
+
+            <!-- In Progress Column -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 mb-4 px-2">
+                    <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
+                    <h2 class="font-bold text-slate-700 uppercase tracking-wider text-sm">In Progress</h2>
+                </div>
+                <div id="progressList" class="space-y-4">
+                    <!-- Hardcoded for now as todo.md doesn't have "In Progress" status yet -->
+                    <div class="glass-card task-card rounded-xl p-5 border-l-4 border-blue-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-500">Active</span>
+                            <span class="badge-bot text-[10px] px-2 py-0.5 rounded-full font-bold">@Bot</span>
+                        </div>
+                        <p class="text-slate-800 font-medium leading-relaxed">Mission Control 開発 (Phase 4)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Done Column -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 mb-4 px-2">
+                    <span class="w-3 h-3 bg-emerald-500 rounded-full"></span>
+                    <h2 class="font-bold text-slate-700 uppercase tracking-wider text-sm">Done</h2>
+                </div>
+                <div id="doneList" class="space-y-4"></div>
+            </div>
+        </main>
+
+        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
+            <p>&copy; 2026 miiichiii Research Lab. Powered by OpenClaw.</p>
+        </footer>
+    </div>
+
+    <script>
+        async function loadTasks() {
+            try {
+                const res = await fetch('tasks.json');
+                const tasks = await res.json();
+                renderTasks(tasks);
+                document.getElementById('lastUpdated').textContent = 'Last Synced: ' + new Date().toLocaleTimeString();
+            } catch (err) {
+                console.error('Failed to load tasks:', err);
+            }
+        }
+
+        function renderTasks(tasks) {
+            const todoList = document.getElementById('todoList');
+            const doneList = document.getElementById('doneList');
+            
+            todoList.innerHTML = '';
+            doneList.innerHTML = '';
+
+            tasks.forEach(task => {
+                const card = document.createElement('div');
+                card.className = `glass-card task-card rounded-xl p-5 border-l-4 ${getBorderColor(task)}`;
+                
+                const assigneeBadge = task.assignee === 'Bot' 
+                    ? '<span class="badge-bot text-[10px] px-2 py-0.5 rounded-full font-bold">@Bot</span>'
+                    : '<span class="badge-me text-[10px] px-2 py-0.5 rounded-full font-bold">@濱田</span>';
+
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Priority ${task.priority}</span>
+                        ${assigneeBadge}
+                    </div>
+                    <p class="text-slate-800 font-medium leading-relaxed ${task.status === 'done' ? 'line-through opacity-60' : ''}">${task.title}</p>
+                `;
+
+                if (task.status === 'done') {
+                    doneList.appendChild(card);
+                } else {
+                    todoList.appendChild(card);
+                }
+            });
+        }
+
+        function getBorderColor(task) {
+            if (task.status === 'done') return 'border-emerald-500';
+            if (task.priority === 'A') return 'border-red-400';
+            if (task.priority === 'B') return 'border-amber-400';
+            return 'border-slate-300';
+        }
+
+        loadTasks();
+    </script>
+</body>
+</html>
