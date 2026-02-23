@@ -1,100 +1,254 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Mission Control Dashboard - miiichiii</title>
+    <title>Mission Control V2 | Midnight Cockpit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        midnight: '#0f172a',
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            900: '#164e63',
+                        },
+                        violet: {
+                            500: '#8b5cf6',
+                            900: '#4c1d95',
+                        }
+                    }
+                }
+            }
         }
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    </script>
+    <style>
+        body {
+            background-color: #020617;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+            color: #e2e8f0;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-panel:hover {
+            border-color: rgba(34, 211, 238, 0.3);
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.1);
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(34, 211, 238, 0.03) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scanline 10s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
+        .status-dot {
+            box-shadow: 0 0 8px currentColor;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen">
-    <div class="max-w-5xl mx-auto px-6 py-12">
-        <header class="mb-16 text-center">
-            <h1 class="text-4xl font-bold tracking-tight text-slate-900 mb-4">Mission Control</h1>
-            <p class="text-lg text-slate-600">Central Hub for Research & Operations</p>
-        </header>
+<body class="min-h-screen relative overflow-x-hidden selection:bg-cyan-500/30">
+    <div class="scanline"></div>
 
-        <main class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Research Reports (New Consolidated Card) -->
-            <a href="research.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
-                <div class="w-16 h-16 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-book-journal-whills text-2xl"></i>
+    <!-- Top Bar: System Health -->
+    <header class="fixed top-0 w-full z-50 glass-panel border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <i class="fa-solid fa-satellite-dish text-cyan-400 animate-pulse"></i>
+                <span class="font-mono text-sm tracking-wider text-cyan-400 font-bold">MISSION CONTROL <span class="text-xs text-slate-500 ml-1">V2.0</span></span>
+            </div>
+            
+            <!-- Health Monitors -->
+            <div class="hidden md:flex items-center gap-6 font-mono text-xs">
+                <div class="flex items-center gap-2">
+                    <span class="text-slate-400">GATEWAY</span>
+                    <span class="flex items-center gap-1.5 text-emerald-400">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 status-dot"></span>
+                        ONLINE
+                    </span>
                 </div>
-                <h2 class="text-xl font-bold mb-2 text-slate-800">研究レポート</h2>
-                <p class="text-slate-500 text-sm mb-6">Research Reports</p>
-                <p class="text-slate-500 text-xs mb-6">MAFB, Neuro, Natto Project...</p>
-                <span class="text-slate-600 text-sm font-semibold mt-auto">プロジェクト一覧 <i class="fa-solid fa-arrow-right ml-1"></i></span>
-            </a>
-
-            <!-- Mission Control Tasks -->
-            <a href="tasks.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
-                <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-full flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-list-check text-2xl"></i>
+                <div class="h-4 w-px bg-slate-700"></div>
+                <div class="flex items-center gap-2">
+                    <span class="text-slate-400">MEMORY</span>
+                    <div class="w-24 h-2 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-violet-500 w-[42%]"></div>
+                    </div>
+                    <span class="text-violet-400">42%</span>
                 </div>
-                <h2 class="text-xl font-bold mb-2 text-slate-800">Tasks</h2>
-                <p class="text-slate-500 text-sm mb-6">タスク管理, 進捗状況, 開発ロードマップ</p>
-                <span class="text-violet-600 text-sm font-semibold mt-auto">タスクボードを表示 <i class="fa-solid fa-arrow-right ml-1"></i></span>
-            </a>
+                <div class="h-4 w-px bg-slate-700"></div>
+                <div class="text-slate-400" id="clock">00:00:00 UTC</div>
+            </div>
 
-            <!-- Mission Control Calendar -->
-            <a href="calendar.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
-                <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-calendar-days text-2xl"></i>
-                </div>
-                <h2 class="text-xl font-bold mb-2 text-slate-800">Calendar</h2>
-                <p class="text-slate-500 text-sm mb-6">スケジュール確認, Google Calendar連携</p>
-                <span class="text-sky-600 text-sm font-semibold mt-auto">カレンダーを表示 <i class="fa-solid fa-arrow-right ml-1"></i></span>
-            </a>
+            <!-- Mobile Menu Toggle (Placeholder) -->
+            <button class="md:hidden text-slate-300">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
-            <!-- Memory Bank -->
-            <a href="memory.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
-                <div class="w-16 h-16 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-brain text-2xl"></i>
-                </div>
-                <h2 class="text-xl font-bold mb-2 text-slate-800">Memory Bank</h2>
-                <p class="text-slate-500 text-sm mb-6">Internal Knowledge Base & Logs</p>
-                <span class="text-rose-600 text-sm font-semibold mt-auto">アクセス <i class="fa-solid fa-arrow-right ml-1"></i></span>
-            </a>
+    <main class="pt-24 pb-12 px-4 max-w-7xl mx-auto">
+        
+        <!-- Welcome / Status -->
+        <section class="mb-12">
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2 tracking-tight">
+                Good evening, <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">Professor.</span>
+            </h1>
+            <p class="text-slate-400 max-w-2xl text-sm md:text-base">
+                System nominal. Research nodes active. Cockpit is ready for command input.
+            </p>
+        </section>
 
-            <!-- Digital Office (V2) -->
-            <a href="office.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
-                <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-building-user text-2xl"></i>
-                </div>
-                <h2 class="text-xl font-bold mb-2 text-slate-800">Digital Office</h2>
-                <p class="text-slate-500 text-sm mb-6">Real-time AI Team Monitor (v2)</p>
-                <span class="text-indigo-600 text-sm font-semibold mt-auto">オフィスに入る <i class="fa-solid fa-arrow-right ml-1"></i></span>
-            </a>
+        <!-- Active Projects Grid -->
+        <section class="mb-12">
+            <div class="flex items-center gap-2 mb-6">
+                <i class="fa-solid fa-flask text-cyan-500"></i>
+                <h2 class="text-sm font-mono font-bold text-cyan-500 tracking-widest uppercase">Active Research</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project: MCTO -->
+                <a href="https://github.com/mhamada-research/MCTO" target="_blank" class="glass-panel rounded-xl p-6 group transition-all duration-300 hover:bg-slate-800/80">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-900/30 flex items-center justify-center text-cyan-400 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-microchip text-xl"></i>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500 border border-slate-700 px-2 py-1 rounded">PUBLIC</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">Project MCTO</h3>
+                    <p class="text-slate-400 text-sm mb-4 line-clamp-2">Mission Control Tactical Operations. Core infrastructure and tooling.</p>
+                    <div class="flex items-center text-xs text-slate-500 gap-4">
+                        <span><i class="fa-regular fa-star mr-1"></i> 12</span>
+                        <span><i class="fa-solid fa-code-branch mr-1"></i> main</span>
+                    </div>
+                </a>
 
-            <!-- AI Team -->
-            <a href="team.html" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
-                <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-sitemap text-2xl"></i>
-                </div>
-                <h2 class="text-xl font-bold mb-2 text-slate-800">AI Team Structure</h2>
-                <p class="text-slate-500 text-sm mb-6">Roles & Responsibilities Map</p>
-                <span class="text-amber-600 text-sm font-semibold mt-auto">構成図を表示 <i class="fa-solid fa-arrow-right ml-1"></i></span>
-            </a>
-        </main>
+                <!-- Project: Natto -->
+                <a href="https://github.com/mhamada-research/Natto" target="_blank" class="glass-panel rounded-xl p-6 group transition-all duration-300 hover:bg-slate-800/80">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-violet-900/30 flex items-center justify-center text-violet-400 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-dna text-xl"></i>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500 border border-slate-700 px-2 py-1 rounded">R&D</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-violet-400 transition-colors">Project Natto</h3>
+                    <p class="text-slate-400 text-sm mb-4 line-clamp-2">Biological sequence analysis and sticky data clustering algorithms.</p>
+                    <div class="flex items-center text-xs text-slate-500 gap-4">
+                        <span><i class="fa-regular fa-circle-dot mr-1 text-green-500"></i> Active</span>
+                    </div>
+                </a>
 
-        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
-            <p>&copy; 2026 miiichiii Research Lab. Powered by OpenClaw & MacStudio-bot.</p>
-        </footer>
-    </div>
+                <!-- Project: Neuro -->
+                <a href="https://github.com/mhamada-research/Neuro" target="_blank" class="glass-panel rounded-xl p-6 group transition-all duration-300 hover:bg-slate-800/80">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-rose-900/30 flex items-center justify-center text-rose-400 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-network-wired text-xl"></i>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500 border border-slate-700 px-2 py-1 rounded">PRIVATE</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-rose-400 transition-colors">Project Neuro</h3>
+                    <p class="text-slate-400 text-sm mb-4 line-clamp-2">Neural network architecture experiments and cognitive modeling.</p>
+                    <div class="flex items-center text-xs text-slate-500 gap-4">
+                        <span><i class="fa-solid fa-lock mr-1"></i> Restricted</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Quick Links / Dashboard Modules -->
+        <section>
+            <div class="flex items-center gap-2 mb-6">
+                <i class="fa-solid fa-layer-group text-slate-500"></i>
+                <h2 class="text-sm font-mono font-bold text-slate-500 tracking-widest uppercase">Modules</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Tasks -->
+                <a href="tasks.html" class="glass-panel p-4 rounded-xl hover:bg-slate-800/50 transition-colors text-center group">
+                    <div class="mb-3 text-cyan-400 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-list-check text-2xl"></i>
+                    </div>
+                    <div class="font-bold text-slate-200">Tasks</div>
+                    <div class="text-xs text-slate-500 mt-1">Combat Board</div>
+                </a>
+
+                <!-- Calendar -->
+                <a href="calendar.html" class="glass-panel p-4 rounded-xl hover:bg-slate-800/50 transition-colors text-center group">
+                    <div class="mb-3 text-violet-400 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-calendar-days text-2xl"></i>
+                    </div>
+                    <div class="font-bold text-slate-200">Calendar</div>
+                    <div class="text-xs text-slate-500 mt-1">Timeline</div>
+                </a>
+
+                <!-- Office -->
+                <a href="office.html" class="glass-panel p-4 rounded-xl hover:bg-slate-800/50 transition-colors text-center group">
+                    <div class="mb-3 text-indigo-400 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-building-user text-2xl"></i>
+                    </div>
+                    <div class="font-bold text-slate-200">Office</div>
+                    <div class="text-xs text-slate-500 mt-1">Digital HQ</div>
+                </a>
+
+                <!-- Memory Bank -->
+                <a href="memory.html" class="glass-panel p-4 rounded-xl hover:bg-slate-800/50 transition-colors text-center group">
+                    <div class="mb-3 text-rose-400 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-brain text-2xl"></i>
+                    </div>
+                    <div class="font-bold text-slate-200">Memory</div>
+                    <div class="text-xs text-slate-500 mt-1">Archives</div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-800/50 mt-12 py-8 text-center">
+        <p class="text-slate-600 text-xs font-mono">
+            SECURE CONNECTION ESTABLISHED <span class="mx-2">|</span> 
+            <span class="text-cyan-900">OPENCLAW GATEWAY</span>
+        </p>
+    </footer>
+
+    <script>
+        // Update clock immediately and every second
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { 
+                hour12: false, 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit' 
+            });
+            document.getElementById('clock').textContent = timeString + ' JST';
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>

@@ -1,139 +1,301 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Mission Control: Dynamic Task Board</title>
+    <title>Combat Task Board | Midnight Cockpit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        midnight: '#0f172a',
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            900: '#164e63',
+                        },
+                        violet: {
+                            500: '#8b5cf6',
+                            900: '#4c1d95',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        body {
+            background-color: #020617;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+            color: #e2e8f0;
         }
-        .task-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
-        .badge-bot { background-color: #e0e7ff; color: #4338ca; }
-        .badge-me { background-color: #f1f5f9; color: #475569; }
+        .glass-panel:hover {
+            border-color: rgba(34, 211, 238, 0.3);
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.1);
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(34, 211, 238, 0.03) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scanline 10s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
+        .status-dot {
+            box-shadow: 0 0 8px currentColor;
+        }
+        /* Custom scrollbar for task lists */
+        .task-list::-webkit-scrollbar {
+            width: 4px;
+        }
+        .task-list::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.3);
+        }
+        .task-list::-webkit-scrollbar-thumb {
+            background: rgba(34, 211, 238, 0.3);
+            border-radius: 2px;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen">
-    <div class="max-w-6xl mx-auto px-4 py-12">
-        <nav class="mb-8">
-            <a href="index.html" class="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2 text-sm font-medium">
-                <i class="fa-solid fa-chevron-left"></i> Back to Dashboard
-            </a>
-        </nav>
+<body class="min-h-screen relative overflow-x-hidden selection:bg-cyan-500/30 flex flex-col">
+    <div class="scanline"></div>
 
-        <header class="mb-12 flex justify-between items-end">
-            <div>
-                <h1 class="text-4xl font-bold tracking-tight text-slate-900 mb-2">Task Board</h1>
-                <p class="text-lg text-slate-600">Dynamic Task Management & Assignees</p>
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 glass-panel border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="text-slate-400 hover:text-cyan-400 transition-colors">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+                <span class="font-mono text-sm tracking-wider text-cyan-400 font-bold">COMBAT TASK BOARD</span>
             </div>
-            <div id="lastUpdated" class="text-xs text-slate-400 font-mono mb-1">Syncing...</div>
-        </header>
-
-        <main class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-            <!-- To Do Column -->
-            <div class="space-y-4">
-                <div class="flex items-center gap-2 mb-4 px-2">
-                    <span class="w-3 h-3 bg-amber-400 rounded-full"></span>
-                    <h2 class="font-bold text-slate-700 uppercase tracking-wider text-sm">To Do</h2>
+            
+            <div class="flex items-center gap-4 font-mono text-xs">
+                <div class="hidden md:flex items-center gap-2">
+                    <span class="text-slate-400">SYNC</span>
+                    <span id="sync-status" class="text-emerald-400">ACTIVE</span>
                 </div>
-                <div id="todoList" class="space-y-4"></div>
+                <div class="h-4 w-px bg-slate-700 hidden md:block"></div>
+                <div class="text-slate-400" id="last-synced">Last Synced: --:--:--</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-12 px-4 max-w-7xl mx-auto flex-grow w-full">
+        <!-- Columns Container -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-full items-start">
+            
+            <!-- To Do Column -->
+            <div class="flex flex-col h-full">
+                <div class="flex items-center justify-between mb-4 px-2 border-b border-amber-500/30 pb-2">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-amber-400 rounded-full status-dot text-amber-400"></span>
+                        <h2 class="font-mono font-bold text-slate-200 tracking-wider text-sm uppercase">To Do</h2>
+                    </div>
+                    <span id="count-todo" class="text-xs font-mono text-slate-500 bg-slate-800/50 px-2 py-0.5 rounded">0</span>
+                </div>
+                <div id="todoList" class="space-y-4 min-h-[200px] task-list">
+                    <!-- Loaded dynamically -->
+                </div>
             </div>
 
             <!-- In Progress Column -->
-            <div class="space-y-4">
-                <div class="flex items-center gap-2 mb-4 px-2">
-                    <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
-                    <h2 class="font-bold text-slate-700 uppercase tracking-wider text-sm">In Progress</h2>
+            <div class="flex flex-col h-full">
+                <div class="flex items-center justify-between mb-4 px-2 border-b border-cyan-500/30 pb-2">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-cyan-400 rounded-full status-dot text-cyan-400 animate-pulse"></span>
+                        <h2 class="font-mono font-bold text-slate-200 tracking-wider text-sm uppercase">In Progress</h2>
+                    </div>
+                    <span id="count-progress" class="text-xs font-mono text-slate-500 bg-slate-800/50 px-2 py-0.5 rounded">1</span>
                 </div>
-                <div id="progressList" class="space-y-4">
-                    <!-- Hardcoded for now as todo.md doesn't have "In Progress" status yet -->
-                    <div class="glass-card task-card rounded-xl p-5 border-l-4 border-blue-500">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-500">Active</span>
-                            <span class="badge-bot text-[10px] px-2 py-0.5 rounded-full font-bold">@Bot</span>
+                <div id="progressList" class="space-y-4 min-h-[200px] task-list">
+                    <!-- Static Active Mission (as placeholder/example since JSON is limited) -->
+                    <div class="glass-panel rounded-xl p-5 border-l-2 border-cyan-500 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i class="fa-solid fa-spinner fa-spin text-4xl text-cyan-400"></i>
                         </div>
-                        <p class="text-slate-800 font-medium leading-relaxed">Mission Control 開発 (Phase 4)</p>
+                        <div class="flex justify-between items-start mb-3 relative z-10">
+                            <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-cyan-400 border border-cyan-900/50 px-1.5 py-0.5 rounded bg-cyan-900/20">Active</span>
+                            <span class="font-mono text-[10px] px-2 py-0.5 rounded border border-indigo-500/30 bg-indigo-900/20 text-indigo-300">@Bot</span>
+                        </div>
+                        <h3 class="text-slate-200 font-bold mb-1 relative z-10">Mission Control Dev (Phase 4)</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed relative z-10">UI/UX Overhaul & Subagent Integration</p>
                     </div>
                 </div>
             </div>
 
             <!-- Done Column -->
-            <div class="space-y-4">
-                <div class="flex items-center gap-2 mb-4 px-2">
-                    <span class="w-3 h-3 bg-emerald-500 rounded-full"></span>
-                    <h2 class="font-bold text-slate-700 uppercase tracking-wider text-sm">Done</h2>
+            <div class="flex flex-col h-full">
+                <div class="flex items-center justify-between mb-4 px-2 border-b border-emerald-500/30 pb-2">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full status-dot text-emerald-500"></span>
+                        <h2 class="font-mono font-bold text-slate-200 tracking-wider text-sm uppercase">Done</h2>
+                    </div>
+                    <span id="count-done" class="text-xs font-mono text-slate-500 bg-slate-800/50 px-2 py-0.5 rounded">0</span>
                 </div>
-                <div id="doneList" class="space-y-4"></div>
+                <div id="doneList" class="space-y-4 min-h-[200px] task-list opacity-70 hover:opacity-100 transition-opacity">
+                    <!-- Loaded dynamically -->
+                </div>
             </div>
-        </main>
 
-        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
-            <p>&copy; 2026 miiichiii Research Lab. Powered by OpenClaw.</p>
-        </footer>
-    </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-800/50 py-6 text-center mt-auto">
+        <p class="text-slate-600 text-xs font-mono">
+            TACTICAL BOARD <span class="mx-2">|</span> 
+            <span class="text-cyan-900">OPENCLAW SYSTEM</span>
+        </p>
+    </footer>
 
     <script>
         async function loadTasks() {
+            const syncStatus = document.getElementById('sync-status');
+            syncStatus.textContent = "SYNCING...";
+            syncStatus.className = "text-amber-400 animate-pulse";
+
             try {
+                // Simulate slight network delay for effect
+                await new Promise(r => setTimeout(r, 400));
+                
                 const res = await fetch('tasks.json');
                 const tasks = await res.json();
                 renderTasks(tasks);
-                document.getElementById('lastUpdated').textContent = 'Last Synced: ' + new Date().toLocaleTimeString();
+                
+                const now = new Date();
+                document.getElementById('last-synced').innerHTML = 
+                    'Last Synced: <span class="text-slate-200">' + 
+                    now.toLocaleTimeString('en-US', { hour12: false }) + 
+                    '</span>';
+                
+                syncStatus.textContent = "ONLINE";
+                syncStatus.className = "text-emerald-400";
             } catch (err) {
                 console.error('Failed to load tasks:', err);
+                syncStatus.textContent = "ERROR";
+                syncStatus.className = "text-red-500";
             }
         }
 
         function renderTasks(tasks) {
             const todoList = document.getElementById('todoList');
+            const progressList = document.getElementById('progressList');
             const doneList = document.getElementById('doneList');
+            
+            // Clear dynamic lists (keeping hardcoded progress items if any, or clear them? 
+            // Strategy: Clear TODO and DONE. Append to PROGRESS if data exists, else keep hardcoded?
+            // Let's stick to safe behavior: Clear specific containers we control.
+            // Actually, for "In Progress", if JSON has it, we should use it.
+            // Current JSON only has 'todo'.
             
             todoList.innerHTML = '';
             doneList.innerHTML = '';
+            
+            // Note: Not clearing progressList to keep the static demo item unless we have real progress items
+            const hasProgressItems = tasks.some(t => t.status === 'in-progress');
+            if (hasProgressItems) {
+                progressList.innerHTML = '';
+            }
+
+            let counts = { todo: 0, progress: 1, done: 0 }; // Start progress at 1 for static item
 
             tasks.forEach(task => {
-                const card = document.createElement('div');
-                card.className = `glass-card task-card rounded-xl p-5 border-l-4 ${getBorderColor(task)}`;
-                
-                const assigneeBadge = task.assignee === 'Bot' 
-                    ? '<span class="badge-bot text-[10px] px-2 py-0.5 rounded-full font-bold">@Bot</span>'
-                    : '<span class="badge-me text-[10px] px-2 py-0.5 rounded-full font-bold">@濱田</span>';
-
-                card.innerHTML = `
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Priority ${task.priority}</span>
-                        ${assigneeBadge}
-                    </div>
-                    <p class="text-slate-800 font-medium leading-relaxed ${task.status === 'done' ? 'line-through opacity-60' : ''}">${task.title}</p>
-                `;
+                const card = createCard(task);
 
                 if (task.status === 'done') {
                     doneList.appendChild(card);
+                    counts.done++;
+                } else if (task.status === 'in-progress') {
+                    progressList.appendChild(card);
+                    counts.progress++;
                 } else {
                     todoList.appendChild(card);
+                    counts.todo++;
                 }
             });
+
+            // Update counters
+            document.getElementById('count-todo').textContent = counts.todo;
+            document.getElementById('count-progress').textContent = counts.progress; // This might be inaccurate if we mixed static+dynamic, but acceptable for now
+            document.getElementById('count-done').textContent = counts.done;
         }
 
-        function getBorderColor(task) {
-            if (task.status === 'done') return 'border-emerald-500';
-            if (task.priority === 'A') return 'border-red-400';
-            if (task.priority === 'B') return 'border-amber-400';
-            return 'border-slate-300';
+        function createCard(task) {
+            const card = document.createElement('div');
+            // Determine border color based on priority
+            let borderClass = 'border-slate-700';
+            let priorityClass = 'text-slate-500 border-slate-700 bg-slate-900/50';
+            
+            if (task.priority === 'A') {
+                borderClass = 'border-red-500';
+                priorityClass = 'text-red-400 border-red-900/50 bg-red-900/20';
+            } else if (task.priority === 'B') {
+                borderClass = 'border-amber-500';
+                priorityClass = 'text-amber-400 border-amber-900/50 bg-amber-900/20';
+            }
+
+            // Assignee styling
+            let assigneeHtml = '';
+            if (task.assignee === 'Bot') {
+                assigneeHtml = `<span class="font-mono text-[10px] px-2 py-0.5 rounded border border-indigo-500/30 bg-indigo-900/20 text-indigo-300"><i class="fa-solid fa-robot mr-1"></i>Bot</span>`;
+            } else {
+                assigneeHtml = `<span class="font-mono text-[10px] px-2 py-0.5 rounded border border-violet-500/30 bg-violet-900/20 text-violet-300"><i class="fa-solid fa-user mr-1"></i>濱田</span>`;
+            }
+
+            // Done state styling
+            const isDone = task.status === 'done';
+            const doneOpacity = isDone ? 'opacity-50' : '';
+            if (isDone) borderClass = 'border-emerald-500';
+
+            card.className = `glass-panel rounded-xl p-5 border-l-2 ${borderClass} group hover:translate-y-[-2px] transition-all duration-300 ${doneOpacity}`;
+
+            card.innerHTML = `
+                <div class="flex justify-between items-start mb-3">
+                    <span class="font-mono text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded border ${priorityClass}">
+                        PRIORITY ${task.priority}
+                    </span>
+                    ${assigneeHtml}
+                </div>
+                <h3 class="text-slate-200 font-bold text-sm leading-relaxed mb-1 ${isDone ? 'line-through decoration-slate-500' : ''}">${task.title}</h3>
+                <div class="text-[10px] font-mono text-slate-500 mt-2 flex justify-end">
+                    <span>${task.id}</span>
+                </div>
+            `;
+            return card;
         }
 
+        // Initial load
         loadTasks();
+        
+        // Auto-refresh every 30s
+        setInterval(loadTasks, 30000);
     </script>
 </body>
 </html>
