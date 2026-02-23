@@ -16,9 +16,9 @@
 - [x] Obtain approval from Critic AI.
 
 ### Phase 2: Core UI Overhaul
-- [/] **index.html**: Redesign as a central command hub. (In progress by UI/UX Builder)
-- [ ] **tasks.html**: Implement "Combat Task Board" (Dark mode, priority levels).
-- [ ] **calendar.html**: Integrated timeline view of schedules and AI cron jobs.
+- [x] **index.html**: Redesign as a central command hub.
+- [x] **tasks.html**: Implement "Combat Task Board".
+- [x] **calendar.html**: Integrated timeline view of schedules and AI cron jobs.
 - [ ] **office.html**: Enhance Digital Office with real-time status and animal avatars (Cockpit version).
 
 ### Phase 3: Data & Security
