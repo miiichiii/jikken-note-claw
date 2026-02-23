@@ -1,0 +1,318 @@
+# 濱田理人：科研費・助成金と原著論文（出典：茨城県立医療大学240924.docx）
+
+## 科研費・助成金（代表）
+- 2023年～2025年｜武田科学振興財団 / 2023年度医学系研究助成（基礎） / 代表｜マクロファージと自律神経の相互作用による肥満抑制メカニズムの解明
+- 2023年～2025年｜日本学術振興会 / 基盤研究(C) / 代表｜転写因子MAFBは脂肪組織マクロファージにおいて交感神経伸長を制御する
+- 2019年～2021年｜日本学術振興会 / 基盤研究(C) / 代表｜転写因子MafBによる恒常性維持に関わるマクロファージの制御機構の解析
+- 2018年4月～2020年3月｜武田科学振興財団 / 2018年度医学系研究助成（がん領域・基礎） / 代表｜転写因子MafBの脾臓での腫瘍随伴マクロファージ数の制御機構の解明
+- 2016年～2018年｜公益財団法人高松宮妃がん研究基金 / 代表｜転写因子MafBによる腫瘍随伴マクロファージ数の制御による腫瘍悪性化の抑制
+- 2016年～2018年｜日本学術振興会 / 若手研究(B) / 代表｜転写因子MafBによる腫瘍随伴マクロファージ増殖の制御
+- 2014年4月～2016年3月｜武田科学振興財団 / 2014年度医学研究奨励（基礎） / 代表｜転写因子MafBによるC1q遺伝子群発現制御を介した自己免疫疾患発症抑制機構の解明
+- 2013年～2015年｜日本学術振興会 / 若手研究(B) / 代表｜マクロファージにおけるMafBによる補体C1q転写制御機構の解明
+
+## 原著論文（タイトル／著者／年／雑誌／DOI）
+- 4. MAFB in Macrophages Regulates Prostaglandin E2–Mediated Lipid Mediator Class Switch through ALOX15 in Ischemic Acute Kidney Injury.
+  - 著者: Maho Kanai, Teppei Nishino, Dhouha Daassi, Akari Kimura, Ching-Wei Liao, Zeynab Javanfekr Shahri, Arata Wakimoto, Natalia Gogoleva, Toshiaki Usui, Naoki Morito, Makoto Arita, Satoru Takahashi, Michito Hamada
+  - 年: 2024年8月（査読有り）
+  - 雑誌: Journal of Immunology In press
+  - DOI: （未記載）
+- 5. MAFB in macrophages regulates cold-induced neuronal density in brown adipose tissue.
+  - 著者: Manoj Kumar Yadav, Megumi Ishida, Natalia Gogoleva, Ching-Wei Liao, Filiani Natalia Salim, Maho Kanai, Akihiro Kuno, Takuto Hayashi, Zeynab Javanfekr Shahri, Kaushalya Kulathunga, Omar Samir, Wenxin Lyu, Olivia Olivia, Evaristus C Mbanefo, Satoru Takahashi, Michito Hamada
+  - 年: 2024年3月（査読有り）
+  - 雑誌: Cell Reports, 43(4), 113978-113978
+  - DOI: （未記載）
+- 6. Natto consumption suppresses atherosclerotic plaque progression in LDL receptor-deficient mice transplanted with iRFP-expressing hematopoietic cells. Takeshi Kawamata, Arata Wakimoto, Takanobu Nishikawa, Masaya Ikezawa, Michito Hamada,ほか14名
+  - 著者: 共著
+  - 年: 2023年（査読有り）
+  - 雑誌: Scientific reports, 13,22469
+  - DOI: （未記載）
+- 7. Intraplacental injection of AAV9-CMV-iCre results in the widespread transduction of multiple organs in double-reporter mouse embryos.
+  - 著者: Natalia Gogoleva, Zeynab Javanfekr Shahri, Atsushi Noda, Ching-Wei Liao, Arata Wakimoto, Yuri Inoue, Hyojung Jeon, Satoru Takahashi, Michito Hamada
+  - 年: 2023年5月（査読有り）
+  - 雑誌: Experimental Animals, 72(4), 460-467
+  - DOI: （未記載）
+- 8. Lunar gravity prevents skeletal muscle atrophy but not myofiber type shift in mice.
+  - 著者: Takuto Hayashi, Ryo Fujita, Risa Okada, Michito Hamada ほか20名
+  - 年: 2023年4月（査読有り）
+  - 雑誌: Communications Biology, 6(1), 424
+  - DOI: （未記載）
+- 9. Large Maf transcription factor family is a major regulator of fast type IIb myofiber determination.
+  - 著者: Shunya Sadaki, Ryo Fujita, Takuto Hayashi, Ayano Nakamura, Yui Okamura, Sayaka Fuseya, Michito Hamada ほか9名
+  - 年: 2023年4月（査読有り）
+  - 雑誌: Cell Reports, 42(4), 112289-112289
+  - DOI: （未記載）
+- 10. Transcription Factor MAFB as a Prognostic Biomarker for the Lung Adenocarcinoma.
+  - 著者: Omar Samir, Naohiro Kobayashi, Teppei Nishino, Mennatullah Siyam, Manoj Kumar Yadav, Yuri Inoue, Satoru Takahashi, Michito Hamada
+  - 年: 2022年9月（査読有り）
+  - 雑誌: International journal of molecular sciences, 23(17)
+  - DOI: （未記載）
+- 11. Macrophage-Specific, Mafb-Deficient Mice Showed Delayed Skin Wound Healing.
+  - 著者: Yuri Inoue, Ching-Wei Liao, Yuki Tsunakawa, I-Lin Tsai, Satoru Takahashi, Michito Hamada
+  - 年: 2022年9月（査読有り）
+  - 雑誌: International journal of molecular sciences, 23(16)
+  - DOI: （未記載）
+- 12. DAJIN enables multiplex genotyping to simultaneously validate intended and unintended target genome editing outcomes.
+  - 著者: Akihiro Kuno, Yoshihisa Ikeda, Shinya Ayabe, Kanako Kato, Kotaro Sakamoto, Sayaka R Suzuki, Kento Morimoto, Arata Wakimoto, Natsuki Mikami, Miyuki Ishida, Natsumi Iki, Yuko Hamada, Megumi Takemura, Yoko Daitoku, Yoko Tanimoto, Tra Thi Huong Dinh, Kazuya Murata, Michito Hamadaほか5名
+  - 年: 2022年12月（査読有り）
+  - 雑誌: PLoS biology, 20(1), e3001507-e3001507
+  - DOI: （未記載）
+- 13. Albino mice with the point mutation at the tyrosinase locus show high cholesterol diet-induced NASH susceptibility. Kaushalya Kulathunga, Arata Wakimoto, Yukiko Hiraishi, Manoj Kumar Yadav, Kyle Gentleman, Eiji Warabi, Tomoki Sakasai, Yoshihiro Miwa, Seiya Mizuno, Satoru Takahash, Michito Hamada
+  - 著者: 共著
+  - 年: 2021年6月（査読有り）
+  - 雑誌: Scientific Reports,11,21827
+  - DOI: （未記載）
+- 14. Nuclear factor E2-related factor 2 (NRF2) deficiency accelerates fast fibre type transition in soleus muscle during space flight.
+  - 著者: Takuto Hayashi, Takashi Kudo, Ryo Fujita, Shin-Ichiro Fujita, Hirona Tsubouchi, Sayaka Fuseya, Riku Suzuki, Michito Hamadaほか7名
+  - 年: 2021年6月（査読有り）
+  - 雑誌: Communications biology, 4(1), 787
+  - DOI: （未記載）
+- 15. Transcriptome analysis of gravitational effects on mouse skeletal muscles under microgravity and artificial 1 g onboard environment.
+  - 著者: Risa Okada, Shin-Ichiro Fujita, Riku Suzuki, Takuto Hayashi, Hirona Tsubouchi, Chihiro Kato, Shunya Sadaki, Maho Kanai, Sayaka Fuseya, Yuri Inoue, Hyojung Jeon, Michito Hamada ほか10名
+  - 年: 2021年4月（査読有り）
+  - 雑誌: Scientific reports, 11,9168
+  - DOI: （未記載）
+- 16. Mobilization efficiency is critically regulated by fat via marrow PPARδ.
+  - 著者: Tomohide Suzuki, Shinichi Ishii, Masakazu Shinohara, Yuko Kawano, Kanako Wakahashi, Hiroki Kawano, Akiko Sada, Kentaro Minagawa, Michito Hamadaほか5名
+  - 年: 2021年7月（査読有り）
+  - 雑誌: Haematologica, 106(6), 1671-1683
+  - DOI: （未記載）
+- 17. Generation of reconstituted hemato-lymphoid murine embryos by placental transplantation into embryos lacking HSCs. Hyojung Jeon, Keigo Asano, Arata Wakimoto, Kaushalya Kulathunga, Mai Thi Nhu Tran, Megumi Nakamura, Tomomasa Yokomizo, Michito Hamada, Satoru Takahashi
+  - 著者: 共著
+  - 年: 2021年2月（査読有り）
+  - 雑誌: Scientific reports,11,4374
+  - DOI: （未記載）
+- 18. Transcription factor MafB in podocytes protects against the development of focal segmental glomerulosclerosis. Toshiaki Usui, Naoki Morito, Hossam H Shawki, Yoshinori Sato, Hiroyasu Tsukaguchi, Michito Hamada, ほか20名
+  - 著者: 共著
+  - 年: 2020年8月（査読有り）
+  - 雑誌: Kidney international, 98(2), 391-403
+  - DOI: （未記載）
+- 19. Efficient production of large deletion and gene fragment knock-in mice mediated by genome editing with Cas9-mouse Cdt1 in mouse zygotes.
+  - 著者: Saori Mizuno-Iijima, Shinya Ayabe, Kanako Kato, Shogo Matoba, Yoshihisa Ikeda, Tra Thi Huong Dinh, Hoai Thu Le, Hayate Suzuki, Kenichi Nakashima, Yoshikazu Hasegawa, Yuko Hamada, Yoko Tanimoto, Yoko Daitoku, Natsumi Iki, Miyuki Ishida, Elzeftawy Abdelaziz Elsayed Ibrahim, Toshiaki Nakashiba, Michito Hamada, ほか11名
+  - 年: 2020年4月（査読有り）
+  - 雑誌: Methods, 191, 23-31
+  - DOI: （未記載）
+- 20. Lymphatic MAFB regulates vascular patterning during developmental and pathological lymphangiogenesis. Lothar C Dieterich, Carlotta Tacconi, Franziska Menzi, Steven T Proulx, Kübra Kapaklikaya, Michito Hamada ほか2名
+  - 著者: 共著
+  - 年: 2020年8月（査読有り）
+  - 雑誌: Angiogenesis, 23(3), 411-423
+  - DOI: （未記載）
+- 21. Transcription factor c-Maf is a checkpoint that programs macrophages in lung cancer.
+  - 著者: Min Liu, Zan Tong, Chuanlin Ding, Fengling Luo, Shouzhen Wu, Caijun Wu, Sabrin Albeituni, Liqing He, Xiaoling Hu, David Tieri, Eric C Rouchka, Michito Hamada ほか8名
+  - 年: 2020年4月（査読有り）
+  - 雑誌: The Journal of clinical investigation, 130(4), 2081-2096
+  - DOI: （未記載）
+- 22. Transcription factor MafB is a marker of tumor-associated macrophages in both mouse and humans.
+  - 著者: Manoj Kumar Yadav, Yuri Inoue, Aya Nakane-Otani, Yuki Tsunakawa, Hyojung Jeon, Omar Samir, Akari Teramoto, Kaushalya Kukathunga, Manabu Kusakabe, Megumi Nakamura, Takashi Kudo, Satoru Takahashi, Michito Hamada
+  - 年: 2020年1月（査読有り）
+  - 雑誌: Biochemical and Biophysical Research Communications, 521(3), 590-595
+  - DOI: （未記載）
+- 23. Phenotypic analysis of mice carrying human-type MAFB p.Leu239Pro mutation.
+  - 著者: Maho Kanai, Hyojung Jeon, Masami Ojima, Teppei Nishino, Toshiaki Usui, Manoj Kumar Yadav, Kaushalya Kulathunga, Naoki Morito, Satoru Takahashi, Michito Hamada
+  - 年: 2019年12月（査読有り）
+  - 雑誌: Biochemical and biophysical research communications, 523(2), 452-457
+  - DOI: （未記載）
+- 24. Impact of spaceflight on the murine thymus and mitigation by exposure to artificial gravity during spaceflight. Kenta Horie, Tamotsu Kato, Takashi Kudo, Hiroki Sasanuma, Maki Miyauchi, Nobuko Akiyama, Takahisa Miyao, Takao Seki, Tatsuya Ishikawa, Yuki Takakura, Masaki Shirakawa, Dai Shiba, Michito Hamadaほか7名
+  - 著者: 共著
+  - 年: 2019年11月（査読有り）
+  - 雑誌: Scientific reports, 9(1), 19866-19866
+  - DOI: （未記載）
+- 25. Spiral ganglion cell degeneration-induced deafness as a consequence of reduced GATA factor activity.
+  - 著者: Tomofumi Hoshino, Tsumoru Terunuma, Jun Takai, Satoshi Uemura, Yasuhiro Nakamura, Michito Hamada, ほか4名
+  - 年: 2019年8月（査読有り）
+  - 雑誌: Genes to cells:  devoted to molecular &amp; cellular mechanisms, 24(8), 534-545
+  - DOI: （未記載）
+- 26. Role of MafB in macrophages.
+  - 著者: Michito Hamada, ほか4名
+  - 年: 2019年10月（査読有り）
+  - 雑誌: Experimental Animals, 69(1), 1-10
+  - DOI: （未記載）
+- 27. Mice harboring an MCTO mutation exhibit renal failure resembling nephropathy in human patients.
+  - 著者: Yuki Tsunakawa, Michito Hamada ほか9名
+  - 年: 2018年10月（査読有り）
+  - 雑誌: Experimental Animals, 68(1), 103-111
+  - DOI: （未記載）
+- 28. A Novel iRFP-Incorporated in vivo Murine Atherosclerosis Imaging System.
+  - 著者: Kaushalya Kulathunga, Michito Hamada ほか11名
+  - 年: 2018年9月（査読有り）
+  - 雑誌: Scientific reports, 8,14515
+  - DOI: （未記載）
+- 29. Macrophages Switch Their Phenotype by Regulating Maf Expression during Different Phases of Inflammation.
+  - 著者: Kenta Kikuchi, Mayumi Iida, Naoki Ikeda, Shigetaka Moriyama, Michito Hamada, ほか12名
+  - 年: 2018年7月（査読有り）
+  - 雑誌: Journal of immunology, 201(2), 635-651
+  - DOI: （未記載）
+- 30. Transcription factor MafB may play an important role in secondary hyperparathyroidism.
+  - 著者: Naoki Morito, Keigyou Yoh, Toshiaki Usui, Hisashi Oishi, Masami Ojima, Akiko Fujita, Ryusuke Koshida, Hossam H Shawki, Michito Hamada, ほか3名
+  - 年: 2018年1月（査読有り）
+  - 雑誌: Kidney international, 93(1), 54-68
+  - DOI: （未記載）
+- 31. A mutation in transcription factor MAFB causes Focal Segmental Glomerulosclerosis with Duane Retraction Syndrome.
+  - 著者: Yoshinori Sato, Hiroyasu Tsukaguchi, Hiroyuki Morita, Koichiro Higasa, Mai Thi Nhu Tran, Michito Hamada, ほか19名
+  - 年: 2018年8月（査読有り）
+  - 雑誌: Kidney International, 94(2), 396-407
+  - DOI: （未記載）
+- 32. MafB is a critical regulator of complement component C1q.
+  - 著者: Mai Thi Nhu Tran, Michito Hamada, ほか18名
+  - 年: 2017年11月（査読有り）
+  - 雑誌: Nature Communications, 8(1), 1700-1700
+  - DOI: （未記載）
+- 33. Differentiation of IL-17-Producing Invariant Natural Killer T Cells Requires Expression of the Transcription Factor c-Maf.
+  - 著者: Jhang-Sian Yu, Michito Hamada, ほか4名
+  - 年: 2017年11月（査読有り）
+  - 雑誌: Frontiers in Immunology, 8
+  - DOI: （未記載）
+- 34. Development of new experimental platform 'MARS'-Multiple Artificial-gravity Research System-to elucidate the impacts of micro/partial gravity on mice.
+  - 著者: Dai Shiba, Hiroyasu Mizuno, Akane Yumoto, Michihiko Shimomura, Hiroe Kobayashi, Hironobu Morita, Miki Shimbo, Michito Hamada, ほか5名
+  - 年: 2017年9月（査読有り）
+  - 雑誌: Scientific Reports, 7,10837
+  - DOI: （未記載）
+- 35. MafB is required for development of the hindbrain choroid plexus.
+  - 著者: Ryusuke Koshida, Hisashi Oishi, Michito Hamada, Yosuke Takei, Satoru Takahashi
+  - 年: 2017年1月（査読有り）
+  - 雑誌: Biochemical and biophysical research communications, 483(1), 288-293
+  - DOI: （未記載）
+- 36. Peripherally administered orexin improves survival of mice with endotoxin shock.
+  - 著者: Yasuhiro Ogawa, Yoko Irukayama-Tomobe, Nobuyuki Murakoshi, Maiko Kiyama, Yui Ishikawa, Naoto Hosokawa, Hiromu Tominaga, Shuntaro Uchida, Saki Kimura, Mika Kanuka, Miho Morita, Michito Hamada, ほか3名
+  - 年: 2016年12月（査読有り）
+  - 雑誌: eLife, 5:e21055
+  - DOI: （未記載）
+- 37. Transcription Factor MafB Coordinates Epidermal Keratinocyte Differentiation. Masashi Miyai, Michito Hamada, Takashi Moriguchi, Junichiro Hiruma, Akiyo Kamitani-Kawamoto, Hajime Watanabe, Mariko Hara-Chikuma, Kenzo Takahashi, Satoru Takahashi, Kohsuke Kataoka
+  - 著者: 共著
+  - 年: 2016年9月（査読有り）
+  - 雑誌: Journal of Investigative Dermatology, 136(9), 1848-1857
+  - DOI: （未記載）
+- 38. MafB deficiency accelerates the development of obesity in mice.
+  - 著者: Mai Thi Nhu Tran, Michito Hamada, Megumi Nakamura, Hyojung Jeon, Risa Kamei, Yuki Tsunakawa, Kaushalya Kulathunga, Yuan-Yu Lin, Kumiko Fujisawa, Takashi Kudo, Satoru Takahashi
+  - 年: 2016年6月（査読有り）
+  - 雑誌: Federation of European Biochemical Societies Open Bio, 6(6), 540-547
+  - DOI: （未記載）
+- 39. Differential expression patterns of MafB and c-Maf in macrophages in vivo and in vitro.
+  - 著者: Dhouha Daassi, Michito Hamada, ほか4名
+  - 年: 2016年3月（査読有り）
+  - 雑誌: Biochemical and Biophysical Research Communications, 473(1), 118-124
+  - DOI: （未記載）
+- 40. Ground-based assessment of JAXA mouse habitat cage unit by mouse phenotypic studies.
+  - 著者: Miki Shimbo, Takashi Kudo, Michito Hamada, ほか39名
+  - 年: 2016年4月（査読有り）
+  - 雑誌: Experimental Animals, 65(2), 175-187
+  - DOI: （未記載）
+- 41. DeepCAGE Transcriptomics Reveal an Important Role of the Transcription Factor MAFB in the Lymphatic Endothelium. Lothar C Dieterich,
+  - 著者: Sarah Klein, Anthony Mathelier, Adriana Sliwa-Primorac, Qiaoli Ma, Young-Kwon Hong, Jay W Shin, Michito Hamada,ほか11名
+  - 年: 2015年12月（査読有り）
+  - 雑誌: Cell reports, 13(7), 1493-1504
+  - DOI: （未記載）
+- 42. MafB antagonizes phenotypic alteration induced by GM-CSF in microglia.
+  - 著者: Ryusuke Koshida, Hisashi Oishi, Michito Hamada, Satoru Takahashi
+  - 年: 2015年9月（査読有り）
+  - 雑誌: Biochemical and Biophysical Research Communications, 463(1-2), 109-115
+  - DOI: （未記載）
+- 43. Sexually dimorphic expression of Mafb regulates masculinization of the embryonic urethral formation.
+  - 著者: Kentaro Suzuki, Tomokazu Numata, Hiroko Suzuki, Dennis Diana Raga, Lerrie Ann Ipulan, Chikako Yokoyama, Shoko Matsushita, Michito Hamada, ほか5名
+  - 年: 2014年11月（査読有り）
+  - 雑誌: Proceedings of the National Academy of Sciences of the United States of America, 111(46), 16407-16412
+  - DOI: （未記載）
+- 44. Overexpression of Mafb in podocytes protects against diabetic nephropathy.
+  - 著者: Naoki Morito, Keigyou Yoh, Masami Ojima, Midori Okamura, Megumi Nakamura, Michito Hamada,ほか4名
+  - 年: 2014年11月（査読有り）
+  - 雑誌: Journal of the American Society of Nephrology, 25(11), 2546-2557
+  - DOI: （未記載）
+- 45. In vivo image analysis using iRFP transgenic mice.
+  - 著者: Mai Thi Nhu Tran, Junko Tanaka, Michito Hamada, ほか5名
+  - 年: 2014年6月（査読有り）
+  - 雑誌: Experimental Animals, 63(3), 311-319
+  - DOI: （未記載）
+- 46. MafB promotes atherosclerosis by inhibiting foam-cell apoptosis.
+  - 著者: Michito Hamada, ほか20名
+  - 年: 2014年1月（査読有り）
+  - 雑誌: Nature Communications, 5, 3147-3147
+  - DOI: （未記載）
+- 47. C1galt1-deficient mice exhibit thrombocytopenia due to abnormal terminal differentiation of megakaryocytes.
+  - 著者: Takashi Kudo, Takashi Sato, Kozue Hagiwara, Yukinori Kozuma, Takashi Yamaguchi, Yuzuru Ikehara, Michito Hamada, ほか6名
+  - 年: 2013年9月（査読有り）
+  - 雑誌: Blood, 122(9), 1649-1657
+  - DOI: （未記載）
+- 48. Overexpression of RORγt under control of the CD2 promoter induces polyclonal plasmacytosis and autoantibody production in transgenic mice.
+  - 著者: Yoh Keigyou, Naoki Morito, Masami Ojima, Kazuko Shibuya, Yumi Kanemaru, Yuko Morishima, Yukio Ishii, Manabu Kusakabe, Hidekazu Nishikii, Akiko Fujita, Emi Matsunaga, Midori Okamura, Michito Hamada ほか5名
+  - 年: 2012年8月（査読有り）
+  - 雑誌: European Journal of Immunology, 42(8), 1999-2009
+  - DOI: （未記載）
+- 49. Molecular basis for Flk1 expression in hemato-cardiovascular progenitors in the mouse.
+  - 著者: Hiroyuki Ishitobi, Asami Wakamatsu, Fang Liu, Takuya Azami, Michito Hamada, ほか7名
+  - 年: 2011年12月（査読有り）
+  - 雑誌: Development,138(24), 5357-5368
+  - DOI: （未記載）
+- 50. Combinatorial motif analysis of regulatory gene expression in Mafb deficient macrophages.
+  - 著者: Mariko Morita, Megumi Nakamura, Michito Hamada, Satoru Takahashi
+  - 年: 2011年12月（査読有り）
+  - 雑誌: BMC Systems biology, 5(2), S7
+  - DOI: （未記載）
+- 51. MafB interacts with Gcm2 and regulates parathyroid hormone expression and parathyroid development.
+  - 著者: Akiyo Kamitani-Kawamoto, Michito Hamada, ほか12名
+  - 年: 2011年10月（査読有り）
+  - 雑誌: Journal of bone and mineral research, 26(10), 2463-2472
+  - DOI: （未記載）
+- 52. c-Maf plays a crucial role for the definitive erythropoiesis that accompanies erythroblastic island formation in the fetal liver.
+  - 著者: Manabu Kusakabe, Kazuteru Hasegawa, Michito Hamada, ほか9名
+  - 年: 2011年8月（査読有り）
+  - 雑誌: Blood, 118(5), 1374-1385
+  - DOI: （未記載）
+- 53. A Novel Transgenic Mouse Model of the Human Multiple Myeloma Chromosomal Translocation t(14;16)(q32;q23).
+  - 著者: Naoki Morito, Keigyou Yoh, Atsuko Maeda, Takako Nakano, Akiko Fujita, Manabu Kusakabe, Michito Hamada, ほか3名
+  - 年: 2011年1月（査読有り）
+  - 雑誌: Cancer research, 71(2), 339-348
+  - DOI: （未記載）
+- 54. Maf promotes osteoblast differentiation in mice by mediating the age-related switch in mesenchymal cell differentiation.
+  - 著者: Keizo Nishikawa, Tomoki Nakashima, Shu Takeda, Masashi Isogai, Michito Hamada,ほか6名
+  - 年: 2010年10月（査読有り）
+  - 雑誌: Journal of clinical investigation, 120(10), 3455-3465
+  - DOI: （未記載）
+- 55. c-Maf and MafB transcription factors are differentially expressed in Huxley's and Henle's layers of the inner root sheath of the hair follicle and regulate cuticle formation.
+  - 著者: Masashi Miyai, Yoshihiro G. Tanaka, Akiyo Kamitani, Michito Hamada, ほか2名
+  - 年: 2010年9月（査読有り）
+  - 雑誌: Journal of dermatological science, 57(3), 178-182
+  - DOI: （未記載）
+- 56. Transcription Factor GATA-3 Is Essential for Lens Development.
+  - 著者: Atsuko Maeda, Takashi Moriguchi, Michito Hamada, ほか7名
+  - 年: 2009年9月（査読有り）
+  - 雑誌: Developmental dynamics, 238(9), 2280-2291
+  - DOI: （未記載）
+- 57. c-Maf is essential for the F4/80 expression in macrophages in vivo.
+  - 著者: Megumi Nakamura, Michito Hamada, ほか7名
+  - 年: 2009年9月（査読有り）
+  - 雑誌: Gene, 445(1-2), 66-72
+  - DOI: （未記載）
+- 58. Neither MafA/L-Maf nor MafB is essential for lens development in mice.
+  - 著者: Takashi Takeuchi, Takashi Kudo, Kiyohito Ogata, Michito Hamada, ほか7名
+  - 年: 2009年8月（査読有り）
+  - 雑誌: Genes to cells, 14(8), 941-947
+  - DOI: （未記載）
+- 59. Gene expression profile of the third pharyngeal pouch reveals role of mesenchymal MafB in embryonic thymus development.
+  - 著者: Dil Afroz Sultana, Shuhei Tomita, Michito Hamada, ほか9名
+  - 年: 2009年4月（査読有り）
+  - 雑誌: Blood, 113(13), 2976-2987
+  - DOI: （未記載）
+- 60. Potential chemoprevention effect of dietary fucoxanthin on urinary bladder cancer EJ-1 cell line.
+  - 著者: Zhenya Zhang, Peijuan Zhang, Michito Hamada, ほか4名
+  - 年: 2008年11月（査読有り）
+  - 雑誌: Oncology reports, 20(5), 1099-1103
+  - DOI: （未記載）
+- 61. Gata3 participates in a complex transcriptional feedback network to regulate sympathoadrenal differentiation.
+  - 著者: Takashi Moriguchi, Nakano Takako, Michito Hamada, ほか10名
+  - 年: 2006年10月（査読有り）
+  - 雑誌: Development, 133(19), 3871-3881
+  - DOI: （未記載）
+- 62. MafB is essential for renal development and F4/80 expression in macrophages.
+  - 著者: Takashi Moriguchi, Michito Hamada, ほか14名
+  - 年: 2006年8月（査読有り）
+  - 雑誌: Molecular and cellular biology, 26(15), 5715-27
+  - DOI: （未記載）
+- 63. MafA Is a Key Regulator of Glucose-Stimulated Insulin Secretion.
+  - 著者: Zhang Chuan, Takashi Moriguchi, Miwuchi Kajihara, Ritsuko Esaki, Ayako Harada, Homare Shimohata, Hisashi Oishi, Michito Hamada ほか6名
+  - 年: 2005年6月（査読有り）
+  - 雑誌: Molecular and cellular biology, 25(12), 4969-4976
+  - DOI: （未記載）
+- 64. The mouse mafB 5′-upstream fragment directs gene expression in myelomonocytic cells, differentiated macrophages and the ventral spinal cord in transgenic mice.
+  - 著者: Michito Hamada, Takashi Moriguchi, Tomomasa Yokomizo, Naoki Morito, Chuan Zhang, Satoru Takahashi
+  - 年: 2005年8月（査読有り）
+  - 雑誌: Journal of Biochemistry, 134(2), 203-210
+  - DOI: （未記載）
