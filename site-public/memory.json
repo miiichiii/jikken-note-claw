@@ -1,15 +1,27 @@
 [
   {
     "filename": "todo.md",
-    "path": "memory/projects/mission_control_v2/todo.md",
-    "mtime": "2026-02-23T15:10:24.482Z",
-    "preview": "Mission Control V2 Implementation Plan Goal: Evolve the current research dashboard into a high-performance, secure, and visually stunning \"Cockpit\" for Professor Hamada. 🛠 Specifications (Target V2) "
+    "path": "memory/todo.md",
+    "mtime": "2026-02-24T12:11:05.309Z",
+    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24 - [ ] お子様の体調記録を継続する（過敏性腸症候群の疑い） @Bot - [ ] 毎朝お子様の体調記録をリマインドする @Bot - [ ] 買い物リストを確認・購入する (隙間用LANケーブル) @濱田 - [x] つくば市役所子ども支援書類 @濱田 - [x] 大学プロジェクト研究ヒアリング準備 @濱田 - [ ] 破骨細"
+  },
+  {
+    "filename": "2026-02-24.md",
+    "path": "memory/child_health/2026-02-24.md",
+    "mtime": "2026-02-24T01:59:41.630Z",
+    "preview": "お子様の体調記録（過敏性腸症候群の疑い） お子様の腹痛や便通の状況を記録するためのファイルです。 記録項目（案） - 日時 - 症状（腹痛の強さ、場所） - 便の様子（ブリストル便性スケールなど） - 食事内容 - ストレス要因や環境の変化 - 薬の服用状況 --- 記録ログ - 2026-02-23: お子様のお腹の調子が悪く、過敏性腸症候群（IBS）の可能性を懸念。記録を開始。 - 日付: 2"
+  },
+  {
+    "filename": "2026-02-24.md",
+    "path": "memory/2026-02-24.md",
+    "mtime": "2026-02-23T23:28:11.208Z",
+    "preview": "2026-02-24 - メール認証復旧: センセイにより gog ツールの再認証が完了。 - 節約モード: トークン節約のため、メールの精査・要約・下書き作成にはローカルモデル（GPT-OSS-20B等）を優先使用する。 - タスク: 未読メールのチェックと報告。 - Recorded Mission Control V2 progress: index/tasks/calendar overh"
   },
   {
     "filename": "todo.md",
-    "path": "memory/todo.md",
-    "mtime": "2026-02-23T06:23:31.794Z",
-    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24 - [ ] 買い物リストを確認・購入する (隙間用LANケーブル) @濱田"
+    "path": "memory/projects/mission_control_v2/todo.md",
+    "mtime": "2026-02-23T15:10:24.482Z",
+    "preview": "Mission Control V2 Implementation Plan Goal: Evolve the current research dashboard into a high-performance, secure, and visually stunning \"Cockpit\" for Professor Hamada. 🛠 Specifications (Target V2) "
   },
   {
     "filename": "shopping_list.md",
