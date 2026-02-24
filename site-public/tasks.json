@@ -8,48 +8,62 @@
   },
   {
     "id": "task-1",
+    "title": "お子様の体調記録を継続する（過敏性腸症候群の疑い）",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "task-2",
+    "title": "毎朝お子様の体調記録をリマインドする",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "task-3",
     "title": "買い物リストを確認・購入する (隙間用LANケーブル)",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-2",
+    "id": "task-4",
     "title": "つくば市役所子ども支援書類",
     "status": "done",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-3",
+    "id": "task-5",
     "title": "大学プロジェクト研究ヒアリング準備",
     "status": "done",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-4",
+    "id": "task-6",
     "title": "破骨細胞RNAseq解析",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-5",
+    "id": "task-7",
     "title": "ハーバードにプラスミド送付（輸出管理）",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-6",
+    "id": "task-8",
     "title": "民間研究助成申請(2/28)",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-7",
+    "id": "task-9",
     "title": "筑波大時代学生実験サポート",
     "status": "todo",
     "priority": "B",

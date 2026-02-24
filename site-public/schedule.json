@@ -1,36 +1,18 @@
 [
   {
-    "id": "7794682d-7456-4cd2-86a0-d5abe421d42d",
-    "name": "Daily review-request digest (24h) to Discord DM",
-    "enabled": true,
-    "nextRunAt": 1771628400000,
-    "lastStatus": "ok",
-    "expr": "0 8 * * *",
-    "target": "isolated"
-  },
-  {
-    "id": "904f9981-2255-4b84-af46-1743a467f25f",
-    "name": "daily-todo-reminder-8am",
-    "enabled": true,
-    "nextRunAt": 1771628400000,
-    "lastStatus": "ok",
-    "expr": "0 8 * * *",
-    "target": "main"
-  },
-  {
     "id": "c9e96a07-a038-436c-b45f-0dc4ae47bf35",
-    "name": "Hourly Email Check (Hamada)",
+    "name": "Hourly Email Check (06-22 JST)",
     "enabled": true,
-    "nextRunAt": 1771628400000,
+    "nextRunAt": 1771902000000,
     "lastStatus": "ok",
-    "expr": "0 7-21 * * *",
-    "target": "main"
+    "expr": "0 6-22 * * *",
+    "target": "isolated"
   },
   {
     "id": "85ab3588-1e36-492e-bf50-509c7fd14fe8",
     "name": "gmail-night-cleanup",
     "enabled": true,
-    "nextRunAt": 1771689600000,
+    "nextRunAt": 1771948800000,
     "lastStatus": "ok",
     "expr": "0 1 * * *",
     "target": "main"
@@ -39,7 +21,7 @@
     "id": "6711c3d4-7858-4197-a871-2c8e309fd024",
     "name": "Nightly Research Report & DB Update",
     "enabled": true,
-    "nextRunAt": 1771696800000,
+    "nextRunAt": 1771956000000,
     "lastStatus": "error",
     "expr": "0 3 * * *",
     "target": "isolated"
@@ -48,7 +30,7 @@
     "id": "a84dd287-93f1-4125-b816-235e38972f2a",
     "name": "Nightly Memory Sync & Deploy",
     "enabled": true,
-    "nextRunAt": 1771704000000,
+    "nextRunAt": 1771963200000,
     "lastStatus": "ok",
     "expr": "0 5 * * *",
     "target": "isolated"
@@ -57,17 +39,33 @@
     "id": "a4d009f3-2780-4ae3-a72e-66ab7c95e46e",
     "name": "Daily gog calendar check (07:00 JST)",
     "enabled": true,
-    "nextRunAt": 1771711200000,
-    "lastStatus": "ok",
+    "nextRunAt": 1771970400000,
+    "lastStatus": "error",
     "expr": "0 7 * * *",
+    "target": "isolated"
+  },
+  {
+    "id": "2b947546-eaac-4695-8ba6-4a14f8e96da2",
+    "name": "お子様の体調記録リマインド",
+    "enabled": true,
+    "nextRunAt": 1771970400000,
+    "target": "isolated"
+  },
+  {
+    "id": "904f9981-2255-4b84-af46-1743a467f25f",
+    "name": "daily-todo-reminder-8am",
+    "enabled": true,
+    "nextRunAt": 1771974000000,
+    "lastStatus": "ok",
+    "expr": "0 8 * * *",
     "target": "isolated"
   },
   {
     "id": "3de13987-e957-42f8-8fb7-7380f884d3f2",
     "name": "Weekly Research Project Reports (oss-120B)",
     "enabled": true,
-    "nextRunAt": 1771804800000,
-    "lastStatus": "ok",
+    "nextRunAt": 1772409600000,
+    "lastStatus": "error",
     "expr": "0 9 * * 1",
     "target": "isolated"
   },

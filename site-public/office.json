@@ -1,62 +1,34 @@
 {
-  "office": {
-    "name": "Miiichiii Digital Office",
-    "updatedAt": "2026-02-22T06:00:00Z"
+  "leader": {
+    "status": "active",
+    "task": ""
   },
-  "staff": [
-    {
-      "id": "macstudio-bot",
-      "name": "macstudio-bot",
-      "role": "Chief Orchestrator",
-      "avatar": "👸",
-      "status": "online",
-      "activity": "Managing the team",
-      "location": { "x": 400, "y": 200 }
-    },
-    {
-      "id": "ui-designer",
-      "name": "UI Designer",
-      "role": "Designer",
-      "avatar": "🎨",
-      "status": "online",
-      "activity": "Designing office layout",
-      "location": { "x": 150, "y": 150 }
-    },
-    {
-      "id": "dev-frontend",
-      "name": "Frontend Dev",
-      "role": "Developer",
-      "avatar": "🦊",
-      "status": "online",
-      "activity": "Coding the interface",
-      "location": { "x": 150, "y": 300 }
-    },
-    {
-      "id": "scientific-writer",
-      "name": "Sci Writer",
-      "role": "Writer",
-      "avatar": "🦉",
-      "status": "online",
-      "activity": "Drafting reports",
-      "location": { "x": 650, "y": 150 }
-    },
-    {
-      "id": "db-analyst",
-      "name": "DB Analyst",
-      "role": "Analyst",
-      "avatar": "🐼",
-      "status": "online",
-      "activity": "Analyzing data",
-      "location": { "x": 650, "y": 300 }
-    },
-    {
-      "id": "email-clerk",
-      "name": "Email Clerk",
-      "role": "Clerk",
-      "avatar": "📧",
-      "status": "online",
-      "activity": "Checking inbox",
-      "location": { "x": 400, "y": 450 }
-    }
-  ]
+  "designer": {
+    "status": "idle",
+    "task": ""
+  },
+  "developer": {
+    "status": "idle",
+    "task": ""
+  },
+  "reviewer": {
+    "status": "idle",
+    "task": ""
+  },
+  "writer": {
+    "status": "idle",
+    "task": ""
+  },
+  "analyst": {
+    "status": "idle",
+    "task": ""
+  },
+  "email": {
+    "status": "idle",
+    "task": ""
+  },
+  "archivist": {
+    "status": "idle",
+    "task": ""
+  }
 }
