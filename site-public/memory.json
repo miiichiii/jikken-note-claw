@@ -2,8 +2,26 @@
   {
     "filename": "todo.md",
     "path": "memory/todo.md",
-    "mtime": "2026-02-24T12:11:05.309Z",
+    "mtime": "2026-02-25T00:28:05.360Z",
     "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24 - [ ] お子様の体調記録を継続する（過敏性腸症候群の疑い） @Bot - [ ] 毎朝お子様の体調記録をリマインドする @Bot - [ ] 買い物リストを確認・購入する (隙間用LANケーブル) @濱田 - [x] つくば市役所子ども支援書類 @濱田 - [x] 大学プロジェクト研究ヒアリング準備 @濱田 - [ ] 破骨細"
+  },
+  {
+    "filename": "lessons.md",
+    "path": "memory/lessons.md",
+    "mtime": "2026-02-25T00:26:11.351Z",
+    "preview": "lessons - Telegramグループに追加されても反応しない時は、設定ファイル（openclaw.json）の channels.telegram.groups にそのグループIDが含まれているか確認し、なければ追加して openclaw gateway restart する。 - TelegramグループIDを追加する際は、requireMention: false, groupPoli"
+  },
+  {
+    "filename": "2026-02-25.md",
+    "path": "memory/2026-02-25.md",
+    "mtime": "2026-02-24T23:34:35.434Z",
+    "preview": "2026-02-25 - OpenClaw was upgraded from 2026.2.21-2 to 2026.2.23 via gateway.update.run (npm global update), followed by gateway restart. - Gemini 3.1 registration issue was diagnosed: google-gemini-c"
+  },
+  {
+    "filename": "2026-02-25.md",
+    "path": "memory/child_health/2026-02-25.md",
+    "mtime": "2026-02-24T22:43:28.659Z",
+    "preview": "お子様の体調記録 2026/02/25 - 日付: 2026/02/25 - 腹痛の強さ: 0 - 症状: 下痢なし。調子良好。 - 服用薬: リンゼス錠なし。 - 備考: 通学可能。昨日（2/24）の下痢・腹痛5から大幅に改善。 --- Created by macstudio-bot"
   },
   {
     "filename": "2026-02-24.md",
@@ -28,12 +46,6 @@
     "path": "memory/shopping_list.md",
     "mtime": "2026-02-23T06:23:20.953Z",
     "preview": "Shopping List - [ ] KB-FL6ASTP-EX 隙間用LANケーブル カテゴリ6A 44cm PoE対応 (サンワダイレクト) - URL: https://direct.sanwa.co.jp/ItemPage/KB-FL6ASTP-EX?ref=web - [ ] サンワダイレクト フラットLANケーブル 隙間 LANケーブル 44cm CAT5e (500-LAN5E-F"
-  },
-  {
-    "filename": "lessons.md",
-    "path": "memory/lessons.md",
-    "mtime": "2026-02-23T06:21:09.120Z",
-    "preview": "lessons - Telegramグループに追加されても反応しない時は、設定ファイル（openclaw.json）の channels.telegram.groups にそのグループIDが含まれているか確認し、なければ追加して openclaw gateway restart する。 - TelegramグループIDを追加する際は、requireMention: false, groupPoli"
   },
   {
     "filename": "2026-02-23_Natto_HCD_Start.md",
