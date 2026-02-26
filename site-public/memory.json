@@ -1,15 +1,33 @@
 [
   {
-    "filename": "todo.md",
-    "path": "memory/todo.md",
-    "mtime": "2026-02-25T00:28:05.360Z",
-    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24 - [ ] お子様の体調記録を継続する（過敏性腸症候群の疑い） @Bot - [ ] 毎朝お子様の体調記録をリマインドする @Bot - [ ] 買い物リストを確認・購入する (隙間用LANケーブル) @濱田 - [x] つくば市役所子ども支援書類 @濱田 - [x] 大学プロジェクト研究ヒアリング準備 @濱田 - [ ] 破骨細"
+    "filename": "2026-02-27.md",
+    "path": "memory/2026-02-27.md",
+    "mtime": "2026-02-26T16:05:07.650Z",
+    "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行（account: hamamicchi@gmail.com）。 - ラベル確認結果: 「要返信」「参照」「処理済み」は既存。\"重要\"はGmail APIで作成不可（invalidArgument）。代替としてシステムラベル IMPORTANT を重要扱い。 - 直近30日 in:inbox から自動仕分け実施: categ"
+  },
+  {
+    "filename": "preferences.md",
+    "path": "memory/preferences.md",
+    "mtime": "2026-02-26T04:17:13.125Z",
+    "preview": "Preferences - Amazonの「いつものマスク」は https://www.amazon.co.jp/dp/B099Z7962T を使う。 - Amazonの「いつものコーヒーフィルター」は https://www.amazon.co.jp/dp/B00BJBOITS を使う。 - Amazonの「いつもの犬用歯みがきガム」は https://www.amazon.co.jp/dp/B"
   },
   {
     "filename": "lessons.md",
     "path": "memory/lessons.md",
-    "mtime": "2026-02-25T00:26:11.351Z",
+    "mtime": "2026-02-26T01:19:00.286Z",
     "preview": "lessons - Telegramグループに追加されても反応しない時は、設定ファイル（openclaw.json）の channels.telegram.groups にそのグループIDが含まれているか確認し、なければ追加して openclaw gateway restart する。 - TelegramグループIDを追加する際は、requireMention: false, groupPoli"
+  },
+  {
+    "filename": "2026-02-26.md",
+    "path": "memory/2026-02-26.md",
+    "mtime": "2026-02-25T23:03:54.363Z",
+    "preview": "2026-02-26 - センセイの体調：今日もお腹の痛みゼロ。 - センセイより「2月24日の設定は完了済み」と明示。完了記録を memory/todo.md に反映。 - センセイより「民間研究助成申請（2/28）は今回は見送り」と判断共有あり。memory/todo.md を見送り完了として更新。 - 「業績と研究がうまくいったので、今はそれで十分」との方針を受領。"
+  },
+  {
+    "filename": "todo.md",
+    "path": "memory/todo.md",
+    "mtime": "2026-02-25T23:03:48.702Z",
+    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24 - [ ] お子様の体調記録を継続する（過敏性腸症候群の疑い） @Bot - [ ] 毎朝お子様の体調記録をリマインドする @Bot - [ ] 買い物リストを確認・購入する (隙間用LANケーブル) @濱田 - [x] つくば市役所子ども支援書類 @濱田 - [x] 大学プロジェクト研究ヒアリング準備 @濱田 - [x] 2月2"
   },
   {
     "filename": "2026-02-25.md",
