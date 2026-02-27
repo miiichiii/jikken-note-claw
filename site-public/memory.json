@@ -1,15 +1,27 @@
 [
   {
-    "filename": "2026-02-27.md",
-    "path": "memory/2026-02-27.md",
-    "mtime": "2026-02-26T16:05:07.650Z",
-    "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行（account: hamamicchi@gmail.com）。 - ラベル確認結果: 「要返信」「参照」「処理済み」は既存。\"重要\"はGmail APIで作成不可（invalidArgument）。代替としてシステムラベル IMPORTANT を重要扱い。 - 直近30日 in:inbox から自動仕分け実施: categ"
+    "filename": "2026-02-28.md",
+    "path": "memory/2026-02-28.md",
+    "mtime": "2026-02-27T16:04:42.926Z",
+    "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行（account: hamamicchi@gmail.com）。 - ラベル確認結果: 「要返信」「参照」「処理済み」は既存。\"重要\"ラベルは Gmail API で作成不可（invalidArgument）のため、重要判定は Gmail システムの is:important を併用。 - 直近30日 in:inbox の自"
+  },
+  {
+    "filename": "2026-02-27-grade-analysis.md",
+    "path": "memory/2026-02-27-grade-analysis.md",
+    "mtime": "2026-02-27T09:08:38.604Z",
+    "preview": "Session: 2026-02-27 09:08:34 UTC - Session Key: agent:main:telegram:group:-1003876826017 - Session ID: 10781e00-6425-4291-8d5c-72b85b49c8e7 - Source: telegram Conversation Summary assistant: <final>デー"
   },
   {
     "filename": "preferences.md",
     "path": "memory/preferences.md",
-    "mtime": "2026-02-26T04:17:13.125Z",
+    "mtime": "2026-02-26T22:20:10.099Z",
     "preview": "Preferences - Amazonの「いつものマスク」は https://www.amazon.co.jp/dp/B099Z7962T を使う。 - Amazonの「いつものコーヒーフィルター」は https://www.amazon.co.jp/dp/B00BJBOITS を使う。 - Amazonの「いつもの犬用歯みがきガム」は https://www.amazon.co.jp/dp/B"
+  },
+  {
+    "filename": "2026-02-27.md",
+    "path": "memory/2026-02-27.md",
+    "mtime": "2026-02-26T16:05:07.650Z",
+    "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行（account: hamamicchi@gmail.com）。 - ラベル確認結果: 「要返信」「参照」「処理済み」は既存。\"重要\"はGmail APIで作成不可（invalidArgument）。代替としてシステムラベル IMPORTANT を重要扱い。 - 直近30日 in:inbox から自動仕分け実施: categ"
   },
   {
     "filename": "lessons.md",
