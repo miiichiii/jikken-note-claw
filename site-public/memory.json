@@ -1,5 +1,23 @@
 [
   {
+    "filename": "2026-03-01.md",
+    "path": "memory/2026-03-01.md",
+    "mtime": "2026-02-28T16:01:52.302Z",
+    "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行。ラベルは「要返信/参照/処理済み」既存、「重要」はGmail API制約で作成不可（IMPORTANTを重要扱い）。直近30日 inbox 仕分け: system通知 8件→参照+INBOX除去、その他 7件→処理済み付与。"
+  },
+  {
+    "filename": "todo.md",
+    "path": "memory/todo.md",
+    "mtime": "2026-02-28T02:57:17.632Z",
+    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24 - [ ] お子様の体調記録を継続する（過敏性腸症候群の疑い） @Bot - [ ] 毎朝お子様の体調記録をリマインドする @Bot - [ ] 買い物リストを確認・購入する (隙間用LANケーブル) @濱田 - [x] つくば市役所子ども支援書類 @濱田 - [x] 大学プロジェクト研究ヒアリング準備 @濱田 - [x] 2月2"
+  },
+  {
+    "filename": "preferences.md",
+    "path": "memory/preferences.md",
+    "mtime": "2026-02-28T02:21:45.431Z",
+    "preview": "Preferences - Amazonの「いつものマスク」は https://www.amazon.co.jp/dp/B099Z7962T を使う。 - Amazonの「いつものコーヒーフィルター」は https://www.amazon.co.jp/dp/B00BJBOITS を使う。 - Amazonの「いつもの犬用歯みがきガム」は https://www.amazon.co.jp/dp/B"
+  },
+  {
     "filename": "2026-02-28.md",
     "path": "memory/2026-02-28.md",
     "mtime": "2026-02-27T16:04:42.926Z",
@@ -10,12 +28,6 @@
     "path": "memory/2026-02-27-grade-analysis.md",
     "mtime": "2026-02-27T09:08:38.604Z",
     "preview": "Session: 2026-02-27 09:08:34 UTC - Session Key: agent:main:telegram:group:-1003876826017 - Session ID: 10781e00-6425-4291-8d5c-72b85b49c8e7 - Source: telegram Conversation Summary assistant: <final>デー"
-  },
-  {
-    "filename": "preferences.md",
-    "path": "memory/preferences.md",
-    "mtime": "2026-02-26T22:20:10.099Z",
-    "preview": "Preferences - Amazonの「いつものマスク」は https://www.amazon.co.jp/dp/B099Z7962T を使う。 - Amazonの「いつものコーヒーフィルター」は https://www.amazon.co.jp/dp/B00BJBOITS を使う。 - Amazonの「いつもの犬用歯みがきガム」は https://www.amazon.co.jp/dp/B"
   },
   {
     "filename": "2026-02-27.md",
@@ -34,12 +46,6 @@
     "path": "memory/2026-02-26.md",
     "mtime": "2026-02-25T23:03:54.363Z",
     "preview": "2026-02-26 - センセイの体調：今日もお腹の痛みゼロ。 - センセイより「2月24日の設定は完了済み」と明示。完了記録を memory/todo.md に反映。 - センセイより「民間研究助成申請（2/28）は今回は見送り」と判断共有あり。memory/todo.md を見送り完了として更新。 - 「業績と研究がうまくいったので、今はそれで十分」との方針を受領。"
-  },
-  {
-    "filename": "todo.md",
-    "path": "memory/todo.md",
-    "mtime": "2026-02-25T23:03:48.702Z",
-    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24 - [ ] お子様の体調記録を継続する（過敏性腸症候群の疑い） @Bot - [ ] 毎朝お子様の体調記録をリマインドする @Bot - [ ] 買い物リストを確認・購入する (隙間用LANケーブル) @濱田 - [x] つくば市役所子ども支援書類 @濱田 - [x] 大学プロジェクト研究ヒアリング準備 @濱田 - [x] 2月2"
   },
   {
     "filename": "2026-02-25.md",
