@@ -1,5 +1,23 @@
 [
   {
+    "filename": "2026-03-02.md",
+    "path": "memory/2026-03-02.md",
+    "mtime": "2026-03-01T16:02:06.288Z",
+    "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行（account: hamamicchi@gmail.com）。 - 直近30日 in:inbox の自動仕分けを実施。合計48件を整理。 - 内訳: - プロモーション/システム通知/ソーシャル等: 「参照」ラベル付与 + 受信トレイから除外。 - その他（重要・要返信ワードを含まないもの）: 「処理済み」ラベル付与 + "
+  },
+  {
+    "filename": "youtube_iR_b09xcDjs_transcript_clean.md",
+    "path": "memory/youtube_iR_b09xcDjs_transcript_clean.md",
+    "mtime": "2026-03-01T02:32:49.049Z",
+    "preview": "Transcript: CLAUDE JUST GOT BANNED - URL: https://www.youtube.com/watch?v=iR_b09xcDjs - Date: 2026-03-01 - Extracted: captionTracks Content Well, breaking news. As I was recording this video, this com"
+  },
+  {
+    "filename": "2026-02-28.md",
+    "path": "memory/dm-daily/2026-02-28.md",
+    "mtime": "2026-02-28T21:00:05.577Z",
+    "preview": "DM Daily Summary: 2026-02-28 (Sat) ✅ Key Tasks Done - Gmail仕分け自動化: hamamicchi@gmail.com の受信トレイ230件超を自動整理。 - プロモーション・通知系を「参照」ラベルへ、その他を「処理済み」へ移動。 - 重要・要返信ラベルの運用ルールを整備。 - 中学2年 理科 天気クイズアプリ: - miiichiii/ko"
+  },
+  {
     "filename": "2026-03-01.md",
     "path": "memory/2026-03-01.md",
     "mtime": "2026-02-28T16:01:52.302Z",
