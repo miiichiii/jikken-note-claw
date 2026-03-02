@@ -43,29 +43,57 @@
   },
   {
     "id": "task-6",
+    "title": "2月24日の設定を完了として記録  2026-02-26",
+    "status": "done",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-7",
     "title": "破骨細胞RNAseq解析",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-7",
+    "id": "task-8",
     "title": "ハーバードにプラスミド送付（輸出管理）",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-8",
-    "title": "民間研究助成申請(2/28)",
+    "id": "task-9",
+    "title": "民間研究助成申請(2/28) ※今回は見送り判断  2026-02-26",
+    "status": "done",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-10",
+    "title": "筑波大時代学生実験サポート",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-9",
-    "title": "筑波大時代学生実験サポート",
+    "id": "task-11",
+    "title": "中1地理（緯度経度・時差・温暖化・世界の気候・オーストラリア）問題集を作成する  2026-02-28",
     "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "task-12",
+    "title": "看護学校見学対応（明後日・2時間）準備を完了する  2026-02-25",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-13",
+    "title": "実習の成績表をつける作業を完了する  2026-03-02",
+    "status": "done",
     "priority": "B",
     "assignee": "Me"
   }
