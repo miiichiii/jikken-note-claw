@@ -1,5 +1,17 @@
 [
   {
+    "filename": "2026-02-20.md",
+    "path": "memory/archive/2026-02/2026-02-20.md",
+    "mtime": "2026-03-02T13:14:39.805Z",
+    "preview": "2026-02-20 - MCTO/MAFB Research: - Colony Assay Result (Day 4): - Source: 2026-02-13_MCTOコロニー観察_Day4.md (GitHub). - MCTO (Avg 35.0) vs WT (Avg 12.7). MCTO showed ~2.8x increase. - Bone Marrow Cell Cou"
+  },
+  {
+    "filename": "todo.md",
+    "path": "memory/todo.md",
+    "mtime": "2026-03-02T04:43:22.169Z",
+    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24 - [ ] お子様の体調記録を継続する（過敏性腸症候群の疑い） @Bot - [ ] 毎朝お子様の体調記録をリマインドする @Bot - [ ] 買い物リストを確認・購入する (隙間用LANケーブル) @濱田 - [x] つくば市役所子ども支援書類 @濱田 - [x] 大学プロジェクト研究ヒアリング準備 @濱田 - [x] 2月2"
+  },
+  {
     "filename": "2026-03-02.md",
     "path": "memory/2026-03-02.md",
     "mtime": "2026-03-01T16:02:06.288Z",
@@ -24,12 +36,6 @@
     "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行。ラベルは「要返信/参照/処理済み」既存、「重要」はGmail API制約で作成不可（IMPORTANTを重要扱い）。直近30日 inbox 仕分け: system通知 8件→参照+INBOX除去、その他 7件→処理済み付与。"
   },
   {
-    "filename": "todo.md",
-    "path": "memory/todo.md",
-    "mtime": "2026-02-28T02:57:17.632Z",
-    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24 - [ ] お子様の体調記録を継続する（過敏性腸症候群の疑い） @Bot - [ ] 毎朝お子様の体調記録をリマインドする @Bot - [ ] 買い物リストを確認・購入する (隙間用LANケーブル) @濱田 - [x] つくば市役所子ども支援書類 @濱田 - [x] 大学プロジェクト研究ヒアリング準備 @濱田 - [x] 2月2"
-  },
-  {
     "filename": "preferences.md",
     "path": "memory/preferences.md",
     "mtime": "2026-02-28T02:21:45.431Z",
@@ -37,19 +43,19 @@
   },
   {
     "filename": "2026-02-28.md",
-    "path": "memory/2026-02-28.md",
+    "path": "memory/archive/2026-02/2026-02-28.md",
     "mtime": "2026-02-27T16:04:42.926Z",
     "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行（account: hamamicchi@gmail.com）。 - ラベル確認結果: 「要返信」「参照」「処理済み」は既存。\"重要\"ラベルは Gmail API で作成不可（invalidArgument）のため、重要判定は Gmail システムの is:important を併用。 - 直近30日 in:inbox の自"
   },
   {
     "filename": "2026-02-27-grade-analysis.md",
-    "path": "memory/2026-02-27-grade-analysis.md",
+    "path": "memory/archive/2026-02/2026-02-27-grade-analysis.md",
     "mtime": "2026-02-27T09:08:38.604Z",
     "preview": "Session: 2026-02-27 09:08:34 UTC - Session Key: agent:main:telegram:group:-1003876826017 - Session ID: 10781e00-6425-4291-8d5c-72b85b49c8e7 - Source: telegram Conversation Summary assistant: <final>デー"
   },
   {
     "filename": "2026-02-27.md",
-    "path": "memory/2026-02-27.md",
+    "path": "memory/archive/2026-02/2026-02-27.md",
     "mtime": "2026-02-26T16:05:07.650Z",
     "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行（account: hamamicchi@gmail.com）。 - ラベル確認結果: 「要返信」「参照」「処理済み」は既存。\"重要\"はGmail APIで作成不可（invalidArgument）。代替としてシステムラベル IMPORTANT を重要扱い。 - 直近30日 in:inbox から自動仕分け実施: categ"
   },
@@ -61,13 +67,13 @@
   },
   {
     "filename": "2026-02-26.md",
-    "path": "memory/2026-02-26.md",
+    "path": "memory/archive/2026-02/2026-02-26.md",
     "mtime": "2026-02-25T23:03:54.363Z",
     "preview": "2026-02-26 - センセイの体調：今日もお腹の痛みゼロ。 - センセイより「2月24日の設定は完了済み」と明示。完了記録を memory/todo.md に反映。 - センセイより「民間研究助成申請（2/28）は今回は見送り」と判断共有あり。memory/todo.md を見送り完了として更新。 - 「業績と研究がうまくいったので、今はそれで十分」との方針を受領。"
   },
   {
     "filename": "2026-02-25.md",
-    "path": "memory/2026-02-25.md",
+    "path": "memory/archive/2026-02/2026-02-25.md",
     "mtime": "2026-02-24T23:34:35.434Z",
     "preview": "2026-02-25 - OpenClaw was upgraded from 2026.2.21-2 to 2026.2.23 via gateway.update.run (npm global update), followed by gateway restart. - Gemini 3.1 registration issue was diagnosed: google-gemini-c"
   },
@@ -85,7 +91,7 @@
   },
   {
     "filename": "2026-02-24.md",
-    "path": "memory/2026-02-24.md",
+    "path": "memory/archive/2026-02/2026-02-24.md",
     "mtime": "2026-02-23T23:28:11.208Z",
     "preview": "2026-02-24 - メール認証復旧: センセイにより gog ツールの再認証が完了。 - 節約モード: トークン節約のため、メールの精査・要約・下書き作成にはローカルモデル（GPT-OSS-20B等）を優先使用する。 - タスク: 未読メールのチェックと報告。 - Recorded Mission Control V2 progress: index/tasks/calendar overh"
   },
@@ -126,12 +132,6 @@
     "preview": "研究背景：MAFB変異によるMCTO発症メカニズムの解明 1. 研究の対象と目的 - 対象: 超希少な骨吸収疾患「多中心性手根足根骨溶解症 (MCTO)」 - 原因: 転写因子 MAFB の酸性転写活性化ドメイン（TAD）における変異。 - 目的: 詳細な分子メカニズムの解明（現状は未解明）。 2. 使用しているモデル系 - MCTO KIマウス: - 患者と同様の変異（Mafb MCTO変異）を"
   },
   {
-    "filename": "2026-02-20.md",
-    "path": "memory/2026-02-20.md",
-    "mtime": "2026-02-20T03:17:27.714Z",
-    "preview": "2026-02-20 - MCTO/MAFB Research: - Colony Assay Result (Day 4): - Source: 2026-02-13_MCTOコロニー観察_Day4.md (GitHub). - MCTO (Avg 35.0) vs WT (Avg 12.7). MCTO showed ~2.8x increase. - Bone Marrow Cell Cou"
-  },
-  {
     "filename": "mission_control_sop.md",
     "path": "memory/mission_control_sop.md",
     "mtime": "2026-02-19T06:46:49.393Z",
@@ -157,7 +157,7 @@
   },
   {
     "filename": "2026-02-19.md",
-    "path": "memory/2026-02-19.md",
+    "path": "memory/archive/2026-02/2026-02-19.md",
     "mtime": "2026-02-19T03:30:12.762Z",
     "preview": "2026-02-19 - 高橋智先生の退官記念式典に関する打ち合わせ日程が決定。 - 日時: 3月4日（水）13:00〜 - 場所: 高橋先生の研究室 - 退官記念式典の進捗状況（高橋先生よりOKが出た事項）: - 企業協賛の取り扱い（ブース出展や広告掲載）: OK - 運営費の公費支出（シンポジウム形式による支出）: OK（トランスボーダー運営委員会で承認予定） - 外部招待演者・来賓については"
   },
@@ -169,7 +169,7 @@
   },
   {
     "filename": "2026-02-18.md",
-    "path": "memory/2026-02-18.md",
+    "path": "memory/archive/2026-02/2026-02-18.md",
     "mtime": "2026-02-18T11:09:13.803Z",
     "preview": "2026-02-18 💼 作業ログ - clawd フォルダの整理: - query.json, query_90.json, query_reset.json, sessions.json を tmp/ へ移動。 - tmp_ibaraki240924.txt を archive/ へ移動。 - robots.txt (直下および site-public/) を archive/ へ移動し、s"
   },
@@ -193,13 +193,13 @@
   },
   {
     "filename": "2026-02-17.md",
-    "path": "memory/2026-02-17.md",
+    "path": "memory/archive/2026-02/2026-02-17.md",
     "mtime": "2026-02-17T00:38:20.193Z",
     "preview": "2026-02-17 - Gmail Label Cleanup: センセイ requested a cleanup of his \"chaotic\" label list. - Created a parent label [Archive] (ID: Label_35) to house old projects. - Identified 7 labels with zero message"
   },
   {
     "filename": "2026-02-16.md",
-    "path": "memory/2026-02-16.md",
+    "path": "memory/archive/2026-02/2026-02-16.md",
     "mtime": "2026-02-16T10:22:09.174Z",
     "preview": "2026-02-16 - Project Research Hearing: センセイ successfully completed the University Project Research Hearing (プロジェクト研究 新規ヒアリング審査会). He strategically performed a presentation on a TV monitor, which set h"
   },
@@ -253,19 +253,19 @@
   },
   {
     "filename": "2026-02-15.md",
-    "path": "memory/2026-02-15.md",
+    "path": "memory/archive/2026-02/2026-02-15.md",
     "mtime": "2026-02-15T13:22:15.673Z",
     "preview": "2026-02-15 - Communication Issues: Connectivity was unstable earlier today; WhatsApp gateway timed out (408). センセイ inquired about offline capabilities. - Offline Mode: Confirmed that local models (LMS"
   },
   {
     "filename": "2026-02-14.md",
-    "path": "memory/2026-02-14.md",
+    "path": "memory/archive/2026-02/2026-02-14.md",
     "mtime": "2026-02-13T16:47:27.355Z",
     "preview": "2026-02-14 - Task/Schedule: - 17:00 Tsukuba Univ. (Colony count / Fertilized egg storage check) reminder set. - User explicitly requested active emoji reactions in all group chats as a sign of \"seen/u"
   },
   {
     "filename": "2026-02-13.md",
-    "path": "memory/2026-02-13.md",
+    "path": "memory/archive/2026-02/2026-02-13.md",
     "mtime": "2026-02-13T11:35:55.137Z",
     "preview": "2026-02-13 - FCM-app (CellQuest-style browser app) project is actively in Iteration 2 under strict A/B/C loop governance with no-stop confirmation style requested by センセイ. - Repo/context established a"
   },
@@ -283,7 +283,7 @@
   },
   {
     "filename": "2026-02-12.md",
-    "path": "memory/2026-02-12.md",
+    "path": "memory/archive/2026-02/2026-02-12.md",
     "mtime": "2026-02-12T13:05:23.020Z",
     "preview": "- iScienceの同一著者のレビューをすでに3回担当。レビューワー3はセンセイ。今回は抽象的かつ厳しめにコメントし、全改訂で良いレビューになることを期待。今後別誌で同内容のレビューが回る可能性あり（記録しておく）。 - センセイ希望：今後、メール通知はTelegramチャンネル「メール（chat:-5200373277）」へ送る。 - 工藤先生コメント反映のv6ドラフト、2/16会議用決定シー"
   },
@@ -307,13 +307,13 @@
   },
   {
     "filename": "2026-02-11.md",
-    "path": "memory/2026-02-11.md",
+    "path": "memory/archive/2026-02/2026-02-11.md",
     "mtime": "2026-02-11T12:56:55.182Z",
     "preview": "- センセイは hamamichi@md.tsukuba.ac.jp 宛のメールを積極的にチェックしてほしい（重要メールが多い）。 - Gmail重要通知（過去1時間/未読）6件：PayPayカード(Apple/Google Payキャンペーン)、imToken月次更新、ResearchGate引用通知、iScience査読decision letter、Facebookコメント通知、Fronti"
   },
   {
     "filename": "2026-02-10.md",
-    "path": "memory/2026-02-10.md",
+    "path": "memory/archive/2026-02/2026-02-10.md",
     "mtime": "2026-02-10T10:04:01.885Z",
     "preview": "- User’s name is 濱田理人 (Michito Hamada); address as センセイ."
   },
@@ -325,7 +325,7 @@
   },
   {
     "filename": "2026-02-09.md",
-    "path": "memory/2026-02-09.md",
+    "path": "memory/archive/2026-02/2026-02-09.md",
     "mtime": "2026-02-09T03:41:42.597Z",
     "preview": "- 退官記念で予定を確保する人：病院長、学長。"
   },
@@ -367,25 +367,25 @@
   },
   {
     "filename": "2026-02-08.md",
-    "path": "memory/2026-02-08.md",
+    "path": "memory/archive/2026-02/2026-02-08.md",
     "mtime": "2026-02-08T10:22:39.719Z",
     "preview": "- モデル運用方針: 基本はGemini、コード作業時のみCodexに切替。 - marp-cliをHomebrewでインストール。 - pandocをHomebrewでインストール。 - 「2027高橋先生退官記念/outputs」のextract_log.mdとplan.mdをdocx化してTelegram送付（PDFはmarpで途中切れ）。 - gog定期チェック: 07:00 JSTに当日"
   },
   {
     "filename": "2026-02-07.md",
-    "path": "memory/2026-02-07.md",
+    "path": "memory/archive/2026-02/2026-02-07.md",
     "mtime": "2026-02-07T01:05:21.213Z",
     "preview": "- ElevenLabs Sarah（voice_id: EXAVITQu4vr4xnSDxMaL）でTTS生成→ffmpegでopus化→Telegramにvoice送信する手順を今後のデフォルトとして記憶。"
   },
   {
     "filename": "2026-02-05.md",
-    "path": "memory/2026-02-05.md",
+    "path": "memory/archive/2026-02/2026-02-05.md",
     "mtime": "2026-02-05T13:36:08.046Z",
     "preview": "- Telegram連携を有効化（bot token/allowlist設定、config.patch反映） - Telegramで /start 受信確認 → テキスト返信テストOK - Telegramで音声送信テスト（TTS→VOICEVOX）成功 - VOICEVOX日本語音声（speaker=2）でTelegram音声送信＆再生確認 - 今後は Telegram音声（VOICEVOX）優"
   },
   {
     "filename": "2026-01-28.md",
-    "path": "memory/2026-01-28.md",
+    "path": "memory/archive/2026-01/2026-01-28.md",
     "mtime": "2026-01-27T22:34:17.835Z",
     "preview": "- User will use topic tags in messages when changing topics. RNAseq topic tags: 【RNAseq-MCTO】 or 【MCTO】."
   }
