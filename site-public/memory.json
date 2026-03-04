@@ -1,15 +1,69 @@
 [
   {
-    "filename": "2026-02-20.md",
-    "path": "memory/archive/2026-02/2026-02-20.md",
-    "mtime": "2026-03-02T13:14:39.805Z",
-    "preview": "2026-02-20 - MCTO/MAFB Research: - Colony Assay Result (Day 4): - Source: 2026-02-13_MCTOコロニー観察_Day4.md (GitHub). - MCTO (Avg 35.0) vs WT (Avg 12.7). MCTO showed ~2.8x increase. - Bone Marrow Cell Cou"
+    "filename": "高橋先生ミーティング_深掘り資料_2026-03-04.md",
+    "path": "memory/高橋先生ミーティング_深掘り資料_2026-03-04.md",
+    "mtime": "2026-03-03T16:24:47.412Z",
+    "preview": "高橋先生ミーティング資料（深掘り版） 作成日: 2026-03-04 目的: 3/13開催に向けて、意思決定ポイントを高橋先生と明確化し、次アクションを確定する --- 1. 開催日・会場（最優先で確定すべき軸） いまの前提 - 開催日: 2027/3/13（土） - 会場: つくば国際会議場（エポカルつくば） - 3月中に予約金（概算5万円前後）支払いを進める必要あり 高橋先生に確認すること -"
+  },
+  {
+    "filename": "2026-03-04.md",
+    "path": "memory/2026-03-04.md",
+    "mtime": "2026-03-03T16:07:02.313Z",
+    "preview": "- 2026-03-04 01:02 JST: OpenClaw を 2026.3.2 に更新し、Gateway も再起動して最新リリースの機能（PDFツール、SecretRef強化、Streaming defaults 等）を取り込んだ。これは /tmp 付近での npm update コマンドの警告を伴ったが成功している。 - 2026-03-04 01:04 JST: テレグラム経由のメッセ"
   },
   {
     "filename": "todo.md",
     "path": "memory/todo.md",
-    "mtime": "2026-03-02T04:43:22.169Z",
-    "preview": "- [ ] コロニーをカウントする @Bot 2026-02-24 - [ ] お子様の体調記録を継続する（過敏性腸症候群の疑い） @Bot - [ ] 毎朝お子様の体調記録をリマインドする @Bot - [ ] 買い物リストを確認・購入する (隙間用LANケーブル) @濱田 - [x] つくば市役所子ども支援書類 @濱田 - [x] 大学プロジェクト研究ヒアリング準備 @濱田 - [x] 2月2"
+    "mtime": "2026-03-03T15:56:09.165Z",
+    "preview": "- [ ] 令和８年度動物実験計画書及び令和７年度動物実験結果報告書を作成し、3/23(月)までに提出 @濱田 - [ ] 納豆抽出物をタカのフーズから受け取る @Bot - [ ] MCTOの次のtodoは末梢血解析 @濱田"
+  },
+  {
+    "filename": "2026-03-03.md",
+    "path": "memory/dm-daily/2026-03-03.md",
+    "mtime": "2026-03-03T12:24:11.619Z",
+    "preview": "DM Daily Summary: 2026-03-03 (Tue) 🌅 朝の開始（6:00 AM） ✅ 前日までの要約 - 成績管理: 実習の成績表作成完了 (@濱田) - 教育アプリ開発: 中学 2 年理科「天気クイズアプリ」基礎編 (30 問) リリース＆誤記修正適用 (@Bot) 🚧 継続中のタスク - ハーバード案件: プラスミド送付に伴う輸出管理手続きの検討 - 研究解析: 破骨細"
+  },
+  {
+    "filename": "2026-03-03.md",
+    "path": "memory/2026-03-03.md",
+    "mtime": "2026-03-03T07:02:00.548Z",
+    "preview": "- SciRep Guest Editor登録手続き（Smartsheet・写真・返信）完了"
+  },
+  {
+    "filename": "rui_health.md",
+    "path": "memory/rui_health.md",
+    "mtime": "2026-03-03T01:35:47.092Z",
+    "preview": "瑠生の健康状態の記録 概要 - 対象：瑠生（りゅうせい） - 生年月日：2012年9月6日 - 目的：日々の健康状態を記録し、長期的な変化を把握する。 記録項目 - 体温 - 血圧 - 脈拍 - 体重 - 食事内容 - 睡眠時間 - 運動量 - 気分 - 特記事項（症状、薬の服用など） 記録ルール - センセイから瑠生の健康状態に関する報告があった際、このファイルに追記する。 記録ログ"
+  },
+  {
+    "filename": "shotaro_health.md",
+    "path": "memory/shotaro_health.md",
+    "mtime": "2026-03-03T01:34:48.170Z",
+    "preview": "2026年3月3日 3月1日まで異常なし。 3月2日: 頭痛のため欠席。 --- 基本情報 生年月日: 2011年5月19日 --- 備考 過敏性腸症候群の疑いあり。"
+  },
+  {
+    "filename": "google_models_2026.md",
+    "path": "memory/google_models_2026.md",
+    "mtime": "2026-03-02T23:34:51.158Z",
+    "preview": "最新のGoogle Gemini APIモデル一覧 (2026年3月現在) 最近の検索結果に基づくGoogle Geminiモデルの動向まとめです。 主な最新モデル - Gemini 3.1 Pro (Preview) (gemini-3.1-pro-preview) - Googleの最新の推論優先（Reasoning-first）モデル。複雑なエージェントワークフローやコーディングに最適化され"
+  },
+  {
+    "filename": "rui_back_pain.md",
+    "path": "memory/rui_back_pain.md",
+    "mtime": "2026-03-02T23:04:19.159Z",
+    "preview": "瑠生の腰の痛み記録 概要 - 対象：瑠生（中学1年生） - 症状：腰の痛み - 開始時期：2026年2月中旬頃（現在発症から約2週間） - 目的：日々の痛みの変化を記録し、回復状況を把握する。 記録ルール - センセイから瑠生の腰の痛みに関する報告があった際、このファイルに追記する。 - 痛みレベル（1-10）、痛む部位、活動への影響などを中心に記録する。 記録ログ 2026-03-03 - 発症"
+  },
+  {
+    "filename": "2026-03-02.md",
+    "path": "memory/dm-daily/2026-03-02.md",
+    "mtime": "2026-03-02T20:57:05.512Z",
+    "preview": "DM Daily Summary: 2026-03-02 (Mon) ✅ Key Tasks Done - 成績管理: 実習の成績表をつける作業を完了しました (@濱田) - 教育アプリ開発: 中学2年理科「天気クイズアプリ」の基礎編(30問)をリリースし、誤記修正を適用しました (@Bot) 🤝 Decisions & Context - クイズアプリ拡張: 次のステップとして、天気図や飽和水"
+  },
+  {
+    "filename": "2026-02-20.md",
+    "path": "memory/archive/2026-02/2026-02-20.md",
+    "mtime": "2026-03-02T13:14:39.805Z",
+    "preview": "2026-02-20 - MCTO/MAFB Research: - Colony Assay Result (Day 4): - Source: 2026-02-13_MCTOコロニー観察_Day4.md (GitHub). - MCTO (Avg 35.0) vs WT (Avg 12.7). MCTO showed ~2.8x increase. - Bone Marrow Cell Cou"
   },
   {
     "filename": "2026-03-02.md",
