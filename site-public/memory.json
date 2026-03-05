@@ -1,5 +1,35 @@
 [
   {
+    "filename": "2026-03-06.md",
+    "path": "memory/2026-03-06.md",
+    "mtime": "2026-03-05T16:00:16.672Z",
+    "preview": "2026-03-06 リマインダー（1:00） - 【リマインダー】Gmail整理（夜間作業）：ラベル「重要/要返信/参照/処理済み」を作成（既存ラベルは触らない）。直近30日のメールだけ仕分け：重要/要返信は手動付与、その他は「処理済み」または「参照」。プロモ/ソーシャル/ショッピングは受信トレイから外して「参照」へ。システム通知（Synology/Google/Microsoft等）は「参照」"
+  },
+  {
+    "filename": "todo.md",
+    "path": "memory/todo.md",
+    "mtime": "2026-03-05T04:50:55.392Z",
+    "preview": "- [ ] 令和８年度動物実験計画書及び令和７年度動物実験結果報告書を作成し、3/23(月)までに提出 @濱田 - [ ] 納豆抽出物をタカのフーズから受け取る @Bot - [ ] MCTOの次のtodoは末梢血解析 @濱田 - [ ] 高橋先生の退官記念式典についての昨日の会議のまとめをやる @Bot"
+  },
+  {
+    "filename": "2026-03-05.md",
+    "path": "memory/2026-03-05.md",
+    "mtime": "2026-03-05T04:20:15.583Z",
+    "preview": "2026-03-05 メールグループ運用メモ（固定） - センセイ指示: この「メール」スレッドでは、トークンリセット後でも運用を忘れないように、Markdownで永続保存して参照すること。 - 実行ルール: 1. 未読メール確認はアシスタント側で gog を使って実施する（ユーザー手動前提にしない）。 2. 9時 / 13時 / 18時の定時チェックでは、重要案件の有無を必ず報告する。 3. 重"
+  },
+  {
+    "filename": "mail-thread-rules.md",
+    "path": "memory/projects/mail-thread-rules.md",
+    "mtime": "2026-03-05T04:20:15.551Z",
+    "preview": "メール（Telegramグループ）運用ルール 最終更新: 2026-03-05 センセイからの明示指示 - このスレッドでは、トークンリセット後でも運用を忘れないように、Markdownに保存したルールを参照して行動する。 - 未読メールはアシスタントが gog で必ず確認する。 - 定時（9時 / 13時 / 18時）に重要案件の有無を必ず報告する。 - 重要案件がない場合も「重要案件なし」と一"
+  },
+  {
+    "filename": "2026-03-04.md",
+    "path": "memory/dm-daily/2026-03-04.md",
+    "mtime": "2026-03-04T20:55:37.836Z",
+    "preview": "DM Daily Summary: 2026-03-04 (Wed) ✅ Key Tasks Done - Reviewed session instructions and prepared today’s summary request; no additional DM tasks recorded yet. 🤝 Decisions & Context - Continue monitor"
+  },
+  {
     "filename": "高橋先生ミーティング_深掘り資料_2026-03-04.md",
     "path": "memory/高橋先生ミーティング_深掘り資料_2026-03-04.md",
     "mtime": "2026-03-03T16:24:47.412Z",
@@ -10,12 +40,6 @@
     "path": "memory/2026-03-04.md",
     "mtime": "2026-03-03T16:07:02.313Z",
     "preview": "- 2026-03-04 01:02 JST: OpenClaw を 2026.3.2 に更新し、Gateway も再起動して最新リリースの機能（PDFツール、SecretRef強化、Streaming defaults 等）を取り込んだ。これは /tmp 付近での npm update コマンドの警告を伴ったが成功している。 - 2026-03-04 01:04 JST: テレグラム経由のメッセ"
-  },
-  {
-    "filename": "todo.md",
-    "path": "memory/todo.md",
-    "mtime": "2026-03-03T15:56:09.165Z",
-    "preview": "- [ ] 令和８年度動物実験計画書及び令和７年度動物実験結果報告書を作成し、3/23(月)までに提出 @濱田 - [ ] 納豆抽出物をタカのフーズから受け取る @Bot - [ ] MCTOの次のtodoは末梢血解析 @濱田"
   },
   {
     "filename": "2026-03-03.md",
