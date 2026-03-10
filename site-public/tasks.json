@@ -54,5 +54,47 @@
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
+  },
+  {
+    "id": "task-8",
+    "title": "実習室で使う頭蓋骨の3Dプリント模型をもう一つ作る",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-9",
+    "title": "実習室のサンプルが乾燥しないよう、新しい乾燥剤を置きに行く",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-10",
+    "title": "実習室で追加購入が必要なものを確認し、リスト化する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-11",
+    "title": "可能なら実習室のプロジェクターを更新する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-12",
+    "title": "不要な巨大レーザープリンターの廃棄を進める",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-13",
+    "title": "人の赤ちゃんの骨の模型を展示できるよう工夫する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
   }
 ]
