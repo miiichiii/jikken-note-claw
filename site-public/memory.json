@@ -2,8 +2,38 @@
   {
     "filename": "todo.md",
     "path": "memory/todo.md",
-    "mtime": "2026-03-10T04:19:12.566Z",
+    "mtime": "2026-03-11T11:30:18.662Z",
     "preview": "- [ ] 令和８年度動物実験計画書及び令和７年度動物実験結果報告書を作成し、3/23(月)までに提出 @濱田 - [ ] 納豆抽出物をタカのフーズから受け取る @Bot - [ ] MCTOの次のtodoは末梢血解析 @濱田 - [ ] 高橋先生の退官記念式典についての昨日の会議のまとめをやる @Bot - [ ] MCTO FACS解析の進捗を整理・実施する @濱田 - [ ] ユージニアさん"
+  },
+  {
+    "filename": "2026-03-11.md",
+    "path": "memory/2026-03-11.md",
+    "mtime": "2026-03-11T09:55:46.228Z",
+    "preview": "2026-03-11 - Downloads フォルダ（実体は ~/Library/CloudStorage/SynologyDrive-download へのリンク）について、2025年以前のファイルを年別フォルダへ整理した。追加で古いフォルダも年別フォルダへ移動し、約323件の古いフォルダを整理した。 - Synology Drive の on-demand 環境でも、同一ドライブ内での移動は"
+  },
+  {
+    "filename": "preferences.md",
+    "path": "memory/preferences.md",
+    "mtime": "2026-03-11T09:55:46.209Z",
+    "preview": "Preferences - Amazonの「いつものマスク」は https://www.amazon.co.jp/dp/B099Z7962T を使う。 - Amazonの「いつものコーヒーフィルター」は https://www.amazon.co.jp/dp/B00BJBOITS を使う。 - Amazonの「いつもの犬用歯みがきガム」は https://www.amazon.co.jp/dp/B"
+  },
+  {
+    "filename": "lessons.md",
+    "path": "memory/lessons.md",
+    "mtime": "2026-03-11T06:54:52.376Z",
+    "preview": "lessons - Telegramグループに追加されても反応しない時は、設定ファイル（openclaw.json）の channels.telegram.groups にそのグループIDが含まれているか確認し、なければ追加して openclaw gateway restart する。 - TelegramグループIDを追加する際は、requireMention: false, groupPoli"
+  },
+  {
+    "filename": "令和8年度動物実験計画書_更新案_draft.md",
+    "path": "memory/令和8年度動物実験計画書_更新案_draft.md",
+    "mtime": "2026-03-10T23:18:54.611Z",
+    "preview": "令和8年度動物実験計画書 / 令和7年度動物実験結果報告書 更新案ドラフト 作成日: 2026-03-11 参照元: - /0筑波大学書類関連/動物実験/令和７年度実験動物計画書/計画書/ - /0筑波大学書類関連/動物実験/令和６年度動物実験/報告書/ - /0筑波大学書類関連/動物実験/令和６年度動物実験/計画書/ --- まず結論 令和8年度の動物実験計画書は、令和7年度計画書をほぼそのまま"
+  },
+  {
+    "filename": "2026-03-10.md",
+    "path": "memory/dm-daily/2026-03-10.md",
+    "mtime": "2026-03-10T20:55:22.992Z",
+    "preview": "2026-03-10 DM Summary Key tasks done - No main-DM actions could be directly recovered from this cron session because agent:main:main history was not visible here. - Reviewed memory/todo.md and preserv"
   },
   {
     "filename": "2026-03-10.md",
@@ -168,12 +198,6 @@
     "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行。ラベルは「要返信/参照/処理済み」既存、「重要」はGmail API制約で作成不可（IMPORTANTを重要扱い）。直近30日 inbox 仕分け: system通知 8件→参照+INBOX除去、その他 7件→処理済み付与。"
   },
   {
-    "filename": "preferences.md",
-    "path": "memory/preferences.md",
-    "mtime": "2026-02-28T02:21:45.431Z",
-    "preview": "Preferences - Amazonの「いつものマスク」は https://www.amazon.co.jp/dp/B099Z7962T を使う。 - Amazonの「いつものコーヒーフィルター」は https://www.amazon.co.jp/dp/B00BJBOITS を使う。 - Amazonの「いつもの犬用歯みがきガム」は https://www.amazon.co.jp/dp/B"
-  },
-  {
     "filename": "2026-02-28.md",
     "path": "memory/archive/2026-02/2026-02-28.md",
     "mtime": "2026-02-27T16:04:42.926Z",
@@ -190,12 +214,6 @@
     "path": "memory/archive/2026-02/2026-02-27.md",
     "mtime": "2026-02-26T16:05:07.650Z",
     "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行（account: hamamicchi@gmail.com）。 - ラベル確認結果: 「要返信」「参照」「処理済み」は既存。\"重要\"はGmail APIで作成不可（invalidArgument）。代替としてシステムラベル IMPORTANT を重要扱い。 - 直近30日 in:inbox から自動仕分け実施: categ"
-  },
-  {
-    "filename": "lessons.md",
-    "path": "memory/lessons.md",
-    "mtime": "2026-02-26T01:19:00.286Z",
-    "preview": "lessons - Telegramグループに追加されても反応しない時は、設定ファイル（openclaw.json）の channels.telegram.groups にそのグループIDが含まれているか確認し、なければ追加して openclaw gateway restart する。 - TelegramグループIDを追加する際は、requireMention: false, groupPoli"
   },
   {
     "filename": "2026-02-26.md",
