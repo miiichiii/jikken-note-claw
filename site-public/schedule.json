@@ -1,61 +1,44 @@
 [
   {
-    "id": "63ed6626-9f27-4fe7-98de-9577d778ee49",
-    "name": "Hourly email check",
+    "id": "eb572853-9eb1-434a-9f7a-efeb8e3b344e",
+    "name": "Email check summary (2-hour, group-session direct)",
     "enabled": true,
-    "nextRunAt": 1772312274883,
+    "nextRunAt": 1773280800000,
     "lastStatus": "ok",
-    "target": "isolated"
-  },
-  {
-    "id": "bc785672-aad9-4d73-8785-ef3556cf92ff",
-    "name": "DM daily reset reminder + load 7-day summaries",
-    "enabled": true,
-    "nextRunAt": 1772312400000,
-    "expr": "0 6 * * *",
+    "expr": "0 7-21/2 * * *",
     "target": "main"
   },
   {
-    "id": "c9e96a07-a038-436c-b45f-0dc4ae47bf35",
-    "name": "Hourly Email Check (06-22 JST)",
+    "id": "6148e3df-8888-46b1-931b-c3ba3d8952c2",
+    "name": "memory-maintenance-every-10-days",
     "enabled": true,
-    "nextRunAt": 1772312400000,
-    "lastStatus": "ok",
-    "expr": "0 6-22 * * *",
-    "target": "isolated"
-  },
-  {
-    "id": "a4d009f3-2780-4ae3-a72e-66ab7c95e46e",
-    "name": "Daily gog calendar check (07:00 JST)",
-    "enabled": true,
-    "nextRunAt": 1772316000000,
+    "nextRunAt": 1773326198591,
     "lastStatus": "error",
-    "expr": "0 7 * * *",
-    "target": "isolated"
-  },
-  {
-    "id": "904f9981-2255-4b84-af46-1743a467f25f",
-    "name": "daily-todo-reminder-8am",
-    "enabled": true,
-    "nextRunAt": 1772319600000,
-    "lastStatus": "error",
-    "expr": "0 8 * * *",
     "target": "isolated"
   },
   {
     "id": "85ab3588-1e36-492e-bf50-509c7fd14fe8",
     "name": "gmail-night-cleanup",
     "enabled": true,
-    "nextRunAt": 1772380800000,
+    "nextRunAt": 1773331200000,
     "lastStatus": "ok",
     "expr": "0 1 * * *",
     "target": "main"
   },
   {
+    "id": "2058cfc7-1827-4155-b1be-5807ba3137e4",
+    "name": "Nightly team page refresh",
+    "enabled": true,
+    "nextRunAt": 1773336600000,
+    "lastStatus": "error",
+    "expr": "0 30 2 * * *",
+    "target": "isolated"
+  },
+  {
     "id": "6711c3d4-7858-4197-a871-2c8e309fd024",
     "name": "Nightly Research Report & DB Update",
     "enabled": true,
-    "nextRunAt": 1772388000000,
+    "nextRunAt": 1773338400000,
     "lastStatus": "ok",
     "expr": "0 3 * * *",
     "target": "isolated"
@@ -64,7 +47,7 @@
     "id": "a84dd287-93f1-4125-b816-235e38972f2a",
     "name": "Nightly Memory Sync & Deploy",
     "enabled": true,
-    "nextRunAt": 1772395200000,
+    "nextRunAt": 1773345600000,
     "lastStatus": "ok",
     "expr": "0 5 * * *",
     "target": "isolated"
@@ -73,41 +56,27 @@
     "id": "655d1498-7145-42f7-91b2-d61656c5b606",
     "name": "DM daily summary writer",
     "enabled": true,
-    "nextRunAt": 1772398500000,
+    "nextRunAt": 1773348900000,
     "lastStatus": "ok",
     "expr": "55 5 * * *",
     "target": "isolated"
   },
   {
-    "id": "3de13987-e957-42f8-8fb7-7380f884d3f2",
-    "name": "Weekly Research Project Reports (oss-120B)",
+    "id": "904f9981-2255-4b84-af46-1743a467f25f",
+    "name": "Daily morning briefing (Calendar & Todo) @07:30",
     "enabled": true,
-    "nextRunAt": 1772409600000,
-    "lastStatus": "error",
-    "expr": "0 9 * * 1",
-    "target": "isolated"
-  },
-  {
-    "id": "6148e3df-8888-46b1-931b-c3ba3d8952c2",
-    "name": "memory-maintenance-every-10-days",
-    "enabled": true,
-    "nextRunAt": 1772462198555,
+    "nextRunAt": 1773354600000,
     "lastStatus": "ok",
+    "expr": "30 7 * * *",
     "target": "isolated"
   },
   {
-    "id": "0dd9c533-6fe9-4032-a9f4-a00ad83a6ad9",
-    "name": "DPチェック表 入力リマインダー (3/9)",
+    "id": "1dcc7bb9-31e6-44f8-80fa-9e4b2073da54",
+    "name": "Daily reminder for recomb DNA docs",
     "enabled": true,
-    "nextRunAt": 1773014400000,
-    "target": "isolated"
-  },
-  {
-    "id": "4230c4f4-d272-4606-8754-dbb2c3527385",
-    "name": "DPチェック表 入力リマインダー (3/11)",
-    "enabled": true,
-    "nextRunAt": 1773187200000,
-    "target": "isolated"
+    "nextRunAt": 1773356400047,
+    "lastStatus": "ok",
+    "target": "main"
   },
   {
     "id": "4b04c735-cbd9-4fe1-94c4-e580b4141bc2",
@@ -115,5 +84,14 @@
     "enabled": true,
     "nextRunAt": 1773532800000,
     "target": "main"
+  },
+  {
+    "id": "3de13987-e957-42f8-8fb7-7380f884d3f2",
+    "name": "Weekly Research Project Reports (oss-120B)",
+    "enabled": true,
+    "nextRunAt": 1773619200000,
+    "lastStatus": "ok",
+    "expr": "0 9 * * 1",
+    "target": "isolated"
   }
 ]

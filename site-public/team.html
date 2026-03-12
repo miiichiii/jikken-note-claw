@@ -1,156 +1,435 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>AI Team Structure - Mission Control</title>
+    <title>Operations Map | Mission Control</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        midnight: '#020617',
+                        panel: '#0f172a',
+                        cyan: {
+                            300: '#67e8f9',
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                        },
+                        violet: {
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                        },
+                        emerald: {
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                        },
+                        amber: {
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        },
+                        rose: {
+                            300: '#fda4af',
+                            400: '#fb7185',
+                        }
+                    }
+                }
+            }
         }
-        .dept-header {
-            writing-mode: vertical-lr;
-            text-orientation: mixed;
+    </script>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 28%),
+                radial-gradient(circle at top right, rgba(139, 92, 246, 0.14), transparent 32%),
+                linear-gradient(180deg, #020617 0%, #0b1120 42%, #020617 100%);
+            color: #e2e8f0;
+        }
+        .grid-overlay::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+            mask-image: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent 78%);
+        }
+        .panel {
+            background: rgba(15, 23, 42, 0.74);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(148, 163, 184, 0.14);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.25);
+        }
+        .panel-soft {
+            background: rgba(15, 23, 42, 0.58);
+            border: 1px solid rgba(148, 163, 184, 0.12);
+        }
+        .glow-cyan {
+            box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.12), 0 0 30px rgba(34, 211, 238, 0.08);
+        }
+        .glow-violet {
+            box-shadow: inset 0 0 0 1px rgba(167, 139, 250, 0.12), 0 0 30px rgba(139, 92, 246, 0.08);
+        }
+        .scan {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        .scan::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 96px;
+            top: -120px;
+            background: linear-gradient(180deg, rgba(34, 211, 238, 0), rgba(34, 211, 238, 0.08), rgba(34, 211, 238, 0));
+            animation: sweep 8s linear infinite;
+        }
+        @keyframes sweep {
+            0% { top: -120px; }
+            100% { top: calc(100% + 120px); }
+        }
+        .status-dot {
+            box-shadow: 0 0 12px currentColor;
+        }
+        .flow-arrow::after {
+            content: "\f061";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: rgba(148, 163, 184, 0.45);
+            font-size: 0.8rem;
+        }
+        @media (max-width: 767px) {
+            .flow-arrow::after {
+                content: "\f063";
+            }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen pb-20">
-    <div class="max-w-7xl mx-auto px-6 py-12">
-        <nav class="mb-8">
-            <a href="index.html" class="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2 text-sm font-medium">
-                <i class="fa-solid fa-chevron-left"></i> Back to Dashboard
-            </a>
-        </nav>
-
-        <header class="mb-16 text-center">
-            <h1 class="text-5xl font-extrabold tracking-tight text-slate-900 mb-4">AI Team Structure</h1>
-            <p class="text-xl text-slate-600">Roles and Responsibilities of your Virtual Research Staff</p>
-        </header>
-
-        <main class="space-y-16">
-            <!-- Leadership -->
-            <section>
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="h-px flex-1 bg-slate-200"></div>
-                    <h2 class="text-sm uppercase tracking-[0.3em] font-bold text-slate-400">Leadership</h2>
-                    <div class="h-px flex-1 bg-slate-200"></div>
+<body class="min-h-screen grid-overlay selection:bg-cyan-500/30">
+    <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/75 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3 min-w-0">
+                <a href="index.html" class="text-slate-400 hover:text-cyan-400 transition-colors shrink-0" aria-label="Back to dashboard">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+                <div class="w-10 h-10 rounded-2xl border border-cyan-400/20 bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0">
+                    <i class="fa-solid fa-tower-broadcast"></i>
                 </div>
-                <div class="flex justify-center">
-                    <div class="glass-card rounded-3xl p-8 max-w-md text-center border-t-8 border-indigo-500">
-                        <div class="w-24 h-24 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
-                            <i class="fa-solid fa-crown text-4xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-1">macstudio-bot</h3>
-                        <p class="text-indigo-500 font-mono text-sm mb-6 uppercase tracking-wider">Chief Orchestrator</p>
-                        <div class="text-left space-y-4">
-                            <div>
-                                <p class="text-[10px] font-bold text-slate-400 uppercase">Primary Models</p>
-                                <p class="text-sm font-semibold text-slate-700">Gemini 3 Pro / Flash</p>
+                <div class="min-w-0">
+                    <div class="font-mono text-[11px] tracking-[0.28em] text-cyan-400 font-bold truncate">OPERATIONS MAP</div>
+                    <div class="text-xs text-slate-500 truncate">Mission Control staffing and routing view</div>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-6 font-mono text-xs">
+                <div class="flex items-center gap-2 text-slate-400">
+                    <span>POSTURE</span>
+                    <span class="text-emerald-400 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 status-dot"></span>LIVE</span>
+                </div>
+                <div class="h-4 w-px bg-slate-800"></div>
+                <div class="text-slate-400">ORCHESTRATOR <span class="text-cyan-400">openai-codex/gpt-5.4</span></div>
+                <div class="h-4 w-px bg-slate-800"></div>
+                <div id="clock" class="text-slate-500">00:00:00 JST</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6 md:py-10 space-y-6 md:space-y-8">
+        <section class="grid xl:grid-cols-[1.2fr_0.8fr] gap-6 items-start">
+            <div class="panel glow-cyan rounded-[28px] p-6 md:p-8 relative overflow-hidden">
+                <div class="scan"></div>
+                <div class="flex flex-wrap items-center gap-2 mb-4 text-[11px] font-mono tracking-[0.28em] uppercase">
+                    <span class="text-cyan-400">Command structure</span>
+                    <span class="text-slate-700">/</span>
+                    <span class="text-slate-500">DM-first orchestration</span>
+                </div>
+                <h1 class="text-3xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    A secretary at the deck,<br>
+                    agents in the field.
+                </h1>
+                <p class="mt-5 max-w-3xl text-sm md:text-lg text-slate-300 leading-relaxed">
+                    This system is no longer presented as a team card wall. It behaves like an operations floor: センセイ talks to one command deck, the command deck opens task rooms, and heavyweight execution is pushed outward to sub-agents while the main DM stays clean.
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2 text-xs font-mono">
+                    <span class="px-3 py-1.5 rounded-full border border-cyan-400/20 bg-cyan-500/10 text-cyan-300">DM = command deck</span>
+                    <span class="px-3 py-1.5 rounded-full border border-violet-400/20 bg-violet-500/10 text-violet-300">threads = task rooms</span>
+                    <span class="px-3 py-1.5 rounded-full border border-emerald-400/20 bg-emerald-500/10 text-emerald-300">local AI = simple only</span>
+                    <span class="px-3 py-1.5 rounded-full border border-amber-400/20 bg-amber-500/10 text-amber-300">Thunderbird = tmux + Peekaboo</span>
+                </div>
+            </div>
+
+            <aside class="panel rounded-[28px] p-5 md:p-6">
+                <div class="flex items-center justify-between gap-3 mb-4">
+                    <div>
+                        <div class="font-mono text-[11px] tracking-[0.25em] uppercase text-slate-500">Mission rail</div>
+                        <h2 class="text-xl font-bold text-white mt-1">Who does what</h2>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-full border border-emerald-400/20 text-emerald-400 text-[11px] font-mono">CURRENT MODEL</span>
+                </div>
+                <div class="space-y-3">
+                    <div class="panel-soft rounded-2xl p-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 text-cyan-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-headset"></i>
                             </div>
-                            <p class="text-sm text-slate-600 leading-relaxed">センセイとの対話、全サブエージェントの指揮・監督、長期記憶の管理、および重要な意思決定を統括します。</p>
+                            <div>
+                                <div class="text-white font-semibold">macstudio-bot</div>
+                                <div class="text-cyan-300 text-sm">Secretary / Orchestrator</div>
+                                <p class="mt-2 text-sm text-slate-400">Owns intake, coordination, synthesis, and the polished reply back to センセイ.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-soft rounded-2xl p-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-violet-500/10 border border-violet-400/20 text-violet-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">DM</div>
+                                <div class="text-violet-300 text-sm">Command Deck</div>
+                                <p class="mt-2 text-sm text-slate-400">The single front door. Clarification, prioritization, approvals, and final answers stay here.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-soft rounded-2xl p-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-400/20 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-door-open"></i>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">Work Threads</div>
+                                <div class="text-amber-300 text-sm">Task Rooms</div>
+                                <p class="mt-2 text-sm text-slate-400">Used when work needs focused context, parallelism, or isolation from the main conversation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section class="panel glow-violet rounded-[28px] p-5 md:p-7">
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5">
+                <div>
+                    <div class="font-mono text-[11px] tracking-[0.25em] uppercase text-violet-400">Dispatch flow</div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">How work moves through the room</h2>
+                </div>
+                <p class="text-sm text-slate-500 max-w-xl">Mobile-first strip: read top to bottom on phone, left to right on desktop.</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-3 md:gap-4">
+                <div class="rounded-3xl border border-cyan-400/18 bg-cyan-500/6 p-4 md:p-5 flex flex-col gap-3 flow-arrow">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-mono tracking-[0.25em] uppercase text-cyan-400">01 intake</span>
+                        <i class="fa-solid fa-inbox text-cyan-300"></i>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg">センセイ → DM</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">Requests arrive in DM, where macstudio-bot interprets intent and decides whether the task is immediate, light, or delegation-worthy.</p>
+                </div>
+                <div class="rounded-3xl border border-violet-400/18 bg-violet-500/6 p-4 md:p-5 flex flex-col gap-3 flow-arrow">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-mono tracking-[0.25em] uppercase text-violet-400">02 routing</span>
+                        <i class="fa-solid fa-shuffle text-violet-300"></i>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg">Triage at deck</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">If the job is tiny, answer inline. If it needs concentration, a work thread becomes the task room and a sub-agent gets the assignment.</p>
+                </div>
+                <div class="rounded-3xl border border-amber-400/18 bg-amber-500/6 p-4 md:p-5 flex flex-col gap-3 flow-arrow">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-mono tracking-[0.25em] uppercase text-amber-400">03 execute</span>
+                        <i class="fa-solid fa-gears text-amber-300"></i>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg">Task room work</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">Heavy coding, research passes, drafting, review loops, and multi-step work are handled outside the main chat so the deck stays uncluttered.</p>
+                </div>
+                <div class="rounded-3xl border border-emerald-400/18 bg-emerald-500/6 p-4 md:p-5 flex flex-col gap-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-mono tracking-[0.25em] uppercase text-emerald-400">04 return</span>
+                        <i class="fa-solid fa-circle-check text-emerald-300"></i>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg">Back to deck</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">Sub-agents hand back a concise result. macstudio-bot integrates it and replies cleanly, without leaking messy process details.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid xl:grid-cols-[0.92fr_1.08fr] gap-6">
+            <section class="panel rounded-[28px] p-5 md:p-7">
+                <div class="flex items-center gap-2 mb-5">
+                    <i class="fa-solid fa-route text-cyan-400"></i>
+                    <h2 class="font-mono text-sm font-bold tracking-[0.24em] uppercase text-cyan-400">Routing policy</h2>
+                </div>
+                <div class="space-y-3">
+                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-xs font-mono uppercase tracking-[0.22em] text-slate-500">Main / orchestrator</span>
+                            <span class="text-cyan-400 font-mono text-sm md:text-base">openai-codex/gpt-5.4</span>
+                        </div>
+                        <p class="mt-2 text-sm text-slate-400">Default control-plane model for intake, synthesis, and final response quality.</p>
+                    </div>
+                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-xs font-mono uppercase tracking-[0.22em] text-slate-500">Heavy sub-agent work prefers</span>
+                            <span class="text-violet-300 font-mono text-sm md:text-base">openai/gpt-5.4</span>
+                            <span class="text-violet-300 font-mono text-sm md:text-base">gemini-3.1 pro</span>
+                        </div>
+                        <p class="mt-2 text-sm text-slate-400">Use when the job needs depth, independent execution, or a large reasoning budget.</p>
+                    </div>
+                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-xs font-mono uppercase tracking-[0.22em] text-slate-500">Light / fast tasks</span>
+                            <span class="text-amber-300 font-mono text-sm md:text-base">gemini-3-flash-preview</span>
+                        </div>
+                        <p class="mt-2 text-sm text-slate-400">Use for quick bounded transformations, triage, short summaries, and lightweight assistive work.</p>
+                    </div>
+                    <div class="rounded-2xl border border-emerald-400/15 bg-emerald-500/6 p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-plug-circle-bolt text-emerald-400"></i>
+                            <span class="text-emerald-300 font-semibold">Local AI policy</span>
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed">Local models are not the general default. They are reserved for truly simple, structured, or offline-friendly tasks where minimal reasoning is enough.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel rounded-[28px] p-5 md:p-7">
+                <div class="flex items-center gap-2 mb-5">
+                    <i class="fa-solid fa-sitemap text-violet-400"></i>
+                    <h2 class="font-mono text-sm font-bold tracking-[0.24em] uppercase text-violet-400">Operating lanes</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="grid grid-cols-[auto_1fr] gap-4 items-start rounded-3xl border border-cyan-400/15 bg-cyan-500/5 p-4 md:p-5">
+                        <div class="w-11 h-11 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 text-cyan-400 flex items-center justify-center"><i class="fa-solid fa-helmet-un"></i></div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <h3 class="text-white font-semibold text-lg">Command Deck Lane</h3>
+                                <span class="text-[11px] font-mono px-2 py-1 rounded-full border border-cyan-400/20 text-cyan-300">ALWAYS ON</span>
+                            </div>
+                            <p class="mt-2 text-sm text-slate-300 leading-relaxed">The DM is where the relationship lives. It handles prioritization, confidence checks, approval points, and the final human-facing output.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-[auto_1fr] gap-4 items-start rounded-3xl border border-violet-400/15 bg-violet-500/5 p-4 md:p-5">
+                        <div class="w-11 h-11 rounded-2xl bg-violet-500/10 border border-violet-400/20 text-violet-400 flex items-center justify-center"><i class="fa-solid fa-people-arrows"></i></div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <h3 class="text-white font-semibold text-lg">Sub-agent Lane</h3>
+                                <span class="text-[11px] font-mono px-2 py-1 rounded-full border border-violet-400/20 text-violet-300">HEAVY WORK</span>
+                            </div>
+                            <p class="mt-2 text-sm text-slate-300 leading-relaxed">Builds, reviews, refactors, long research passes, drafting bursts, and anything likely to bloat the main context get dispatched here.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-[auto_1fr] gap-4 items-start rounded-3xl border border-amber-400/15 bg-amber-500/5 p-4 md:p-5">
+                        <div class="w-11 h-11 rounded-2xl bg-amber-500/10 border border-amber-400/20 text-amber-400 flex items-center justify-center"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <h3 class="text-white font-semibold text-lg">Flash Lane</h3>
+                                <span class="text-[11px] font-mono px-2 py-1 rounded-full border border-amber-400/20 text-amber-300">LIGHT TASKS</span>
+                            </div>
+                            <p class="mt-2 text-sm text-slate-300 leading-relaxed">Short, bounded work that benefits from speed over depth routes to the fast model tier rather than the heavy execution path.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-[auto_1fr] gap-4 items-start rounded-3xl border border-emerald-400/15 bg-emerald-500/5 p-4 md:p-5">
+                        <div class="w-11 h-11 rounded-2xl bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 flex items-center justify-center"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <h3 class="text-white font-semibold text-lg">Local Utility Lane</h3>
+                                <span class="text-[11px] font-mono px-2 py-1 rounded-full border border-emerald-400/20 text-emerald-300">STRICTLY SIMPLE</span>
+                            </div>
+                            <p class="mt-2 text-sm text-slate-300 leading-relaxed">For truly simple or structured tasks only. If judgment, polish, or non-trivial reasoning matters, route back to frontier models instead.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="grid lg:grid-cols-[1.05fr_0.95fr] gap-6">
+            <section class="panel rounded-[28px] p-5 md:p-7">
+                <div class="flex items-center gap-2 mb-5">
+                    <i class="fa-solid fa-display text-amber-400"></i>
+                    <h2 class="font-mono text-sm font-bold tracking-[0.24em] uppercase text-amber-400">Special operator path</h2>
+                </div>
+                <div class="rounded-[26px] border border-amber-400/16 bg-amber-500/6 p-4 md:p-5">
+                    <div class="grid sm:grid-cols-[1fr_auto_1fr_auto_1fr] gap-3 items-center">
+                        <div class="rounded-2xl bg-slate-950/45 border border-slate-800 p-4">
+                            <div class="text-xs font-mono tracking-[0.22em] uppercase text-slate-500">Drafting</div>
+                            <div class="mt-1 text-white font-semibold">Content is prepared</div>
+                            <p class="mt-2 text-sm text-slate-400">Reasoning and wording can be produced elsewhere first.</p>
+                        </div>
+                        <div class="hidden sm:flex justify-center text-slate-600"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="rounded-2xl bg-slate-950/45 border border-amber-400/18 p-4">
+                            <div class="text-xs font-mono tracking-[0.22em] uppercase text-amber-400">Execution</div>
+                            <div class="mt-1 text-white font-semibold">tmux + Peekaboo</div>
+                            <p class="mt-2 text-sm text-slate-300">Thunderbird drafts are saved through the UI automation lane.</p>
+                        </div>
+                        <div class="hidden sm:flex justify-center text-slate-600"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="rounded-2xl bg-slate-950/45 border border-slate-800 p-4">
+                            <div class="text-xs font-mono tracking-[0.22em] uppercase text-slate-500">Boundary</div>
+                            <div class="mt-1 text-white font-semibold">Draft only</div>
+                            <p class="mt-2 text-sm text-slate-400">The system prepares the draft. Sending stays with the human.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Development & Design -->
-                <section class="space-y-6">
-                    <h2 class="text-lg font-bold text-slate-800 border-b-2 border-sky-500 pb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-code text-sky-500"></i> Development & Design
-                    </h2>
-                    <div class="space-y-4">
-                        <div class="glass-card rounded-2xl p-5 border-l-4 border-sky-400">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fa-solid fa-palette text-sky-400"></i>
-                                <h4 class="font-bold text-slate-800">UI/UX Designer</h4>
-                            </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">Mission Controlの視覚設計、Tailwind/Glassmorphismの適用を担当。</p>
-                            <p class="mt-3 text-[10px] font-mono text-slate-400 uppercase">Model: Gemini 3 Pro</p>
-                        </div>
-                        <div class="glass-card rounded-2xl p-5 border-l-4 border-sky-400">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fa-solid fa-laptop-code text-sky-400"></i>
-                                <h4 class="font-bold text-slate-800">Frontend Developer</h4>
-                            </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">HTML/JSの実装、動的データ連携、新規機能のコーディングを担当。</p>
-                            <p class="mt-3 text-[10px] font-mono text-slate-400 uppercase">Model: Gemini 3 Pro</p>
-                        </div>
-                        <div class="glass-card rounded-2xl p-5 border-l-4 border-sky-400">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fa-solid fa-magnifying-glass-chart text-sky-400"></i>
-                                <h4 class="font-bold text-slate-800">System Reviewer</h4>
-                            </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">コード品質チェック、セキュリティ監査、エラー検出、最終承認を担当。</p>
-                            <p class="mt-3 text-[10px] font-mono text-slate-400 uppercase">Model: Gemini 3 Flash</p>
-                        </div>
-                    </div>
-                </section>
+            <section class="panel rounded-[28px] p-5 md:p-7">
+                <div class="flex items-center gap-2 mb-5">
+                    <i class="fa-solid fa-mobile-screen-button text-rose-400"></i>
+                    <h2 class="font-mono text-sm font-bold tracking-[0.24em] uppercase text-rose-400">Phone-friendly reading</h2>
+                </div>
+                <div class="space-y-3 text-sm text-slate-300">
+                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">Top section tells the story in one glance: secretary at the deck, agents in the field.</div>
+                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">Dispatch flow stacks vertically on mobile, so it reads like a clean operations checklist.</div>
+                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">Routing policy and operating lanes are separated into distinct panels to avoid tiny dense cards.</div>
+                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">Key policies are surfaced as labels and rails instead of buried in prose blocks.</div>
+                </div>
+            </section>
+        </section>
+    </main>
 
-                <!-- Research & Content -->
-                <section class="space-y-6">
-                    <h2 class="text-lg font-bold text-slate-800 border-b-2 border-emerald-500 pb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-microscope text-emerald-500"></i> Research & Content
-                    </h2>
-                    <div class="space-y-4">
-                        <div class="glass-card rounded-2xl p-5 border-l-4 border-emerald-400">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fa-solid fa-pen-nib text-emerald-400"></i>
-                                <h4 class="font-bold text-slate-800">Scientific Writer</h4>
-                            </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">論文の内容要約、研究レポートの執筆、学術的背景の解説を担当。</p>
-                            <p class="mt-3 text-[10px] font-mono text-slate-400 uppercase">Model: DeepSeek-R1-70B</p>
-                        </div>
-                        <div class="glass-card rounded-2xl p-5 border-l-4 border-emerald-400">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fa-solid fa-database text-emerald-400"></i>
-                                <h4 class="font-bold text-slate-800">Database Analyst</h4>
-                            </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">研究戦略DB更新、論文自動スキャン、データ整合性の維持を担当。</p>
-                            <p class="mt-3 text-[10px] font-mono text-slate-400 uppercase">Model: DeepSeek-R1-70B</p>
-                        </div>
-                    </div>
-                </section>
+    <footer class="border-t border-slate-800/60 mt-8">
+        <div class="max-w-7xl mx-auto px-4 py-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs font-mono">
+            <div class="text-slate-500">MISSION CONTROL / OPERATIONS MAP / DM-FIRST ORCHESTRATION</div>
+            <div class="text-slate-600">macstudio-bot as secretary, sub-agents as delegated execution staff</div>
+        </div>
+    </footer>
 
-                <!-- Operations -->
-                <section class="space-y-6">
-                    <h2 class="text-lg font-bold text-slate-800 border-b-2 border-amber-500 pb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-gears text-amber-500"></i> Operations
-                    </h2>
-                    <div class="space-y-4">
-                        <div class="glass-card rounded-2xl p-5 border-l-4 border-amber-400">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fa-solid fa-envelope-circle-check text-amber-400"></i>
-                                <h4 class="font-bold text-slate-800">Email Clerk</h4>
-                            </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">Gmail監視、重要度選別、要約、返信案作成を担当。</p>
-                            <p class="mt-3 text-[10px] font-mono text-slate-400 uppercase">Model: GPT-OSS 20B + Gemini</p>
-                        </div>
-                        <div class="glass-card rounded-2xl p-5 border-l-4 border-amber-400">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fa-solid fa-box-archive text-amber-400"></i>
-                                <h4 class="font-bold text-slate-800">Memory Archivist</h4>
-                            </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">メモリフォルダ整理、定期メンテナンス、重複情報の削除を担当。</p>
-                            <p class="mt-3 text-[10px] font-mono text-slate-400 uppercase">Model: Gemini 3 Flash</p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
-
-        <footer class="mt-24 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
-            <p>&copy; 2026 miiichiii Research Lab. Built by macstudio-bot & Team.</p>
-        </footer>
-    </div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', {
+                timeZone: 'Asia/Tokyo',
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('clock').textContent = timeString + ' JST';
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>

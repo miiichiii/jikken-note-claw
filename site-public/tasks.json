@@ -96,5 +96,96 @@
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
+  },
+  {
+    "id": "task-14",
+    "title": "生化学会の2026年度会費支払い状況を確認し、未納なら3/31までに手続きする",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-15",
+    "title": "組換えDNA実験の提出書類（従事者登録申請書・計画承認申請書・計画書・経過/終了報告書）を3/17正午締切に向けて準備し、鈴木先生へ本日の進捗報告を送る",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-16",
+    "title": "【退官記念】高橋先生との面談を実施し、日程・会場・形式・演者方針を確認する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-17",
+    "title": "【退官記念】高橋先生→川口先生→水野先生の順で合意形成を進める",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-18",
+    "title": "【退官記念】国際会議場の予約金5万円と、その後の4月支払いのフローを確定する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-19",
+    "title": "【退官記念】主要演者への日程確保依頼・候補リスト整理",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "task-20",
+    "title": "【退官記念】横村氏を含めた招待者リストの漏れ確認を行う",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "task-21",
+    "title": "【退官記念】協賛候補企業リストと協賛メニュー草案を作成する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "task-22",
+    "title": "【退官記念】案内状・出欠フォームの設計を開始する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "task-23",
+    "title": "【退官記念】当日運営のためのOB/OG・学生協力体制のたたき台を作る",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "task-24",
+    "title": "【退官記念】内藤先生（※要確認）に話す",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-25",
+    "title": "【退官記念】組み換えの件を出す",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-26",
+    "title": "team.html を毎晩コーディングAIで見直し・更新する自動運用を回す",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
   }
 ]
