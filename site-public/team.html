@@ -1,66 +1,43 @@
 <!DOCTYPE html>
-<html lang="ja" class="dark">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Operations Map | Mission Control</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        midnight: '#020617',
-                        panel: '#0f172a',
-                        cyan: {
-                            300: '#67e8f9',
-                            400: '#22d3ee',
-                            500: '#06b6d4',
-                        },
-                        violet: {
-                            300: '#c4b5fd',
-                            400: '#a78bfa',
-                            500: '#8b5cf6',
-                        },
-                        emerald: {
-                            300: '#6ee7b7',
-                            400: '#34d399',
-                            500: '#10b981',
-                        },
-                        amber: {
-                            300: '#fcd34d',
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                        },
-                        rose: {
-                            300: '#fda4af',
-                            400: '#fb7185',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Team Flow | Mission Control</title>
     <style>
         :root {
             color-scheme: dark;
+            --bg: #030712;
+            --bg2: #0b1220;
+            --panel: rgba(15, 23, 42, 0.78);
+            --panel-strong: rgba(15, 23, 42, 0.94);
+            --line: rgba(148, 163, 184, 0.28);
+            --text: #e5eefb;
+            --muted: #8da2c0;
+            --cyan: #22d3ee;
+            --violet: #a78bfa;
+            --amber: #fbbf24;
+            --emerald: #34d399;
+            --rose: #fb7185;
         }
+
+        * { box-sizing: border-box; }
+
         body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text);
             background:
-                radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 28%),
-                radial-gradient(circle at top right, rgba(139, 92, 246, 0.14), transparent 32%),
-                linear-gradient(180deg, #020617 0%, #0b1120 42%, #020617 100%);
-            color: #e2e8f0;
+                radial-gradient(circle at 12% 12%, rgba(34, 211, 238, 0.14), transparent 24%),
+                radial-gradient(circle at 88% 8%, rgba(167, 139, 250, 0.14), transparent 24%),
+                linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+            position: relative;
+            overflow-x: hidden;
         }
-        .grid-overlay::before {
+
+        body::before {
             content: "";
             position: fixed;
             inset: 0;
@@ -68,368 +45,594 @@
             background-image:
                 linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
-            background-size: 32px 32px;
-            mask-image: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent 78%);
+            background-size: 30px 30px;
+            mask-image: linear-gradient(to bottom, rgba(255,255,255,0.33), transparent 82%);
         }
-        .panel {
-            background: rgba(15, 23, 42, 0.74);
+
+        a { color: inherit; text-decoration: none; }
+
+        .wrap {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 28px 18px 48px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 22px;
+            padding: 14px 18px;
+            border: 1px solid rgba(148, 163, 184, 0.12);
+            border-radius: 18px;
+            background: rgba(2, 6, 23, 0.72);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
-            border: 1px solid rgba(148, 163, 184, 0.14);
-            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.25);
         }
-        .panel-soft {
-            background: rgba(15, 23, 42, 0.58);
+
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+        }
+
+        .back {
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(148, 163, 184, 0.16);
+            color: var(--muted);
+            background: rgba(15, 23, 42, 0.8);
+            flex: 0 0 auto;
+        }
+
+        .back:hover { color: var(--cyan); border-color: rgba(34, 211, 238, 0.28); }
+
+        .eyebrow {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.26em;
+            color: var(--cyan);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .subline {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            background: rgba(16, 185, 129, 0.08);
+            color: #a7f3d0;
+            font-weight: 600;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: var(--emerald);
+            box-shadow: 0 0 12px var(--emerald);
+        }
+
+        .hero {
+            display: grid;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .hero-card {
             border: 1px solid rgba(148, 163, 184, 0.12);
+            border-radius: 26px;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.68));
+            padding: 26px 24px;
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
         }
-        .glow-cyan {
-            box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.12), 0 0 30px rgba(34, 211, 238, 0.08);
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2rem, 5vw, 4.8rem);
+            line-height: 0.98;
+            letter-spacing: -0.04em;
         }
-        .glow-violet {
-            box-shadow: inset 0 0 0 1px rgba(167, 139, 250, 0.12), 0 0 30px rgba(139, 92, 246, 0.08);
+
+        .hero p {
+            margin: 0;
+            max-width: 760px;
+            color: #bfd0e8;
+            font-size: clamp(0.98rem, 1.5vw, 1.1rem);
+            line-height: 1.6;
         }
-        .scan {
-            position: absolute;
-            inset: 0;
+
+        .flow-shell {
+            position: relative;
+            border-radius: 34px;
+            border: 1px solid rgba(148, 163, 184, 0.14);
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.84));
+            padding: 28px 18px 30px;
             overflow: hidden;
-            pointer-events: none;
-            border-radius: inherit;
+            box-shadow: 0 22px 80px rgba(0, 0, 0, 0.34);
         }
-        .scan::after {
+
+        .flow-shell::before {
             content: "";
             position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.08), transparent 42%);
+        }
+
+        .flow-title {
+            position: relative;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .flow-title h2 {
+            margin: 6px 0 4px;
+            font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+        }
+
+        .flow-title p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.98rem;
+        }
+
+        .diagram {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto 56px auto 70px auto;
+            gap: 0;
+            align-items: center;
+            min-height: 720px;
+        }
+
+        .node {
+            position: relative;
+            z-index: 2;
+            border-radius: 24px;
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            background: var(--panel);
+            padding: 18px;
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .node::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.015);
+        }
+
+        .node.small { padding: 16px; }
+        .node.main { padding: 22px; }
+
+        .node .kicker {
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.24em;
+        }
+
+        .node h3 {
+            margin: 0 0 8px;
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+        }
+
+        .node p {
+            margin: 0;
+            color: #c5d4e8;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .node .meta {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 7px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            color: #dcecff;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(148, 163, 184, 0.16);
+        }
+
+        .cyan { border-color: rgba(34, 211, 238, 0.2); box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.08), 0 18px 40px rgba(34, 211, 238, 0.06); }
+        .cyan .kicker { color: var(--cyan); }
+        .violet { border-color: rgba(167, 139, 250, 0.22); box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.08), 0 18px 40px rgba(167, 139, 250, 0.06); }
+        .violet .kicker { color: var(--violet); }
+        .amber { border-color: rgba(251, 191, 36, 0.24); box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.08), 0 18px 40px rgba(251, 191, 36, 0.06); }
+        .amber .kicker { color: var(--amber); }
+        .emerald { border-color: rgba(52, 211, 153, 0.24); box-shadow: 0 0 0 1px rgba(52, 211, 153, 0.08), 0 18px 40px rgba(52, 211, 153, 0.06); }
+        .emerald .kicker { color: var(--emerald); }
+        .rose { border-color: rgba(251, 113, 133, 0.22); box-shadow: 0 0 0 1px rgba(251, 113, 133, 0.08), 0 18px 40px rgba(251, 113, 133, 0.06); }
+        .rose .kicker { color: var(--rose); }
+
+        .user-node { grid-column: 2 / span 3; grid-row: 1; }
+        .dm-node { grid-column: 5 / span 4; grid-row: 1; }
+        .bot-node { grid-column: 4 / span 6; grid-row: 3; }
+        .subagent-node { grid-column: 1 / span 4; grid-row: 5; }
+        .local-node { grid-column: 5 / span 4; grid-row: 5; }
+        .thunderbird-node { grid-column: 9 / span 4; grid-row: 5; }
+
+        .connector {
+            position: relative;
+            z-index: 1;
+            align-self: stretch;
+            justify-self: stretch;
+        }
+
+        .line-h::before,
+        .line-v::before,
+        .line-v::after,
+        .branch::before,
+        .branch::after {
+            content: "";
+            position: absolute;
+            background: linear-gradient(90deg, rgba(148,163,184,0.18), rgba(148,163,184,0.52), rgba(148,163,184,0.18));
+        }
+
+        .line-h::before {
+            height: 3px;
             left: 0;
             right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 999px;
+        }
+
+        .line-v::before {
+            width: 3px;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 999px;
+            background: linear-gradient(180deg, rgba(148,163,184,0.18), rgba(148,163,184,0.52), rgba(148,163,184,0.18));
+        }
+
+        .arrow-right::after,
+        .arrow-down::after {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-right: 3px solid rgba(191, 203, 221, 0.72);
+            border-bottom: 3px solid rgba(191, 203, 221, 0.72);
+        }
+
+        .arrow-right::after {
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+
+        .arrow-down::after {
+            left: 50%;
+            bottom: 4px;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .user-dm { grid-column: 4 / span 1; grid-row: 1; }
+        .dm-bot { grid-column: 6 / span 1; grid-row: 2 / span 2; }
+
+        .branch {
+            grid-column: 2 / span 10;
+            grid-row: 4;
+            position: relative;
+        }
+
+        .branch::before {
+            height: 3px;
+            left: 8%;
+            right: 8%;
+            top: 18px;
+            border-radius: 999px;
+        }
+
+        .branch::after {
+            width: 3px;
+            top: -26px;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 999px;
+            background: linear-gradient(180deg, rgba(148,163,184,0.18), rgba(148,163,184,0.56), rgba(148,163,184,0.18));
+        }
+
+        .branch .tap {
+            position: absolute;
+            width: 3px;
+            top: 18px;
+            bottom: 0;
+            border-radius: 999px;
+            background: linear-gradient(180deg, rgba(148,163,184,0.18), rgba(148,163,184,0.56), rgba(148,163,184,0.18));
+        }
+
+        .branch .tap.left { left: 15%; }
+        .branch .tap.mid { left: 50%; transform: translateX(-50%); }
+        .branch .tap.right { right: 15%; }
+
+        .branch .arrow {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-right: 3px solid rgba(191, 203, 221, 0.72);
+            border-bottom: 3px solid rgba(191, 203, 221, 0.72);
+            bottom: 1px;
+            transform: rotate(45deg);
+        }
+
+        .branch .arrow.left { left: calc(15% - 4px); }
+        .branch .arrow.mid { left: calc(50% - 6px); }
+        .branch .arrow.right { right: calc(15% - 4px); }
+
+        .bot-header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .invader {
+            width: 96px;
             height: 96px;
-            top: -120px;
-            background: linear-gradient(180deg, rgba(34, 211, 238, 0), rgba(34, 211, 238, 0.08), rgba(34, 211, 238, 0));
-            animation: sweep 8s linear infinite;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            gap: 2px;
+            padding: 6px;
+            border-radius: 18px;
+            background: rgba(34, 211, 238, 0.08);
+            border: 1px solid rgba(34, 211, 238, 0.18);
+            box-shadow: inset 0 0 22px rgba(34, 211, 238, 0.08), 0 0 36px rgba(34, 211, 238, 0.09);
+            flex: 0 0 auto;
         }
-        @keyframes sweep {
-            0% { top: -120px; }
-            100% { top: calc(100% + 120px); }
+
+        .px {
+            border-radius: 2px;
+            background: transparent;
         }
-        .status-dot {
-            box-shadow: 0 0 12px currentColor;
+
+        .px.on {
+            background: linear-gradient(180deg, #9df6ff 0%, #34d8f4 55%, #16a7c4 100%);
+            box-shadow: 0 0 10px rgba(52, 216, 244, 0.38);
         }
-        .flow-arrow::after {
-            content: "\f061";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: rgba(148, 163, 184, 0.45);
-            font-size: 0.8rem;
+
+        .legend {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
         }
-        @media (max-width: 767px) {
-            .flow-arrow::after {
-                content: "\f063";
+
+        .legend-card {
+            border-radius: 18px;
+            border: 1px solid rgba(148, 163, 184, 0.12);
+            background: rgba(2, 6, 23, 0.5);
+            padding: 14px;
+        }
+
+        .legend-card strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .legend-card span {
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+
+        footer {
+            margin-top: 16px;
+            text-align: center;
+            color: #6f84a3;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 1100px) {
+            .legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 860px) {
+            .topbar { flex-direction: column; align-items: flex-start; }
+            .diagram {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                min-height: auto;
             }
+            .node, .user-node, .dm-node, .bot-node, .subagent-node, .local-node, .thunderbird-node {
+                grid-column: auto;
+                grid-row: auto;
+            }
+            .connector,
+            .branch {
+                display: none;
+            }
+            .node {
+                position: relative;
+            }
+            .node:not(:last-child)::before {
+                content: "↓";
+                position: absolute;
+                left: 50%;
+                bottom: -22px;
+                transform: translateX(-50%);
+                color: rgba(191, 203, 221, 0.72);
+                font-size: 20px;
+                line-height: 1;
+            }
+            .bot-node::before {
+                bottom: -26px;
+            }
+            .legend { grid-template-columns: 1fr; }
+            .bot-header { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+        }
+
+        @media (max-width: 560px) {
+            .wrap { padding: 16px 12px 28px; }
+            .hero-card, .flow-shell { border-radius: 22px; }
+            .node { border-radius: 20px; }
+            .invader { width: 84px; height: 84px; }
         }
     </style>
 </head>
-<body class="min-h-screen grid-overlay selection:bg-cyan-500/30">
-    <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/75 backdrop-blur-xl">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
-            <div class="flex items-center gap-3 min-w-0">
-                <a href="index.html" class="text-slate-400 hover:text-cyan-400 transition-colors shrink-0" aria-label="Back to dashboard">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </a>
-                <div class="w-10 h-10 rounded-2xl border border-cyan-400/20 bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0">
-                    <i class="fa-solid fa-tower-broadcast"></i>
-                </div>
-                <div class="min-w-0">
-                    <div class="font-mono text-[11px] tracking-[0.28em] text-cyan-400 font-bold truncate">OPERATIONS MAP</div>
-                    <div class="text-xs text-slate-500 truncate">Mission Control staffing and routing view</div>
-                </div>
-            </div>
-            <div class="hidden md:flex items-center gap-6 font-mono text-xs">
-                <div class="flex items-center gap-2 text-slate-400">
-                    <span>POSTURE</span>
-                    <span class="text-emerald-400 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 status-dot"></span>LIVE</span>
-                </div>
-                <div class="h-4 w-px bg-slate-800"></div>
-                <div class="text-slate-400">ORCHESTRATOR <span class="text-cyan-400">openai-codex/gpt-5.4</span></div>
-                <div class="h-4 w-px bg-slate-800"></div>
-                <div id="clock" class="text-slate-500">00:00:00 JST</div>
-            </div>
-        </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-4 py-6 md:py-10 space-y-6 md:space-y-8">
-        <section class="grid xl:grid-cols-[1.2fr_0.8fr] gap-6 items-start">
-            <div class="panel glow-cyan rounded-[28px] p-6 md:p-8 relative overflow-hidden">
-                <div class="scan"></div>
-                <div class="flex flex-wrap items-center gap-2 mb-4 text-[11px] font-mono tracking-[0.28em] uppercase">
-                    <span class="text-cyan-400">Command structure</span>
-                    <span class="text-slate-700">/</span>
-                    <span class="text-slate-500">DM-first orchestration</span>
-                </div>
-                <h1 class="text-3xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                    A secretary at the deck,<br>
-                    agents in the field.
-                </h1>
-                <p class="mt-5 max-w-3xl text-sm md:text-lg text-slate-300 leading-relaxed">
-                    This system is no longer presented as a team card wall. It behaves like an operations floor: センセイ talks to one command deck, the command deck opens task rooms, and heavyweight execution is pushed outward to sub-agents while the main DM stays clean.
-                </p>
-
-                <div class="mt-6 flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="px-3 py-1.5 rounded-full border border-cyan-400/20 bg-cyan-500/10 text-cyan-300">DM = command deck</span>
-                    <span class="px-3 py-1.5 rounded-full border border-violet-400/20 bg-violet-500/10 text-violet-300">threads = task rooms</span>
-                    <span class="px-3 py-1.5 rounded-full border border-emerald-400/20 bg-emerald-500/10 text-emerald-300">local AI = simple only</span>
-                    <span class="px-3 py-1.5 rounded-full border border-amber-400/20 bg-amber-500/10 text-amber-300">Thunderbird = tmux + Peekaboo</span>
-                </div>
-            </div>
-
-            <aside class="panel rounded-[28px] p-5 md:p-6">
-                <div class="flex items-center justify-between gap-3 mb-4">
-                    <div>
-                        <div class="font-mono text-[11px] tracking-[0.25em] uppercase text-slate-500">Mission rail</div>
-                        <h2 class="text-xl font-bold text-white mt-1">Who does what</h2>
-                    </div>
-                    <span class="px-2.5 py-1 rounded-full border border-emerald-400/20 text-emerald-400 text-[11px] font-mono">CURRENT MODEL</span>
-                </div>
-                <div class="space-y-3">
-                    <div class="panel-soft rounded-2xl p-4">
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 text-cyan-400 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-headset"></i>
-                            </div>
-                            <div>
-                                <div class="text-white font-semibold">macstudio-bot</div>
-                                <div class="text-cyan-300 text-sm">Secretary / Orchestrator</div>
-                                <p class="mt-2 text-sm text-slate-400">Owns intake, coordination, synthesis, and the polished reply back to センセイ.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-soft rounded-2xl p-4">
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-2xl bg-violet-500/10 border border-violet-400/20 text-violet-400 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-comments"></i>
-                            </div>
-                            <div>
-                                <div class="text-white font-semibold">DM</div>
-                                <div class="text-violet-300 text-sm">Command Deck</div>
-                                <p class="mt-2 text-sm text-slate-400">The single front door. Clarification, prioritization, approvals, and final answers stay here.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-soft rounded-2xl p-4">
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-400/20 text-amber-400 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-door-open"></i>
-                            </div>
-                            <div>
-                                <div class="text-white font-semibold">Work Threads</div>
-                                <div class="text-amber-300 text-sm">Task Rooms</div>
-                                <p class="mt-2 text-sm text-slate-400">Used when work needs focused context, parallelism, or isolation from the main conversation.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </section>
-
-        <section class="panel glow-violet rounded-[28px] p-5 md:p-7">
-            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5">
+<body>
+    <div class="wrap">
+        <header class="topbar">
+            <div class="topbar-left">
+                <a class="back" href="index.html" aria-label="Back to dashboard">←</a>
                 <div>
-                    <div class="font-mono text-[11px] tracking-[0.25em] uppercase text-violet-400">Dispatch flow</div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">How work moves through the room</h2>
+                    <div class="eyebrow">Mission Control</div>
+                    <div class="subline">Instant 2D flow of how work moves through macstudio-bot</div>
                 </div>
-                <p class="text-sm text-slate-500 max-w-xl">Mobile-first strip: read top to bottom on phone, left to right on desktop.</p>
             </div>
-            <div class="grid md:grid-cols-4 gap-3 md:gap-4">
-                <div class="rounded-3xl border border-cyan-400/18 bg-cyan-500/6 p-4 md:p-5 flex flex-col gap-3 flow-arrow">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[11px] font-mono tracking-[0.25em] uppercase text-cyan-400">01 intake</span>
-                        <i class="fa-solid fa-inbox text-cyan-300"></i>
-                    </div>
-                    <h3 class="text-white font-semibold text-lg">センセイ → DM</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">Requests arrive in DM, where macstudio-bot interprets intent and decides whether the task is immediate, light, or delegation-worthy.</p>
-                </div>
-                <div class="rounded-3xl border border-violet-400/18 bg-violet-500/6 p-4 md:p-5 flex flex-col gap-3 flow-arrow">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[11px] font-mono tracking-[0.25em] uppercase text-violet-400">02 routing</span>
-                        <i class="fa-solid fa-shuffle text-violet-300"></i>
-                    </div>
-                    <h3 class="text-white font-semibold text-lg">Triage at deck</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">If the job is tiny, answer inline. If it needs concentration, a work thread becomes the task room and a sub-agent gets the assignment.</p>
-                </div>
-                <div class="rounded-3xl border border-amber-400/18 bg-amber-500/6 p-4 md:p-5 flex flex-col gap-3 flow-arrow">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[11px] font-mono tracking-[0.25em] uppercase text-amber-400">03 execute</span>
-                        <i class="fa-solid fa-gears text-amber-300"></i>
-                    </div>
-                    <h3 class="text-white font-semibold text-lg">Task room work</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">Heavy coding, research passes, drafting, review loops, and multi-step work are handled outside the main chat so the deck stays uncluttered.</p>
-                </div>
-                <div class="rounded-3xl border border-emerald-400/18 bg-emerald-500/6 p-4 md:p-5 flex flex-col gap-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[11px] font-mono tracking-[0.25em] uppercase text-emerald-400">04 return</span>
-                        <i class="fa-solid fa-circle-check text-emerald-300"></i>
-                    </div>
-                    <h3 class="text-white font-semibold text-lg">Back to deck</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">Sub-agents hand back a concise result. macstudio-bot integrates it and replies cleanly, without leaking messy process details.</p>
-                </div>
+            <div class="status">
+                <span class="badge"><span class="dot"></span> LIVE FLOW</span>
+                <span>Main: <strong>openai-codex/gpt-5.4</strong></span>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-card">
+                <div class="eyebrow">Operations Flow</div>
+                <h1>センセイ → DM → macstudio-bot → execution lanes</h1>
+                <p>
+                    The layout is intentionally simple: one front door, one orchestrator, then three clear paths for heavy work, light work, and Thunderbird draft execution.
+                </p>
             </div>
         </section>
 
-        <section class="grid xl:grid-cols-[0.92fr_1.08fr] gap-6">
-            <section class="panel rounded-[28px] p-5 md:p-7">
-                <div class="flex items-center gap-2 mb-5">
-                    <i class="fa-solid fa-route text-cyan-400"></i>
-                    <h2 class="font-mono text-sm font-bold tracking-[0.24em] uppercase text-cyan-400">Routing policy</h2>
-                </div>
-                <div class="space-y-3">
-                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">
-                        <div class="flex flex-col gap-1">
-                            <span class="text-xs font-mono uppercase tracking-[0.22em] text-slate-500">Main / orchestrator</span>
-                            <span class="text-cyan-400 font-mono text-sm md:text-base">openai-codex/gpt-5.4</span>
-                        </div>
-                        <p class="mt-2 text-sm text-slate-400">Default control-plane model for intake, synthesis, and final response quality.</p>
-                    </div>
-                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">
-                        <div class="flex flex-col gap-1">
-                            <span class="text-xs font-mono uppercase tracking-[0.22em] text-slate-500">Heavy sub-agent work prefers</span>
-                            <span class="text-violet-300 font-mono text-sm md:text-base">openai/gpt-5.4</span>
-                            <span class="text-violet-300 font-mono text-sm md:text-base">gemini-3.1 pro</span>
-                        </div>
-                        <p class="mt-2 text-sm text-slate-400">Use when the job needs depth, independent execution, or a large reasoning budget.</p>
-                    </div>
-                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">
-                        <div class="flex flex-col gap-1">
-                            <span class="text-xs font-mono uppercase tracking-[0.22em] text-slate-500">Light / fast tasks</span>
-                            <span class="text-amber-300 font-mono text-sm md:text-base">gemini-3-flash-preview</span>
-                        </div>
-                        <p class="mt-2 text-sm text-slate-400">Use for quick bounded transformations, triage, short summaries, and lightweight assistive work.</p>
-                    </div>
-                    <div class="rounded-2xl border border-emerald-400/15 bg-emerald-500/6 p-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <i class="fa-solid fa-plug-circle-bolt text-emerald-400"></i>
-                            <span class="text-emerald-300 font-semibold">Local AI policy</span>
-                        </div>
-                        <p class="text-sm text-slate-300 leading-relaxed">Local models are not the general default. They are reserved for truly simple, structured, or offline-friendly tasks where minimal reasoning is enough.</p>
-                    </div>
-                </div>
-            </section>
+        <section class="flow-shell">
+            <div class="flow-title">
+                <div class="eyebrow">2D Flowchart</div>
+                <h2>Who receives, routes, and executes</h2>
+                <p>Read left to right, then branch downward.</p>
+            </div>
 
-            <section class="panel rounded-[28px] p-5 md:p-7">
-                <div class="flex items-center gap-2 mb-5">
-                    <i class="fa-solid fa-sitemap text-violet-400"></i>
-                    <h2 class="font-mono text-sm font-bold tracking-[0.24em] uppercase text-violet-400">Operating lanes</h2>
+            <div class="diagram">
+                <div class="node cyan small user-node">
+                    <div class="kicker">01 / user</div>
+                    <h3>センセイ</h3>
+                    <p>Starts every request.</p>
                 </div>
 
-                <div class="space-y-4">
-                    <div class="grid grid-cols-[auto_1fr] gap-4 items-start rounded-3xl border border-cyan-400/15 bg-cyan-500/5 p-4 md:p-5">
-                        <div class="w-11 h-11 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 text-cyan-400 flex items-center justify-center"><i class="fa-solid fa-helmet-un"></i></div>
-                        <div>
-                            <div class="flex flex-wrap items-center gap-2">
-                                <h3 class="text-white font-semibold text-lg">Command Deck Lane</h3>
-                                <span class="text-[11px] font-mono px-2 py-1 rounded-full border border-cyan-400/20 text-cyan-300">ALWAYS ON</span>
-                            </div>
-                            <p class="mt-2 text-sm text-slate-300 leading-relaxed">The DM is where the relationship lives. It handles prioritization, confidence checks, approval points, and the final human-facing output.</p>
-                        </div>
-                    </div>
+                <div class="connector line-h arrow-right user-dm"></div>
 
-                    <div class="grid grid-cols-[auto_1fr] gap-4 items-start rounded-3xl border border-violet-400/15 bg-violet-500/5 p-4 md:p-5">
-                        <div class="w-11 h-11 rounded-2xl bg-violet-500/10 border border-violet-400/20 text-violet-400 flex items-center justify-center"><i class="fa-solid fa-people-arrows"></i></div>
-                        <div>
-                            <div class="flex flex-wrap items-center gap-2">
-                                <h3 class="text-white font-semibold text-lg">Sub-agent Lane</h3>
-                                <span class="text-[11px] font-mono px-2 py-1 rounded-full border border-violet-400/20 text-violet-300">HEAVY WORK</span>
-                            </div>
-                            <p class="mt-2 text-sm text-slate-300 leading-relaxed">Builds, reviews, refactors, long research passes, drafting bursts, and anything likely to bloat the main context get dispatched here.</p>
-                        </div>
-                    </div>
+                <div class="node violet small dm-node">
+                    <div class="kicker">02 / command deck</div>
+                    <h3>DM</h3>
+                    <p>Single front door. Clean chat. Clear commands.</p>
+                </div>
 
-                    <div class="grid grid-cols-[auto_1fr] gap-4 items-start rounded-3xl border border-amber-400/15 bg-amber-500/5 p-4 md:p-5">
-                        <div class="w-11 h-11 rounded-2xl bg-amber-500/10 border border-amber-400/20 text-amber-400 flex items-center justify-center"><i class="fa-solid fa-bolt"></i></div>
-                        <div>
-                            <div class="flex flex-wrap items-center gap-2">
-                                <h3 class="text-white font-semibold text-lg">Flash Lane</h3>
-                                <span class="text-[11px] font-mono px-2 py-1 rounded-full border border-amber-400/20 text-amber-300">LIGHT TASKS</span>
-                            </div>
-                            <p class="mt-2 text-sm text-slate-300 leading-relaxed">Short, bounded work that benefits from speed over depth routes to the fast model tier rather than the heavy execution path.</p>
-                        </div>
-                    </div>
+                <div class="connector line-v arrow-down dm-bot"></div>
 
-                    <div class="grid grid-cols-[auto_1fr] gap-4 items-start rounded-3xl border border-emerald-400/15 bg-emerald-500/5 p-4 md:p-5">
-                        <div class="w-11 h-11 rounded-2xl bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 flex items-center justify-center"><i class="fa-solid fa-laptop-code"></i></div>
+                <div class="node cyan main bot-node">
+                    <div class="bot-header">
+                        <div class="invader" aria-hidden="true">
+                            <span class="px"></span><span class="px on"></span><span class="px"></span><span class="px"></span><span class="px"></span><span class="px"></span><span class="px on"></span><span class="px"></span>
+                            <span class="px"></span><span class="px"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px"></span><span class="px"></span>
+                            <span class="px"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px"></span>
+                            <span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px"></span><span class="px"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span>
+                            <span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span>
+                            <span class="px on"></span><span class="px"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px on"></span><span class="px"></span><span class="px on"></span>
+                            <span class="px"></span><span class="px"></span><span class="px on"></span><span class="px"></span><span class="px"></span><span class="px on"></span><span class="px"></span><span class="px"></span>
+                            <span class="px"></span><span class="px on"></span><span class="px"></span><span class="px"></span><span class="px"></span><span class="px"></span><span class="px on"></span><span class="px"></span>
+                        </div>
                         <div>
-                            <div class="flex flex-wrap items-center gap-2">
-                                <h3 class="text-white font-semibold text-lg">Local Utility Lane</h3>
-                                <span class="text-[11px] font-mono px-2 py-1 rounded-full border border-emerald-400/20 text-emerald-300">STRICTLY SIMPLE</span>
-                            </div>
-                            <p class="mt-2 text-sm text-slate-300 leading-relaxed">For truly simple or structured tasks only. If judgment, polish, or non-trivial reasoning matters, route back to frontier models instead.</p>
+                            <div class="kicker">03 / secretary + orchestrator</div>
+                            <h3>macstudio-bot</h3>
+                            <p>Keeps the DM tidy, decides the lane, delegates when needed, and brings the answer back to センセイ.</p>
+                            <div class="meta">Main model: openai-codex/gpt-5.4</div>
                         </div>
                     </div>
                 </div>
-            </section>
+
+                <div class="branch" aria-hidden="true">
+                    <span class="tap left"></span>
+                    <span class="tap mid"></span>
+                    <span class="tap right"></span>
+                    <span class="arrow left"></span>
+                    <span class="arrow mid"></span>
+                    <span class="arrow right"></span>
+                </div>
+
+                <div class="node violet subagent-node">
+                    <div class="kicker">Heavy work</div>
+                    <h3>Sub-agents</h3>
+                    <p>Long builds, deep research, coding, review loops.</p>
+                    <div class="meta">openai/gpt-5.4 or gemini-3.1 pro</div>
+                </div>
+
+                <div class="node emerald local-node">
+                    <div class="kicker">Simple tasks</div>
+                    <h3>Local AI</h3>
+                    <p>Small, quick, bounded jobs only.</p>
+                    <div class="meta">gemini-3-flash-preview</div>
+                </div>
+
+                <div class="node amber thunderbird-node">
+                    <div class="kicker">Draft executor</div>
+                    <h3>Thunderbird Executor</h3>
+                    <p>tmux + Peekaboo lane for saving drafts in Thunderbird.</p>
+                    <div class="meta">UI execution path</div>
+                </div>
+            </div>
+
+            <div class="legend">
+                <div class="legend-card">
+                    <strong>Front door</strong>
+                    <span>Everything starts in DM. One place to ask, approve, and receive results.</span>
+                </div>
+                <div class="legend-card">
+                    <strong>Central brain</strong>
+                    <span>macstudio-bot is the secretary at the center, not just another worker box.</span>
+                </div>
+                <div class="legend-card">
+                    <strong>Clear split</strong>
+                    <span>Heavy work, simple tasks, and Thunderbird execution are visually separated.</span>
+                </div>
+                <div class="legend-card">
+                    <strong>At-a-glance routing</strong>
+                    <span>Model policy is embedded directly inside the destination nodes.</span>
+                </div>
+            </div>
         </section>
 
-        <section class="grid lg:grid-cols-[1.05fr_0.95fr] gap-6">
-            <section class="panel rounded-[28px] p-5 md:p-7">
-                <div class="flex items-center gap-2 mb-5">
-                    <i class="fa-solid fa-display text-amber-400"></i>
-                    <h2 class="font-mono text-sm font-bold tracking-[0.24em] uppercase text-amber-400">Special operator path</h2>
-                </div>
-                <div class="rounded-[26px] border border-amber-400/16 bg-amber-500/6 p-4 md:p-5">
-                    <div class="grid sm:grid-cols-[1fr_auto_1fr_auto_1fr] gap-3 items-center">
-                        <div class="rounded-2xl bg-slate-950/45 border border-slate-800 p-4">
-                            <div class="text-xs font-mono tracking-[0.22em] uppercase text-slate-500">Drafting</div>
-                            <div class="mt-1 text-white font-semibold">Content is prepared</div>
-                            <p class="mt-2 text-sm text-slate-400">Reasoning and wording can be produced elsewhere first.</p>
-                        </div>
-                        <div class="hidden sm:flex justify-center text-slate-600"><i class="fa-solid fa-arrow-right"></i></div>
-                        <div class="rounded-2xl bg-slate-950/45 border border-amber-400/18 p-4">
-                            <div class="text-xs font-mono tracking-[0.22em] uppercase text-amber-400">Execution</div>
-                            <div class="mt-1 text-white font-semibold">tmux + Peekaboo</div>
-                            <p class="mt-2 text-sm text-slate-300">Thunderbird drafts are saved through the UI automation lane.</p>
-                        </div>
-                        <div class="hidden sm:flex justify-center text-slate-600"><i class="fa-solid fa-arrow-right"></i></div>
-                        <div class="rounded-2xl bg-slate-950/45 border border-slate-800 p-4">
-                            <div class="text-xs font-mono tracking-[0.22em] uppercase text-slate-500">Boundary</div>
-                            <div class="mt-1 text-white font-semibold">Draft only</div>
-                            <p class="mt-2 text-sm text-slate-400">The system prepares the draft. Sending stays with the human.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="panel rounded-[28px] p-5 md:p-7">
-                <div class="flex items-center gap-2 mb-5">
-                    <i class="fa-solid fa-mobile-screen-button text-rose-400"></i>
-                    <h2 class="font-mono text-sm font-bold tracking-[0.24em] uppercase text-rose-400">Phone-friendly reading</h2>
-                </div>
-                <div class="space-y-3 text-sm text-slate-300">
-                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">Top section tells the story in one glance: secretary at the deck, agents in the field.</div>
-                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">Dispatch flow stacks vertically on mobile, so it reads like a clean operations checklist.</div>
-                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">Routing policy and operating lanes are separated into distinct panels to avoid tiny dense cards.</div>
-                    <div class="rounded-2xl border border-slate-800 bg-slate-950/45 p-4">Key policies are surfaced as labels and rails instead of buried in prose blocks.</div>
-                </div>
-            </section>
-        </section>
-    </main>
-
-    <footer class="border-t border-slate-800/60 mt-8">
-        <div class="max-w-7xl mx-auto px-4 py-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs font-mono">
-            <div class="text-slate-500">MISSION CONTROL / OPERATIONS MAP / DM-FIRST ORCHESTRATION</div>
-            <div class="text-slate-600">macstudio-bot as secretary, sub-agents as delegated execution staff</div>
-        </div>
-    </footer>
-
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString('en-US', {
-                timeZone: 'Asia/Tokyo',
-                hour12: false,
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            });
-            document.getElementById('clock').textContent = timeString + ' JST';
-        }
-        updateClock();
-        setInterval(updateClock, 1000);
-    </script>
+        <footer>Mission Control / Team Flow / Static HTML</footer>
+    </div>
 </body>
 </html>
