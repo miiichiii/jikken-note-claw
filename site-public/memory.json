@@ -1,9 +1,45 @@
 [
   {
+    "filename": "2026-03-12.md",
+    "path": "memory/2026-03-12.md",
+    "mtime": "2026-03-12T14:38:56.688Z",
+    "preview": "2026-03-12 - 08:00 JST リマインダー受信。令和8年度組換えDNA実験の提出書類（従事者登録申請書・計画承認申請書・計画書・経過/終了報告書）の締切は 3/17 正午。提出先は教務課 鈴木先生（suzukiko@ipu.ac.jp）。本日も準備進捗の報告が必要。 - memory/todo.md に同件タスクが既にあることを確認済み。 - 23:xx JST メモリメンテ実施。"
+  },
+  {
+    "filename": "2026-02-27-grade-analysis.md",
+    "path": "memory/archive/2026-02/2026-02-27-grade-analysis.md",
+    "mtime": "2026-03-12T14:38:40.448Z",
+    "preview": "2026-02-27 Grade Analysis Summary Status - Original long transcript/log was rotated out of the active archive to keep memory files compact. - Raw source preserved at: memory/archive/raw/2026-02/2026-0"
+  },
+  {
+    "filename": "science_feedback_japan_vaccine_summary.md",
+    "path": "memory/science_feedback_japan_vaccine_summary.md",
+    "mtime": "2026-03-12T06:59:00.404Z",
+    "preview": "Science Feedback記事要約 元記事: https://science.feedback.org/review/inadequate-analysis-japan-data-false-covid-vaccine-mortality/ 何が主張されていたか 反ワクチン系の発信者たちが、「日本の1800万人のデータで、COVID-19ワクチンは打てば打つほど早く死ぬことが示された」と主張"
+  },
+  {
     "filename": "todo.md",
     "path": "memory/todo.md",
-    "mtime": "2026-03-11T11:30:18.662Z",
+    "mtime": "2026-03-12T06:55:21.759Z",
     "preview": "- [ ] 令和８年度動物実験計画書及び令和７年度動物実験結果報告書を作成し、3/23(月)までに提出 @濱田 - [ ] 納豆抽出物をタカのフーズから受け取る @Bot - [ ] MCTOの次のtodoは末梢血解析 @濱田 - [ ] 高橋先生の退官記念式典についての昨日の会議のまとめをやる @Bot - [ ] MCTO FACS解析の進捗を整理・実施する @濱田 - [ ] ユージニアさん"
+  },
+  {
+    "filename": "pubmed_40416011_summary.md",
+    "path": "memory/pubmed_40416011_summary.md",
+    "mtime": "2026-03-12T06:51:56.938Z",
+    "preview": "PubMed PMID 40416011 Summary - PMID: 40416011 - URL: https://pubmed.ncbi.nlm.nih.gov/40416011/ Title Significant Increase in Excess Deaths after Repeated COVID-19 Vaccination in Japan. Authors Hideki "
+  },
+  {
+    "filename": "lessons.md",
+    "path": "memory/lessons.md",
+    "mtime": "2026-03-12T01:47:46.664Z",
+    "preview": "lessons - Telegramグループに追加されても反応しない時は、設定ファイル（openclaw.json）の channels.telegram.groups にそのグループIDが含まれているか確認し、なければ追加して openclaw gateway restart する。 - TelegramグループIDを追加する際は、requireMention: false, groupPoli"
+  },
+  {
+    "filename": "2026-03-11.md",
+    "path": "memory/dm-daily/2026-03-11.md",
+    "mtime": "2026-03-11T20:55:23.041Z",
+    "preview": "2026-03-11 DM Summary Key tasks done - Organized old files/folders in Downloads into year-based folders; confirmed Synology Drive on-demand moves stayed cloud-only without re-downloading. - Created a "
   },
   {
     "filename": "2026-03-11.md",
@@ -16,12 +52,6 @@
     "path": "memory/preferences.md",
     "mtime": "2026-03-11T09:55:46.209Z",
     "preview": "Preferences - Amazonの「いつものマスク」は https://www.amazon.co.jp/dp/B099Z7962T を使う。 - Amazonの「いつものコーヒーフィルター」は https://www.amazon.co.jp/dp/B00BJBOITS を使う。 - Amazonの「いつもの犬用歯みがきガム」は https://www.amazon.co.jp/dp/B"
-  },
-  {
-    "filename": "lessons.md",
-    "path": "memory/lessons.md",
-    "mtime": "2026-03-11T06:54:52.376Z",
-    "preview": "lessons - Telegramグループに追加されても反応しない時は、設定ファイル（openclaw.json）の channels.telegram.groups にそのグループIDが含まれているか確認し、なければ追加して openclaw gateway restart する。 - TelegramグループIDを追加する際は、requireMention: false, groupPoli"
   },
   {
     "filename": "令和8年度動物実験計画書_更新案_draft.md",
@@ -202,12 +232,6 @@
     "path": "memory/archive/2026-02/2026-02-28.md",
     "mtime": "2026-02-27T16:04:42.926Z",
     "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行（account: hamamicchi@gmail.com）。 - ラベル確認結果: 「要返信」「参照」「処理済み」は既存。\"重要\"ラベルは Gmail API で作成不可（invalidArgument）のため、重要判定は Gmail システムの is:important を併用。 - 直近30日 in:inbox の自"
-  },
-  {
-    "filename": "2026-02-27-grade-analysis.md",
-    "path": "memory/archive/2026-02/2026-02-27-grade-analysis.md",
-    "mtime": "2026-02-27T09:08:38.604Z",
-    "preview": "Session: 2026-02-27 09:08:34 UTC - Session Key: agent:main:telegram:group:-1003876826017 - Session ID: 10781e00-6425-4291-8d5c-72b85b49c8e7 - Source: telegram Conversation Summary assistant: <final>デー"
   },
   {
     "filename": "2026-02-27.md",
