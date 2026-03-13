@@ -1,140 +1,531 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Miiichiii Digital Office - v2</title>
+    <title>Digital Office | Midnight Cockpit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        cyan: {
+                            300: '#67e8f9',
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            900: '#164e63',
+                        },
+                        violet: {
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            900: '#4c1d95',
+                        },
+                        emerald: {
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            900: '#064e3b',
+                        },
+                        amber: {
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            900: '#78350f',
+                        },
+                        rose: {
+                            300: '#fda4af',
+                            400: '#fb7185',
+                            500: '#f43f5e',
+                            900: '#881337',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background: #0f172a; overflow: hidden; }
-        .office-floor {
-            position: relative;
-            width: 800px;
-            height: 600px;
-            background: rgba(30, 41, 59, 0.7);
-            border-radius: 40px;
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.5), 0 20px 50px rgba(0,0,0,0.3);
-            border: 2px solid rgba(255,255,255,0.1);
+        body {
+            background-color: #020617;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+            color: #e2e8f0;
         }
-        .avatar-container {
-            position: absolute;
-            transition: all 1s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.62);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(148, 163, 184, 0.12);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.22);
         }
-        .avatar-circle {
-            width: 80px;
-            height: 80px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            border: 4px solid #3b82f6;
-            animation: float 3s ease-in-out infinite;
+        .glass-panel:hover {
+            border-color: rgba(34, 211, 238, 0.24);
+            box-shadow: 0 0 24px rgba(34, 211, 238, 0.08);
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .name-tag {
-            background: rgba(255,255,255,0.9);
-            color: #1e293b;
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-top: 8px;
-            white-space: nowrap;
-        }
-        .status-bubble {
-            position: absolute;
+        .scanline {
+            width: 100%;
+            height: 110px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(34, 211, 238, 0.04) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.12;
+            position: fixed;
             bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            padding: 8px 12px;
-            border-radius: 15px;
-            font-size: 0.7rem;
-            width: 120px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
-            opacity: 0;
-            transition: opacity 0.3s;
+            animation: scanline 11s linear infinite;
+            pointer-events: none;
         }
-        .avatar-container:hover .status-bubble { opacity: 1; }
-        .status-bubble::after {
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -110px; }
+        }
+        .grid-overlay {
+            background-image:
+                linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+        .status-dot {
+            box-shadow: 0 0 10px currentColor, 0 0 22px currentColor;
+        }
+        .node-shell {
+            position: relative;
+            overflow: hidden;
+        }
+        .node-shell::before {
             content: '';
             position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 8px solid transparent;
-            border-top-color: white;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(135deg, rgba(34,211,238,0.08), transparent 42%, rgba(139,92,246,0.08));
+            opacity: 0.8;
         }
-        .grid-bg {
-            background-image: radial-gradient(circle, #334155 1px, transparent 1px);
-            background-size: 40px 40px;
+        .node-shell::after {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            border-radius: 1.45rem;
+            pointer-events: none;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+        .flow-stage {
+            position: relative;
+        }
+        .connector-grid {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.72;
+        }
+        .connector-grid svg {
+            width: 100%;
+            height: 100%;
+        }
+        .connector-grid path {
+            fill: none;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke: url(#connectorGradient);
+            filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.25));
+        }
+        .node-badge {
+            letter-spacing: 0.18em;
+        }
+        .pixel-icon {
+            width: 2.75rem;
+            height: 2.75rem;
+            display: inline-grid;
+            place-items: center;
+            border-radius: 0.9rem;
+            background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(30,41,59,0.75));
+            border: 1px solid rgba(148,163,184,0.16);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03), 0 0 18px rgba(34,211,238,0.08);
+        }
+        .pulse-working {
+            animation: pulseWorking 1.8s ease-in-out infinite;
+        }
+        @keyframes pulseWorking {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.18); opacity: 1; }
+        }
+        @media (max-width: 1023px) {
+            .connector-grid {
+                display: none;
+            }
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen">
-    <div class="absolute top-8 left-8">
-        <a href="index.html" class="text-slate-400 hover:text-white flex items-center gap-2">
-            <i class="fa-solid fa-arrow-left"></i> Exit Office
-        </a>
-    </div>
+<body class="min-h-screen relative overflow-x-hidden selection:bg-cyan-500/30">
+    <div class="scanline"></div>
 
-    <div class="text-center mb-8 absolute top-8 w-full">
-        <h1 class="text-3xl font-bold text-white mb-2">Miiichiii Digital Office</h1>
-        <p class="text-slate-400 text-sm">Real-time AI Staff Status Monitor</p>
-    </div>
+    <header class="fixed top-0 w-full z-50 glass-panel border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4 min-w-0">
+                <a href="index.html" class="flex items-center gap-3 hover:text-cyan-400 transition-colors min-w-0">
+                    <i class="fa-solid fa-chevron-left text-slate-500"></i>
+                    <i class="fa-solid fa-building-user text-cyan-400"></i>
+                    <span class="font-mono text-sm tracking-wider text-cyan-400 font-bold truncate">DIGITAL OFFICE</span>
+                </a>
+            </div>
 
-    <div class="office-floor grid-bg" id="office-floor">
-        <!-- Avatars will be injected here -->
-    </div>
+            <div class="flex items-center gap-4 md:gap-6 font-mono text-[11px] md:text-xs shrink-0">
+                <div class="hidden md:flex items-center gap-2 text-slate-400">
+                    <span>OFFICE FEED</span>
+                    <span class="flex items-center gap-1.5 text-emerald-400">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 status-dot"></span>
+                        LIVE
+                    </span>
+                </div>
+                <div class="h-4 w-px bg-slate-700 hidden md:block"></div>
+                <div class="text-slate-400" id="clock">00:00:00 JST</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-12 px-4 max-w-7xl mx-auto">
+        <section class="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] items-stretch mb-8">
+            <div class="glass-panel rounded-3xl p-6 md:p-8 relative overflow-hidden grid-overlay">
+                <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-500/10 pointer-events-none"></div>
+                <div class="relative">
+                    <p class="text-cyan-400 font-mono text-xs md:text-sm tracking-[0.28em] uppercase mb-3">Midnight Cockpit / Office Map</p>
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+                        Structural staff lanes,
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">live role status</span>.
+                    </h1>
+                    <p class="text-slate-300 max-w-3xl leading-7 text-sm md:text-base">
+                        The old floating-avatar mockup is gone. This office now mirrors the darker Mission Control language:
+                        glass hardware, glowing dots, monospace telemetry, and a clean 2D lane map backed directly by <span class="font-mono text-cyan-300">office.json</span>.
+                    </p>
+                </div>
+            </div>
+
+            <aside class="glass-panel rounded-3xl p-6 flex flex-col justify-between">
+                <div>
+                    <p class="text-slate-500 font-mono text-xs uppercase tracking-[0.24em] mb-3">Live telemetry</p>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center justify-between gap-3">
+                            <span class="text-slate-400">Data source</span>
+                            <span class="text-cyan-300 font-mono">office.json</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <span class="text-slate-400">Refresh cadence</span>
+                            <span class="text-emerald-300 font-mono">5 sec</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <span class="text-slate-400">Current mode</span>
+                            <span class="text-violet-300 font-mono">Cockpit grid</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <span class="text-slate-400">Occupied seats</span>
+                            <span class="text-amber-300 font-mono" id="occupied-count">0 / 8</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 pt-5 border-t border-slate-800/80">
+                    <p class="text-xs text-slate-400 leading-6" id="last-sync-copy">
+                        Awaiting office telemetry.
+                    </p>
+                </div>
+            </aside>
+        </section>
+
+        <section class="grid gap-4 md:grid-cols-3 mb-8">
+            <div class="glass-panel rounded-2xl p-4 border border-cyan-500/20">
+                <div class="text-slate-500 font-mono text-[11px] uppercase tracking-[0.22em] mb-2">Active</div>
+                <div class="text-3xl font-extrabold text-white" id="active-count">0</div>
+                <div class="text-sm text-slate-400 mt-1">Control nodes online</div>
+            </div>
+            <div class="glass-panel rounded-2xl p-4 border border-emerald-500/20">
+                <div class="text-slate-500 font-mono text-[11px] uppercase tracking-[0.22em] mb-2">Working</div>
+                <div class="text-3xl font-extrabold text-white" id="working-count">0</div>
+                <div class="text-sm text-slate-400 mt-1">Seats running real tasks</div>
+            </div>
+            <div class="glass-panel rounded-2xl p-4 border border-slate-700/70">
+                <div class="text-slate-500 font-mono text-[11px] uppercase tracking-[0.22em] mb-2">Idle</div>
+                <div class="text-3xl font-extrabold text-white" id="idle-count">0</div>
+                <div class="text-sm text-slate-400 mt-1">Available standby modules</div>
+            </div>
+        </section>
+
+        <section class="glass-panel rounded-[2rem] p-4 md:p-6 xl:p-8 relative overflow-hidden grid-overlay flow-stage">
+            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/8 via-transparent to-violet-500/8 pointer-events-none"></div>
+
+            <div class="flex items-center gap-2 mb-6 relative z-10">
+                <i class="fa-solid fa-diagram-project text-slate-500"></i>
+                <h2 class="text-sm font-mono font-bold text-slate-500 tracking-widest uppercase">Office topology</h2>
+            </div>
+
+            <div class="connector-grid" aria-hidden="true">
+                <svg viewBox="0 0 1200 760" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="connectorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="rgba(34,211,238,0.12)"></stop>
+                            <stop offset="30%" stop-color="rgba(34,211,238,0.8)"></stop>
+                            <stop offset="70%" stop-color="rgba(139,92,246,0.72)"></stop>
+                            <stop offset="100%" stop-color="rgba(251,191,36,0.5)"></stop>
+                        </linearGradient>
+                    </defs>
+                    <path d="M600 130 L600 238"></path>
+                    <path d="M600 238 L240 238 L240 294"></path>
+                    <path d="M600 238 L480 238 L480 294"></path>
+                    <path d="M600 238 L720 238 L720 294"></path>
+                    <path d="M600 238 L960 238 L960 294"></path>
+                    <path d="M240 466 L240 520"></path>
+                    <path d="M480 466 L480 520"></path>
+                    <path d="M720 466 L720 520"></path>
+                    <path d="M960 466 L960 520"></path>
+                </svg>
+            </div>
+
+            <div class="relative z-10 space-y-5">
+                <div class="max-w-md mx-auto" id="slot-leader"></div>
+
+                <div class="grid gap-5 lg:grid-cols-4" id="row-upper"></div>
+                <div class="grid gap-5 lg:grid-cols-4" id="row-lower"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-800/50 py-8 text-center">
+        <p class="text-slate-600 text-xs font-mono">
+            MIDNIGHT COCKPIT <span class="mx-2">|</span>
+            DIGITAL OFFICE <span class="mx-2">|</span>
+            STATIC STATUS MONITOR
+        </p>
+    </footer>
 
     <script>
+        const OFFICE_LAYOUT = {
+            leader: 'slot-leader',
+            designer: 'row-upper',
+            developer: 'row-upper',
+            reviewer: 'row-upper',
+            writer: 'row-upper',
+            analyst: 'row-lower',
+            email: 'row-lower',
+            archivist: 'row-lower'
+        };
+
+        const ROLE_META = {
+            leader: {
+                name: 'Leader',
+                lane: 'Mission Control',
+                icon: 'fa-satellite-dish',
+                accentBorder: 'border-cyan-500/20',
+                accentText: 'text-cyan-300',
+                accentPanel: 'from-cyan-500/10'
+            },
+            designer: {
+                name: 'Designer',
+                lane: 'Visual Systems',
+                icon: 'fa-compass-drafting',
+                accentBorder: 'border-violet-500/20',
+                accentText: 'text-violet-300',
+                accentPanel: 'from-violet-500/10'
+            },
+            developer: {
+                name: 'Developer',
+                lane: 'Build Lane',
+                icon: 'fa-code',
+                accentBorder: 'border-emerald-500/20',
+                accentText: 'text-emerald-300',
+                accentPanel: 'from-emerald-500/10'
+            },
+            reviewer: {
+                name: 'Reviewer',
+                lane: 'Critique Lane',
+                icon: 'fa-shield-halved',
+                accentBorder: 'border-amber-500/20',
+                accentText: 'text-amber-300',
+                accentPanel: 'from-amber-500/10'
+            },
+            writer: {
+                name: 'Writer',
+                lane: 'Narrative Lane',
+                icon: 'fa-pen-nib',
+                accentBorder: 'border-rose-500/20',
+                accentText: 'text-rose-300',
+                accentPanel: 'from-rose-500/10'
+            },
+            analyst: {
+                name: 'Analyst',
+                lane: 'Research Lane',
+                icon: 'fa-chart-line',
+                accentBorder: 'border-cyan-500/20',
+                accentText: 'text-cyan-300',
+                accentPanel: 'from-cyan-500/10'
+            },
+            email: {
+                name: 'Email',
+                lane: 'Draft Ops',
+                icon: 'fa-envelope-open-text',
+                accentBorder: 'border-amber-500/20',
+                accentText: 'text-amber-300',
+                accentPanel: 'from-amber-500/10'
+            },
+            archivist: {
+                name: 'Archivist',
+                lane: 'Memory Vault',
+                icon: 'fa-box-archive',
+                accentBorder: 'border-violet-500/20',
+                accentText: 'text-violet-300',
+                accentPanel: 'from-violet-500/10'
+            }
+        };
+
+        const STATUS_META = {
+            idle: {
+                label: 'IDLE',
+                dot: 'bg-slate-500 text-slate-400',
+                badge: 'border-slate-700 bg-slate-900/70 text-slate-300',
+                copy: 'Standing by'
+            },
+            active: {
+                label: 'ACTIVE',
+                dot: 'bg-emerald-400 text-emerald-400',
+                badge: 'border-emerald-500/30 bg-emerald-900/20 text-emerald-200',
+                copy: 'Online / supervising'
+            },
+            working: {
+                label: 'WORKING',
+                dot: 'bg-cyan-400 text-cyan-400 pulse-working',
+                badge: 'border-cyan-500/30 bg-cyan-900/20 text-cyan-200',
+                copy: 'Running a task'
+            }
+        };
+
+        function escapeHtml(value) {
+            return String(value ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function sentenceCaseFromKey(key) {
+            return key.replace(/(^.|[-_].)/g, segment => segment.replace(/[-_]/g, '').toUpperCase());
+        }
+
+        function buildNode(roleId, state) {
+            const meta = ROLE_META[roleId] || {
+                name: sentenceCaseFromKey(roleId),
+                lane: 'General Lane',
+                icon: 'fa-microchip',
+                accentBorder: 'border-cyan-500/20',
+                accentText: 'text-cyan-300',
+                accentPanel: 'from-cyan-500/10'
+            };
+            const statusKey = STATUS_META[state.status] ? state.status : 'idle';
+            const status = STATUS_META[statusKey];
+            const task = (state.task || '').trim();
+            const accentBorder = meta.accentBorder;
+            const accentText = meta.accentText;
+            const accentPanel = meta.accentPanel;
+
+            return `
+                <article class="glass-panel node-shell rounded-[1.5rem] p-5 border ${accentBorder} min-h-[172px] flex flex-col justify-between">
+                    <div class="relative z-10 flex items-start justify-between gap-4 mb-4">
+                        <div class="min-w-0">
+                            <p class="font-mono text-[11px] uppercase node-badge ${accentText} mb-2">${escapeHtml(meta.lane)}</p>
+                            <h3 class="text-xl font-bold text-white truncate">${escapeHtml(meta.name)}</h3>
+                            <p class="text-slate-500 font-mono text-xs mt-1">${escapeHtml(roleId)}</p>
+                        </div>
+                        <div class="pixel-icon shrink-0 ${accentText}">
+                            <i class="fa-solid ${escapeHtml(meta.icon)}"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="w-2.5 h-2.5 rounded-full status-dot ${status.dot}"></span>
+                                <span class="font-mono text-xs text-slate-300 tracking-[0.18em] uppercase truncate">${escapeHtml(status.label)}</span>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full border ${status.badge} text-[11px] font-mono shrink-0">${escapeHtml(status.copy)}</span>
+                        </div>
+
+                        <div class="rounded-2xl border border-slate-800/90 bg-slate-950/45 px-3 py-3 bg-gradient-to-br ${accentPanel} to-transparent">
+                            <div class="text-slate-500 font-mono text-[11px] uppercase tracking-[0.18em] mb-2">Current task</div>
+                            <p class="text-sm leading-6 ${task ? 'text-slate-200' : 'text-slate-500'}">${escapeHtml(task || 'No active task attached.')}</p>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        function updateSummary(roles) {
+            const statuses = Object.values(roles).map(role => role.status || 'idle');
+            const counts = {
+                active: statuses.filter(status => status === 'active').length,
+                working: statuses.filter(status => status === 'working').length,
+                idle: statuses.filter(status => status === 'idle').length
+            };
+            const occupied = counts.active + counts.working;
+
+            document.getElementById('active-count').textContent = counts.active;
+            document.getElementById('working-count').textContent = counts.working;
+            document.getElementById('idle-count').textContent = counts.idle;
+            document.getElementById('occupied-count').textContent = `${occupied} / ${statuses.length}`;
+        }
+
+        function renderOffice(data) {
+            const leaderSlot = document.getElementById('slot-leader');
+            const upperRow = document.getElementById('row-upper');
+            const lowerRow = document.getElementById('row-lower');
+            leaderSlot.innerHTML = '';
+            upperRow.innerHTML = '';
+            lowerRow.innerHTML = '';
+
+            Object.entries(OFFICE_LAYOUT).forEach(([roleId, targetId]) => {
+                const target = document.getElementById(targetId);
+                const state = data[roleId] || { status: 'idle', task: '' };
+                target.insertAdjacentHTML('beforeend', buildNode(roleId, state));
+            });
+
+            updateSummary(data);
+            document.getElementById('last-sync-copy').textContent = `Last sync ${new Date().toLocaleTimeString('en-US', {
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            })} JST · structural map refreshed from office.json.`;
+        }
+
         async function updateOffice() {
             try {
-                const response = await fetch('office.json?t=' + Date.now());
+                const response = await fetch('office.json?t=' + Date.now(), { cache: 'no-store' });
                 const data = await response.json();
-                const floor = document.getElementById('office-floor');
-                floor.innerHTML = '';
-
-                data.staff.forEach(person => {
-                    const container = document.createElement('div');
-                    container.className = 'avatar-container';
-                    container.style.left = person.location.x + 'px';
-                    container.style.top = person.location.y + 'px';
-
-                    container.innerHTML = `
-                        <div class="status-bubble">
-                            <strong>${person.role}</strong><br>
-                            ${person.activity}
-                        </div>
-                        <div class="avatar-circle">
-                            ${person.avatar}
-                        </div>
-                        <div class="name-tag">
-                            ${person.name}
-                        </div>
-                    `;
-                    floor.appendChild(container);
-                });
-            } catch (e) {
-                console.error("Failed to load office state", e);
+                renderOffice(data);
+            } catch (error) {
+                console.error('Failed to load office state', error);
+                document.getElementById('last-sync-copy').textContent = 'Office telemetry unavailable. Showing last known frame if present.';
             }
         }
 
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', {
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('clock').textContent = timeString + ' JST';
+        }
+
+        setInterval(updateClock, 1000);
         setInterval(updateOffice, 5000);
+        updateClock();
         updateOffice();
     </script>
 </body>
