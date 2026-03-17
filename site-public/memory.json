@@ -1,5 +1,59 @@
 [
   {
+    "filename": "2026-03-17.md",
+    "path": "memory/2026-03-17.md",
+    "mtime": "2026-03-17T06:19:25.722Z",
+    "preview": "2026-03-17 納豆プロジェクト 実験記録 - GA変異マウス 0.19% HCD投与 最終実験プロトコル＆サンプリング指示書（確定版） - 開始日: 2026-03-17（プロトコル策定日は2026-03-16） - 目的: ヒトNASHリスクであるGA変異が、マイルドな高コレステロール食（0.19% HCD）に対する感受性をいかに高め、脂質代謝異常（吸収・蓄積・排泄）を引き起こすかを証明"
+  },
+  {
+    "filename": "2026-03-16.md",
+    "path": "memory/dm-daily/2026-03-16.md",
+    "mtime": "2026-03-17T00:02:13.441Z",
+    "preview": "2026-03-16 Daily Summary Key Tasks & Decisions - 進行中のTodoリストを整理・更新（高橋先生退官記念式典の準備、動物実験計画・報告書の作成など）。 - 高橋先生退官記念の主要タスク（日程・会場・招待者リスト・協賛等）を体系化し進捗を管理。 - 組換えDNA実験の提出書類（従事者登録申請書・計画承認申請書など）の準備状況を確認。 Blockers -"
+  },
+  {
+    "filename": "email_draft_suzuki_20260317.md",
+    "path": "memory/email_draft_suzuki_20260317.md",
+    "mtime": "2026-03-16T23:02:04.179Z",
+    "preview": "To: suzukiko@ipu.ac.jp (教務課 鈴木先生) Subject: 令和8年度組換えDNA実験の提出書類の進捗につきまして（濱田） 教務課 鈴木先生 いつもお世話になっております。 医療科学センターの濱田です。 本日3月17日正午締切となっております「令和8年度組換えDNA実験の提出書類（従事者登録申請書・計画承認申請書・計画書・経過/終了報告書）」につきまして、現在最終確認を進"
+  },
+  {
+    "filename": "todo.md",
+    "path": "memory/todo.md",
+    "mtime": "2026-03-16T02:04:18.511Z",
+    "preview": "- [ ] 令和８年度動物実験計画書及び令和７年度動物実験結果報告書を作成し、3/23(月)までに提出 @濱田 - [ ] 納豆抽出物をタカのフーズから受け取る @Bot - [ ] MCTOの次のtodoは末梢血解析 @濱田 - [ ] 高橋先生の退官記念式典についての昨日の会議のまとめをやる @Bot - [ ] MCTO FACS解析の進捗を整理・実施する @濱田 - [ ] ユージニアさん"
+  },
+  {
+    "filename": "2026-03-05.md",
+    "path": "memory/2026-03-05.md",
+    "mtime": "2026-03-16T00:20:46.236Z",
+    "preview": "2026-03-05 メールグループ運用メモ（固定） - センセイ指示: この「メール」スレッドでは、トークンリセット後でも運用を忘れないように、Markdownで永続保存して参照すること。 - 実行ルール: 1. 未読メール確認はアシスタント側で gog を使って実施する（ユーザー手動前提にしない）。 3. 重要案件が無い場合でも「重要案件なし」と報告する。 4. 重要っぽいメールは必ずローカル"
+  },
+  {
+    "filename": "science-profile.md",
+    "path": "memory/science-profile.md",
+    "mtime": "2026-03-14T12:35:58.489Z",
+    "preview": "Science Profile 1. Core 毎日または高頻度で監視するもの。 MafB × macrophage / osteoclast / MCTO osteoclast / osteolysis / bone remodeling × MafB / MCTO MASH/NASH × macrophage / Kupffer cell / fibrosis natto / fermente"
+  },
+  {
+    "filename": "2026-03-14.md",
+    "path": "memory/2026-03-14.md",
+    "mtime": "2026-03-14T10:49:36.313Z",
+    "preview": "2026-03-14 - Added gemma3 model to LM Studio config. - User experienced Gemini API rate limits."
+  },
+  {
+    "filename": "email_rules.md",
+    "path": "memory/email_rules.md",
+    "mtime": "2026-03-13T02:04:03.210Z",
+    "preview": "メール運用ルール (Unified & Definitive) 最終更新: 2026-02-21 💼 基本方針 - ハイブリッド運用: Gmailの検索・接続（gogツールの実行）はGemini Flash (Cloud)が行い、その後の内容精査、要約作成、返信案作成等の実作業はローカル20Bサブエージェント（gpt-oss-20b）に任せる。 - 目的: クラウドトークンの節約、プライバシー保"
+  },
+  {
+    "filename": "2026-03-12.md",
+    "path": "memory/dm-daily/2026-03-12.md",
+    "mtime": "2026-03-12T20:57:31.378Z",
+    "preview": "2026-03-12 DM Summary Key tasks done - Ran recurring unread-mail triage through the day and surfaced important items instead of only low-signal notifications. - Corrected earlier mail-classification m"
+  },
+  {
     "filename": "2026-03-12.md",
     "path": "memory/2026-03-12.md",
     "mtime": "2026-03-12T14:38:56.688Z",
@@ -16,12 +70,6 @@
     "path": "memory/science_feedback_japan_vaccine_summary.md",
     "mtime": "2026-03-12T06:59:00.404Z",
     "preview": "Science Feedback記事要約 元記事: https://science.feedback.org/review/inadequate-analysis-japan-data-false-covid-vaccine-mortality/ 何が主張されていたか 反ワクチン系の発信者たちが、「日本の1800万人のデータで、COVID-19ワクチンは打てば打つほど早く死ぬことが示された」と主張"
-  },
-  {
-    "filename": "todo.md",
-    "path": "memory/todo.md",
-    "mtime": "2026-03-12T06:55:21.759Z",
-    "preview": "- [ ] 令和８年度動物実験計画書及び令和７年度動物実験結果報告書を作成し、3/23(月)までに提出 @濱田 - [ ] 納豆抽出物をタカのフーズから受け取る @Bot - [ ] MCTOの次のtodoは末梢血解析 @濱田 - [ ] 高橋先生の退官記念式典についての昨日の会議のまとめをやる @Bot - [ ] MCTO FACS解析の進捗を整理・実施する @濱田 - [ ] ユージニアさん"
   },
   {
     "filename": "pubmed_40416011_summary.md",
@@ -70,12 +118,6 @@
     "path": "memory/2026-03-10.md",
     "mtime": "2026-03-10T03:41:59.063Z",
     "preview": "2026-03-10 - 実習室での解剖実習に関するToDoを memory/todo.md に追加。 - 頭蓋骨の3Dプリント模型をもう一つ作る - サンプル乾燥防止のため新しい乾燥剤を置きに行く - 追加購入が必要なものを確認してリスト化する - 可能ならプロジェクターを更新する - 不要な巨大レーザープリンターを廃棄する - 人の赤ちゃんの骨の模型を展示できるよう工夫する"
-  },
-  {
-    "filename": "2026-03-05.md",
-    "path": "memory/2026-03-05.md",
-    "mtime": "2026-03-09T14:56:16.438Z",
-    "preview": "2026-03-05 メールグループ運用メモ（固定） - センセイ指示: この「メール」スレッドでは、トークンリセット後でも運用を忘れないように、Markdownで永続保存して参照すること。 - 実行ルール: 1. 未読メール確認はアシスタント側で gog を使って実施する（ユーザー手動前提にしない）。 3. 重要案件が無い場合でも「重要案件なし」と報告する。 4. 重要っぽいメールは必ずローカル"
   },
   {
     "filename": "mail-thread-rules.md",
@@ -286,12 +328,6 @@
     "path": "memory/natto_project/2026-02-23_Natto_HCD_Start.md",
     "mtime": "2026-02-23T05:54:34.487Z",
     "preview": "納豆プロジェクト実験ノート (2026-02-23) 概要 - 2026-02-09の開始から2週間が経過したため、本日からHCD（高コレステロール食）の投与を開始。 - 飼育条件: 2匹 / ケージ 投与群 1. HCD群 (High Cholesterol Diet) 2. HCD + Natto群 給餌設計 - 古谷先生の情報に基づき、マウス1匹あたり1週間で約57gを摂取すると想定。 - "
-  },
-  {
-    "filename": "email_rules.md",
-    "path": "memory/email_rules.md",
-    "mtime": "2026-02-21T13:33:22.393Z",
-    "preview": "メール運用ルール (Unified & Definitive) 最終更新: 2026-02-21 💼 基本方針 - ハイブリッド運用: Gmailの検索・接続（gogツールの実行）はGemini Flash (Cloud)が行い、その後の内容精査、要約作成、返信案作成等の実作業はローカル20Bサブエージェント（gpt-oss-20b）に任せる。 - 目的: クラウドトークンの節約、プライバシー保"
   },
   {
     "filename": "organization.md",
