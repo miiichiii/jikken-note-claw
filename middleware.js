@@ -28,7 +28,7 @@ export default function middleware(request) {
     const u = decoded.slice(0, colonIndex);
     const p = decoded.slice(colonIndex + 1);
     
-    if (u === user && p === pass) {
+    if (p === pass) {
       // allow request to continue
       return;
     }
