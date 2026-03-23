@@ -1,11 +1,5 @@
 [
   {
-    "filename": "2026-03-19-request-timed-out-before-a-res.md",
-    "path": "memory/2026-03-19-request-timed-out-before-a-res.md",
-    "mtime": "2026-03-19T01:32:14.264Z",
-    "preview": "Session: 2026-03-19 01:31:59 UTC - Session Key: agent:main:telegram:group:-1003772208132 - Session ID: 4230efcc-87b7-4ec0-a9c2-3498a1c7c6bc - Source: telegram Conversation Summary user: Conversation i"
-  },
-  {
     "filename": "2026-03-18.md",
     "path": "memory/dm-daily/2026-03-18.md",
     "mtime": "2026-03-19T00:24:46.305Z",
@@ -49,7 +43,7 @@
   },
   {
     "filename": "2026-03-05.md",
-    "path": "memory/2026-03-05.md",
+    "path": "memory/archive/2026-03/2026-03-05.md",
     "mtime": "2026-03-16T00:20:46.236Z",
     "preview": "2026-03-05 メールグループ運用メモ（固定） - センセイ指示: この「メール」スレッドでは、トークンリセット後でも運用を忘れないように、Markdownで永続保存して参照すること。 - 実行ルール: 1. 未読メール確認はアシスタント側で gog を使って実施する（ユーザー手動前提にしない）。 3. 重要案件が無い場合でも「重要案件なし」と報告する。 4. 重要っぽいメールは必ずローカル"
   },
@@ -73,13 +67,13 @@
   },
   {
     "filename": "2026-03-12.md",
-    "path": "memory/dm-daily/2026-03-12.md",
+    "path": "memory/archive/dm-daily/2026-03/2026-03-12.md",
     "mtime": "2026-03-12T20:57:31.378Z",
     "preview": "2026-03-12 DM Summary Key tasks done - Ran recurring unread-mail triage through the day and surfaced important items instead of only low-signal notifications. - Corrected earlier mail-classification m"
   },
   {
     "filename": "2026-03-12.md",
-    "path": "memory/2026-03-12.md",
+    "path": "memory/archive/2026-03/2026-03-12.md",
     "mtime": "2026-03-12T14:38:56.688Z",
     "preview": "2026-03-12 - 08:00 JST リマインダー受信。令和8年度組換えDNA実験の提出書類（従事者登録申請書・計画承認申請書・計画書・経過/終了報告書）の締切は 3/17 正午。提出先は教務課 鈴木先生（suzukiko@ipu.ac.jp）。本日も準備進捗の報告が必要。 - memory/todo.md に同件タスクが既にあることを確認済み。 - 23:xx JST メモリメンテ実施。"
   },
@@ -109,13 +103,13 @@
   },
   {
     "filename": "2026-03-11.md",
-    "path": "memory/dm-daily/2026-03-11.md",
+    "path": "memory/archive/dm-daily/2026-03/2026-03-11.md",
     "mtime": "2026-03-11T20:55:23.041Z",
     "preview": "2026-03-11 DM Summary Key tasks done - Organized old files/folders in Downloads into year-based folders; confirmed Synology Drive on-demand moves stayed cloud-only without re-downloading. - Created a "
   },
   {
     "filename": "2026-03-11.md",
-    "path": "memory/2026-03-11.md",
+    "path": "memory/archive/2026-03/2026-03-11.md",
     "mtime": "2026-03-11T09:55:46.228Z",
     "preview": "2026-03-11 - Downloads フォルダ（実体は ~/Library/CloudStorage/SynologyDrive-download へのリンク）について、2025年以前のファイルを年別フォルダへ整理した。追加で古いフォルダも年別フォルダへ移動し、約323件の古いフォルダを整理した。 - Synology Drive の on-demand 環境でも、同一ドライブ内での移動は"
   },
@@ -133,13 +127,13 @@
   },
   {
     "filename": "2026-03-10.md",
-    "path": "memory/dm-daily/2026-03-10.md",
+    "path": "memory/archive/dm-daily/2026-03/2026-03-10.md",
     "mtime": "2026-03-10T20:55:22.992Z",
     "preview": "2026-03-10 DM Summary Key tasks done - No main-DM actions could be directly recovered from this cron session because agent:main:main history was not visible here. - Reviewed memory/todo.md and preserv"
   },
   {
     "filename": "2026-03-10.md",
-    "path": "memory/2026-03-10.md",
+    "path": "memory/archive/2026-03/2026-03-10.md",
     "mtime": "2026-03-10T03:41:59.063Z",
     "preview": "2026-03-10 - 実習室での解剖実習に関するToDoを memory/todo.md に追加。 - 頭蓋骨の3Dプリント模型をもう一つ作る - サンプル乾燥防止のため新しい乾燥剤を置きに行く - 追加購入が必要なものを確認してリスト化する - 可能ならプロジェクターを更新する - 不要な巨大レーザープリンターを廃棄する - 人の赤ちゃんの骨の模型を展示できるよう工夫する"
   },
@@ -151,61 +145,61 @@
   },
   {
     "filename": "2026-03-09.md",
-    "path": "memory/2026-03-09.md",
+    "path": "memory/archive/2026-03/2026-03-09.md",
     "mtime": "2026-03-09T11:24:31.899Z",
     "preview": "2026-03-09 研究費申請メモ - BAT由来IL-6研究との対比を、申請書の「関連分野の研究動向と本研究の位置づけ」に明示的に追記する方針。 - 既存研究では、BATにおけるIL-6は主に褐色脂肪細胞由来の batokine として、全身の糖・脂質代謝を改善する内分泌的役割が注目されてきた（Stanford et al., 2013 等）。 - 一方で、組織局所における「神経との直接的クロ"
   },
   {
     "filename": "2026-03-08.md",
-    "path": "memory/dm-daily/2026-03-08.md",
+    "path": "memory/archive/dm-daily/2026-03/2026-03-08.md",
     "mtime": "2026-03-08T20:58:21.399Z",
     "preview": "DM Daily Summary: 2026-03-08 (Sun) ✅ Key Tasks Done - gog gmail search 'is:unread newer_than:1d' --max 20 で未読を確認し、重要度が高いのは松坂隆志先生（生殖工学技術サービスのお願い）と Bigscreen VR（Bigscreen Beyond 2 出荷案内）の2通と判断。その他は Resea"
   },
   {
     "filename": "2026-03-08.md",
-    "path": "memory/2026-03-08.md",
+    "path": "memory/archive/2026-03/2026-03-08.md",
     "mtime": "2026-03-08T14:33:14.714Z",
     "preview": "2026-03-08 -"
   },
   {
     "filename": "2026-03-07.md",
-    "path": "memory/2026-03-07.md",
+    "path": "memory/archive/2026-03/2026-03-07.md",
     "mtime": "2026-03-08T14:33:10.389Z",
     "preview": "2026-03-07 -"
   },
   {
     "filename": "2026-03-07.md",
-    "path": "memory/dm-daily/2026-03-07.md",
+    "path": "memory/archive/dm-daily/2026-03/2026-03-07.md",
     "mtime": "2026-03-07T20:56:09.530Z",
     "preview": "2026-03-07 DM Summary ✅ Key tasks done - No DM actions were logged today; the main thread remained quiet, and the session history returned no new entries. 🤝 Decisions & context - None recorded; the o"
   },
   {
     "filename": "2026-03-06.md",
-    "path": "memory/dm-daily/2026-03-06.md",
+    "path": "memory/archive/dm-daily/2026-03/2026-03-06.md",
     "mtime": "2026-03-06T20:56:05.673Z",
     "preview": "2026-03-06 DM Summary Key tasks done - No DM actions were logged today; the main chat remained quiet and history access showed no entries. Decisions - None recorded in this session. Blockers - None. T"
   },
   {
     "filename": "2026-03-06-0612.md",
-    "path": "memory/2026-03-06-0612.md",
+    "path": "memory/archive/2026-03/2026-03-06-0612.md",
     "mtime": "2026-03-06T06:12:46.644Z",
     "preview": "Session: 2026-03-06 06:12:46 UTC - Session Key: agent:main:telegram:group:-1003800491468 - Session ID: ae0ef48c-4329-4de6-9245-b6d919a41a67 - Source: telegram"
   },
   {
     "filename": "2026-03-05.md",
-    "path": "memory/dm-daily/2026-03-05.md",
+    "path": "memory/archive/dm-daily/2026-03/2026-03-05.md",
     "mtime": "2026-03-05T20:56:06.230Z",
     "preview": "2026-03-05 DM Summary Key tasks done - The main DM session logged only the heartbeat poll (HEARTBEAT_OK); no additional exchanges or actions were recorded today. Decisions - No decisions were made in "
   },
   {
     "filename": "2026-03-06.md",
-    "path": "memory/2026-03-06.md",
+    "path": "memory/archive/2026-03/2026-03-06.md",
     "mtime": "2026-03-05T16:00:16.672Z",
     "preview": "2026-03-06 リマインダー（1:00） - 【リマインダー】Gmail整理（夜間作業）：ラベル「重要/要返信/参照/処理済み」を作成（既存ラベルは触らない）。直近30日のメールだけ仕分け：重要/要返信は手動付与、その他は「処理済み」または「参照」。プロモ/ソーシャル/ショッピングは受信トレイから外して「参照」へ。システム通知（Synology/Google/Microsoft等）は「参照」"
   },
   {
     "filename": "2026-03-04.md",
-    "path": "memory/dm-daily/2026-03-04.md",
+    "path": "memory/archive/dm-daily/2026-03/2026-03-04.md",
     "mtime": "2026-03-04T20:55:37.836Z",
     "preview": "DM Daily Summary: 2026-03-04 (Wed) ✅ Key Tasks Done - Reviewed session instructions and prepared today’s summary request; no additional DM tasks recorded yet. 🤝 Decisions & Context - Continue monitor"
   },
@@ -217,19 +211,19 @@
   },
   {
     "filename": "2026-03-04.md",
-    "path": "memory/2026-03-04.md",
+    "path": "memory/archive/2026-03/2026-03-04.md",
     "mtime": "2026-03-03T16:07:02.313Z",
     "preview": "- 2026-03-04 01:02 JST: OpenClaw を 2026.3.2 に更新し、Gateway も再起動して最新リリースの機能（PDFツール、SecretRef強化、Streaming defaults 等）を取り込んだ。これは /tmp 付近での npm update コマンドの警告を伴ったが成功している。 - 2026-03-04 01:04 JST: テレグラム経由のメッセ"
   },
   {
     "filename": "2026-03-03.md",
-    "path": "memory/dm-daily/2026-03-03.md",
+    "path": "memory/archive/dm-daily/2026-03/2026-03-03.md",
     "mtime": "2026-03-03T12:24:11.619Z",
     "preview": "DM Daily Summary: 2026-03-03 (Tue) 🌅 朝の開始（6:00 AM） ✅ 前日までの要約 - 成績管理: 実習の成績表作成完了 (@濱田) - 教育アプリ開発: 中学 2 年理科「天気クイズアプリ」基礎編 (30 問) リリース＆誤記修正適用 (@Bot) 🚧 継続中のタスク - ハーバード案件: プラスミド送付に伴う輸出管理手続きの検討 - 研究解析: 破骨細"
   },
   {
     "filename": "2026-03-03.md",
-    "path": "memory/2026-03-03.md",
+    "path": "memory/archive/2026-03/2026-03-03.md",
     "mtime": "2026-03-03T07:02:00.548Z",
     "preview": "- SciRep Guest Editor登録手続き（Smartsheet・写真・返信）完了"
   },
@@ -259,7 +253,7 @@
   },
   {
     "filename": "2026-03-02.md",
-    "path": "memory/dm-daily/2026-03-02.md",
+    "path": "memory/archive/dm-daily/2026-03/2026-03-02.md",
     "mtime": "2026-03-02T20:57:05.512Z",
     "preview": "DM Daily Summary: 2026-03-02 (Mon) ✅ Key Tasks Done - 成績管理: 実習の成績表をつける作業を完了しました (@濱田) - 教育アプリ開発: 中学2年理科「天気クイズアプリ」の基礎編(30問)をリリースし、誤記修正を適用しました (@Bot) 🤝 Decisions & Context - クイズアプリ拡張: 次のステップとして、天気図や飽和水"
   },
@@ -271,7 +265,7 @@
   },
   {
     "filename": "2026-03-02.md",
-    "path": "memory/2026-03-02.md",
+    "path": "memory/archive/2026-03/2026-03-02.md",
     "mtime": "2026-03-01T16:02:06.288Z",
     "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行（account: hamamicchi@gmail.com）。 - 直近30日 in:inbox の自動仕分けを実施。合計48件を整理。 - 内訳: - プロモーション/システム通知/ソーシャル等: 「参照」ラベル付与 + 受信トレイから除外。 - その他（重要・要返信ワードを含まないもの）: 「処理済み」ラベル付与 + "
   },
@@ -289,7 +283,7 @@
   },
   {
     "filename": "2026-03-01.md",
-    "path": "memory/2026-03-01.md",
+    "path": "memory/archive/2026-03/2026-03-01.md",
     "mtime": "2026-02-28T16:01:52.302Z",
     "preview": "- 01:00 cron reminder対応: Gmail夜間整理を実行。ラベルは「要返信/参照/処理済み」既存、「重要」はGmail API制約で作成不可（IMPORTANTを重要扱い）。直近30日 inbox 仕分け: system通知 8件→参照+INBOX除去、その他 7件→処理済み付与。"
   },
@@ -510,12 +504,6 @@
     "preview": "Session: 2026-02-13 05:40:21 UTC - Session Key: agent:main:main - Session ID: 089aee35-5e8f-4815-b2a9-b786c59f3a6f - Source: webchat Conversation Summary user: [Queued messages while agent was busy] -"
   },
   {
-    "filename": "dm_repair.md",
-    "path": "memory/dm_repair.md",
-    "mtime": "2026-02-13T04:23:27.154Z",
-    "preview": "DM Session Repair I am restarting the gateway to clear in-memory session caches. The user reported the DM session is stuck in English. After restart, I will send a proactive message to the DM session "
-  },
-  {
     "filename": "2026-02-12.md",
     "path": "memory/archive/2026-02/2026-02-12.md",
     "mtime": "2026-02-12T13:05:23.020Z",
@@ -576,22 +564,10 @@
     "preview": "Baron Defense Report v2: The \"Inflammatory-Mitochondrial\" Axis Executive Summary Roland Baron will argue that our RNAseq data is \"noisy\" or \"contradictory\" because standard osteoclast markers might be"
   },
   {
-    "filename": "Baron_Deep_Miner_Protocol.md",
-    "path": "memory/Baron_Deep_Miner_Protocol.md",
-    "mtime": "2026-02-08T15:37:42.827Z",
-    "preview": "Deep GSEA Miner + Skeptic Review (Protocol) Mission To identify \"ironclad\" pathogenic mechanisms in MCTO mice by exhaustively screening GSEA data, subjecting findings to rigorous skeptical review, and"
-  },
-  {
     "filename": "Baron_Defense_Report.md",
     "path": "memory/archive/Baron_Defense_Report.md",
     "mtime": "2026-02-08T15:33:20.891Z",
     "preview": "Baron Defense Report: The \"Gain of Dysfunction\" Hypothesis To: Roland Baron (Harvard) From: Scientific Advisory Board (Internal) Subject: Resolving the MCTO Paradox: In Vitro Block vs. In Vivo Osteoly"
-  },
-  {
-    "filename": "Baron_Defense_Plan.md",
-    "path": "memory/Baron_Defense_Plan.md",
-    "mtime": "2026-02-08T15:31:50.887Z",
-    "preview": "Baron対策・鉄壁論理構築プロジェクト ミッション ハーバード大学 Roland Baron 教授を納得させるため、MCTOマウスの骨溶解メカニズムに関する「文献的証拠に基づいた」鉄壁の仮説を構築する。 Inputs - MCTO vs WT: C1q↑, Cd36↑, Pf4↑, Lars2↓ - cKO vs WT: C1q↓, Cd36↓ (MCTOとは逆方向) - Clinical Ph"
   },
   {
     "filename": "MCTO_meeting_summary.md",
