@@ -173,6 +173,16 @@
         </div>
     </main>
 
+    <div id="sync-actions" class="hidden fixed bottom-4 right-4 z-50 glass-panel rounded-xl px-4 py-3 border border-cyan-900/30 shadow-xl max-w-sm">
+        <div class="text-[11px] font-mono text-slate-300 mb-2">
+            <span id="pending-count" class="text-cyan-300 font-bold">0</span> 件のローカル変更があります
+        </div>
+        <div class="flex gap-2">
+            <button id="copy-sync-text" class="text-[11px] font-mono px-3 py-2 rounded border border-cyan-500/30 bg-cyan-900/20 text-cyan-300 hover:bg-cyan-900/30">📋 反映テキストをコピー</button>
+            <button id="clear-local-overrides" class="text-[11px] font-mono px-3 py-2 rounded border border-slate-500/30 bg-slate-900/20 text-slate-300 hover:bg-slate-900/30">✕ クリア</button>
+        </div>
+    </div>
+
     <footer class="border-t border-slate-800/50 py-6 text-center mt-auto">
         <p class="text-slate-600 text-xs font-mono">
             TACTICAL BOARD <span class="mx-2">|</span> 
@@ -256,6 +266,36 @@
             return merged;
         }
 
+        function updateSyncActions(tasks) {
+            const overrides = getLocalOverrides();
+            const actionBox = document.getElementById('sync-actions');
+            const pendingCount = document.getElementById('pending-count');
+            const entries = Object.entries(overrides);
+            pendingCount.textContent = entries.length;
+            actionBox.classList.toggle('hidden', entries.length === 0);
+        }
+
+        function buildSyncText(tasks) {
+            const overrides = getLocalOverrides();
+            const taskMap = new Map(tasks.map(t => [t.id, t]));
+            const doneLines = [];
+            const undoLines = [];
+            for (const [taskId, override] of Object.entries(overrides)) {
+                const task = taskMap.get(taskId);
+                const title = task ? task.title : taskId;
+                if (override.status === 'done' || override.status === 'pending-done') {
+                    doneLines.push(`done ${taskId} // ${title}`);
+                } else {
+                    undoLines.push(`undo ${taskId} // ${title}`);
+                }
+            }
+            return [
+                'タスク反映お願いします',
+                ...doneLines,
+                ...undoLines
+            ].join('\n');
+        }
+
         function renderTasks(tasks) {
             const todoList = document.getElementById('todoList');
             const progressList = document.getElementById('progressList');
@@ -290,6 +330,7 @@
             document.getElementById('count-todo').textContent = counts.todo;
             document.getElementById('count-progress').textContent = counts.progress;
             document.getElementById('count-done').textContent = counts.done;
+            updateSyncActions(mergedTasks);
         }
 
         function createCard(task) {
@@ -363,6 +404,26 @@
             } else if (action === 'undo' || action === 'undo-pending') {
                 clearLocalOverride(taskId);
             }
+            loadTasks();
+        });
+
+        document.getElementById('copy-sync-text').addEventListener('click', async () => {
+            try {
+                const res = await fetch('tasks.json');
+                const tasks = await res.json();
+                const text = buildSyncText(tasks);
+                await navigator.clipboard.writeText(text);
+                const btn = document.getElementById('copy-sync-text');
+                const prev = btn.textContent;
+                btn.textContent = '✅ コピーしました';
+                setTimeout(() => btn.textContent = prev, 1500);
+            } catch (e) {
+                alert('コピーに失敗しました。');
+            }
+        });
+
+        document.getElementById('clear-local-overrides').addEventListener('click', () => {
+            localStorage.removeItem('taskBoardOverrides');
             loadTasks();
         });
 
