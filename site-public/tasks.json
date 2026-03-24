@@ -2,7 +2,7 @@
   {
     "id": "task-0",
     "title": "4月の授業予定（医療大学・筑波大学・看護学校）をカレンダーに登録する",
-    "status": "todo",
+    "status": "done",
     "priority": "B",
     "assignee": "Bot"
   },
@@ -303,7 +303,7 @@
   {
     "id": "task-43",
     "title": "R7の計画書に対応する動物実験結果報告書を作成する",
-    "status": "todo",
+    "status": "done",
     "priority": "B",
     "assignee": "Me"
   },
@@ -351,6 +351,20 @@
   },
   {
     "id": "task-50",
+    "title": "実験室の整理：Liaoくん/大木さんの実験台・冷蔵庫を空にする、-30℃フリーザー下段2BOXの整理",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-51",
+    "title": "遺伝子組換え書類の更新確認（Excelピンク色の欄）",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-52",
     "title": "遺伝子組換え書類の更新確認（Excelピンク色の欄）",
     "status": "todo",
     "priority": "B",
