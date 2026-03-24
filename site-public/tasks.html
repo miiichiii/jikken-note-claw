@@ -217,9 +217,9 @@
             }
         }
 
-        function setLocalOverride(taskId, status) {
+        function setLocalOverride(taskId, value) {
             const overrides = getLocalOverrides();
-            overrides[taskId] = status;
+            overrides[taskId] = value;
             localStorage.setItem('taskBoardOverrides', JSON.stringify(overrides));
         }
 
@@ -231,7 +231,29 @@
 
         function mergeLocalOverrides(tasks) {
             const overrides = getLocalOverrides();
-            return tasks.map(task => overrides[task.id] ? { ...task, status: overrides[task.id] } : task);
+            const now = Date.now();
+            let changed = false;
+            const merged = tasks.map(task => {
+                const override = overrides[task.id];
+                if (!override) return task;
+
+                if (override.status === 'pending-done') {
+                    const elapsed = now - override.at;
+                    if (elapsed >= 10000) {
+                        overrides[task.id] = { status: 'done', at: override.at };
+                        changed = true;
+                        return { ...task, status: 'done' };
+                    }
+                    return { ...task, status: 'pending-done', pendingSeconds: Math.max(0, 10 - Math.floor(elapsed / 1000)) };
+                }
+
+                return { ...task, status: override.status };
+            });
+
+            if (changed) {
+                localStorage.setItem('taskBoardOverrides', JSON.stringify(overrides));
+            }
+            return merged;
         }
 
         function renderTasks(tasks) {
@@ -294,14 +316,22 @@
 
             // Done state styling
             const isDone = task.status === 'done';
+            const isPendingDone = task.status === 'pending-done';
             const doneOpacity = isDone ? 'opacity-50' : '';
             if (isDone) borderClass = 'border-emerald-500';
+            if (isPendingDone) borderClass = 'border-amber-400';
 
             card.className = `glass-panel rounded-xl p-5 border-l-2 ${borderClass} group hover:translate-y-[-2px] transition-all duration-300 ${doneOpacity}`;
 
             const actionButton = isDone
                 ? `<button data-action="undo" data-task-id="${task.id}" class="text-[10px] font-mono px-2 py-1 rounded border border-amber-500/30 bg-amber-900/20 text-amber-300 hover:bg-amber-900/30">↩ UNDO</button>`
-                : `<button data-action="done" data-task-id="${task.id}" class="text-[10px] font-mono px-2 py-1 rounded border border-emerald-500/30 bg-emerald-900/20 text-emerald-300 hover:bg-emerald-900/30">✅ DONE</button>`;
+                : isPendingDone
+                    ? `<button data-action="undo-pending" data-task-id="${task.id}" class="text-[10px] font-mono px-2 py-1 rounded border border-slate-500/30 bg-slate-900/20 text-slate-300 hover:bg-slate-900/30">✕ CANCEL</button>`
+                    : `<button data-action="done" data-task-id="${task.id}" class="text-[10px] font-mono px-2 py-1 rounded border border-emerald-500/30 bg-emerald-900/20 text-emerald-300 hover:bg-emerald-900/30">✅ DONE</button>`;
+
+            const pendingBadge = isPendingDone
+                ? `<div class="mb-2 text-[10px] font-mono text-amber-300">DONE in ${task.pendingSeconds}s...</div>`
+                : '';
 
             card.innerHTML = `
                 <div class="flex justify-between items-start mb-3 gap-2">
@@ -313,7 +343,8 @@
                         ${actionButton}
                     </div>
                 </div>
-                <h3 class="text-slate-200 font-bold text-sm leading-relaxed mb-1 ${isDone ? 'line-through decoration-slate-500' : ''}">${task.title}</h3>
+                ${pendingBadge}
+                <h3 class="text-slate-200 font-bold text-sm leading-relaxed mb-1 ${(isDone || isPendingDone) ? 'line-through decoration-slate-500' : ''}">${task.title}</h3>
                 <div class="text-[10px] font-mono text-slate-500 mt-2 flex justify-between items-center">
                     <span>${task.id}</span>
                     <span class="text-slate-600">browser-local</span>
@@ -328,12 +359,18 @@
             const taskId = button.dataset.taskId;
             const action = button.dataset.action;
             if (action === 'done') {
-                setLocalOverride(taskId, 'done');
-            } else if (action === 'undo') {
+                setLocalOverride(taskId, { status: 'pending-done', at: Date.now() });
+            } else if (action === 'undo' || action === 'undo-pending') {
                 clearLocalOverride(taskId);
             }
             loadTasks();
         });
+
+        setInterval(() => {
+            if (Object.keys(getLocalOverrides()).length > 0) {
+                loadTasks();
+            }
+        }, 1000);
 
         // Initial load
         loadTasks();
