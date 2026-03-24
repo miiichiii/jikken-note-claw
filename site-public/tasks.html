@@ -109,6 +109,11 @@
     </header>
 
     <main class="pt-24 pb-12 px-4 max-w-7xl mx-auto flex-grow w-full">
+        <div class="glass-panel rounded-xl p-4 mb-6 text-xs text-slate-300 leading-relaxed border border-cyan-900/30">
+            <span class="font-mono text-cyan-400 font-bold mr-2">BETA</span>
+            このページの <span class="text-emerald-300">DONE</span> / <span class="text-amber-300">UNDO</span> は、いまは <span class="font-mono">このブラウザだけ</span> に保存されます。正式反映は Telegram で私に伝えてください。
+        </div>
+
         <!-- Columns Container -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-full items-start">
             
@@ -204,29 +209,48 @@
             }
         }
 
+        function getLocalOverrides() {
+            try {
+                return JSON.parse(localStorage.getItem('taskBoardOverrides') || '{}');
+            } catch {
+                return {};
+            }
+        }
+
+        function setLocalOverride(taskId, status) {
+            const overrides = getLocalOverrides();
+            overrides[taskId] = status;
+            localStorage.setItem('taskBoardOverrides', JSON.stringify(overrides));
+        }
+
+        function clearLocalOverride(taskId) {
+            const overrides = getLocalOverrides();
+            delete overrides[taskId];
+            localStorage.setItem('taskBoardOverrides', JSON.stringify(overrides));
+        }
+
+        function mergeLocalOverrides(tasks) {
+            const overrides = getLocalOverrides();
+            return tasks.map(task => overrides[task.id] ? { ...task, status: overrides[task.id] } : task);
+        }
+
         function renderTasks(tasks) {
             const todoList = document.getElementById('todoList');
             const progressList = document.getElementById('progressList');
             const doneList = document.getElementById('doneList');
-            
-            // Clear dynamic lists (keeping hardcoded progress items if any, or clear them? 
-            // Strategy: Clear TODO and DONE. Append to PROGRESS if data exists, else keep hardcoded?
-            // Let's stick to safe behavior: Clear specific containers we control.
-            // Actually, for "In Progress", if JSON has it, we should use it.
-            // Current JSON only has 'todo'.
+            const mergedTasks = mergeLocalOverrides(tasks);
             
             todoList.innerHTML = '';
             doneList.innerHTML = '';
             
-            // Note: Not clearing progressList to keep the static demo item unless we have real progress items
-            const hasProgressItems = tasks.some(t => t.status === 'in-progress');
+            const hasProgressItems = mergedTasks.some(t => t.status === 'in-progress');
             if (hasProgressItems) {
                 progressList.innerHTML = '';
             }
 
-            let counts = { todo: 0, progress: 1, done: 0 }; // Start progress at 1 for static item
+            let counts = { todo: 0, progress: hasProgressItems ? 0 : 1, done: 0 };
 
-            tasks.forEach(task => {
+            mergedTasks.forEach(task => {
                 const card = createCard(task);
 
                 if (task.status === 'done') {
@@ -241,9 +265,8 @@
                 }
             });
 
-            // Update counters
             document.getElementById('count-todo').textContent = counts.todo;
-            document.getElementById('count-progress').textContent = counts.progress; // This might be inaccurate if we mixed static+dynamic, but acceptable for now
+            document.getElementById('count-progress').textContent = counts.progress;
             document.getElementById('count-done').textContent = counts.done;
         }
 
@@ -276,20 +299,41 @@
 
             card.className = `glass-panel rounded-xl p-5 border-l-2 ${borderClass} group hover:translate-y-[-2px] transition-all duration-300 ${doneOpacity}`;
 
+            const actionButton = isDone
+                ? `<button data-action="undo" data-task-id="${task.id}" class="text-[10px] font-mono px-2 py-1 rounded border border-amber-500/30 bg-amber-900/20 text-amber-300 hover:bg-amber-900/30">↩ UNDO</button>`
+                : `<button data-action="done" data-task-id="${task.id}" class="text-[10px] font-mono px-2 py-1 rounded border border-emerald-500/30 bg-emerald-900/20 text-emerald-300 hover:bg-emerald-900/30">✅ DONE</button>`;
+
             card.innerHTML = `
-                <div class="flex justify-between items-start mb-3">
+                <div class="flex justify-between items-start mb-3 gap-2">
                     <span class="font-mono text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded border ${priorityClass}">
                         PRIORITY ${task.priority}
                     </span>
-                    ${assigneeHtml}
+                    <div class="flex items-center gap-2">
+                        ${assigneeHtml}
+                        ${actionButton}
+                    </div>
                 </div>
                 <h3 class="text-slate-200 font-bold text-sm leading-relaxed mb-1 ${isDone ? 'line-through decoration-slate-500' : ''}">${task.title}</h3>
-                <div class="text-[10px] font-mono text-slate-500 mt-2 flex justify-end">
+                <div class="text-[10px] font-mono text-slate-500 mt-2 flex justify-between items-center">
                     <span>${task.id}</span>
+                    <span class="text-slate-600">browser-local</span>
                 </div>
             `;
             return card;
         }
+
+        document.addEventListener('click', (event) => {
+            const button = event.target.closest('button[data-action]');
+            if (!button) return;
+            const taskId = button.dataset.taskId;
+            const action = button.dataset.action;
+            if (action === 'done') {
+                setLocalOverride(taskId, 'done');
+            } else if (action === 'undo') {
+                clearLocalOverride(taskId);
+            }
+            loadTasks();
+        });
 
         // Initial load
         loadTasks();
