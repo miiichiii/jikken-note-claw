@@ -162,188 +162,195 @@
   },
   {
     "id": "task-23",
-    "title": "筋肉G用に、Liaoくん・大木さんが使っていた実験台と横のシャープ製冷凍冷蔵庫の中身を整理・空にする",
+    "title": "【年度替わり片付け案件】退職・異動に伴う実験台、冷凍冷蔵庫、-30℃フリーザー、4階マウス室、ロッカー周りの整理をまとめて進める",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
     "id": "task-24",
-    "title": "壁面の-30℃フリーザー3台のうち、中央下段の2BOX（ラベルなし）を整理する",
+    "title": "筋肉G用に、Liaoくん・大木さんが使っていた実験台と横のシャープ製冷凍冷蔵庫の中身を整理・空にする",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
     "id": "task-25",
-    "title": "4階マウス室のラック整理が必要になる可能性あり。状況確認する",
+    "title": "壁面の-30℃フリーザー3台のうち、中央下段の2BOX（ラベルなし）を整理する",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
     "id": "task-26",
-    "title": "ロッカーの片付けを進める",
+    "title": "4階マウス室のラック整理が必要になる可能性あり。状況確認する",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
     "id": "task-27",
-    "title": "Jeonさんに論文について連絡する",
+    "title": "ロッカーの片付けを進める",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
     "id": "task-28",
-    "title": "【退官記念】高橋先生→川口先生→水野先生の順で合意形成を進める",
+    "title": "Jeonさんに論文について連絡する",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
     "id": "task-29",
-    "title": "【退官記念】国際会議場の予約金5万円と、その後の4月支払いのフローを確定する",
+    "title": "【退官記念】高橋先生→川口先生→水野先生の順で合意形成を進める",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
     "id": "task-30",
+    "title": "【退官記念】国際会議場の予約金5万円と、その後の4月支払いのフローを確定する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "task-31",
     "title": "【退官記念】主要演者への日程確保依頼・候補リスト整理",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-31",
+    "id": "task-32",
     "title": "【退官記念】横村氏を含めた招待者リストの漏れ確認を行う",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-32",
+    "id": "task-33",
     "title": "【退官記念】協賛候補企業リストと協賛メニュー草案を作成する",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-33",
+    "id": "task-34",
     "title": "【退官記念】案内状・出欠フォームの設計を開始する",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-34",
+    "id": "task-35",
     "title": "【退官記念】当日運営のためのOB/OG・学生協力体制のたたき台を作る",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-35",
+    "id": "task-36",
     "title": "【退官記念】内藤先生（※要確認）に話す",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-36",
+    "id": "task-37",
     "title": "【退官記念】組み換えの件を出す",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-37",
+    "id": "task-38",
     "title": "team.html を毎晩コーディングAIで見直し・更新する自動運用を回す",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-38",
+    "id": "task-39",
     "title": "R7の動物実験計画書を工藤先生へ提出する（3/15締切）",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-39",
+    "id": "task-40",
     "title": "PubMed論文（PMID: 40416011）の要約を作成してセンセイに報告する",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-40",
+    "id": "task-41",
     "title": "Science Feedbackの記事（COVIDワクチンと日本のデータに関する誤った主張のファクトチェック）を要約して保存する",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-41",
+    "id": "task-42",
     "title": "Aqua Voice Pro を解約する（4/14）",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-42",
+    "id": "task-43",
     "title": "R7の計画書に対応する動物実験結果報告書を作成する",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-43",
+    "id": "task-44",
     "title": "R7-8の動物実験計画書を作成する",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-44",
+    "id": "task-45",
     "title": "Northwestern Mafb flox マウスMTA対応（高橋先生より依頼）",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-45",
+    "id": "task-46",
     "title": "論文プレスリリース：筑波大広報局との共同リリース調整状況の把握",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-46",
+    "id": "task-47",
     "title": "退官記念パーティー未回答OBOG（約60名）への連絡・リマインド依頼対応",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-47",
+    "id": "task-48",
     "title": "高橋先生退官行事の出欠回答（期限: 3/31、https://forms.gle/AW5mttJk9veSUyLK8）",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-48",
+    "id": "task-49",
     "title": "組織解析室のロッカー移動（旧Natashaエリア）",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-49",
+    "id": "task-50",
     "title": "遺伝子組換え書類の更新確認（Excelピンク色の欄）",
     "status": "todo",
     "priority": "B",
