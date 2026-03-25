@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Science Feedback | Midnight Cockpit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        cyan: { 400: '#22d3ee', 500: '#06b6d4' },
+                        amber: { 400: '#fbbf24', 500: '#f59e0b' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #020617;
+            background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%);
+            color: #e2e8f0;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen pt-24 pb-12 px-4 max-w-4xl mx-auto">
+    <header class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-slate-700/50 h-16 flex items-center px-4">
+        <a href="index.html" class="flex items-center gap-3 text-cyan-400 hover:text-white transition-colors font-mono text-sm">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span>MISSION CONTROL</span>
+        </a>
+    </header>
+
+    <main>
+        <div class="mb-8">
+            <div class="flex items-center gap-3 text-amber-400 mb-2">
+                <i class="fa-solid fa-microscope"></i>
+                <span class="font-mono text-xs tracking-widest uppercase">Research Briefing</span>
+            </div>
+            <h1 class="text-3xl font-bold text-white mb-4">Science Feedback 要約</h1>
+            <p class="text-slate-400 text-sm">日本のCOVIDワクチンデータに関するファクトチェック（2025年8月公開）</p>
+        </div>
+
+        <div class="glass-panel rounded-2xl p-6 mb-6">
+            <h2 class="text-xl font-bold text-cyan-400 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-circle-exclamation text-sm"></i>
+                Misleading: 不適切な解析
+            </h2>
+            <div class="space-y-4 text-slate-300 leading-relaxed">
+                <p>反ワクチン系の発信者たちが、「日本の1800万人のデータで、COVID-19ワクチンは打てば打つほど早く死ぬことが示された」と主張していましたが、Science Feedbackはこの主張を「ミスリーディング」および「事実誤認」と判定しました。</p>
+                
+                <ul class="space-y-3 list-none">
+                    <li class="flex gap-3">
+                        <i class="fa-solid fa-xmark text-rose-500 mt-1"></i>
+                        <span><strong>分母の誤解</strong>: 1800万人“分の接種記録”を、1800万人“の人”のデータと取り違えていた。</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <i class="fa-solid fa-xmark text-rose-500 mt-1"></i>
+                        <span><strong>交絡因子の無視</strong>: 年齢や基礎疾患を調整しておらず、高齢者ほど追加接種を受けやすいという背景が死亡率に影響している。</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <i class="fa-solid fa-xmark text-rose-500 mt-1"></i>
+                        <span><strong>非公式な解析</strong>: 査読付き論文ではなく、活動家グループが自治体から得たデータを独自に（かつ不適切に）解釈したもの。</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="glass-panel rounded-2xl p-6">
+            <h2 class="text-xl font-bold text-emerald-400 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-sm"></i>
+                Scientific Verdict: 科学的知見
+            </h2>
+            <p class="text-slate-300 mb-4">適切な方法で交絡因子を考慮した複数の公表済み研究では、COVID-19ワクチン接種が全死亡率を上げる証拠は見つかっておらず、むしろ重症化や死亡のリスクを下げることが示されています。</p>
+            <a href="https://science.feedback.org/review/inadequate-analysis-japan-data-false-covid-vaccine-mortality/" target="_blank" class="inline-flex items-center gap-2 text-cyan-400 hover:underline font-mono text-xs">
+                VIEW ORIGINAL ARTICLE <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+    </main>
+</body>
+</html>
