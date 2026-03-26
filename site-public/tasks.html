@@ -95,170 +95,170 @@
                 <a href="index.html" class="text-slate-400 hover:text-cyan-400 transition-colors shrink-0">
                     <i class="fa-solid fa-chevron-left"></i>
                 </a>
-                <span class="font-mono text-sm tracking-wider text-cyan-400 font-bold truncate">COMBAT TASK BOARD</span>
+                <span class="font-mono text-sm tracking-wider text-cyan-400 font-bold truncate uppercase">Combat Task Board</span>
             </div>
 
             <div class="flex items-center gap-3 font-mono text-xs min-w-0">
-                <div class="hidden md:flex items-center gap-2 shrink-0">
-                    <span class="text-slate-400">SYNC</span>
-                    <span id="sync-status" class="text-emerald-400">ACTIVE</span>
+                <div class="flex items-center gap-2 shrink-0">
+                    <span id="sync-status-label" class="text-slate-500 hidden md:inline">SYNC:</span>
+                    <span id="sync-status" class="text-slate-500 font-bold">OFFLINE</span>
                 </div>
-                <div class="h-4 w-px bg-slate-700 hidden md:block"></div>
-                <div class="text-slate-400 truncate" id="last-synced">Last Synced: --:--:--</div>
+                <div class="h-4 w-px bg-slate-700"></div>
+                <button id="header-owner-setup" class="text-cyan-400 hover:text-white transition-colors p-2" title="Owner Setup">
+                    <i class="fa-solid fa-key"></i>
+                </button>
             </div>
         </div>
     </header>
 
     <main class="pt-24 pb-24 px-4 max-w-7xl mx-auto flex-grow w-full safe-bottom">
-        <div class="glass-panel rounded-xl p-4 mb-4 text-xs text-slate-300 leading-relaxed border border-cyan-900/30 space-y-3">
-            <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
-                <div class="space-y-2">
-                    <div>
-                        <span class="font-mono text-cyan-400 font-bold mr-2">SYNC</span>
-                        既定では Vercel API 経由で <span class="text-emerald-300">DONE</span> / <span class="text-amber-300">UNDO</span> を GitHub 上の <span class="font-mono">memory/todo.md</span> へ反映します。失敗時は localhost bridge、その両方が使えないときだけ <span class="font-mono">このブラウザだけ</span> に保持します。
-                    </div>
-                    <div id="sync-headline" class="font-mono text-[11px] text-slate-400">状態確認中...</div>
-                </div>
-                <button id="configure-owner-sync" class="text-[11px] font-mono px-3 py-2 rounded border border-cyan-500/30 bg-cyan-900/20 text-cyan-300 hover:bg-cyan-900/30 shrink-0">🔐 OWNER SETUP</button>
+        
+        <!-- Setup Required Banner (Only visible when no token/session) -->
+        <div id="setup-required-banner" class="hidden glass-panel rounded-2xl p-6 mb-8 border border-amber-500/30 bg-amber-950/10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <i class="fa-solid fa-shield-halved text-6xl text-amber-500"></i>
             </div>
-
-            <div id="failure-banner" class="hidden rounded-lg border border-amber-500/30 bg-amber-950/30 px-3 py-3 text-[11px] text-amber-200">
-                <div class="font-mono font-bold mb-1">REMOTE WRITE FAILED</div>
-                <div id="failure-banner-text">変更はこのブラウザに保持されています。</div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-3 items-start">
-                <div class="flex flex-wrap items-center gap-2 text-[11px] font-mono">
-                    <span id="sync-chip" class="px-2.5 py-1 rounded-full border border-slate-600/60 text-slate-300 bg-slate-900/30">checking</span>
-                    <span id="bridge-status-detail" class="text-slate-400 break-all">bridge: 未確認</span>
+            <div class="relative z-10">
+                <div class="flex items-center gap-3 text-amber-400 mb-3">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span class="font-mono text-xs tracking-widest uppercase font-bold">Action Required: Owner Setup</span>
                 </div>
-                <div class="flex flex-wrap items-center gap-2 md:justify-end">
-                    <button id="clear-owner-sync" class="text-[11px] font-mono px-3 py-2 rounded border border-slate-500/30 bg-slate-900/20 text-slate-300 hover:bg-slate-900/30">✕ TOKEN CLEAR</button>
-                </div>
+                <h2 class="text-xl font-bold text-white mb-2">GitHub 同期が有効になっていません</h2>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6 max-w-2xl">
+                    現在、このブラウザでの変更は GitHub (`todo.md`) に直接反映されません。
+                    右上の <i class="fa-solid fa-key mx-1 text-cyan-400"></i> アイコン、または下のボタンから設定トークンを入力して、フル同期を有効にしてください。
+                </p>
+                <button id="banner-owner-setup" class="px-5 py-2.5 rounded-xl bg-amber-500 text-amber-950 font-bold text-sm hover:bg-amber-400 transition-colors">
+                    🔐 今すぐ同期を設定する
+                </button>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-full items-start">
-            <div class="flex flex-col h-full">
-                <div class="flex items-center justify-between mb-4 px-2 border-b border-amber-500/30 pb-2">
+        <!-- Sync Engine Telemetry -->
+        <div class="glass-panel rounded-xl p-4 mb-8 text-[11px] text-slate-400 border border-slate-800/50">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
                     <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 bg-amber-400 rounded-full status-dot text-amber-400"></span>
-                        <h2 class="font-mono font-bold text-slate-200 tracking-wider text-sm uppercase">To Do</h2>
+                        <span id="sync-chip" class="px-2 py-0.5 rounded-full border border-slate-700 bg-slate-900/50 text-slate-500">Checking...</span>
+                    </div>
+                    <div id="sync-headline" class="font-mono truncate">Initializing sync engine...</div>
+                </div>
+                <div id="last-synced" class="font-mono text-slate-500">Last Synced: --:--:--</div>
+            </div>
+            
+            <div id="failure-banner" class="hidden mt-4 rounded-lg border border-rose-500/30 bg-rose-950/20 px-3 py-2 text-rose-200">
+                <div class="font-mono font-bold mb-1"><i class="fa-solid fa-triangle-exclamation mr-2"></i>REMOTE WRITE FAILED</div>
+                <div id="failure-banner-text">ブラウザに一時保存されています。</div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            <!-- To Do -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between px-2 border-b border-amber-500/30 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-amber-400 rounded-full status-dot"></span>
+                        <h2 class="font-mono font-bold text-slate-200 tracking-widest text-sm uppercase">To Do</h2>
                     </div>
                     <span id="count-todo" class="text-xs font-mono text-slate-500 bg-slate-800/50 px-2 py-0.5 rounded">0</span>
                 </div>
-                <div id="todoList" class="space-y-4 min-h-[200px] task-list"></div>
+                <div id="todoList" class="space-y-4 min-h-[100px] task-list"></div>
             </div>
 
-            <div class="flex flex-col h-full">
-                <div class="flex items-center justify-between mb-4 px-2 border-b border-cyan-500/30 pb-2">
+            <!-- In Progress -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between px-2 border-b border-cyan-500/30 pb-3">
                     <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 bg-cyan-400 rounded-full status-dot text-cyan-400 animate-pulse"></span>
-                        <h2 class="font-mono font-bold text-slate-200 tracking-wider text-sm uppercase">In Progress</h2>
+                        <span class="w-2 h-2 bg-cyan-400 rounded-full status-dot animate-pulse"></span>
+                        <h2 class="font-mono font-bold text-slate-200 tracking-widest text-sm uppercase">In Progress</h2>
                     </div>
-                    <span id="count-progress" class="text-xs font-mono text-slate-500 bg-slate-800/50 px-2 py-0.5 rounded">1</span>
+                    <span id="count-progress" class="text-xs font-mono text-slate-500 bg-slate-800/50 px-2 py-0.5 rounded">0</span>
                 </div>
-                <div id="progressList" class="space-y-4 min-h-[200px] task-list">
-                    <div class="glass-panel rounded-xl p-5 border-l-2 border-cyan-500 relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <i class="fa-solid fa-spinner fa-spin text-4xl text-cyan-400"></i>
-                        </div>
-                        <div class="flex justify-between items-start mb-3 relative z-10">
-                            <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-cyan-400 border border-cyan-900/50 px-1.5 py-0.5 rounded bg-cyan-900/20">Active</span>
-                            <span class="font-mono text-[10px] px-2 py-0.5 rounded border border-indigo-500/30 bg-indigo-900/20 text-indigo-300">@Bot</span>
-                        </div>
-                        <h3 class="text-slate-200 font-bold mb-1 relative z-10">Mission Control Dev (Phase 4)</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed relative z-10">UI/UX Overhaul &amp; Subagent Integration</p>
-                    </div>
-                </div>
+                <div id="progressList" class="space-y-4 min-h-[100px] task-list"></div>
             </div>
 
-            <div class="flex flex-col h-full">
-                <div class="flex items-center justify-between mb-4 px-2 border-b border-emerald-500/30 pb-2">
+            <!-- Done -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between px-2 border-b border-emerald-500/30 pb-3">
                     <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 bg-emerald-500 rounded-full status-dot text-emerald-500"></span>
-                        <h2 class="font-mono font-bold text-slate-200 tracking-wider text-sm uppercase">Done</h2>
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full status-dot"></span>
+                        <h2 class="font-mono font-bold text-slate-200 tracking-widest text-sm uppercase">Done</h2>
                     </div>
                     <span id="count-done" class="text-xs font-mono text-slate-500 bg-slate-800/50 px-2 py-0.5 rounded">0</span>
                 </div>
-                <div id="doneList" class="space-y-4 min-h-[200px] task-list opacity-70 hover:opacity-100 transition-opacity"></div>
+                <div id="doneList" class="space-y-4 min-h-[100px] task-list opacity-60 hover:opacity-100 transition-opacity"></div>
             </div>
         </div>
     </main>
 
-    <div id="sync-actions" class="hidden fixed bottom-4 left-4 right-4 md:left-auto md:right-4 z-40 glass-panel rounded-xl px-4 py-3 border border-cyan-900/30 shadow-xl md:max-w-sm safe-bottom">
-        <div class="text-[11px] font-mono text-slate-300 mb-2">
-            <span id="pending-count" class="text-cyan-300 font-bold">0</span> 件のブラウザ保持変更があります
+    <!-- Floating Local Sync Actions -->
+    <div id="sync-actions" class="hidden fixed bottom-6 left-4 right-4 md:left-auto md:right-6 z-40 glass-panel rounded-2xl p-4 border border-cyan-500/30 shadow-2xl md:max-w-xs safe-bottom">
+        <div class="flex items-center gap-3 mb-3">
+            <i class="fa-solid fa-cloud-arrow-up text-cyan-400"></i>
+            <span id="pending-count" class="text-xs font-mono font-bold text-white">0 件の保留中の変更</span>
         </div>
-        <div class="flex flex-wrap gap-2">
-            <button id="retry-pending-sync" class="text-[11px] font-mono px-3 py-2 rounded border border-emerald-500/30 bg-emerald-900/20 text-emerald-300 hover:bg-emerald-900/30">🔁 再同期</button>
-            <button id="copy-sync-text" class="text-[11px] font-mono px-3 py-2 rounded border border-cyan-500/30 bg-cyan-900/20 text-cyan-300 hover:bg-cyan-900/30">📋 反映テキストをコピー</button>
-            <button id="show-sync-text" class="text-[11px] font-mono px-3 py-2 rounded border border-violet-500/30 bg-violet-900/20 text-violet-300 hover:bg-violet-900/30">📝 テキスト表示</button>
-            <button id="clear-local-overrides" class="text-[11px] font-mono px-3 py-2 rounded border border-slate-500/30 bg-slate-900/20 text-slate-300 hover:bg-slate-900/30">✕ クリア</button>
+        <div class="grid grid-cols-2 gap-2">
+            <button id="retry-pending-sync" class="text-[10px] font-mono py-2 rounded-lg bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition-colors">再同期</button>
+            <button id="show-sync-text" class="text-[10px] font-mono py-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors">テキスト出力</button>
         </div>
     </div>
 
-    <div id="sync-text-modal" class="hidden fixed inset-0 z-50 bg-black/60 p-4">
-        <div class="max-w-2xl mx-auto mt-20 glass-panel rounded-xl p-4 border border-cyan-900/30">
-            <div class="flex items-center justify-between mb-3">
-                <div class="font-mono text-cyan-300 text-sm">反映テキスト</div>
-                <button id="close-sync-modal" class="text-slate-400 hover:text-white">✕</button>
+    <!-- Modals -->
+    <div id="sync-text-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex items-center justify-center">
+        <div class="w-full max-w-2xl glass-panel rounded-2xl p-6 border border-slate-700">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-mono text-cyan-400 text-sm font-bold uppercase tracking-widest">Manual Sync Payload</h3>
+                <button id="close-sync-modal" class="text-slate-500 hover:text-white transition-colors text-xl">✕</button>
             </div>
-            <textarea id="sync-text-output" class="w-full h-56 bg-slate-950/70 text-slate-200 border border-slate-700 rounded p-3 font-mono text-xs"></textarea>
-            <div class="mt-3 text-xs text-slate-400">選択してコピーし、そのまま Telegram で送ってください。</div>
+            <textarea id="sync-text-output" readonly class="w-full h-64 bg-slate-950/80 text-emerald-400 border border-slate-800 rounded-xl p-4 font-mono text-xs focus:outline-none"></textarea>
+            <p class="mt-4 text-[11px] text-slate-500 leading-relaxed">
+                自動同期に失敗した場合、このテキストをコピーして Telegram で私に送信してください。
+            </p>
         </div>
     </div>
 
-    <div id="owner-sync-modal" class="hidden fixed inset-0 z-50 bg-black/70 px-4 py-6 overflow-y-auto">
-        <div class="max-w-lg mx-auto glass-panel rounded-2xl border border-cyan-900/40 p-4 md:p-5 mt-8 md:mt-16">
-            <div class="flex items-start justify-between gap-4 mb-4">
+    <div id="owner-sync-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex items-center justify-center overflow-y-auto">
+        <div class="w-full max-w-md glass-panel rounded-3xl border border-cyan-500/20 p-8 shadow-2xl">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white uppercase tracking-wider">Owner Setup</h3>
+                        <p class="text-[10px] font-mono text-slate-500">GITHUB / VERCEL SYNC LOCK</p>
+                    </div>
+                </div>
+                <button id="close-owner-sync-modal" class="text-slate-500 hover:text-white transition-colors text-xl">✕</button>
+            </div>
+
+            <form id="owner-sync-form" class="space-y-6">
                 <div>
-                    <div class="font-mono text-cyan-300 text-sm">OWNER SYNC SETUP</div>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">おすすめは一時セッションです。長い owner token を毎回残さず、この端末には短命 session だけを保存できます。localhost bridge URL は Vercel 停止時のフォールバック用です。</p>
-                </div>
-                <button id="close-owner-sync-modal" class="text-slate-400 hover:text-white text-lg">✕</button>
-            </div>
-
-            <form id="owner-sync-form" class="space-y-4">
-                <label class="block">
-                    <div class="text-[11px] font-mono text-slate-300 mb-1">OWNER TOKEN</div>
-                    <div class="flex gap-2">
-                        <input id="owner-token-input" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" class="flex-1 rounded-lg border border-slate-700 bg-slate-950/70 px-3 py-3 text-sm text-slate-100 placeholder:text-slate-500" placeholder="TASK_BOARD_OWNER_TOKEN">
-                        <button id="toggle-owner-token-visibility" type="button" class="px-3 py-3 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 text-xs font-mono">SHOW</button>
+                    <label class="block text-[11px] font-mono text-slate-400 uppercase tracking-widest mb-2">Owner Token</label>
+                    <div class="relative">
+                        <input id="owner-token-input" type="password" autocomplete="off" class="w-full rounded-xl border border-slate-800 bg-slate-950/50 px-4 py-3 text-sm text-white focus:border-cyan-500/50 focus:outline-none transition-colors" placeholder="••••••••••••••••">
+                        <button id="toggle-owner-token-visibility" type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 hover:text-cyan-400 transition-colors text-xs font-mono">SHOW</button>
                     </div>
-                </label>
-
-                <label class="block">
-                    <div class="text-[11px] font-mono text-slate-300 mb-1">LOCAL BRIDGE URL <span class="text-slate-500">(optional)</span></div>
-                    <input id="bridge-url-input" type="url" inputmode="url" autocapitalize="off" spellcheck="false" class="w-full rounded-lg border border-slate-700 bg-slate-950/70 px-3 py-3 text-sm text-slate-100 placeholder:text-slate-500" placeholder="http://127.0.0.1:8787">
-                </label>
-
-                <div class="rounded-lg border border-slate-800 bg-slate-950/40 p-3 text-[11px] text-slate-400 space-y-1">
-                    <div>• SAVE SETTINGS は従来どおり owner token を <span class="font-mono">localStorage</span> に保存します</div>
-                    <div>• PAIR THIS PHONE は短命 session を保存し、owner token を残さない運用向けです</div>
-                    <div>• <span class="font-mono">#pair=OWNER_TOKEN</span> 付きURLでもワンタップ pairing できます</div>
-                    <div>• Vercel API に失敗したときだけ localhost bridge を試します</div>
-                    <div>• bridge も失敗した場合はこのブラウザだけに保持され、後で再同期できます</div>
                 </div>
 
-                <div id="owner-sync-form-status" class="hidden rounded-lg border px-3 py-2 text-[11px] font-mono"></div>
+                <div id="owner-sync-form-status" class="hidden rounded-xl border px-4 py-3 text-xs font-mono"></div>
 
-                <div class="flex flex-col-reverse sm:flex-row gap-2 sm:justify-between">
-                    <div class="flex flex-wrap gap-2">
-                        <button id="test-owner-sync" type="button" class="px-3 py-3 rounded-lg border border-violet-500/30 bg-violet-900/20 text-violet-300 text-xs font-mono">TEST</button>
-                        <button id="pair-owner-session" type="button" class="px-3 py-3 rounded-lg border border-emerald-500/30 bg-emerald-900/20 text-emerald-300 text-xs font-mono">PAIR THIS PHONE</button>
-                        <button id="remove-owner-sync" type="button" class="px-3 py-3 rounded-lg border border-slate-500/30 bg-slate-900/20 text-slate-300 text-xs font-mono">CLEAR</button>
-                    </div>
-                    <button type="submit" class="px-4 py-3 rounded-lg border border-cyan-500/30 bg-cyan-900/20 text-cyan-300 text-xs font-mono">SAVE TOKEN MODE</button>
+                <div class="grid grid-cols-1 gap-3">
+                    <button id="pair-owner-session" type="button" class="w-full py-3 rounded-xl bg-cyan-600 text-white font-bold text-sm hover:bg-cyan-500 transition-all transform active:scale-95">🔐 同期を有効にする</button>
+                    <button id="remove-owner-sync" type="button" class="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 font-bold text-sm hover:text-rose-400 hover:border-rose-900/50 transition-colors">設定をクリア</button>
                 </div>
+                
+                <p class="text-[10px] text-slate-500 text-center leading-relaxed">
+                    トークンはブラウザに安全に保存（またはペアリング）され、<br>GitHub の <span class="text-slate-300">todo.md</span> への直接書き込みに使用されます。
+                </p>
             </form>
         </div>
     </div>
 
-    <footer class="border-t border-slate-800/50 py-6 text-center mt-auto">
-        <p class="text-slate-600 text-xs font-mono">
-            TACTICAL BOARD <span class="mx-2">|</span>
-            <span class="text-cyan-900">OPENCLAW SYSTEM</span>
+    <footer class="border-t border-slate-900/50 py-8 text-center mt-auto">
+        <p class="text-slate-700 text-[10px] font-mono tracking-[0.3em]">
+            TACTICAL BOARD <span class="mx-3 opacity-30">|</span> 
+            <span class="text-cyan-950">OPENCLAW SYSTEM V2.1</span>
         </p>
     </footer>
 
@@ -268,28 +268,20 @@
         const REMOTE_HEALTH_ENDPOINT = `${REMOTE_API_BASE}/api/task-board/health`;
         const REMOTE_UPDATE_ENDPOINT = `${REMOTE_API_BASE}/api/task-board/update`;
         const REMOTE_SESSION_ENDPOINT = `${REMOTE_API_BASE}/api/task-board/session`;
-        const BRIDGE_URL_CANDIDATES = ['http://127.0.0.1:8787', 'http://localhost:8787'];
         const LOCAL_OVERRIDE_KEY = 'taskBoardOverrides';
         const OWNER_TOKEN_KEY = 'taskBoardOwnerToken';
         const OWNER_SESSION_KEY = 'taskBoardOwnerSession';
         const OWNER_SESSION_EXP_KEY = 'taskBoardOwnerSessionExpiresAt';
-        const OWNER_BRIDGE_KEY = 'taskBoardBridgeBaseUrl';
         const BRIDGE_PENDING_SECONDS = 10;
         const LOAD_INTERVAL_MS = 30000;
-        const PENDING_TICK_MS = 1000;
 
         let lastLoadedTasks = [];
-        let bridgeState = { mode: 'checking', detail: 'bridge: 確認中...', headline: '状態確認中...' };
+        let syncState = 'offline';
         const syncingTaskIds = new Set();
         let isLoading = false;
-        let pendingRerenderTimer = null;
 
         function getLocalOverrides() {
-            try {
-                return JSON.parse(localStorage.getItem(LOCAL_OVERRIDE_KEY) || '{}');
-            } catch {
-                return {};
-            }
+            try { return JSON.parse(localStorage.getItem(LOCAL_OVERRIDE_KEY) || '{}'); } catch { return {}; }
         }
 
         function saveLocalOverrides(overrides) {
@@ -298,12 +290,7 @@
 
         function setLocalOverride(taskId, value) {
             const overrides = getLocalOverrides();
-            overrides[taskId] = {
-                retryCount: value.retryCount || 0,
-                syncSource: value.syncSource || 'local-override',
-                lastError: value.lastError || '',
-                ...value
-            };
+            overrides[taskId] = { at: Date.now(), ...value };
             saveLocalOverrides(overrides);
         }
 
@@ -313,16 +300,10 @@
             saveLocalOverrides(overrides);
         }
 
-        function getOwnerToken() {
-            return localStorage.getItem(OWNER_TOKEN_KEY) || '';
-        }
-
-        function setOwnerToken(token) {
-            if (token && token.trim()) {
-                localStorage.setItem(OWNER_TOKEN_KEY, token.trim());
-            } else {
-                localStorage.removeItem(OWNER_TOKEN_KEY);
-            }
+        function getOwnerToken() { return localStorage.getItem(OWNER_TOKEN_KEY) || ''; }
+        function setOwnerToken(token) { 
+            if (token) localStorage.setItem(OWNER_TOKEN_KEY, token.trim());
+            else localStorage.removeItem(OWNER_TOKEN_KEY);
         }
 
         function getOwnerSession() {
@@ -346,352 +327,124 @@
             }
         }
 
-        function getActiveAuthHeader(preferToken = false) {
+        function getAuthHeader() {
             const ownerToken = getOwnerToken();
             const session = getOwnerSession();
-            const token = preferToken ? (ownerToken || session.token) : (session.token || ownerToken);
+            const token = session.token || ownerToken;
             return token ? `Bearer ${token}` : '';
         }
 
-        function getBridgeBaseUrl() {
-            return localStorage.getItem(OWNER_BRIDGE_KEY) || BRIDGE_URL_CANDIDATES[0];
+        function hasSyncConfig() {
+            return !!(getOwnerToken() || getOwnerSession().token);
         }
 
-        function setBridgeBaseUrl(url) {
-            if (url && url.trim()) {
-                localStorage.setItem(OWNER_BRIDGE_KEY, url.trim().replace(/\/$/, ''));
-            } else {
-                localStorage.removeItem(OWNER_BRIDGE_KEY);
-            }
-        }
-
-        function hasOwnerSyncConfigured() {
-            return Boolean(getOwnerSession().token || getOwnerToken());
-        }
-
-        function formatStatusHeadline(mode, detail) {
-            if (mode === 'remote-online') return 'GitHub canonical sync is ready.';
-            if (mode === 'syncing') return 'Syncing changes...';
-            if (mode === 'local-fallback') return 'Remote write unavailable. Changes are safe in this browser until retry.';
-            if (mode === 'error') return 'Task board could not refresh right now.';
-            return detail;
-        }
-
-        function updateBridgeStatus(mode, detail) {
-            bridgeState = { mode, detail, headline: formatStatusHeadline(mode, detail) };
-            const syncStatus = document.getElementById('sync-status');
-            const detailEl = document.getElementById('bridge-status-detail');
+        function updateUIStatus(mode, detail) {
+            syncState = mode;
+            const statusEl = document.getElementById('sync-status');
             const chip = document.getElementById('sync-chip');
             const headline = document.getElementById('sync-headline');
+            const banner = document.getElementById('setup-required-banner');
 
-            detailEl.textContent = detail;
-            headline.textContent = bridgeState.headline;
+            banner.classList.toggle('hidden', hasSyncConfig());
 
-            chip.className = 'px-2.5 py-1 rounded-full border text-[11px] font-mono';
-            if (mode === 'remote-online') {
-                syncStatus.textContent = 'REMOTE';
-                syncStatus.className = 'text-emerald-400';
-                chip.classList.add('border-emerald-500/40', 'text-emerald-300', 'bg-emerald-950/30');
-                chip.textContent = 'github-ready';
-            } else if (mode === 'local-fallback') {
-                syncStatus.textContent = 'LOCAL';
-                syncStatus.className = 'text-amber-300';
-                chip.classList.add('border-amber-500/40', 'text-amber-200', 'bg-amber-950/30');
-                chip.textContent = 'browser-held';
-            } else if (mode === 'syncing') {
-                syncStatus.textContent = 'SYNCING...';
-                syncStatus.className = 'text-amber-400 animate-pulse';
-                chip.classList.add('border-cyan-500/40', 'text-cyan-200', 'bg-cyan-950/30');
-                chip.textContent = 'syncing';
+            if (mode === 'remote') {
+                statusEl.textContent = 'REMOTE';
+                statusEl.className = 'text-emerald-400 font-bold';
+                chip.className = 'px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-950/20 text-emerald-400';
+                chip.textContent = 'synced';
+                headline.textContent = detail || 'GitHub 連携済み (todo.md)';
+            } else if (mode === 'local') {
+                statusEl.textContent = 'LOCAL';
+                statusEl.className = 'text-amber-400 font-bold';
+                chip.className = 'px-2 py-0.5 rounded-full border border-amber-500/30 bg-amber-950/20 text-amber-400';
+                chip.textContent = 'held-local';
+                headline.textContent = detail || 'BETA: 設定未完了（ブラウザ保存のみ）';
             } else {
-                syncStatus.textContent = 'ERROR';
-                syncStatus.className = 'text-red-500';
-                chip.classList.add('border-red-500/40', 'text-red-200', 'bg-red-950/30');
-                chip.textContent = 'error';
-            }
-
-            const pendingEntries = Object.values(getLocalOverrides());
-            const hasFailures = pendingEntries.some((entry) => entry.lastError);
-            const banner = document.getElementById('failure-banner');
-            const bannerText = document.getElementById('failure-banner-text');
-            if (mode === 'local-fallback' || hasFailures) {
-                banner.classList.remove('hidden');
-                bannerText.textContent = detail;
-            } else {
-                banner.classList.add('hidden');
+                statusEl.textContent = 'OFFLINE';
+                statusEl.className = 'text-slate-500 font-bold';
+                chip.className = 'px-2 py-0.5 rounded-full border border-slate-700 bg-slate-900/50 text-slate-500';
+                chip.textContent = 'offline';
+                headline.textContent = detail || '同期エンジン停止中';
             }
         }
 
         async function fetchJson(url, options = {}) {
             const response = await fetch(url, { cache: 'no-store', ...options });
-            const payload = await response.json().catch(() => ({}));
             if (!response.ok) {
-                const error = new Error(payload.error || payload.message || `http_${response.status}`);
-                error.statusCode = response.status;
-                error.payload = payload;
-                throw error;
+                const payload = await response.json().catch(() => ({}));
+                throw new Error(payload.error || `http_${response.status}`);
             }
-            return payload;
+            return response.json();
         }
 
-        async function probeBridge() {
-            try {
-                const data = await fetchJson(REMOTE_HEALTH_ENDPOINT);
-                updateBridgeStatus('remote-online', `github: ${data.repo}@${data.branch} (${data.taskCount} tasks)`);
-                return { mode: 'remote', baseUrl: REMOTE_API_BASE };
-            } catch (_) {
-            }
-
-            if (!hasOwnerSyncConfigured()) {
-                updateBridgeStatus('local-fallback', 'fallback: owner token未設定。DONE/UNDOはこのブラウザに保持されます');
-                return { mode: 'local-only', baseUrl: null };
-            }
-
-            const preferred = getBridgeBaseUrl();
-            const candidates = [preferred, ...BRIDGE_URL_CANDIDATES.filter((url) => url !== preferred)];
-            for (const baseUrl of candidates) {
-                try {
-                    const data = await fetchJson(`${baseUrl}/api/task-board/health`);
-                    setBridgeBaseUrl(baseUrl);
-                    updateBridgeStatus('remote-online', `localhost bridge: ${baseUrl.replace('http://', '')} (${data.taskCount} tasks)`);
-                    return { mode: 'bridge', baseUrl };
-                } catch (_) {
-                }
-            }
-
-            updateBridgeStatus('local-fallback', 'fallback: Vercel / localhost bridge 両方とも未接続。変更はこのブラウザに保持中');
-            return { mode: 'local-only', baseUrl: null };
-        }
-
-        async function fetchRemoteTasks() {
-            const payload = await fetchJson(REMOTE_TASKS_ENDPOINT);
-            return payload.tasks || [];
-        }
-
-        async function fetchStaticTasks() {
-            const res = await fetch('tasks.json', { cache: 'no-store' });
-            if (!res.ok) throw new Error(`http_${res.status}`);
-            return res.json();
-        }
-
-        function maybeSchedulePendingRerender(tasks) {
-            const overrides = getLocalOverrides();
-            const hasPending = Object.values(overrides).some((entry) => entry.status === 'pending-done');
-            if (!hasPending) {
-                if (pendingRerenderTimer) clearTimeout(pendingRerenderTimer);
-                pendingRerenderTimer = null;
+        async function probeSync() {
+            if (!hasSyncConfig()) {
+                updateUIStatus('local');
                 return;
             }
-            if (pendingRerenderTimer) return;
-            pendingRerenderTimer = setTimeout(() => {
-                pendingRerenderTimer = null;
-                renderTasks(tasks || lastLoadedTasks);
-                syncEligibleOverrides(lastLoadedTasks, { silent: true }).catch(() => {});
-            }, PENDING_TICK_MS);
+            try {
+                const data = await fetchJson(REMOTE_HEALTH_ENDPOINT);
+                updateUIStatus('remote', `GitHub: ${data.repo}@${data.branch}`);
+            } catch (e) {
+                updateUIStatus('local', '同期サーバーに接続できません');
+            }
         }
 
-        async function loadTasks({ silent = false } = {}) {
+        async function loadTasks() {
             if (isLoading) return;
             isLoading = true;
-
-            if (!silent && bridgeState.mode !== 'syncing') {
-                updateBridgeStatus('syncing', 'task board: タスク読込中...');
-            }
-
             try {
-                let tasks;
-                try {
-                    tasks = await fetchRemoteTasks();
-                } catch (_) {
-                    tasks = await fetchStaticTasks();
-                }
-
-                lastLoadedTasks = tasks;
-                renderTasks(tasks);
-                await syncEligibleOverrides(tasks, { silent: true });
-                await probeBridge();
-
-                const now = new Date();
-                document.getElementById('last-synced').innerHTML =
-                    'Last Synced: <span class="text-slate-200">' +
-                    now.toLocaleTimeString('en-US', { hour12: false }) +
-                    '</span>';
+                const payload = await fetchJson(REMOTE_TASKS_ENDPOINT);
+                lastLoadedTasks = payload.tasks || [];
+                renderTasks(lastLoadedTasks);
+                await probeSync();
+                document.getElementById('last-synced').textContent = `Last Synced: ${new Date().toLocaleTimeString('ja-JP')}`;
             } catch (err) {
-                console.error('Failed to load tasks:', err);
-                updateBridgeStatus('error', 'task board: タスク読込エラー');
+                console.error('Load failed:', err);
             } finally {
                 isLoading = false;
             }
-        }
-
-        function mergeLocalOverrides(tasks) {
-            const overrides = getLocalOverrides();
-            const now = Date.now();
-            let changed = false;
-
-            const merged = tasks.map((task) => {
-                const override = overrides[task.id];
-                if (!override) return task;
-
-                if (override.status === 'pending-done') {
-                    const elapsed = now - (override.at || now);
-                    if (elapsed >= BRIDGE_PENDING_SECONDS * 1000) {
-                        overrides[task.id] = { ...override, status: 'done', syncSource: 'local-override' };
-                        changed = true;
-                        return {
-                            ...task,
-                            status: 'done',
-                            syncSource: 'local-pending',
-                            retryCount: override.retryCount || 0,
-                            lastError: override.lastError || ''
-                        };
-                    }
-                    return {
-                        ...task,
-                        status: 'pending-done',
-                        pendingSeconds: Math.max(0, BRIDGE_PENDING_SECONDS - Math.floor(elapsed / 1000)),
-                        syncSource: override.syncSource || 'local-pending',
-                        retryCount: override.retryCount || 0,
-                        lastError: override.lastError || ''
-                    };
-                }
-
-                return {
-                    ...task,
-                    status: override.status,
-                    syncSource: override.syncSource || 'local-override',
-                    retryCount: override.retryCount || 0,
-                    lastError: override.lastError || ''
-                };
-            });
-
-            if (changed) saveLocalOverrides(overrides);
-            return merged;
-        }
-
-        function updateSyncActions(tasks) {
-            const overrides = getLocalOverrides();
-            const actionBox = document.getElementById('sync-actions');
-            const pendingCount = document.getElementById('pending-count');
-            const entries = Object.entries(overrides);
-            pendingCount.textContent = entries.length;
-            actionBox.classList.toggle('hidden', entries.length === 0);
-        }
-
-        function buildSyncText(tasks) {
-            const overrides = getLocalOverrides();
-            const taskMap = new Map(tasks.map((t) => [t.id, t]));
-            const doneLines = [];
-            const undoLines = [];
-            for (const [taskId, override] of Object.entries(overrides)) {
-                const task = taskMap.get(taskId);
-                const title = task ? task.title : taskId;
-                if (override.status === 'done' || override.status === 'pending-done') {
-                    doneLines.push(`done ${taskId} // ${title}`);
-                } else {
-                    undoLines.push(`undo ${taskId} // ${title}`);
-                }
-            }
-            return ['タスク反映お願いします', ...doneLines, ...undoLines].join('\n');
-        }
-
-        function getSyncSourceLabel(task) {
-            if (task.syncSource === 'remote') return 'github-synced';
-            if (task.syncSource === 'local-pending') return 'undo-window';
-            if (task.syncSource === 'local-override') return task.lastError ? 'retry-needed' : 'browser-held';
-            if (bridgeState.mode === 'remote-online') return 'remote-ready';
-            return 'browser-local';
-        }
-
-        function createCard(task) {
-            const card = document.createElement('div');
-            let borderClass = 'border-slate-700';
-            let priorityClass = 'text-slate-500 border-slate-700 bg-slate-900/50';
-
-            if (task.priority === 'A') {
-                borderClass = 'border-red-500';
-                priorityClass = 'text-red-400 border-red-900/50 bg-red-900/20';
-            } else if (task.priority === 'B') {
-                borderClass = 'border-amber-500';
-                priorityClass = 'text-amber-400 border-amber-900/50 bg-amber-900/20';
-            }
-
-            let assigneeHtml = '';
-            if (task.assignee === 'Bot') {
-                assigneeHtml = `<span class="font-mono text-[10px] px-2 py-0.5 rounded border border-indigo-500/30 bg-indigo-900/20 text-indigo-300"><i class="fa-solid fa-robot mr-1"></i>Bot</span>`;
-            } else {
-                assigneeHtml = `<span class="font-mono text-[10px] px-2 py-0.5 rounded border border-violet-500/30 bg-violet-900/20 text-violet-300"><i class="fa-solid fa-user mr-1"></i>濱田</span>`;
-            }
-
-            const isDone = task.status === 'done';
-            const isPendingDone = task.status === 'pending-done';
-            const doneOpacity = isDone ? 'opacity-50' : '';
-            if (isDone) borderClass = 'border-emerald-500';
-            if (isPendingDone) borderClass = 'border-amber-400';
-            if (task.lastError && !isPendingDone && !isDone) borderClass = 'border-amber-500';
-
-            card.className = `glass-panel rounded-xl p-4 md:p-5 border-l-2 ${borderClass} group hover:translate-y-[-2px] transition-all duration-300 ${doneOpacity}`;
-
-            const actionButton = isDone
-                ? `<button data-action="undo" data-task-id="${task.id}" class="text-[10px] font-mono px-3 py-2 rounded border border-amber-500/30 bg-amber-900/20 text-amber-300 hover:bg-amber-900/30">↩ UNDO</button>`
-                : isPendingDone
-                    ? `<button data-action="undo-pending" data-task-id="${task.id}" class="text-[10px] font-mono px-3 py-2 rounded border border-slate-500/30 bg-slate-900/20 text-slate-300 hover:bg-slate-900/30">✕ CANCEL</button>`
-                    : `<button data-action="done" data-task-id="${task.id}" class="text-[10px] font-mono px-3 py-2 rounded border border-emerald-500/30 bg-emerald-900/20 text-emerald-300 hover:bg-emerald-900/30">✅ DONE</button>`;
-
-            const retryButton = task.lastError
-                ? `<button data-action="retry" data-task-id="${task.id}" class="text-[10px] font-mono px-3 py-2 rounded border border-cyan-500/30 bg-cyan-900/20 text-cyan-300 hover:bg-cyan-900/30">RETRY</button>`
-                : '';
-
-            const pendingBadge = isPendingDone
-                ? `<div class="mb-2 text-[10px] font-mono text-amber-300">DONE in ${task.pendingSeconds}s... tap CANCEL to undo</div>`
-                : '';
-
-            const errorBadge = task.lastError
-                ? `<div class="mb-2 text-[10px] font-mono text-amber-200">remote write failed → held in browser (${task.lastError})</div>`
-                : '';
-
-            card.innerHTML = `
-                <div class="flex flex-col gap-3">
-                    <div class="flex justify-between items-start gap-2">
-                        <span class="font-mono text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded border ${priorityClass}">PRIORITY ${task.priority}</span>
-                        <div class="flex items-center gap-2 shrink-0">${assigneeHtml}</div>
-                    </div>
-                    ${pendingBadge}
-                    ${errorBadge}
-                    <h3 class="text-slate-200 font-bold text-sm leading-relaxed ${(isDone || isPendingDone) ? 'line-through decoration-slate-500' : ''}">${task.title}</h3>
-                    <div class="flex flex-wrap items-center justify-between gap-2">
-                        <div class="text-[10px] font-mono text-slate-500 flex items-center gap-2">
-                            <span>${task.id}</span>
-                            <span class="text-slate-600">${getSyncSourceLabel(task)}</span>
-                            ${task.retryCount ? `<span class="text-slate-600">retry:${task.retryCount}</span>` : ''}
-                        </div>
-                        <div class="flex flex-wrap items-center gap-2">${retryButton}${actionButton}</div>
-                    </div>
-                </div>
-            `;
-            return card;
         }
 
         function renderTasks(tasks) {
             const todoList = document.getElementById('todoList');
             const progressList = document.getElementById('progressList');
             const doneList = document.getElementById('doneList');
-            const mergedTasks = mergeLocalOverrides(tasks);
+            const overrides = getLocalOverrides();
+            const now = Date.now();
 
             todoList.innerHTML = '';
+            progressList.innerHTML = '';
             doneList.innerHTML = '';
 
-            const hasProgressItems = mergedTasks.some((t) => t.status === 'in-progress');
-            if (hasProgressItems) progressList.innerHTML = '';
+            let counts = { todo: 0, progress: 0, done: 0 };
+            let hasPending = false;
 
-            let counts = { todo: 0, progress: hasProgressItems ? 0 : 1, done: 0 };
+            tasks.forEach(task => {
+                const override = overrides[task.id];
+                let displayStatus = task.status;
+                let pendingSec = 0;
 
-            mergedTasks.forEach((task) => {
-                const card = createCard(task);
-                if (task.status === 'done') {
+                if (override) {
+                    if (override.status === 'pending-done') {
+                        const elapsed = Math.floor((now - override.at) / 1000);
+                        if (elapsed < BRIDGE_PENDING_SECONDS) {
+                            displayStatus = 'pending-done';
+                            pendingSec = BRIDGE_PENDING_SECONDS - elapsed;
+                            hasPending = true;
+                        } else {
+                            displayStatus = 'done';
+                        }
+                    } else {
+                        displayStatus = override.status;
+                    }
+                }
+
+                const card = createCard({...task, status: displayStatus, pendingSec});
+                if (displayStatus === 'done') {
                     doneList.appendChild(card);
                     counts.done++;
-                } else if (task.status === 'in-progress') {
+                } else if (displayStatus === 'in-progress') {
                     progressList.appendChild(card);
                     counts.progress++;
                 } else {
@@ -703,349 +456,146 @@
             document.getElementById('count-todo').textContent = counts.todo;
             document.getElementById('count-progress').textContent = counts.progress;
             document.getElementById('count-done').textContent = counts.done;
-            updateSyncActions(mergedTasks);
-            maybeSchedulePendingRerender(tasks);
+
+            const pendingCount = Object.keys(overrides).length;
+            document.getElementById('sync-actions').classList.toggle('hidden', pendingCount === 0);
+            document.getElementById('pending-count').textContent = `${pendingCount} 件の保留中の変更`;
+
+            if (hasPending) setTimeout(() => renderTasks(tasks), 1000);
         }
 
-        async function pushTaskUpdate(taskId, status) {
-            const authorization = getActiveAuthHeader();
-            if (!authorization) throw new Error('owner_token_missing');
+        function createCard(task) {
+            const div = document.createElement('div');
+            const isDone = task.status === 'done';
+            const isPending = task.status === 'pending-done';
+            const isBot = task.assignee === 'Bot';
 
-            const headers = {
-                'Content-Type': 'application/json',
-                'Authorization': authorization
-            };
+            div.className = `glass-panel rounded-xl p-4 border-l-4 transition-all duration-300 group ${
+                task.priority === 'A' ? 'border-amber-500' : 'border-slate-800'
+            } ${isDone ? 'opacity-50 border-emerald-500' : ''}`;
 
+            div.innerHTML = `
+                <div class="flex flex-col gap-2">
+                    <div class="flex justify-between items-start">
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-slate-500">${task.id}</span>
+                        <span class="font-mono text-[9px] px-1.5 py-0.5 rounded border border-slate-800 bg-slate-900/50 ${isBot ? 'text-indigo-400' : 'text-violet-400'}">
+                            @${task.assignee}
+                        </span>
+                    </div>
+                    <h3 class="text-sm font-semibold text-slate-200 leading-snug ${isDone || isPending ? 'line-through decoration-slate-600 text-slate-500' : ''}">
+                        ${task.title}
+                    </h3>
+                    <div class="flex justify-end mt-2">
+                        ${isPending ? 
+                            `<button data-action="undo-pending" data-task-id="${task.id}" class="text-[10px] font-mono text-amber-500 hover:text-white transition-colors">CANCEL (${task.pendingSec}s)</button>` :
+                            isDone ? 
+                            `<button data-action="undo" data-task-id="${task.id}" class="text-[10px] font-mono text-slate-500 hover:text-white transition-colors">UNDO</button>` :
+                            `<button data-action="done" data-task-id="${task.id}" class="text-[10px] font-mono text-emerald-500 hover:text-emerald-400 transition-colors font-bold">DONE</button>`
+                        }
+                    </div>
+                </div>
+            `;
+            return div;
+        }
+
+        async function syncUpdate(taskId, status) {
+            if (!hasSyncConfig()) return;
             try {
-                return await fetchJson(REMOTE_UPDATE_ENDPOINT, {
+                await fetchJson(REMOTE_UPDATE_ENDPOINT, {
                     method: 'POST',
-                    headers,
+                    headers: { 'Content-Type': 'application/json', 'Authorization': getAuthHeader() },
                     body: JSON.stringify({ taskId, status })
                 });
-            } catch (remoteError) {
-                const baseUrl = getBridgeBaseUrl();
-                if (!baseUrl) throw remoteError;
-                return fetchJson(`${baseUrl}/api/task-board/update`, {
-                    method: 'POST',
-                    headers,
-                    body: JSON.stringify({ taskId, status })
-                });
+                clearLocalOverride(taskId);
+                loadTasks();
+            } catch (e) {
+                console.error('Sync failed:', e);
+                document.getElementById('failure-banner').classList.remove('hidden');
             }
         }
 
-        async function syncEligibleOverrides(tasks, { silent = false } = {}) {
-            const overrides = getLocalOverrides();
-            const entries = Object.entries(overrides);
-            if (entries.length === 0) return;
-
-            for (const [taskId, override] of entries) {
-                if (syncingTaskIds.has(taskId)) continue;
-
-                if (override.status === 'pending-done' && Date.now() - (override.at || Date.now()) < BRIDGE_PENDING_SECONDS * 1000) {
-                    continue;
-                }
-
-                const nextStatus = override.status === 'pending-done' ? 'done' : override.status;
-                if (!['done', 'todo'].includes(nextStatus)) continue;
-                if (!hasOwnerSyncConfigured()) continue;
-
-                syncingTaskIds.add(taskId);
-                try {
-                    if (!silent) updateBridgeStatus('syncing', `task board: ${taskId} を同期中...`);
-                    const result = await pushTaskUpdate(taskId, nextStatus);
-                    clearLocalOverride(taskId);
-                    if (Array.isArray(result.tasks)) {
-                        lastLoadedTasks = result.tasks;
-                        renderTasks(result.tasks);
-                    } else {
-                        renderTasks(lastLoadedTasks);
-                    }
-                    updateBridgeStatus('remote-online', `remote write ok: ${taskId}`);
-                } catch (error) {
-                    const lastError = String(error.message || 'sync_failed').slice(0, 80);
-                    setLocalOverride(taskId, {
-                        status: nextStatus,
-                        at: override.at || Date.now(),
-                        syncSource: 'local-override',
-                        retryCount: (override.retryCount || 0) + 1,
-                        lastError
-                    });
-                    renderTasks(lastLoadedTasks);
-                    updateBridgeStatus('local-fallback', `remote write failed for ${taskId} (${lastError}). 変更はこのブラウザに保持中`);
-                } finally {
-                    syncingTaskIds.delete(taskId);
-                }
-            }
-        }
-
-        function describeAuthMode() {
-            const session = getOwnerSession();
-            if (session.token) {
-                const until = new Date(session.expiresAt).toLocaleString('ja-JP', { hour12: false });
-                return `session 保存済み（${until} まで）`;
-            }
-            if (getOwnerToken()) return 'token mode 保存済み';
-            return '未設定';
-        }
-
-        function openOwnerSyncModal() {
-            document.getElementById('owner-token-input').value = getOwnerToken();
-            document.getElementById('bridge-url-input').value = getBridgeBaseUrl();
-            hideOwnerSyncStatus();
-            showOwnerSyncStatus('ok', `現在: ${describeAuthMode()}`);
-            document.getElementById('owner-sync-modal').classList.remove('hidden');
-        }
-
-        function closeOwnerSyncModal() {
-            document.getElementById('owner-sync-modal').classList.add('hidden');
-        }
-
-        function showOwnerSyncStatus(kind, text) {
-            const el = document.getElementById('owner-sync-form-status');
-            el.className = 'rounded-lg border px-3 py-2 text-[11px] font-mono';
-            if (kind === 'ok') {
-                el.classList.add('border-emerald-500/30', 'bg-emerald-950/30', 'text-emerald-200');
-            } else {
-                el.classList.add('border-amber-500/30', 'bg-amber-950/30', 'text-amber-200');
-            }
-            el.textContent = text;
-            el.classList.remove('hidden');
-        }
-
-        function hideOwnerSyncStatus() {
-            document.getElementById('owner-sync-form-status').classList.add('hidden');
-        }
-
-        async function createOwnerSession(ownerToken) {
-            return fetchJson(REMOTE_SESSION_ENDPOINT, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${ownerToken}`
-                },
-                body: JSON.stringify({})
-            });
-        }
-
-        async function testOwnerSyncConfig() {
-            const token = document.getElementById('owner-token-input').value.trim();
-            const bridgeUrl = document.getElementById('bridge-url-input').value.trim();
-
-            if (!token && !getOwnerSession().token) {
-                showOwnerSyncStatus('error', 'token または有効な session が必要です');
-                return;
-            }
-
-            if (token) setOwnerToken(token);
-            setBridgeBaseUrl(bridgeUrl || BRIDGE_URL_CANDIDATES[0]);
-            const result = await probeBridge();
-            if (result.mode === 'local-only') {
-                showOwnerSyncStatus('error', 'Vercel も localhost bridge も見つかりません。保存はできますが、この端末ではまだ browser-held です');
-            } else {
-                showOwnerSyncStatus('ok', `接続確認できました（${describeAuthMode()}）`);
-            }
-        }
-
-        document.addEventListener('click', async (event) => {
-            const button = event.target.closest('button[data-action]');
-            if (!button) return;
-            const taskId = button.dataset.taskId;
-            const action = button.dataset.action;
+        document.addEventListener('click', async e => {
+            const btn = e.target.closest('button[data-action]');
+            if (!btn) return;
+            const { action, taskId } = btn.dataset;
 
             if (action === 'done') {
-                setLocalOverride(taskId, { status: 'pending-done', at: Date.now(), syncSource: 'local-pending', lastError: '' });
+                setLocalOverride(taskId, { status: 'pending-done' });
                 renderTasks(lastLoadedTasks);
-                return;
-            }
-
-            if (action === 'undo') {
-                setLocalOverride(taskId, { status: 'todo', at: Date.now(), syncSource: 'local-override', lastError: '' });
-                renderTasks(lastLoadedTasks);
-                await syncEligibleOverrides(lastLoadedTasks);
-                return;
-            }
-
-            if (action === 'undo-pending') {
+                setTimeout(() => {
+                    const overrides = getLocalOverrides();
+                    if (overrides[taskId] && overrides[taskId].status === 'pending-done') {
+                        syncUpdate(taskId, 'done');
+                    }
+                }, BRIDGE_PENDING_SECONDS * 1000);
+            } else if (action === 'undo' || action === 'undo-pending') {
                 clearLocalOverride(taskId);
+                if (action === 'undo') await syncUpdate(taskId, 'todo');
                 renderTasks(lastLoadedTasks);
-                return;
-            }
-
-            if (action === 'retry') {
-                const existing = getLocalOverrides()[taskId];
-                if (!existing) return;
-                setLocalOverride(taskId, { ...existing, lastError: '' });
-                renderTasks(lastLoadedTasks);
-                await syncEligibleOverrides(lastLoadedTasks);
             }
         });
 
-        async function getSyncText() {
-            let tasks;
-            try {
-                tasks = await fetchRemoteTasks();
-            } catch (_) {
-                tasks = await fetchStaticTasks();
-            }
-            return buildSyncText(tasks);
-        }
+        // Modal Handlers
+        const modals = {
+            owner: document.getElementById('owner-sync-modal'),
+            text: document.getElementById('sync-text-modal')
+        };
+        
+        document.getElementById('header-owner-setup').onclick = () => modals.owner.classList.remove('hidden');
+        document.getElementById('banner-owner-setup').onclick = () => modals.owner.classList.remove('hidden');
+        document.getElementById('close-owner-sync-modal').onclick = () => modals.owner.classList.add('hidden');
+        document.getElementById('close-sync-modal').onclick = () => modals.text.classList.add('hidden');
 
-        function showSyncModal(text) {
-            const modal = document.getElementById('sync-text-modal');
-            const output = document.getElementById('sync-text-output');
-            output.value = text;
-            modal.classList.remove('hidden');
-            output.focus();
-            output.select();
-        }
-
-        document.getElementById('copy-sync-text').addEventListener('click', async () => {
-            try {
-                const text = await getSyncText();
-                await navigator.clipboard.writeText(text);
-                const btn = document.getElementById('copy-sync-text');
-                const prev = btn.textContent;
-                btn.textContent = '✅ コピーしました';
-                setTimeout(() => btn.textContent = prev, 1500);
-            } catch (_) {
-                const text = await getSyncText();
-                showSyncModal(text);
-            }
-        });
-
-        document.getElementById('show-sync-text').addEventListener('click', async () => {
-            const text = await getSyncText();
-            showSyncModal(text);
-        });
-
-        document.getElementById('retry-pending-sync').addEventListener('click', async () => {
-            await probeBridge();
-            await syncEligibleOverrides(lastLoadedTasks);
-        });
-
-        document.getElementById('close-sync-modal').addEventListener('click', () => {
-            document.getElementById('sync-text-modal').classList.add('hidden');
-        });
-
-        document.getElementById('clear-local-overrides').addEventListener('click', () => {
-            localStorage.removeItem(LOCAL_OVERRIDE_KEY);
-            renderTasks(lastLoadedTasks);
-            probeBridge();
-        });
-
-        document.getElementById('configure-owner-sync').addEventListener('click', openOwnerSyncModal);
-        document.getElementById('close-owner-sync-modal').addEventListener('click', closeOwnerSyncModal);
-        document.getElementById('owner-sync-modal').addEventListener('click', (event) => {
-            if (event.target.id === 'owner-sync-modal') closeOwnerSyncModal();
-        });
-
-        document.getElementById('toggle-owner-token-visibility').addEventListener('click', () => {
-            const input = document.getElementById('owner-token-input');
-            const btn = document.getElementById('toggle-owner-token-visibility');
-            const nextType = input.type === 'password' ? 'text' : 'password';
-            input.type = nextType;
-            btn.textContent = nextType === 'password' ? 'SHOW' : 'HIDE';
-        });
-
-        document.getElementById('owner-sync-form').addEventListener('submit', async (event) => {
-            event.preventDefault();
+        document.getElementById('pair-owner-session').onclick = async () => {
             const token = document.getElementById('owner-token-input').value.trim();
-            const bridgeUrl = document.getElementById('bridge-url-input').value.trim();
-            setOwnerToken(token);
-            if (!token) setOwnerSession('', 0);
-            setBridgeBaseUrl(bridgeUrl || BRIDGE_URL_CANDIDATES[0]);
-            await probeBridge();
-            renderTasks(lastLoadedTasks);
-            showOwnerSyncStatus('ok', token ? '保存しました。このブラウザで token mode を使います' : 'token / session を削除しました');
-            if (token) {
-                await syncEligibleOverrides(lastLoadedTasks);
-            }
-            setTimeout(closeOwnerSyncModal, 500);
-        });
-
-        document.getElementById('test-owner-sync').addEventListener('click', async () => {
+            if (!token) return;
             try {
-                await testOwnerSyncConfig();
-            } catch (error) {
-                showOwnerSyncStatus('error', `接続確認失敗: ${error.message || 'unknown_error'}`);
-            }
-        });
-
-        document.getElementById('pair-owner-session').addEventListener('click', async () => {
-            const token = document.getElementById('owner-token-input').value.trim();
-            const bridgeUrl = document.getElementById('bridge-url-input').value.trim();
-            if (!token) {
-                showOwnerSyncStatus('error', 'pair には owner token が必要です');
-                return;
-            }
-            const session = await createOwnerSession(token);
-            setOwnerSession(session.token, session.expiresAt);
-            setOwnerToken('');
-            document.getElementById('owner-token-input').value = '';
-            setBridgeBaseUrl(bridgeUrl || BRIDGE_URL_CANDIDATES[0]);
-            await probeBridge();
-            renderTasks(lastLoadedTasks);
-            showOwnerSyncStatus('ok', `pair 完了: ${describeAuthMode()}`);
-            await syncEligibleOverrides(lastLoadedTasks);
-        });
-
-        document.getElementById('remove-owner-sync').addEventListener('click', async () => {
-            setOwnerToken('');
-            setOwnerSession('', 0);
-            setBridgeBaseUrl('');
-            hideOwnerSyncStatus();
-            closeOwnerSyncModal();
-            await probeBridge();
-            renderTasks(lastLoadedTasks);
-        });
-
-        document.getElementById('clear-owner-sync').addEventListener('click', async () => {
-            setOwnerToken('');
-            setOwnerSession('', 0);
-            setBridgeBaseUrl('');
-            await probeBridge();
-            renderTasks(lastLoadedTasks);
-        });
-
-        async function handlePairFromUrl() {
-            const hash = window.location.hash.startsWith('#') ? window.location.hash.slice(1) : '';
-            const params = new URLSearchParams(hash);
-            const pairToken = (params.get('pair') || params.get('token') || '').trim();
-            if (!pairToken) return;
-            try {
-                const session = await createOwnerSession(pairToken);
-                setOwnerSession(session.token, session.expiresAt);
+                const res = await fetchJson(REMOTE_SESSION_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                setOwnerSession(res.token, res.expiresAt);
                 setOwnerToken('');
-                params.delete('pair');
-                params.delete('token');
-                const nextHash = params.toString();
-                history.replaceState(null, '', `${window.location.pathname}${window.location.search}${nextHash ? `#${nextHash}` : ''}`);
-                await probeBridge();
-                renderTasks(lastLoadedTasks);
-            } catch (error) {
-                showOwnerSyncStatus('error', `pairing 失敗: ${error.message || 'unknown_error'}`);
+                modals.owner.classList.add('hidden');
+                probeSync();
+                loadTasks();
+            } catch (e) {
+                const status = document.getElementById('owner-sync-form-status');
+                status.textContent = 'ペアリングに失敗しました。トークンを確認してください。';
+                status.className = 'rounded-xl border border-rose-500/30 bg-rose-950/20 px-4 py-3 text-xs font-mono text-rose-200';
+                status.classList.remove('hidden');
             }
-        }
+        };
 
-        window.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                document.getElementById('sync-text-modal').classList.add('hidden');
-                closeOwnerSyncModal();
-            }
-        });
+        document.getElementById('remove-owner-sync').onclick = () => {
+            setOwnerToken('');
+            setOwnerSession('', 0);
+            localStorage.removeItem(LOCAL_OVERRIDE_KEY);
+            location.reload();
+        };
 
-        setInterval(() => {
+        document.getElementById('toggle-owner-token-visibility').onclick = function() {
+            const input = document.getElementById('owner-token-input');
+            const type = input.type === 'password' ? 'text' : 'password';
+            input.type = type;
+            this.textContent = type === 'password' ? 'SHOW' : 'HIDE';
+        };
+
+        document.getElementById('show-sync-text').onclick = () => {
             const overrides = getLocalOverrides();
-            if (Object.keys(overrides).length > 0) {
-                renderTasks(lastLoadedTasks);
-                syncEligibleOverrides(lastLoadedTasks, { silent: true }).catch(() => {});
-            }
-        }, PENDING_TICK_MS);
+            const text = Object.entries(overrides).map(([id, o]) => `${o.status === 'done' ? 'done' : 'undo'} ${id}`).join('\n');
+            document.getElementById('sync-text-output').value = `反映お願いします:\n${text}`;
+            modals.text.classList.remove('hidden');
+        };
 
-        handlePairFromUrl().finally(() => {
-            probeBridge().finally(() => loadTasks({ silent: true }));
-        });
-        setInterval(() => loadTasks({ silent: true }), LOAD_INTERVAL_MS);
+        document.getElementById('retry-pending-sync').onclick = () => {
+            const overrides = getLocalOverrides();
+            Object.keys(overrides).forEach(id => syncUpdate(id, overrides[id].status === 'pending-done' ? 'done' : 'todo'));
+        };
+
+        // Init
+        loadTasks();
+        setInterval(loadTasks, LOAD_INTERVAL_MS);
     </script>
 </body>
 </html>
