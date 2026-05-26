@@ -124,6 +124,21 @@
       --page-bg-position: center, 0 8px, 42px 28px, -22px 68px, 26px 104px, center, center, center;
     }
 
+    body.bg-leaves {
+      --page-bg:
+        linear-gradient(145deg, rgba(255, 248, 236, 0.38), rgba(38, 83, 52, 0.22)),
+        radial-gradient(ellipse 34px 94px at 10% 12%, rgba(24, 91, 49, 0.42) 0 58%, transparent 61%),
+        radial-gradient(ellipse 30px 88px at 78% 14%, rgba(86, 132, 48, 0.4) 0 58%, transparent 61%),
+        radial-gradient(ellipse 42px 110px at 28% 70%, rgba(16, 107, 79, 0.34) 0 58%, transparent 61%),
+        radial-gradient(ellipse 30px 86px at 88% 82%, rgba(32, 72, 45, 0.4) 0 58%, transparent 61%),
+        radial-gradient(circle at 66% 34%, rgba(169, 38, 99, 0.16) 0 8%, transparent 22%),
+        radial-gradient(circle at 18% 90%, rgba(214, 154, 31, 0.14) 0 9%, transparent 24%),
+        repeating-linear-gradient(124deg, rgba(39, 57, 36, 0.09) 0 1px, transparent 1px 12px),
+        linear-gradient(132deg, #f8ead4 0%, #d4b99a 44%, #6d8764 100%);
+      --page-bg-size: auto, 138px 188px, 154px 210px, 176px 230px, 148px 198px, auto, auto, auto, auto;
+      --page-bg-position: center, -28px -18px, 42px 4px, -38px 84px, 36px 118px, center, center, center, center;
+    }
+
     button {
       color: inherit;
       font: inherit;
@@ -668,6 +683,19 @@
         linear-gradient(135deg, var(--color-cream), var(--color-paper-deep));
       background-size: 62px 80px, 72px 88px, 70px 90px, 74px 92px, auto, auto;
       background-position: 0 0, 20px 10px, 6px 42px, 34px 44px, center, center;
+    }
+
+    .bg-option[data-bg="leaves"] .bg-preview {
+      background:
+        linear-gradient(145deg, rgba(255, 248, 236, 0.18), rgba(17, 61, 39, 0.18)),
+        radial-gradient(ellipse 19px 58px at 12% 8%, rgba(24, 91, 49, 0.78) 0 58%, transparent 61%),
+        radial-gradient(ellipse 18px 54px at 72% 18%, rgba(86, 132, 48, 0.72) 0 58%, transparent 61%),
+        radial-gradient(ellipse 23px 68px at 30% 72%, rgba(16, 107, 79, 0.68) 0 58%, transparent 61%),
+        radial-gradient(ellipse 17px 52px at 88% 82%, rgba(32, 72, 45, 0.74) 0 58%, transparent 61%),
+        radial-gradient(circle at 68% 48%, rgba(169, 38, 99, 0.34), transparent 24%),
+        linear-gradient(135deg, #f6e0bd, #6f925f);
+      background-size: auto, 72px 98px, 84px 108px, 92px 120px, 76px 98px, auto, auto;
+      background-position: center, -12px -12px, 26px 0, -8px 36px, 42px 40px, center, center;
     }
 
     .bg-option-title {
@@ -1249,7 +1277,7 @@
     }
   </style>
 </head>
-<body class="bg-paisley">
+<body class="bg-leaves">
   <div class="app">
     <div class="floral-field" aria-hidden="true">
       <div class="flower one"><span></span><i></i><b></b></div>
@@ -1310,12 +1338,12 @@
         <div class="background-lab-head">
           <div>
             <p class="background-lab-label">Background candidates</p>
-            <p class="background-lab-title">紙面の奥に敷く柄を3方向で比較</p>
+            <p class="background-lab-title">紙面の奥に敷く柄を4方向で比較</p>
           </div>
           <p class="background-lab-note">押すと背景が切り替わります</p>
         </div>
         <div class="bg-options">
-          <button class="bg-option is-active" type="button" data-bg="paisley" aria-pressed="true">
+          <button class="bg-option" type="button" data-bg="paisley" aria-pressed="false">
             <span class="bg-preview" aria-hidden="true"></span>
             <span>
               <span class="bg-option-label">A</span>
@@ -1334,6 +1362,13 @@
             <span>
               <span class="bg-option-label">C</span>
               <span class="bg-option-title">花びら散布</span>
+            </span>
+          </button>
+          <button class="bg-option is-active" type="button" data-bg="leaves" aria-pressed="true">
+            <span class="bg-preview" aria-hidden="true"></span>
+            <span>
+              <span class="bg-option-label">D</span>
+              <span class="bg-option-title">繁茂する葉</span>
             </span>
           </button>
         </div>
@@ -1464,7 +1499,7 @@
     bgOptions.forEach((option) => {
       option.addEventListener("click", () => {
         const selected = option.dataset.bg;
-        document.body.classList.remove("bg-paisley", "bg-botanical", "bg-petals");
+        document.body.classList.remove("bg-paisley", "bg-botanical", "bg-petals", "bg-leaves");
         document.body.classList.add(`bg-${selected}`);
         bgOptions.forEach((candidate) => {
           const active = candidate === option;
