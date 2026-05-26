@@ -1001,7 +1001,14 @@
     }
 
     .task-card.is-done {
-      opacity: 0.78;
+      opacity: 0.56;
+      border-color: rgba(255, 255, 255, 0.34);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 248, 236, 0.12)),
+        radial-gradient(circle at 100% 4%, rgba(111, 169, 162, 0.1), transparent 32%);
+      -webkit-backdrop-filter: blur(4px) saturate(1.02);
+      backdrop-filter: blur(4px) saturate(1.02);
+      box-shadow: 0 7px 16px rgba(51, 57, 39, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.34);
     }
 
     .task-card.is-done .task-name {
@@ -1310,7 +1317,7 @@
     }
   </style>
 </head>
-<body class="bg-leaves">
+<body class="bg-leaves-mixed">
   <div class="app">
     <div class="floral-field" aria-hidden="true">
       <div class="flower one"><span></span><i></i><b></b></div>
@@ -1397,7 +1404,7 @@
               <span class="bg-option-title">花びら散布</span>
             </span>
           </button>
-          <button class="bg-option is-active" type="button" data-bg="leaves" aria-pressed="true">
+          <button class="bg-option" type="button" data-bg="leaves" aria-pressed="false">
             <span class="bg-preview" aria-hidden="true"></span>
             <span>
               <span class="bg-option-label">D</span>
@@ -1411,7 +1418,7 @@
               <span class="bg-option-title">細枝の密生</span>
             </span>
           </button>
-          <button class="bg-option" type="button" data-bg="leaves-mixed" aria-pressed="false">
+          <button class="bg-option is-active" type="button" data-bg="leaves-mixed" aria-pressed="true">
             <span class="bg-preview" aria-hidden="true"></span>
             <span>
               <span class="bg-option-label">F</span>
