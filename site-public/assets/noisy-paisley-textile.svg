@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="180" viewBox="0 0 220 180">
+  <defs>
+    <pattern id="weave" width="18" height="18" patternUnits="userSpaceOnUse">
+      <path d="M0 8.5h18M8.5 0v18" fill="none" stroke="#4b3a5d" stroke-opacity=".14" stroke-width="1"/>
+      <path d="M0 17.5h18M17.5 0v18" fill="none" stroke="#f2c94c" stroke-opacity=".22" stroke-width="1"/>
+    </pattern>
+    <g id="paisley-a">
+      <path d="M47 8c27 3 52 31 49 62-2 25-20 50-49 55C18 130 0 109 4 84c4-22 21-30 22-47C27 21 32 7 47 8Z" fill="#b54573"/>
+      <path d="M47 16c21 3 41 25 38 51-3 22-18 40-40 44-21 4-34-11-31-28 3-16 17-25 17-42 0-15 5-26 16-25Z" fill="#f0b24a"/>
+      <path d="M47 25c16 3 30 21 26 40-4 18-19 29-35 28-13-1-19-9-17-20 3-13 17-20 17-34 0-9 3-15 9-14Z" fill="#347f88"/>
+      <path d="M47 36c8 2 15 10 13 20-2 10-10 17-19 16-7-1-10-6-8-12 2-8 10-12 10-19 0-4 1-6 4-5Z" fill="#f8efe0"/>
+      <path d="M21 88c18 14 42 17 64-5" fill="none" stroke="#422f46" stroke-opacity=".45" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="58" cy="56" r="6" fill="#4d5fb0"/>
+      <circle cx="38" cy="74" r="4" fill="#d95f43"/>
+      <circle cx="70" cy="84" r="4" fill="#8bcf7d"/>
+    </g>
+    <g id="paisley-b">
+      <path d="M36 4c22 3 38 21 35 44-2 18-15 35-36 39C15 91 1 78 4 60c3-15 15-21 15-33C19 15 24 3 36 4Z" fill="#4058a7"/>
+      <path d="M36 12c15 3 25 15 23 31-2 14-12 24-27 25-11 1-18-7-16-17 2-9 12-15 12-25 0-9 3-15 8-14Z" fill="#db5f87"/>
+      <path d="M35 24c8 2 13 8 12 16-1 8-7 13-15 14-6 1-10-4-8-10 1-6 8-9 8-16 0-3 1-5 3-4Z" fill="#f7d74e"/>
+      <path d="M12 61c14 8 30 9 47-6" fill="none" stroke="#fff7e8" stroke-opacity=".64" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="42" cy="40" r="4" fill="#2f8b7d"/>
+      <circle cx="28" cy="55" r="3" fill="#f4a85d"/>
+    </g>
+  </defs>
+  <rect width="220" height="180" fill="#7f384f"/>
+  <rect width="220" height="180" fill="url(#weave)"/>
+  <path d="M0 28c30-16 48-14 70 0s44 15 72-2 49-17 78-1v32c-29-16-50-16-78 1s-50 16-72 2S30 44 0 60Z" fill="#264f7e" opacity=".38"/>
+  <path d="M0 125c34 18 55 17 80 2s43-17 67 1 43 18 73 0v35c-30 18-49 18-73 0s-42-16-67-1-46 16-80-2Z" fill="#e0a23b" opacity=".42"/>
+  <use href="#paisley-a" x="7" y="18" transform="rotate(-12 55 82)"/>
+  <use href="#paisley-b" x="134" y="8" transform="rotate(23 170 52)"/>
+  <use href="#paisley-b" x="16" y="105" transform="rotate(34 50 140)"/>
+  <use href="#paisley-a" x="118" y="82" transform="rotate(-28 166 145) scale(.86)"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M3 17c18 9 34 9 52 0M78 16c20 12 42 11 63-2M151 35c16 8 36 9 57-3" stroke="#fff4da" stroke-opacity=".46" stroke-width="2"/>
+    <path d="M9 96c23-8 43-6 61 7M89 112c23-13 47-13 70 2M160 76c19-10 36-9 55 4" stroke="#63c3a2" stroke-opacity=".55" stroke-width="3"/>
+    <path d="M9 160c22 10 42 9 61-3M91 154c21 11 44 11 67-1M162 151c18 8 35 8 52-1" stroke="#f5c84c" stroke-opacity=".6" stroke-width="2"/>
+  </g>
+  <g opacity=".78">
+    <circle cx="111" cy="26" r="3" fill="#f7efe3"/>
+    <circle cx="124" cy="38" r="2.5" fill="#eb684f"/>
+    <circle cx="102" cy="44" r="2.5" fill="#78c17d"/>
+    <circle cx="197" cy="116" r="3" fill="#f7efe3"/>
+    <circle cx="89" cy="84" r="2.5" fill="#f1c948"/>
+    <circle cx="18" cy="79" r="2" fill="#66bbad"/>
+    <circle cx="211" cy="17" r="2.5" fill="#d96388"/>
+    <circle cx="137" cy="162" r="2" fill="#f7efe3"/>
+  </g>
+</svg>
