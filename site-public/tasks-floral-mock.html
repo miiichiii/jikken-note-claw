@@ -19,14 +19,18 @@
       --color-coral: #f29a74;
       --color-lavender: #b7a6df;
       --color-violet: #8f7ac2;
+      --color-indigo: #6f6da8;
       --color-leaf: #8dbd8b;
       --color-leaf-deep: #5f946a;
+      --color-teal: #6fa9a2;
       --color-mimosa: #f4cd63;
       --color-honey: #df9d38;
+      --color-rust: #b86f4b;
       --color-sky: #9dc8df;
       --color-ink: #46352b;
       --color-ink-soft: #7c6659;
       --color-line: rgba(120, 92, 72, 0.18);
+      --color-pattern: rgba(92, 67, 96, 0.15);
       --color-shadow: rgba(116, 79, 45, 0.18);
       --color-white: rgba(255, 255, 255, 0.86);
       --font-ui: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", system-ui, sans-serif;
@@ -113,11 +117,96 @@
       filter: blur(0.1px);
     }
 
+    .pattern-field {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      overflow: hidden;
+      opacity: 0.72;
+      mix-blend-mode: multiply;
+    }
+
+    .mandala {
+      position: absolute;
+      width: 174px;
+      height: 174px;
+      border-radius: 50%;
+      opacity: 0.22;
+      background:
+        radial-gradient(circle, transparent 0 18%, rgba(111, 109, 168, 0.2) 19% 20%, transparent 21% 28%, rgba(111, 109, 168, 0.18) 29% 30%, transparent 31%),
+        repeating-conic-gradient(from 11deg, rgba(184, 111, 75, 0.22) 0 7deg, transparent 7deg 16deg),
+        repeating-radial-gradient(circle, transparent 0 17px, rgba(92, 67, 96, 0.18) 18px 19px, transparent 20px 31px);
+      filter: blur(0.2px);
+      mask-image: radial-gradient(circle, black 0 62%, transparent 76%);
+      -webkit-mask-image: radial-gradient(circle, black 0 62%, transparent 76%);
+    }
+
+    .mandala.one {
+      top: 62px;
+      left: -78px;
+      transform: rotate(-18deg);
+    }
+
+    .mandala.two {
+      right: -84px;
+      bottom: 116px;
+      width: 214px;
+      height: 214px;
+      opacity: 0.18;
+      transform: rotate(22deg);
+    }
+
+    .paisley {
+      position: absolute;
+      width: 148px;
+      height: 212px;
+      border: 1px solid rgba(111, 109, 168, 0.18);
+      border-radius: 72% 30% 66% 34% / 58% 28% 78% 42%;
+      opacity: 0.22;
+      background:
+        radial-gradient(ellipse at 48% 32%, rgba(255, 248, 236, 0.62) 0 18%, transparent 19%),
+        radial-gradient(ellipse at 54% 46%, rgba(111, 109, 168, 0.18) 0 8%, transparent 9%),
+        radial-gradient(ellipse at 42% 65%, rgba(111, 169, 162, 0.16) 0 10%, transparent 11%),
+        repeating-radial-gradient(ellipse at 54% 46%, transparent 0 17px, rgba(184, 111, 75, 0.14) 18px 19px, transparent 20px 31px),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.42), rgba(183, 166, 223, 0.18));
+      box-shadow: inset 0 0 0 8px rgba(255, 248, 236, 0.2);
+      transform: rotate(28deg);
+    }
+
+    .paisley::before {
+      position: absolute;
+      right: 12px;
+      top: -13px;
+      width: 68px;
+      height: 84px;
+      content: "";
+      border-radius: 78% 22% 68% 32% / 62% 26% 74% 38%;
+      border-top: 1px solid rgba(111, 109, 168, 0.18);
+      border-right: 1px solid rgba(111, 109, 168, 0.16);
+      background: rgba(255, 248, 236, 0.2);
+      transform: rotate(18deg);
+    }
+
+    .paisley.one {
+      top: 222px;
+      right: -62px;
+    }
+
+    .paisley.two {
+      left: -72px;
+      bottom: -46px;
+      width: 128px;
+      height: 184px;
+      opacity: 0.17;
+      transform: rotate(-26deg);
+    }
+
     .flower {
       position: absolute;
       width: 104px;
       height: 104px;
-      opacity: 0.42;
+      opacity: 0.3;
       filter: drop-shadow(0 14px 18px rgba(109, 72, 42, 0.08));
     }
 
@@ -165,7 +254,7 @@
       top: 46%;
       right: -48px;
       transform: rotate(36deg) scale(0.78);
-      opacity: 0.34;
+      opacity: 0.22;
     }
 
     .shell {
@@ -246,6 +335,7 @@
       border-radius: var(--radius-shell);
       padding: 23px 22px 20px;
       background:
+        repeating-conic-gradient(from 18deg at 84% 18%, rgba(111, 109, 168, 0.08) 0 7deg, transparent 7deg 19deg),
         radial-gradient(circle at 14% 14%, rgba(255, 255, 255, 0.78), transparent 21%),
         linear-gradient(160deg, rgba(255, 255, 255, 0.74), rgba(255, 248, 236, 0.5)),
         radial-gradient(circle at 88% 8%, rgba(245, 169, 184, 0.32), transparent 34%);
@@ -263,10 +353,9 @@
       content: "";
       border-radius: 46% 54% 48% 52%;
       background:
-        radial-gradient(circle at 30% 26%, rgba(244, 205, 99, 0.52), transparent 23%),
-        radial-gradient(circle at 62% 54%, rgba(183, 166, 223, 0.5), transparent 30%),
-        radial-gradient(circle at 38% 70%, rgba(141, 189, 139, 0.42), transparent 31%);
-      opacity: 0.24;
+        radial-gradient(circle at 50% 50%, transparent 0 19%, rgba(111, 109, 168, 0.2) 20% 21%, transparent 22% 31%, rgba(184, 111, 75, 0.16) 32% 33%, transparent 34%),
+        repeating-conic-gradient(from 12deg, rgba(111, 169, 162, 0.18) 0 6deg, transparent 6deg 15deg);
+      opacity: 0.26;
       filter: blur(1.6px);
       transform: rotate(-18deg);
     }
@@ -414,7 +503,8 @@
       border-radius: var(--radius-card);
       background:
         linear-gradient(145deg, rgba(255, 255, 255, 0.62), var(--color-cream-glass)),
-        radial-gradient(circle at 100% 0%, rgba(183, 166, 223, 0.08), transparent 34%);
+        radial-gradient(circle at 100% 0%, rgba(183, 166, 223, 0.08), transparent 34%),
+        repeating-linear-gradient(132deg, transparent 0 16px, rgba(111, 109, 168, 0.035) 17px 18px, transparent 19px 34px);
       -webkit-backdrop-filter: var(--blur-glass);
       backdrop-filter: var(--blur-glass);
       box-shadow: 0 12px 24px rgba(116, 79, 45, 0.12), inset 0 1px 0 var(--color-white);
@@ -636,6 +726,12 @@
 <body>
   <div class="app">
     <div class="floral-field" aria-hidden="true">
+      <div class="pattern-field">
+        <div class="mandala one"></div>
+        <div class="mandala two"></div>
+        <div class="paisley one"></div>
+        <div class="paisley two"></div>
+      </div>
       <div class="flower one"><span></span><i></i><b></b></div>
       <div class="flower two"><span></span><i></i><b></b></div>
       <div class="flower three"><span></span><i></i><b></b></div>
