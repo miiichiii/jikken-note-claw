@@ -546,24 +546,26 @@
       position: relative;
       isolation: isolate;
       min-width: 0;
-      min-height: 52px;
+      min-height: 60px;
       overflow: hidden;
-      padding: 0 9px;
+      padding: 0 8px;
       border: 1px solid rgba(255, 255, 255, 0.42);
       border-radius: var(--radius-button);
       color: rgba(255, 250, 242, 0.96);
-      font-size: 14px;
+      font-size: 21px;
       font-weight: 950;
+      letter-spacing: 0;
+      line-height: 1;
       text-shadow: 0 2px 8px rgba(18, 12, 26, 0.68);
       background:
-        linear-gradient(145deg, rgba(16, 10, 25, 0.48), rgba(16, 10, 25, 0.26)),
-        radial-gradient(circle at 16% 20%, var(--seg-hot) 0 17%, transparent 18%),
-        radial-gradient(circle at 88% 18%, var(--seg-cool) 0 20%, transparent 21%),
-        radial-gradient(circle at 48% 92%, var(--seg-warm) 0 20%, transparent 21%),
+        linear-gradient(145deg, rgba(16, 10, 25, 0.6), rgba(16, 10, 25, 0.22)),
+        radial-gradient(circle at var(--seg-hot-x) var(--seg-hot-y), var(--seg-hot) 0 24%, transparent 25%),
+        radial-gradient(circle at var(--seg-cool-x) var(--seg-cool-y), var(--seg-cool) 0 24%, transparent 25%),
+        radial-gradient(circle at var(--seg-warm-x) var(--seg-warm-y), var(--seg-warm) 0 26%, transparent 27%),
         url("assets/noisy-paisley-textile.svg"),
         linear-gradient(145deg, var(--seg-base-a), var(--seg-base-b));
-      background-size: auto, auto, auto, auto, 150px 123px, auto;
-      background-position: center, center, center, center, center, center;
+      background-size: auto, auto, auto, auto, var(--seg-pattern-size), auto;
+      background-position: center, center, center, center, var(--seg-pattern-position), center;
       box-shadow:
         0 13px 22px var(--seg-shadow),
         inset 0 1px 0 rgba(255, 255, 255, 0.44),
@@ -575,9 +577,23 @@
       inset: 1px 8px auto;
       height: 45%;
       content: "";
-      z-index: -1;
+      z-index: 1;
       border-radius: var(--radius-button);
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0));
+      pointer-events: none;
+    }
+
+    .seg-button::after {
+      position: absolute;
+      inset: -24px;
+      content: "";
+      z-index: -1;
+      opacity: var(--seg-pattern-opacity);
+      background-image: url("assets/noisy-paisley-textile.svg");
+      background-size: var(--seg-pattern-layer-size);
+      background-position: var(--seg-pattern-layer-position);
+      mix-blend-mode: hard-light;
+      transform: rotate(var(--seg-pattern-rotate)) scale(var(--seg-pattern-scale));
       pointer-events: none;
     }
 
@@ -592,30 +608,69 @@
     }
 
     .seg-button:nth-child(1) {
-      --seg-base-a: #4b163d;
-      --seg-base-b: #9d244f;
-      --seg-hot: rgba(226, 107, 67, 0.78);
-      --seg-cool: rgba(143, 122, 194, 0.72);
-      --seg-warm: rgba(240, 193, 48, 0.72);
-      --seg-shadow: rgba(157, 36, 79, 0.32);
+      --seg-base-a: #4b0d45;
+      --seg-base-b: #ba214f;
+      --seg-hot: rgba(255, 92, 40, 0.82);
+      --seg-cool: rgba(121, 75, 210, 0.76);
+      --seg-warm: rgba(247, 191, 31, 0.82);
+      --seg-hot-x: 8%;
+      --seg-hot-y: 14%;
+      --seg-cool-x: 88%;
+      --seg-cool-y: 18%;
+      --seg-warm-x: 46%;
+      --seg-warm-y: 94%;
+      --seg-pattern-size: 118px 97px;
+      --seg-pattern-position: 24% 44%;
+      --seg-pattern-layer-size: 96px 78px;
+      --seg-pattern-layer-position: 18px 8px;
+      --seg-pattern-rotate: -15deg;
+      --seg-pattern-scale: 1.16;
+      --seg-pattern-opacity: 0.42;
+      --seg-shadow: rgba(186, 33, 79, 0.36);
     }
 
     .seg-button:nth-child(2) {
-      --seg-base-a: #183a82;
-      --seg-base-b: #7a2d5e;
-      --seg-hot: rgba(213, 155, 23, 0.76);
-      --seg-cool: rgba(49, 184, 173, 0.72);
-      --seg-warm: rgba(226, 107, 67, 0.7);
-      --seg-shadow: rgba(24, 58, 130, 0.3);
+      --seg-base-a: #082f91;
+      --seg-base-b: #0b7c82;
+      --seg-hot: rgba(255, 210, 37, 0.84);
+      --seg-cool: rgba(29, 207, 184, 0.78);
+      --seg-warm: rgba(179, 49, 164, 0.72);
+      --seg-hot-x: 82%;
+      --seg-hot-y: 22%;
+      --seg-cool-x: 12%;
+      --seg-cool-y: 72%;
+      --seg-warm-x: 54%;
+      --seg-warm-y: 8%;
+      --seg-pattern-size: 154px 126px;
+      --seg-pattern-position: 72% 52%;
+      --seg-pattern-layer-size: 132px 108px;
+      --seg-pattern-layer-position: -16px 18px;
+      --seg-pattern-rotate: 18deg;
+      --seg-pattern-scale: 1.02;
+      --seg-pattern-opacity: 0.36;
+      --seg-shadow: rgba(8, 47, 145, 0.34);
     }
 
     .seg-button:nth-child(3) {
-      --seg-base-a: #0f5b55;
-      --seg-base-b: #7c6721;
-      --seg-hot: rgba(201, 46, 88, 0.74);
-      --seg-cool: rgba(23, 110, 183, 0.72);
-      --seg-warm: rgba(141, 207, 125, 0.72);
-      --seg-shadow: rgba(15, 91, 85, 0.3);
+      --seg-base-a: #094f2f;
+      --seg-base-b: #a66d08;
+      --seg-hot: rgba(220, 34, 101, 0.82);
+      --seg-cool: rgba(35, 106, 224, 0.74);
+      --seg-warm: rgba(154, 222, 67, 0.82);
+      --seg-hot-x: 16%;
+      --seg-hot-y: 24%;
+      --seg-cool-x: 88%;
+      --seg-cool-y: 72%;
+      --seg-warm-x: 38%;
+      --seg-warm-y: 88%;
+      --seg-pattern-size: 96px 79px;
+      --seg-pattern-position: 48% 28%;
+      --seg-pattern-layer-size: 86px 70px;
+      --seg-pattern-layer-position: 12px -8px;
+      --seg-pattern-rotate: -28deg;
+      --seg-pattern-scale: 1.22;
+      --seg-pattern-opacity: 0.46;
+      --seg-shadow: rgba(9, 79, 47, 0.34);
     }
 
     .section-title {
@@ -976,11 +1031,10 @@
       }
 
       .seg-button {
-        min-height: 47px;
-        padding-right: 4px;
-        padding-left: 4px;
-        font-size: 13px;
-        background-size: auto, auto, auto, auto, 126px 103px, auto;
+        min-height: 54px;
+        padding-right: 3px;
+        padding-left: 3px;
+        font-size: 19px;
       }
     }
 
