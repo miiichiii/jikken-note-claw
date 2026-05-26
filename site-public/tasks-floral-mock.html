@@ -6,18 +6,23 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Floral Task Notebook Mock</title>
   <style>
-    /* Hallmark · pre-emit critique: P5 H4 E5 S5 R4 V5 */
+    /* Hallmark · pre-emit critique: P5 H5 E5 S5 R4 V5 */
     :root {
       --color-paper: #f7ead8;
       --color-paper-deep: #ead4b8;
+      --color-paper-warm: #f2dfc4;
       --color-cream: #fff8ec;
       --color-cream-glass: rgba(255, 248, 236, 0.74);
+      --color-glass-bright: rgba(255, 255, 255, 0.68);
       --color-petal: #f5a9b8;
       --color-petal-deep: #dd6f8a;
+      --color-coral: #f29a74;
       --color-lavender: #b7a6df;
+      --color-violet: #8f7ac2;
       --color-leaf: #8dbd8b;
       --color-leaf-deep: #5f946a;
       --color-mimosa: #f4cd63;
+      --color-honey: #df9d38;
       --color-sky: #9dc8df;
       --color-ink: #46352b;
       --color-ink-soft: #7c6659;
@@ -29,6 +34,7 @@
       --radius-card: 28px;
       --radius-button: 999px;
       --shadow-raised: 0 18px 34px var(--color-shadow), inset 0 1px 0 var(--color-white);
+      --shadow-float: 0 24px 48px rgba(116, 79, 45, 0.18), 0 8px 18px rgba(221, 111, 138, 0.12), inset 0 1px 0 var(--color-white);
       --shadow-pressed: inset 0 7px 14px rgba(109, 72, 42, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.45);
       --blur-glass: blur(22px) saturate(1.35);
     }
@@ -48,10 +54,15 @@
       color: var(--color-ink);
       font-family: var(--font-ui);
       background:
+        radial-gradient(circle at 24px 24px, rgba(255, 255, 255, 0.26) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 18px 18px, rgba(221, 111, 138, 0.09) 0 1px, transparent 1.5px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
         radial-gradient(circle at 16% 10%, rgba(245, 169, 184, 0.36) 0 7%, transparent 22%),
         radial-gradient(circle at 92% 18%, rgba(183, 166, 223, 0.34) 0 8%, transparent 24%),
         radial-gradient(circle at 12% 78%, rgba(244, 205, 99, 0.28) 0 10%, transparent 28%),
         linear-gradient(145deg, var(--color-cream) 0%, var(--color-paper) 48%, var(--color-paper-deep) 100%);
+      background-size: 42px 42px, 34px 34px, 28px 28px, 28px 28px, auto, auto, auto, auto;
       overflow-x: hidden;
     }
 
@@ -65,6 +76,20 @@
       min-height: 100dvh;
       padding: max(18px, env(safe-area-inset-top)) 18px max(24px, env(safe-area-inset-bottom));
       isolation: isolate;
+    }
+
+    .app::before {
+      position: fixed;
+      inset: -80px -120px auto -120px;
+      height: 260px;
+      content: "";
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 64%, rgba(245, 169, 184, 0.28), transparent 26%),
+        radial-gradient(circle at 58% 18%, rgba(244, 205, 99, 0.24), transparent 28%),
+        radial-gradient(circle at 84% 56%, rgba(157, 200, 223, 0.22), transparent 30%);
+      filter: blur(2px);
     }
 
     .floral-field {
@@ -130,6 +155,20 @@
       opacity: 0.34;
     }
 
+    .flower.four {
+      top: 104px;
+      left: 52%;
+      transform: rotate(-8deg) scale(0.46);
+      opacity: 0.26;
+    }
+
+    .flower.five {
+      right: 18px;
+      bottom: 48px;
+      transform: rotate(24deg) scale(0.52);
+      opacity: 0.28;
+    }
+
     .shell {
       width: min(100%, 460px);
       margin: 0 auto;
@@ -151,7 +190,7 @@
       background: linear-gradient(150deg, rgba(255, 255, 255, 0.82), rgba(255, 244, 229, 0.58));
       -webkit-backdrop-filter: var(--blur-glass);
       backdrop-filter: var(--blur-glass);
-      box-shadow: var(--shadow-raised);
+      box-shadow: var(--shadow-float);
       cursor: pointer;
       transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
       -webkit-tap-highlight-color: transparent;
@@ -208,11 +247,12 @@
       border-radius: var(--radius-shell);
       padding: 23px 22px 20px;
       background:
+        radial-gradient(circle at 14% 14%, rgba(255, 255, 255, 0.78), transparent 21%),
         linear-gradient(160deg, rgba(255, 255, 255, 0.74), rgba(255, 248, 236, 0.5)),
         radial-gradient(circle at 88% 8%, rgba(245, 169, 184, 0.32), transparent 34%);
       -webkit-backdrop-filter: var(--blur-glass);
       backdrop-filter: var(--blur-glass);
-      box-shadow: var(--shadow-raised);
+      box-shadow: var(--shadow-float);
     }
 
     .hero::after {
@@ -258,6 +298,36 @@
       font-weight: 600;
     }
 
+    .mood-strip {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .mood-chip {
+      min-width: 0;
+      padding: 10px 9px;
+      border: 1px solid rgba(255, 255, 255, 0.62);
+      border-radius: 18px;
+      background: linear-gradient(155deg, rgba(255, 255, 255, 0.66), rgba(255, 248, 236, 0.36));
+      color: var(--color-ink-soft);
+      box-shadow: inset 0 1px 0 var(--color-white), 0 8px 16px rgba(116, 79, 45, 0.08);
+      font-size: 11px;
+      font-weight: 850;
+      text-align: center;
+    }
+
+    .mood-chip strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--color-ink);
+      font-size: 15px;
+      line-height: 1;
+    }
+
     .progress-row {
       position: relative;
       z-index: 1;
@@ -277,7 +347,7 @@
       background:
         conic-gradient(var(--color-leaf) calc(var(--progress, 0) * 1%), rgba(255, 255, 255, 0.5) 0),
         linear-gradient(145deg, var(--color-cream), var(--color-paper));
-      box-shadow: var(--shadow-raised);
+      box-shadow: var(--shadow-float);
     }
 
     .progress-orb span {
@@ -372,12 +442,45 @@
       padding: 14px;
       border: 1px solid var(--color-line);
       border-radius: var(--radius-card);
-      background: var(--color-cream-glass);
+      background:
+        linear-gradient(145deg, var(--color-glass-bright), var(--color-cream-glass)),
+        radial-gradient(circle at 100% 0%, rgba(245, 169, 184, 0.14), transparent 34%);
       -webkit-backdrop-filter: var(--blur-glass);
       backdrop-filter: var(--blur-glass);
       box-shadow: 0 12px 24px rgba(116, 79, 45, 0.12), inset 0 1px 0 var(--color-white);
       overflow: hidden;
-      transition: transform 180ms ease, opacity 180ms ease;
+      transition: transform 180ms ease, opacity 180ms ease, box-shadow 180ms ease;
+    }
+
+    .task-card::before {
+      position: absolute;
+      inset: 12px auto 12px 0;
+      width: 5px;
+      content: "";
+      border-radius: 0 999px 999px 0;
+      background: var(--color-petal);
+      box-shadow: 0 0 18px rgba(245, 169, 184, 0.32);
+    }
+
+    .task-card:nth-child(2)::before { background: var(--color-leaf); }
+    .task-card:nth-child(3)::before { background: var(--color-lavender); }
+    .task-card:nth-child(4)::before { background: var(--color-mimosa); }
+
+    .task-card::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background: linear-gradient(115deg, transparent 0 34%, rgba(255, 255, 255, 0.24) 44%, transparent 58%);
+      opacity: 0;
+      transform: translateX(-36%);
+      transition: opacity 220ms ease, transform 520ms ease;
+    }
+
+    .task-card:active::after,
+    .task-card.is-sparkling::after {
+      opacity: 1;
+      transform: translateX(28%);
     }
 
     .task-card:active {
@@ -386,6 +489,7 @@
 
     .task-card.is-done {
       opacity: 0.78;
+      box-shadow: 0 13px 28px rgba(95, 148, 106, 0.13), inset 0 1px 0 var(--color-white);
     }
 
     .task-card.is-done .task-name {
@@ -403,12 +507,26 @@
       border: 1px solid rgba(255, 255, 255, 0.62);
       border-radius: 19px;
       background: linear-gradient(150deg, rgba(255, 255, 255, 0.94), rgba(247, 234, 216, 0.78));
-      box-shadow: var(--shadow-raised);
+      box-shadow: var(--shadow-float);
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
+      overflow: hidden;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .check-button::after {
+      position: absolute;
+      inset: 6px 7px auto;
+      height: 15px;
+      content: "";
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0));
+      pointer-events: none;
     }
 
     .check-button::before {
+      position: relative;
+      z-index: 1;
       width: 20px;
       height: 10px;
       content: "";
@@ -422,6 +540,11 @@
     .task-card.is-done .check-button {
       background: linear-gradient(145deg, var(--color-leaf), var(--color-leaf-deep));
       box-shadow: 0 13px 24px rgba(95, 148, 106, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.48);
+    }
+
+    .check-button:active {
+      transform: translateY(2px) scale(0.96);
+      box-shadow: var(--shadow-pressed);
     }
 
     .task-card.is-done .check-button::before {
@@ -500,7 +623,9 @@
       padding: 15px;
       border: 1px solid var(--color-line);
       border-radius: 24px;
-      background: rgba(255, 248, 236, 0.5);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.56), rgba(255, 248, 236, 0.42)),
+        radial-gradient(circle at 10% 10%, rgba(141, 189, 139, 0.14), transparent 26%);
       -webkit-backdrop-filter: var(--blur-glass);
       backdrop-filter: var(--blur-glass);
       box-shadow: inset 0 1px 0 var(--color-white);
@@ -540,7 +665,9 @@
       color: var(--color-ink);
       font-size: 15px;
       font-weight: 950;
-      background: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(245, 169, 184, 0.32));
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(245, 169, 184, 0.36)),
+        radial-gradient(circle at 18% 16%, rgba(244, 205, 99, 0.32), transparent 28%);
     }
 
     .mini-stat {
@@ -588,6 +715,8 @@
       <div class="flower one"><span></span><i></i><b></b></div>
       <div class="flower two"><span></span><i></i><b></b></div>
       <div class="flower three"><span></span><i></i><b></b></div>
+      <div class="flower four"><span></span><i></i><b></b></div>
+      <div class="flower five"><span></span><i></i><b></b></div>
     </div>
 
     <main class="shell">
@@ -601,11 +730,16 @@
       </nav>
 
       <section class="hero" aria-labelledby="today-title">
-        <p class="eyebrow">Tue · Research Notebook</p>
-        <h1 id="today-title">今日の手帳</h1>
+        <p class="eyebrow">Tue · Floral Mission</p>
+        <h1 id="today-title">今日の花手帳</h1>
         <p class="hero-copy">
           研究・メール・生活のタスクを、やさしい紙面で一枚にまとめるモックです。
         </p>
+        <div class="mood-strip" aria-label="今日の状態">
+          <div class="mood-chip"><strong>4</strong>小さな用事</div>
+          <div class="mood-chip"><strong>1</strong>同期待ち</div>
+          <div class="mood-chip"><strong>25%</strong>達成</div>
+        </div>
         <div class="progress-row">
           <div class="progress-orb" id="progressOrb" style="--progress: 25">
             <span id="progressText">25%</span>
@@ -675,7 +809,7 @@
       </section>
 
       <footer class="bottom-actions">
-        <button class="primary-button" type="button" id="completeNext">次の1件を完了</button>
+        <button class="primary-button" type="button" id="completeNext">花をつける</button>
         <div class="mini-stat" id="queueCount">未同期 0</div>
       </footer>
     </main>
