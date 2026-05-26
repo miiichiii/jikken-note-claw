@@ -259,22 +259,39 @@
     .hero {
       position: relative;
       overflow: hidden;
-      border: 1px solid var(--color-line);
+      border: 1px solid rgba(255, 255, 255, 0.28);
       border-radius: var(--radius-shell);
       padding: 23px 22px 20px;
       background:
-        radial-gradient(ellipse at 86% 16%, rgba(77, 134, 201, 0.16) 0 18%, transparent 42%),
-        radial-gradient(ellipse at 74% 28%, rgba(164, 102, 159, 0.16) 0 10%, transparent 30%),
-        radial-gradient(circle at 14% 14%, rgba(255, 255, 255, 0.78), transparent 21%),
-        linear-gradient(160deg, rgba(255, 255, 255, 0.74), rgba(255, 248, 236, 0.5)),
-        radial-gradient(circle at 88% 8%, rgba(217, 95, 118, 0.24), transparent 34%);
+        linear-gradient(135deg, rgba(37, 22, 45, 0.44), rgba(96, 37, 68, 0.26) 48%, rgba(20, 90, 97, 0.34)),
+        linear-gradient(180deg, rgba(25, 18, 34, 0.26), rgba(23, 13, 27, 0.62)),
+        url("assets/noisy-paisley-textile.svg");
+      background-size: auto, auto, 190px 156px;
+      background-position: center, center, center;
       -webkit-backdrop-filter: var(--blur-glass);
       backdrop-filter: var(--blur-glass);
-      box-shadow: var(--shadow-raised);
+      box-shadow: 0 20px 40px rgba(72, 38, 53, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 14% 10%, rgba(255, 255, 255, 0.24), transparent 28%),
+        linear-gradient(115deg, rgba(38, 20, 42, 0.62) 0 45%, rgba(38, 20, 42, 0.34) 68%, rgba(38, 20, 42, 0.52));
+      mix-blend-mode: multiply;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
     }
 
     .hero::after {
       position: absolute;
+      z-index: 0;
       right: -24px;
       bottom: -36px;
       width: 118px;
@@ -288,14 +305,14 @@
         radial-gradient(ellipse at 44% 68%, rgba(217, 95, 118, 0.16) 0 10%, transparent 11%),
         repeating-radial-gradient(ellipse at 52% 48%, transparent 0 16px, rgba(111, 109, 168, 0.12) 17px 18px, transparent 19px 30px),
         linear-gradient(145deg, rgba(255, 255, 255, 0.28), rgba(122, 199, 191, 0.16));
-      opacity: 0.5;
+      opacity: 0.26;
       filter: blur(0.3px);
       transform: rotate(-21deg);
     }
 
     .eyebrow {
       margin: 0 0 8px;
-      color: var(--color-petal-deep);
+      color: rgba(255, 248, 236, 0.82);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 0;
@@ -304,9 +321,11 @@
     h1 {
       margin: 0;
       max-width: 270px;
+      color: #fffaf2;
       font-size: clamp(31px, 9vw, 43px);
       line-height: 0.98;
       letter-spacing: 0;
+      text-shadow: 0 2px 14px rgba(25, 14, 24, 0.34);
     }
 
     .hero-copy {
@@ -314,7 +333,7 @@
       z-index: 1;
       max-width: 292px;
       margin: 12px 0 0;
-      color: var(--color-ink-soft);
+      color: rgba(255, 248, 236, 0.86);
       font-size: 14px;
       line-height: 1.72;
       font-weight: 600;
@@ -505,13 +524,15 @@
 
     .progress-title {
       margin: 0 0 6px;
+      color: #fffaf2;
       font-size: 15px;
       font-weight: 900;
+      text-shadow: 0 2px 12px rgba(25, 14, 24, 0.28);
     }
 
     .progress-detail {
       margin: 0;
-      color: var(--color-ink-soft);
+      color: rgba(255, 248, 236, 0.8);
       font-size: 12px;
       line-height: 1.55;
       font-weight: 650;
@@ -658,33 +679,6 @@
 
     .task-card.is-done {
       opacity: 0.78;
-    }
-
-    .task-card.is-textile-type {
-      border-color: rgba(87, 54, 92, 0.24);
-      background:
-        linear-gradient(90deg, rgba(255, 248, 236, 0.88) 0 62%, rgba(255, 248, 236, 0.28) 62% 100%),
-        url("assets/noisy-paisley-textile.svg");
-      background-size: auto, 156px 128px;
-      background-position: 0 0, right -28px center;
-    }
-
-    .task-card.is-textile-type::after {
-      position: absolute;
-      inset: 0;
-      content: "";
-      pointer-events: none;
-      background:
-        linear-gradient(90deg, transparent 0 60%, rgba(255, 248, 236, 0.16) 76%, rgba(60, 33, 54, 0.08) 100%),
-        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 6px);
-      mix-blend-mode: screen;
-    }
-
-    .task-card.is-textile-type .check-button,
-    .task-card.is-textile-type .task-copy,
-    .task-card.is-textile-type .petal-burst {
-      position: relative;
-      z-index: 1;
     }
 
     .task-card.is-done .task-name {
@@ -996,7 +990,7 @@
       </section>
 
       <section class="task-list" id="taskList" aria-label="タスク一覧">
-        <article class="task-card is-textile-type" data-task>
+        <article class="task-card" data-task>
           <button class="check-button" type="button" aria-label="タスクを完了にする"></button>
           <div class="task-copy">
             <p class="task-name">メール候補を見て、返事が必要なものだけ決める</p>
