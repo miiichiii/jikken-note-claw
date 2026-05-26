@@ -68,7 +68,7 @@
       margin: 0;
       color: var(--color-ink);
       font-family: var(--font-ui);
-      background:
+      --page-bg:
         radial-gradient(circle at 16% 10%, rgba(201, 46, 88, 0.14) 0 7%, transparent 22%),
         radial-gradient(circle at 92% 18%, rgba(23, 110, 183, 0.15) 0 8%, transparent 24%),
         radial-gradient(circle at 12% 78%, rgba(213, 155, 23, 0.16) 0 10%, transparent 28%),
@@ -76,8 +76,52 @@
         radial-gradient(circle at 38% 94%, rgba(138, 63, 133, 0.13) 0 9%, transparent 25%),
         linear-gradient(115deg, rgba(255, 255, 255, 0.34) 0 1px, transparent 1px 100%),
         linear-gradient(145deg, var(--color-cream) 0%, var(--color-paper) 48%, var(--color-paper-deep) 100%);
-      background-size: auto, auto, auto, 54px 54px, auto;
+      --page-bg-size: auto, auto, auto, 54px 54px, auto, auto;
+      --page-bg-position: center;
+      background: var(--page-bg);
+      background-size: var(--page-bg-size);
+      background-position: var(--page-bg-position);
       overflow-x: clip;
+      transition: background 260ms ease;
+    }
+
+    body.bg-paisley {
+      --page-bg:
+        linear-gradient(145deg, rgba(255, 248, 236, 0.62), rgba(222, 194, 164, 0.34)),
+        radial-gradient(circle at 8% 16%, rgba(201, 46, 88, 0.28) 0 10%, transparent 24%),
+        radial-gradient(circle at 90% 12%, rgba(47, 69, 157, 0.24) 0 11%, transparent 25%),
+        radial-gradient(circle at 20% 86%, rgba(213, 155, 23, 0.22) 0 12%, transparent 26%),
+        url("assets/noisy-paisley-textile.svg"),
+        linear-gradient(132deg, var(--color-cream) 0%, var(--color-paper) 46%, var(--color-paper-deep) 100%);
+      --page-bg-size: auto, auto, auto, auto, 188px 154px, auto;
+      --page-bg-position: center, center, center, center, -22px 34px, center;
+    }
+
+    body.bg-botanical {
+      --page-bg:
+        linear-gradient(145deg, rgba(255, 248, 236, 0.7), rgba(244, 228, 207, 0.48)),
+        radial-gradient(ellipse 24px 58px at 14% 10%, rgba(95, 148, 106, 0.24) 0 58%, transparent 60%),
+        radial-gradient(ellipse 28px 64px at 82% 18%, rgba(201, 46, 88, 0.2) 0 58%, transparent 60%),
+        radial-gradient(ellipse 24px 54px at 26% 76%, rgba(23, 110, 183, 0.18) 0 58%, transparent 60%),
+        radial-gradient(ellipse 36px 82px at 72% 88%, rgba(213, 155, 23, 0.2) 0 58%, transparent 60%),
+        repeating-linear-gradient(34deg, rgba(70, 53, 43, 0.04) 0 1px, transparent 1px 13px),
+        linear-gradient(132deg, var(--color-cream) 0%, var(--color-paper) 42%, var(--color-paper-deep) 100%);
+      --page-bg-size: auto, 142px 180px, 168px 202px, 158px 196px, 172px 214px, auto, auto;
+      --page-bg-position: center, 0 0, 38px 24px, -18px 82px, 34px 108px, center, center;
+    }
+
+    body.bg-petals {
+      --page-bg:
+        linear-gradient(145deg, rgba(255, 248, 236, 0.66), rgba(222, 194, 164, 0.4)),
+        radial-gradient(ellipse 18px 38px at 12% 18%, rgba(185, 83, 109, 0.22) 0 58%, transparent 60%),
+        radial-gradient(ellipse 14px 34px at 86% 16%, rgba(49, 184, 173, 0.2) 0 58%, transparent 60%),
+        radial-gradient(ellipse 18px 42px at 24% 82%, rgba(68, 76, 157, 0.2) 0 58%, transparent 60%),
+        radial-gradient(ellipse 16px 36px at 76% 78%, rgba(240, 193, 48, 0.22) 0 58%, transparent 60%),
+        radial-gradient(circle at 44% 28%, rgba(201, 46, 88, 0.12) 0 7%, transparent 20%),
+        radial-gradient(circle at 58% 92%, rgba(35, 140, 130, 0.12) 0 8%, transparent 22%),
+        linear-gradient(132deg, var(--color-cream) 0%, var(--color-paper) 44%, var(--color-paper-deep) 100%);
+      --page-bg-size: auto, 92px 122px, 104px 136px, 116px 146px, 108px 142px, auto, auto, auto;
+      --page-bg-position: center, 0 8px, 42px 28px, -22px 68px, 26px 104px, center, center, center;
     }
 
     button {
@@ -511,6 +555,131 @@
     .color-field span:nth-child(4) { background: linear-gradient(145deg, var(--color-citrine), var(--color-mimosa)); }
     .color-field span:nth-child(5) { background: linear-gradient(145deg, var(--color-aqua), var(--color-teal)); }
     .color-field span:nth-child(6) { background: linear-gradient(145deg, var(--color-rust), var(--color-clay)); }
+
+    .background-lab {
+      display: grid;
+      gap: 10px;
+      margin: 12px 0 18px;
+      padding: 12px;
+      border: 1px solid rgba(73, 48, 58, 0.16);
+      border-radius: 27px;
+      background: rgba(255, 248, 236, 0.56);
+      -webkit-backdrop-filter: var(--blur-glass);
+      backdrop-filter: var(--blur-glass);
+      box-shadow: 0 14px 28px rgba(116, 79, 45, 0.1), inset 0 1px 0 var(--color-white);
+    }
+
+    .background-lab-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 0 4px;
+    }
+
+    .background-lab-label,
+    .bg-option-label {
+      margin: 0;
+      color: var(--color-ink-soft);
+      font-size: 10px;
+      font-weight: 950;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .background-lab-title {
+      margin: 2px 0 0;
+      font-size: 15px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .background-lab-note {
+      margin: 0;
+      color: var(--color-ink-soft);
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .bg-options {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .bg-option {
+      display: grid;
+      gap: 7px;
+      min-width: 0;
+      min-height: 112px;
+      padding: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.52);
+      border-radius: 22px;
+      background: rgba(255, 248, 236, 0.44);
+      box-shadow: 0 10px 18px rgba(116, 79, 45, 0.11), inset 0 1px 0 var(--color-white);
+      cursor: pointer;
+      text-align: left;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .bg-option.is-active {
+      box-shadow:
+        0 14px 22px rgba(116, 79, 45, 0.16),
+        0 0 0 3px rgba(201, 46, 88, 0.12),
+        inset 0 1px 0 var(--color-white);
+    }
+
+    .bg-preview {
+      min-height: 66px;
+      border-radius: 16px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.62), inset 0 -12px 18px rgba(43, 28, 36, 0.14);
+      overflow: hidden;
+    }
+
+    .bg-option[data-bg="paisley"] .bg-preview {
+      background:
+        linear-gradient(145deg, rgba(255, 248, 236, 0.24), rgba(43, 18, 43, 0.1)),
+        radial-gradient(circle at 18% 20%, rgba(201, 46, 88, 0.38), transparent 32%),
+        radial-gradient(circle at 82% 70%, rgba(23, 110, 183, 0.34), transparent 34%),
+        url("assets/noisy-paisley-textile.svg");
+      background-size: auto, auto, auto, 122px 100px;
+      background-position: center, center, center, 14px 12px;
+    }
+
+    .bg-option[data-bg="botanical"] .bg-preview {
+      background:
+        radial-gradient(ellipse 17px 44px at 18% 18%, rgba(95, 148, 106, 0.45) 0 58%, transparent 60%),
+        radial-gradient(ellipse 20px 50px at 70% 34%, rgba(201, 46, 88, 0.35) 0 58%, transparent 60%),
+        radial-gradient(ellipse 15px 42px at 38% 78%, rgba(23, 110, 183, 0.32) 0 58%, transparent 60%),
+        radial-gradient(ellipse 20px 52px at 82% 84%, rgba(213, 155, 23, 0.34) 0 58%, transparent 60%),
+        linear-gradient(135deg, var(--color-cream), var(--color-paper-deep));
+      background-size: 92px 102px, 106px 120px, 92px 110px, 110px 128px, auto;
+      background-position: 0 0, 26px 8px, 8px 34px, 40px 38px, center;
+    }
+
+    .bg-option[data-bg="petals"] .bg-preview {
+      background:
+        radial-gradient(ellipse 12px 30px at 18% 16%, rgba(185, 83, 109, 0.48) 0 58%, transparent 60%),
+        radial-gradient(ellipse 12px 32px at 76% 20%, rgba(49, 184, 173, 0.42) 0 58%, transparent 60%),
+        radial-gradient(ellipse 13px 34px at 28% 78%, rgba(68, 76, 157, 0.4) 0 58%, transparent 60%),
+        radial-gradient(ellipse 12px 32px at 76% 78%, rgba(240, 193, 48, 0.44) 0 58%, transparent 60%),
+        repeating-linear-gradient(118deg, rgba(70, 53, 43, 0.04) 0 1px, transparent 1px 11px),
+        linear-gradient(135deg, var(--color-cream), var(--color-paper-deep));
+      background-size: 62px 80px, 72px 88px, 70px 90px, 74px 92px, auto, auto;
+      background-position: 0 0, 20px 10px, 6px 42px, 34px 44px, center, center;
+    }
+
+    .bg-option-title {
+      display: block;
+      overflow: hidden;
+      color: var(--color-ink);
+      font-size: 12px;
+      font-weight: 950;
+      line-height: 1.15;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
 
     .progress-title {
       margin: 0 0 6px;
@@ -1025,6 +1194,36 @@
         min-height: 122px;
       }
 
+      .background-lab-head {
+        display: block;
+      }
+
+      .background-lab-note {
+        margin-top: 3px;
+      }
+
+      .bg-options {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 7px;
+      }
+
+      .bg-option {
+        grid-template-columns: 86px minmax(0, 1fr);
+        align-items: center;
+        min-height: 102px;
+        padding: 6px;
+        border-radius: 19px;
+      }
+
+      .bg-preview {
+        min-height: 60px;
+        border-radius: 14px;
+      }
+
+      .bg-option-title {
+        font-size: 11px;
+      }
+
       .segment {
         gap: 6px;
         padding: 6px;
@@ -1050,7 +1249,7 @@
     }
   </style>
 </head>
-<body>
+<body class="bg-paisley">
   <div class="app">
     <div class="floral-field" aria-hidden="true">
       <div class="flower one"><span></span><i></i><b></b></div>
@@ -1105,6 +1304,39 @@
             <span></span><span></span><span></span><span></span><span></span><span></span>
           </div>
         </article>
+      </section>
+
+      <section class="background-lab" aria-label="背景候補">
+        <div class="background-lab-head">
+          <div>
+            <p class="background-lab-label">Background candidates</p>
+            <p class="background-lab-title">紙面の奥に敷く柄を3方向で比較</p>
+          </div>
+          <p class="background-lab-note">押すと背景が切り替わります</p>
+        </div>
+        <div class="bg-options">
+          <button class="bg-option is-active" type="button" data-bg="paisley" aria-pressed="true">
+            <span class="bg-preview" aria-hidden="true"></span>
+            <span>
+              <span class="bg-option-label">A</span>
+              <span class="bg-option-title">濃いペイズリー</span>
+            </span>
+          </button>
+          <button class="bg-option" type="button" data-bg="botanical" aria-pressed="false">
+            <span class="bg-preview" aria-hidden="true"></span>
+            <span>
+              <span class="bg-option-label">B</span>
+              <span class="bg-option-title">ごちゃ花葉</span>
+            </span>
+          </button>
+          <button class="bg-option" type="button" data-bg="petals" aria-pressed="false">
+            <span class="bg-preview" aria-hidden="true"></span>
+            <span>
+              <span class="bg-option-label">C</span>
+              <span class="bg-option-title">花びら散布</span>
+            </span>
+          </button>
+        </div>
       </section>
 
       <div class="segment" role="tablist" aria-label="表示モード">
@@ -1179,6 +1411,7 @@
     const remainingCount = document.querySelector("#remainingCount");
     const queueCount = document.querySelector("#queueCount");
     const completeNext = document.querySelector("#completeNext");
+    const bgOptions = [...document.querySelectorAll(".bg-option")];
     let queued = 0;
 
     function refresh() {
@@ -1226,6 +1459,19 @@
     completeNext.addEventListener("click", () => {
       const next = [...document.querySelectorAll("[data-task]")].find((task) => !task.classList.contains("is-done"));
       if (next) toggleTask(next);
+    });
+
+    bgOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        const selected = option.dataset.bg;
+        document.body.classList.remove("bg-paisley", "bg-botanical", "bg-petals");
+        document.body.classList.add(`bg-${selected}`);
+        bgOptions.forEach((candidate) => {
+          const active = candidate === option;
+          candidate.classList.toggle("is-active", active);
+          candidate.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+      });
     });
 
     refresh();
