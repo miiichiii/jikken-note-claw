@@ -2,9 +2,9 @@
 <html lang="ja" class="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="robots" content="noindex, nofollow">
-    <title>Combat Task Board | Midnight Cockpit</title>
+    <title>Floral Task Board | OpenClaw</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -84,9 +84,431 @@
         .safe-bottom {
             padding-bottom: max(1rem, env(safe-area-inset-bottom));
         }
+        :root {
+            --color-paper: #f4e4cf;
+            --color-paper-deep: #dec2a4;
+            --color-cream: #fff8ec;
+            --color-cream-glass: rgba(255, 248, 236, 0.72);
+            --color-white-glass: rgba(255, 255, 255, 0.76);
+            --color-petal: #d58c96;
+            --color-petal-deep: #b9536d;
+            --color-rose: #c92e58;
+            --color-coral: #e26b43;
+            --color-lavender: #b7a6df;
+            --color-indigo: #444c9d;
+            --color-cobalt: #176eb7;
+            --color-leaf: #8dbd8b;
+            --color-leaf-deep: #5f946a;
+            --color-teal: #238c82;
+            --color-aqua: #31b8ad;
+            --color-mimosa: #f0c130;
+            --color-honey: #c7801f;
+            --color-plum: #8a3f85;
+            --color-ink: #46352b;
+            --color-ink-soft: #7c6659;
+            --color-line: rgba(120, 92, 72, 0.18);
+            --color-shadow: rgba(116, 79, 45, 0.18);
+            --font-ui: "Hiragino Maru Gothic ProN", "Hiragino Maru Gothic Pro", "Yu Gothic Rounded", "M PLUS Rounded 1c", "Tsukushi A Round Gothic", "Hiragino Sans", "Yu Gothic", "YuGothic", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            --shadow-liquid: 0 17px 30px rgba(79, 48, 34, 0.20), 0 5px 12px rgba(255, 255, 255, 0.24), inset 0 2px 0 rgba(255, 255, 255, 0.78), inset 0 -12px 20px rgba(83, 48, 31, 0.14);
+            --shadow-liquid-pressed: inset 0 8px 16px rgba(83, 48, 31, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.54);
+            --blur-glass: blur(22px) saturate(1.35);
+        }
+
+        html,
+        body {
+            overflow-x: clip;
+        }
+
+        body.floral-task-board {
+            color: var(--color-ink);
+            font-family: var(--font-ui);
+            font-feature-settings: "palt" 1;
+            background:
+                linear-gradient(145deg, rgba(255, 248, 236, 0.42), rgba(36, 29, 39, 0.24)),
+                radial-gradient(circle at 14% 16%, rgba(201, 46, 88, 0.16) 0 8%, transparent 23%),
+                radial-gradient(circle at 86% 18%, rgba(23, 110, 183, 0.16) 0 9%, transparent 24%),
+                url("assets/slow-mixed-paint-generated.webp"),
+                repeating-linear-gradient(122deg, rgba(49, 34, 39, 0.06) 0 1px, transparent 1px 12px),
+                linear-gradient(132deg, #f0d5b1 0%, #ba9368 44%, #516d57 100%);
+            background-size: auto, auto, auto, 520px 520px, auto, auto;
+            background-position: center, center, center, center top, center, center;
+            min-height: 100dvh;
+        }
+
+        .floral-task-board .scanline {
+            display: none;
+        }
+
+        .floral-field {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floral-field::before,
+        .floral-field::after {
+            position: absolute;
+            content: "";
+            border-radius: 999px;
+            filter: blur(1px);
+            opacity: 0.28;
+        }
+
+        .floral-field::before {
+            left: 24px;
+            top: 96px;
+            width: 132px;
+            height: 210px;
+            transform: rotate(-12deg);
+            background:
+                radial-gradient(ellipse 12px 32px at 42px 42px, rgba(95, 148, 106, 0.3) 0 58%, transparent 60%),
+                radial-gradient(ellipse 13px 34px at 82px 80px, rgba(95, 148, 106, 0.22) 0 58%, transparent 60%),
+                radial-gradient(ellipse 12px 31px at 44px 132px, rgba(221, 111, 138, 0.2) 0 58%, transparent 60%),
+                linear-gradient(96deg, transparent 47%, rgba(120, 92, 72, 0.46) 48% 49%, transparent 50%);
+        }
+
+        .floral-field::after {
+            right: -24px;
+            bottom: 84px;
+            width: 190px;
+            height: 190px;
+            background:
+                radial-gradient(circle at 35% 32%, rgba(240, 193, 48, 0.38), transparent 25%),
+                radial-gradient(circle at 60% 58%, rgba(213, 140, 150, 0.34), transparent 28%),
+                radial-gradient(circle at 44% 70%, rgba(49, 184, 173, 0.28), transparent 25%);
+        }
+
+        .floral-task-board .glass-panel {
+            background: linear-gradient(155deg, rgba(255, 248, 236, 0.62), rgba(255, 255, 255, 0.34));
+            border: 1px solid rgba(255, 255, 255, 0.42);
+            box-shadow: var(--shadow-liquid);
+            color: var(--color-ink);
+            backdrop-filter: var(--blur-glass);
+            -webkit-backdrop-filter: var(--blur-glass);
+        }
+
+        .floral-task-board header.glass-panel {
+            border-bottom-color: rgba(255, 255, 255, 0.34);
+        }
+
+        .floral-task-board .text-slate-200,
+        .floral-task-board .text-slate-300,
+        .floral-task-board .text-slate-400,
+        .floral-task-board .text-slate-500,
+        .floral-task-board .text-slate-700,
+        .floral-task-board .text-white {
+            color: var(--color-ink-soft) !important;
+        }
+
+        .floral-task-board h2.text-white,
+        .floral-task-board h3.text-white,
+        .floral-task-board .board-summary-title {
+            color: var(--color-ink) !important;
+        }
+
+        .floral-task-board main {
+            max-width: 1160px;
+        }
+
+        .floral-task-board .board-summary {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 28px;
+            padding: 20px;
+            border-radius: 28px;
+        }
+
+        .progress-orb {
+            --progress: 0;
+            display: grid;
+            width: 86px;
+            height: 86px;
+            place-items: center;
+            border-radius: 50%;
+            background:
+                conic-gradient(var(--color-leaf) calc(var(--progress) * 1%), rgba(255, 255, 255, 0.52) 0),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(255, 248, 236, 0.48));
+            box-shadow: var(--shadow-liquid);
+        }
+
+        .progress-orb span {
+            display: grid;
+            width: 62px;
+            height: 62px;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--color-cream);
+            color: var(--color-ink);
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .board-summary-title {
+            margin: 0 0 3px;
+            color: var(--color-ink);
+            font-size: clamp(18px, 3vw, 25px);
+            font-weight: 800;
+        }
+
+        .board-summary-detail {
+            margin: 0;
+            color: var(--color-ink-soft);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .task-column {
+            padding: 14px;
+            border-radius: 28px;
+            background: rgba(255, 248, 236, 0.32);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
+        }
+
+        .task-column > .flex:first-child {
+            border-bottom-color: var(--color-line);
+        }
+
+        .task-list {
+            scrollbar-color: rgba(124, 102, 89, 0.36) transparent;
+        }
+
+        .task-card {
+            position: relative;
+            display: grid;
+            grid-template-columns: 52px minmax(0, 1fr);
+            gap: 13px;
+            align-items: center;
+            min-height: 104px;
+            padding: 16px 15px;
+            overflow: hidden;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.44);
+            background:
+                linear-gradient(145deg, rgba(255, 248, 236, 0.72), rgba(255, 255, 255, 0.36)),
+                radial-gradient(circle at 16% 0%, rgba(213, 140, 150, 0.18), transparent 34%),
+                radial-gradient(circle at 92% 100%, rgba(49, 184, 173, 0.14), transparent 34%);
+            box-shadow: var(--shadow-liquid);
+            transition: transform 260ms ease, opacity 360ms ease, background 360ms ease, box-shadow 360ms ease;
+        }
+
+        .task-card::before {
+            position: absolute;
+            inset: 1px 1px auto 1px;
+            height: 48%;
+            content: "";
+            border-radius: 24px 24px 45% 45%;
+            pointer-events: none;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0));
+        }
+
+        .task-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .task-card.priority-high {
+            background:
+                linear-gradient(145deg, rgba(255, 248, 236, 0.72), rgba(255, 255, 255, 0.34)),
+                radial-gradient(circle at 18% 0%, rgba(240, 193, 48, 0.28), transparent 34%),
+                radial-gradient(circle at 92% 100%, rgba(201, 46, 88, 0.16), transparent 36%);
+        }
+
+        .task-card.is-done {
+            background:
+                linear-gradient(145deg, rgba(96, 124, 104, 0.78), rgba(50, 73, 62, 0.72)),
+                radial-gradient(circle at 12% 10%, rgba(255, 255, 255, 0.2), transparent 32%);
+            border-color: rgba(255, 255, 255, 0.38);
+            box-shadow: var(--shadow-liquid-pressed);
+        }
+
+        .task-card.is-toggling {
+            transform: translateY(2px) scale(0.99);
+        }
+
+        .task-copy {
+            min-width: 0;
+        }
+
+        .task-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 22px;
+            padding: 0 9px;
+            border-radius: 999px;
+            color: var(--color-ink-soft);
+            background: rgba(255, 255, 255, 0.38);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .tag.bot {
+            color: var(--color-cobalt);
+        }
+
+        .task-name {
+            margin: 0;
+            color: var(--color-ink);
+            font-size: 14px;
+            font-weight: 800;
+            line-height: 1.55;
+            overflow-wrap: anywhere;
+        }
+
+        .task-card.is-done .task-name {
+            color: rgba(226, 222, 216, 0.9);
+            text-decoration: none;
+        }
+
+        .task-card.is-done .tag,
+        .task-card.is-done .task-meta {
+            color: rgba(239, 235, 229, 0.72);
+        }
+
+        .check-button {
+            position: relative;
+            display: grid;
+            width: 48px;
+            height: 48px;
+            place-items: center;
+            border: 0;
+            border-radius: 999px;
+            color: var(--color-ink);
+            cursor: pointer;
+            background:
+                radial-gradient(circle at 35% 24%, rgba(255, 255, 255, 0.78), transparent 38%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.58), rgba(255, 248, 236, 0.32));
+            box-shadow: var(--shadow-liquid);
+            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+        }
+
+        .check-button:hover {
+            transform: translateY(-1px);
+        }
+
+        .check-button:active {
+            transform: translateY(2px) scale(0.96);
+            box-shadow: var(--shadow-liquid-pressed);
+        }
+
+        .check-button::before {
+            content: "";
+            width: 17px;
+            height: 10px;
+            border-left: 3px solid currentColor;
+            border-bottom: 3px solid currentColor;
+            transform: rotate(-45deg) translateY(-1px);
+            opacity: 0.45;
+        }
+
+        .task-card.is-done .check-button {
+            color: var(--color-cream);
+            background:
+                radial-gradient(circle at 35% 24%, rgba(255, 255, 255, 0.54), transparent 38%),
+                linear-gradient(145deg, rgba(141, 189, 139, 0.68), rgba(95, 148, 106, 0.64));
+            box-shadow: var(--shadow-liquid-pressed);
+        }
+
+        .task-card.is-done .check-button::before {
+            opacity: 1;
+        }
+
+        .task-action {
+            justify-self: end;
+            border: 0;
+            border-radius: 999px;
+            padding: 7px 11px;
+            color: var(--color-ink-soft);
+            background: rgba(255, 255, 255, 0.36);
+            font-size: 10px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .task-card.is-done .task-action {
+            color: rgba(239, 235, 229, 0.78);
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .petal-burst {
+            position: absolute;
+            left: 36px;
+            top: 28px;
+            width: 1px;
+            height: 1px;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .petal-burst span {
+            position: absolute;
+            width: var(--petal-w, 10px);
+            height: var(--petal-h, 14px);
+            opacity: 0;
+            border-radius: 70% 35% 70% 35%;
+            background: var(--color-petal);
+            transform: translate(0, 0) rotate(0deg) scale(0.5);
+            transform-origin: 50% 80%;
+        }
+
+        .task-card.is-sparkling .petal-burst span {
+            animation: petal-pop 1180ms cubic-bezier(.1, .78, .18, 1) forwards;
+        }
+
+        .petal-burst span:nth-child(1) { --x: -28px; --y: -42px; --r: -32deg; background: var(--color-rose); }
+        .petal-burst span:nth-child(2) { --x: 28px; --y: -46px; --r: 38deg; --petal-w: 9px; --petal-h: 13px; background: var(--color-indigo); animation-delay: 38ms; }
+        .petal-burst span:nth-child(3) { --x: 48px; --y: -8px; --r: 96deg; --petal-w: 11px; --petal-h: 15px; background: var(--color-mimosa); animation-delay: 76ms; }
+        .petal-burst span:nth-child(4) { --x: -42px; --y: 16px; --r: -92deg; background: var(--color-aqua); animation-delay: 114ms; }
+        .petal-burst span:nth-child(5) { --x: 12px; --y: -62px; --r: 124deg; --petal-w: 8px; --petal-h: 12px; background: var(--color-petal-deep); animation-delay: 24ms; }
+        .petal-burst span:nth-child(6) { --x: 58px; --y: 24px; --r: 148deg; --petal-w: 9px; --petal-h: 14px; background: var(--color-teal); animation-delay: 92ms; }
+        .petal-burst span:nth-child(7) { --x: -54px; --y: -12px; --r: -144deg; --petal-w: 8px; --petal-h: 13px; background: var(--color-lavender); animation-delay: 128ms; }
+        .petal-burst span:nth-child(8) { --x: 4px; --y: 42px; --r: 72deg; --petal-w: 11px; --petal-h: 16px; background: var(--color-coral); animation-delay: 158ms; }
+        .petal-burst span:nth-child(9) { --x: -20px; --y: 48px; --r: -54deg; --petal-w: 7px; --petal-h: 11px; background: var(--color-mimosa); animation-delay: 188ms; }
+        .petal-burst span:nth-child(10) { --x: 38px; --y: 48px; --r: 206deg; --petal-w: 8px; --petal-h: 12px; background: var(--color-plum); animation-delay: 216ms; }
+
+        @keyframes petal-pop {
+            0% { opacity: 0; transform: translate(0, 0) rotate(0deg) scale(0.42); }
+            18% { opacity: 1; }
+            100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(1); }
+        }
+
+        @media (max-width: 640px) {
+            .floral-task-board .board-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-orb {
+                width: 74px;
+                height: 74px;
+            }
+
+            .progress-orb span {
+                width: 54px;
+                height: 54px;
+                font-size: 16px;
+            }
+
+            .task-column {
+                padding: 12px;
+                border-radius: 24px;
+            }
+        }
     </style>
 </head>
-<body class="min-h-screen relative overflow-x-hidden selection:bg-cyan-500/30 flex flex-col">
+<body class="floral-task-board bg-paint min-h-screen relative overflow-x-clip selection:bg-cyan-500/30 flex flex-col">
+    <div class="floral-field" aria-hidden="true"></div>
     <div class="scanline"></div>
 
     <header class="fixed top-0 w-full z-50 glass-panel border-b border-slate-700/50">
@@ -95,7 +517,7 @@
                 <a href="index.html" class="text-slate-400 hover:text-cyan-400 transition-colors shrink-0">
                     <i class="fa-solid fa-chevron-left"></i>
                 </a>
-                <span class="font-mono text-sm tracking-wider text-cyan-400 font-bold truncate uppercase">Combat Task Board</span>
+                <span class="font-mono text-sm tracking-wider text-cyan-400 font-bold truncate uppercase">Floral Task Board</span>
             </div>
 
             <div class="flex items-center gap-3 font-mono text-xs min-w-0">
@@ -152,9 +574,21 @@
             </div>
         </div>
 
+        <section class="board-summary glass-panel" aria-label="タスク進捗">
+            <div class="progress-orb" id="progressOrb" style="--progress: 0">
+                <span id="progressText">0%</span>
+            </div>
+            <div>
+                <p class="board-summary-title" id="progressTitle">タスクを読み込み中</p>
+                <p class="board-summary-detail">
+                    チェック操作は0.1秒だけためてから反映し、完了カードは横線なしの白っぽいグレーで表示します。
+                </p>
+            </div>
+        </section>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             <!-- To Do -->
-            <div class="flex flex-col gap-4">
+            <div class="task-column flex flex-col gap-4">
                 <div class="flex items-center justify-between px-2 border-b border-amber-500/30 pb-3">
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 bg-amber-400 rounded-full status-dot"></span>
@@ -166,7 +600,7 @@
             </div>
 
             <!-- In Progress -->
-            <div class="flex flex-col gap-4">
+            <div class="task-column flex flex-col gap-4">
                 <div class="flex items-center justify-between px-2 border-b border-cyan-500/30 pb-3">
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 bg-cyan-400 rounded-full status-dot animate-pulse"></span>
@@ -178,7 +612,7 @@
             </div>
 
             <!-- Done -->
-            <div class="flex flex-col gap-4">
+            <div class="task-column flex flex-col gap-4">
                 <div class="flex items-center justify-between px-2 border-b border-emerald-500/30 pb-3">
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 bg-emerald-500 rounded-full status-dot"></span>
@@ -186,7 +620,7 @@
                     </div>
                     <span id="count-done" class="text-xs font-mono text-slate-500 bg-slate-800/50 px-2 py-0.5 rounded">0</span>
                 </div>
-                <div id="doneList" class="space-y-4 min-h-[100px] task-list opacity-60 hover:opacity-100 transition-opacity"></div>
+                <div id="doneList" class="space-y-4 min-h-[100px] task-list"></div>
             </div>
         </div>
     </main>
@@ -257,7 +691,7 @@
 
     <footer class="border-t border-slate-900/50 py-8 text-center mt-auto">
         <p class="text-slate-700 text-[10px] font-mono tracking-[0.3em]">
-            TACTICAL BOARD <span class="mx-3 opacity-30">|</span> 
+            FLORAL TASK BOARD <span class="mx-3 opacity-30">|</span>
             <span class="text-cyan-950">OPENCLAW SYSTEM V2.1</span>
         </p>
     </footer>
@@ -274,9 +708,11 @@
         const OWNER_SESSION_EXP_KEY = 'taskBoardOwnerSessionExpiresAt';
         const BRIDGE_PENDING_SECONDS = 10;
         const LOAD_INTERVAL_MS = 30000;
+        const TOGGLE_DELAY_MS = 100;
 
         let lastLoadedTasks = [];
         let syncState = 'offline';
+        let sparklingTaskId = '';
         const syncingTaskIds = new Set();
         let isLoading = false;
 
@@ -298,6 +734,16 @@
             const overrides = getLocalOverrides();
             delete overrides[taskId];
             saveLocalOverrides(overrides);
+        }
+
+        function escapeHtml(value) {
+            return String(value ?? '').replace(/[&<>"']/g, char => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[char]));
         }
 
         function getOwnerToken() { return localStorage.getItem(OWNER_TOKEN_KEY) || ''; }
@@ -456,6 +902,7 @@
             document.getElementById('count-todo').textContent = counts.todo;
             document.getElementById('count-progress').textContent = counts.progress;
             document.getElementById('count-done').textContent = counts.done;
+            updateProgressSummary(counts);
 
             const pendingCount = Object.keys(overrides).length;
             document.getElementById('sync-actions').classList.toggle('hidden', pendingCount === 0);
@@ -464,36 +911,40 @@
             if (hasPending) setTimeout(() => renderTasks(tasks), 1000);
         }
 
+        function updateProgressSummary(counts) {
+            const total = counts.todo + counts.progress + counts.done;
+            const percent = total ? Math.round((counts.done / total) * 100) : 0;
+            const remaining = counts.todo + counts.progress;
+            document.getElementById('progressOrb').style.setProperty('--progress', percent);
+            document.getElementById('progressText').textContent = `${percent}%`;
+            document.getElementById('progressTitle').textContent = total
+                ? `${counts.done}件完了、あと${remaining}件`
+                : 'タスクがありません';
+        }
+
         function createCard(task) {
             const div = document.createElement('div');
             const isDone = task.status === 'done';
             const isPending = task.status === 'pending-done';
             const isBot = task.assignee === 'Bot';
+            const visuallyDone = isDone || isPending;
+            const primaryAction = isPending ? 'undo-pending' : isDone ? 'undo' : 'done';
+            const actionLabel = isPending ? `CANCEL (${task.pendingSec}s)` : isDone ? 'UNDO' : 'DONE';
 
-            div.className = `glass-panel rounded-xl p-4 border-l-4 transition-all duration-300 group ${
-                task.priority === 'A' ? 'border-amber-500' : 'border-slate-800'
-            } ${isDone ? 'opacity-50 border-emerald-500' : ''}`;
+            div.className = `task-card ${task.priority === 'A' ? 'priority-high' : ''} ${visuallyDone ? 'is-done' : ''} ${sparklingTaskId === task.id ? 'is-sparkling' : ''}`;
+            div.dataset.taskIdCard = task.id;
 
             div.innerHTML = `
-                <div class="flex flex-col gap-2">
-                    <div class="flex justify-between items-start">
-                        <span class="font-mono text-[9px] uppercase tracking-widest text-slate-500">${task.id}</span>
-                        <span class="font-mono text-[9px] px-1.5 py-0.5 rounded border border-slate-800 bg-slate-900/50 ${isBot ? 'text-indigo-400' : 'text-violet-400'}">
-                            @${task.assignee}
-                        </span>
+                <button data-action="${primaryAction}" data-task-id="${escapeHtml(task.id)}" class="check-button" aria-label="${escapeHtml(actionLabel)}"></button>
+                <div class="task-copy">
+                    <div class="task-meta">
+                        <span class="tag">#${escapeHtml(task.id)}</span>
+                        <span class="tag ${isBot ? 'bot' : ''}">@${escapeHtml(task.assignee || 'Unassigned')}</span>
                     </div>
-                    <h3 class="text-sm font-semibold text-slate-200 leading-snug ${isDone || isPending ? 'line-through decoration-slate-600 text-slate-500' : ''}">
-                        ${task.title}
-                    </h3>
-                    <div class="flex justify-end mt-2">
-                        ${isPending ? 
-                            `<button data-action="undo-pending" data-task-id="${task.id}" class="text-[10px] font-mono text-amber-500 hover:text-white transition-colors">CANCEL (${task.pendingSec}s)</button>` :
-                            isDone ? 
-                            `<button data-action="undo" data-task-id="${task.id}" class="text-[10px] font-mono text-slate-500 hover:text-white transition-colors">UNDO</button>` :
-                            `<button data-action="done" data-task-id="${task.id}" class="text-[10px] font-mono text-emerald-500 hover:text-emerald-400 transition-colors font-bold">DONE</button>`
-                        }
-                    </div>
+                    <p class="task-name">${escapeHtml(task.title)}</p>
+                    <button data-action="${primaryAction}" data-task-id="${escapeHtml(task.id)}" class="task-action">${escapeHtml(actionLabel)}</button>
                 </div>
+                <div class="petal-burst" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
             `;
             return div;
         }
@@ -520,14 +971,26 @@
             const { action, taskId } = btn.dataset;
 
             if (action === 'done') {
-                setLocalOverride(taskId, { status: 'pending-done' });
-                renderTasks(lastLoadedTasks);
+                const card = btn.closest('.task-card');
+                card?.classList.add('is-toggling', 'is-sparkling');
+                if (navigator.vibrate) navigator.vibrate([10, 24, 16]);
+                setTimeout(() => {
+                    sparklingTaskId = taskId;
+                    setLocalOverride(taskId, { status: 'pending-done' });
+                    renderTasks(lastLoadedTasks);
+                    setTimeout(() => {
+                        if (sparklingTaskId === taskId) {
+                            sparklingTaskId = '';
+                            renderTasks(lastLoadedTasks);
+                        }
+                    }, 1300);
+                }, TOGGLE_DELAY_MS);
                 setTimeout(() => {
                     const overrides = getLocalOverrides();
                     if (overrides[taskId] && overrides[taskId].status === 'pending-done') {
                         syncUpdate(taskId, 'done');
                     }
-                }, BRIDGE_PENDING_SECONDS * 1000);
+                }, (BRIDGE_PENDING_SECONDS * 1000) + TOGGLE_DELAY_MS);
             } else if (action === 'undo' || action === 'undo-pending') {
                 clearLocalOverride(taskId);
                 if (action === 'undo') await syncUpdate(taskId, 'todo');
@@ -583,7 +1046,7 @@
 
         document.getElementById('show-sync-text').onclick = () => {
             const overrides = getLocalOverrides();
-            const text = Object.entries(overrides).map(([id, o]) => `${o.status === 'done' ? 'done' : 'undo'} ${id}`).join('\n');
+            const text = Object.entries(overrides).map(([id, o]) => `${o.status === 'pending-done' || o.status === 'done' ? 'done' : 'undo'} ${id}`).join('\n');
             document.getElementById('sync-text-output').value = `反映お願いします:\n${text}`;
             modals.text.classList.remove('hidden');
         };
