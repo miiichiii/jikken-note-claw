@@ -7,8 +7,7 @@
   <title>Floral Task Notebook Mock</title>
   <style>
     /* Hallmark · pre-emit critique: P5 H5 E5 S5 R3 V5 */
-    /* Textile source: local hand-authored noisy paisley tile for this mock. */
-    /* Paint source: generated raster texture, compressed to WebP for page weight. */
+    /* Pattern sources: generated raster textures, compressed to WebP for page weight. */
     /* Dense paisley is intentionally limited to the hero card and category buttons. */
     :root {
       --color-paper: #f4e4cf;
@@ -98,19 +97,6 @@
       --page-bg-position: center, center, center, center, center top, center;
     }
 
-    body.bg-botanical {
-      --page-bg:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.7), rgba(244, 228, 207, 0.48)),
-        radial-gradient(ellipse 24px 58px at 14% 10%, rgba(95, 148, 106, 0.24) 0 58%, transparent 60%),
-        radial-gradient(ellipse 28px 64px at 82% 18%, rgba(201, 46, 88, 0.2) 0 58%, transparent 60%),
-        radial-gradient(ellipse 24px 54px at 26% 76%, rgba(23, 110, 183, 0.18) 0 58%, transparent 60%),
-        radial-gradient(ellipse 36px 82px at 72% 88%, rgba(213, 155, 23, 0.2) 0 58%, transparent 60%),
-        repeating-linear-gradient(34deg, rgba(70, 53, 43, 0.04) 0 1px, transparent 1px 13px),
-        linear-gradient(132deg, var(--color-cream) 0%, var(--color-paper) 42%, var(--color-paper-deep) 100%);
-      --page-bg-size: auto, 142px 180px, 168px 202px, 158px 196px, 172px 214px, auto, auto;
-      --page-bg-position: center, 0 0, 38px 24px, -18px 82px, 34px 108px, center, center;
-    }
-
     body.bg-petals {
       --page-bg:
         linear-gradient(145deg, rgba(255, 248, 236, 0.52), rgba(222, 194, 164, 0.3)),
@@ -132,28 +118,6 @@
         linear-gradient(132deg, #f8ead4 0%, #d4b99a 44%, #789067 100%);
       --page-bg-size: auto, auto, auto, 520px 520px, auto, auto;
       --page-bg-position: center, center, center, center top, center, center;
-    }
-
-    body.bg-leaves-fine {
-      --page-bg:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.58), rgba(53, 91, 59, 0.16)),
-        radial-gradient(circle at 44% 26%, rgba(201, 46, 88, 0.08) 0 5%, transparent 18%),
-        url("assets/leaf-forest-fine.svg"),
-        repeating-linear-gradient(102deg, rgba(39, 57, 36, 0.05) 0 1px, transparent 1px 9px),
-        linear-gradient(132deg, #fbecd8 0%, #d9c39d 50%, #8ca075 100%);
-      --page-bg-size: auto, auto, 90px 66px, auto, auto;
-      --page-bg-position: center, center, -6px 0, center, center;
-    }
-
-    body.bg-leaves-mixed {
-      --page-bg:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.46), rgba(35, 66, 44, 0.25)),
-        radial-gradient(circle at 58% 36%, rgba(169, 38, 99, 0.1) 0 6%, transparent 20%),
-        url("assets/leaf-forest-mixed.svg"),
-        repeating-linear-gradient(142deg, rgba(39, 57, 36, 0.08) 0 1px, transparent 1px 10px),
-        linear-gradient(132deg, #f4e0c4 0%, #b8b67f 42%, #5f845e 100%);
-      --page-bg-size: auto, auto, 166px 132px, auto, auto;
-      --page-bg-position: center, center, -22px -4px, center, center;
     }
 
     body.bg-paint {
@@ -354,8 +318,8 @@
       background:
         linear-gradient(135deg, rgba(37, 22, 45, 0.44), rgba(96, 37, 68, 0.26) 48%, rgba(20, 90, 97, 0.34)),
         linear-gradient(180deg, rgba(25, 18, 34, 0.26), rgba(23, 13, 27, 0.62)),
-        url("assets/noisy-paisley-textile.svg");
-      background-size: auto, auto, 190px 156px;
+        url("assets/generated-dark-paisley.webp");
+      background-size: auto, auto, 360px 360px;
       background-position: center, center, center;
       -webkit-backdrop-filter: var(--blur-glass);
       backdrop-filter: var(--blur-glass);
@@ -689,17 +653,6 @@
       background-position: center, center;
     }
 
-    .bg-option[data-bg="botanical"] .bg-preview {
-      background:
-        radial-gradient(ellipse 17px 44px at 18% 18%, rgba(95, 148, 106, 0.45) 0 58%, transparent 60%),
-        radial-gradient(ellipse 20px 50px at 70% 34%, rgba(201, 46, 88, 0.35) 0 58%, transparent 60%),
-        radial-gradient(ellipse 15px 42px at 38% 78%, rgba(23, 110, 183, 0.32) 0 58%, transparent 60%),
-        radial-gradient(ellipse 20px 52px at 82% 84%, rgba(213, 155, 23, 0.34) 0 58%, transparent 60%),
-        linear-gradient(135deg, var(--color-cream), var(--color-paper-deep));
-      background-size: 92px 102px, 106px 120px, 92px 110px, 110px 128px, auto;
-      background-position: 0 0, 26px 8px, 8px 34px, 40px 38px, center;
-    }
-
     .bg-option[data-bg="petals"] .bg-preview {
       background:
         linear-gradient(145deg, rgba(255, 248, 236, 0.12), rgba(222, 194, 164, 0.14)),
@@ -715,24 +668,6 @@
         linear-gradient(135deg, #f6e0bd, #6f925f);
       background-size: auto, 116px 116px, auto;
       background-position: center, center, center;
-    }
-
-    .bg-option[data-bg="leaves-fine"] .bg-preview {
-      background:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.22), rgba(17, 61, 39, 0.1)),
-        url("assets/leaf-forest-fine.svg"),
-        linear-gradient(135deg, #fbecd8, #8ca075);
-      background-size: auto, 58px 44px, auto;
-      background-position: center, -4px 0, center;
-    }
-
-    .bg-option[data-bg="leaves-mixed"] .bg-preview {
-      background:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.16), rgba(17, 61, 39, 0.18)),
-        url("assets/leaf-forest-mixed.svg"),
-        linear-gradient(135deg, #f4e0c4, #5f845e);
-      background-size: auto, 104px 82px, auto;
-      background-position: center, -14px -2px, center;
     }
 
     .bg-option[data-bg="paint"] .bg-preview {
@@ -805,7 +740,7 @@
         radial-gradient(circle at var(--seg-hot-x) var(--seg-hot-y), var(--seg-hot) 0 24%, transparent 25%),
         radial-gradient(circle at var(--seg-cool-x) var(--seg-cool-y), var(--seg-cool) 0 24%, transparent 25%),
         radial-gradient(circle at var(--seg-warm-x) var(--seg-warm-y), var(--seg-warm) 0 26%, transparent 27%),
-        url("assets/noisy-paisley-textile.svg"),
+        url("assets/generated-dark-paisley.webp"),
         linear-gradient(145deg, var(--seg-base-a), var(--seg-base-b));
       background-size: auto, auto, auto, auto, var(--seg-pattern-size), auto;
       background-position: center, center, center, center, var(--seg-pattern-position), center;
@@ -832,7 +767,7 @@
       content: "";
       z-index: -1;
       opacity: var(--seg-pattern-opacity);
-      background-image: url("assets/noisy-paisley-textile.svg");
+      background-image: url("assets/generated-dark-paisley.webp");
       background-size: var(--seg-pattern-layer-size);
       background-position: var(--seg-pattern-layer-position);
       mix-blend-mode: hard-light;
@@ -1391,7 +1326,7 @@
         <div class="background-lab-head">
           <div>
             <p class="background-lab-label">Background candidates</p>
-            <p class="background-lab-title">紙面の奥に敷く柄を7方向で比較</p>
+            <p class="background-lab-title">紙面の奥に敷く生成画像を4方向で比較</p>
           </div>
           <p class="background-lab-note">押すと背景が切り替わります</p>
         </div>
@@ -1403,45 +1338,24 @@
               <span class="bg-option-title">濃いペイズリー</span>
             </span>
           </button>
-          <button class="bg-option" type="button" data-bg="botanical" aria-pressed="false">
-            <span class="bg-preview" aria-hidden="true"></span>
-            <span>
-              <span class="bg-option-label">B</span>
-              <span class="bg-option-title">ごちゃ花葉</span>
-            </span>
-          </button>
           <button class="bg-option" type="button" data-bg="petals" aria-pressed="false">
             <span class="bg-preview" aria-hidden="true"></span>
             <span>
-              <span class="bg-option-label">C</span>
+              <span class="bg-option-label">B</span>
               <span class="bg-option-title">花びら散布</span>
             </span>
           </button>
           <button class="bg-option" type="button" data-bg="leaves" aria-pressed="false">
             <span class="bg-preview" aria-hidden="true"></span>
             <span>
-              <span class="bg-option-label">D</span>
+              <span class="bg-option-label">C</span>
               <span class="bg-option-title">枝葉の森</span>
-            </span>
-          </button>
-          <button class="bg-option" type="button" data-bg="leaves-fine" aria-pressed="false">
-            <span class="bg-preview" aria-hidden="true"></span>
-            <span>
-              <span class="bg-option-label">E</span>
-              <span class="bg-option-title">細枝の密生</span>
-            </span>
-          </button>
-          <button class="bg-option" type="button" data-bg="leaves-mixed" aria-pressed="false">
-            <span class="bg-preview" aria-hidden="true"></span>
-            <span>
-              <span class="bg-option-label">F</span>
-              <span class="bg-option-title">枝葉ミックス</span>
             </span>
           </button>
           <button class="bg-option is-active" type="button" data-bg="paint" aria-pressed="true">
             <span class="bg-preview" aria-hidden="true"></span>
             <span>
-              <span class="bg-option-label">G</span>
+              <span class="bg-option-label">D</span>
               <span class="bg-option-title">絵の具の尾</span>
             </span>
           </button>
@@ -1573,7 +1487,7 @@
     bgOptions.forEach((option) => {
       option.addEventListener("click", () => {
         const selected = option.dataset.bg;
-        document.body.classList.remove("bg-paisley", "bg-botanical", "bg-petals", "bg-leaves", "bg-leaves-fine", "bg-leaves-mixed", "bg-paint");
+        document.body.classList.remove("bg-paisley", "bg-petals", "bg-leaves", "bg-paint");
         document.body.classList.add(`bg-${selected}`);
         bgOptions.forEach((candidate) => {
           const active = candidate === option;
