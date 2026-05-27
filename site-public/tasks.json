@@ -392,6 +392,13 @@
     "assignee": "Me"
   },
   {
+    "id": "task-56",
+    "title": "GraciaをMeta Questでダウンロードする",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
     "title": "研究支援課へ学振外国人特別研究員受け入れの件を連絡",
     "status": "done",
     "priority": "high",
