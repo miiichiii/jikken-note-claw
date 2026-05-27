@@ -88,14 +88,14 @@
 
     body.bg-paisley {
       --page-bg:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.62), rgba(222, 194, 164, 0.34)),
+        linear-gradient(145deg, rgba(255, 248, 236, 0.5), rgba(41, 20, 43, 0.24)),
         radial-gradient(circle at 8% 16%, rgba(201, 46, 88, 0.28) 0 10%, transparent 24%),
         radial-gradient(circle at 90% 12%, rgba(47, 69, 157, 0.24) 0 11%, transparent 25%),
         radial-gradient(circle at 20% 86%, rgba(213, 155, 23, 0.22) 0 12%, transparent 26%),
-        url("assets/noisy-paisley-textile.svg"),
+        url("assets/generated-dark-paisley.webp"),
         linear-gradient(132deg, var(--color-cream) 0%, var(--color-paper) 46%, var(--color-paper-deep) 100%);
-      --page-bg-size: auto, auto, auto, auto, 188px 154px, auto;
-      --page-bg-position: center, center, center, center, -22px 34px, center;
+      --page-bg-size: auto, auto, auto, auto, 520px 520px, auto;
+      --page-bg-position: center, center, center, center, center top, center;
     }
 
     body.bg-botanical {
@@ -113,28 +113,25 @@
 
     body.bg-petals {
       --page-bg:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.66), rgba(222, 194, 164, 0.4)),
-        radial-gradient(ellipse 18px 38px at 12% 18%, rgba(185, 83, 109, 0.22) 0 58%, transparent 60%),
-        radial-gradient(ellipse 14px 34px at 86% 16%, rgba(49, 184, 173, 0.2) 0 58%, transparent 60%),
-        radial-gradient(ellipse 18px 42px at 24% 82%, rgba(68, 76, 157, 0.2) 0 58%, transparent 60%),
-        radial-gradient(ellipse 16px 36px at 76% 78%, rgba(240, 193, 48, 0.22) 0 58%, transparent 60%),
-        radial-gradient(circle at 44% 28%, rgba(201, 46, 88, 0.12) 0 7%, transparent 20%),
-        radial-gradient(circle at 58% 92%, rgba(35, 140, 130, 0.12) 0 8%, transparent 22%),
+        linear-gradient(145deg, rgba(255, 248, 236, 0.52), rgba(222, 194, 164, 0.3)),
+        radial-gradient(circle at 44% 28%, rgba(201, 46, 88, 0.1) 0 7%, transparent 20%),
+        radial-gradient(circle at 58% 92%, rgba(35, 140, 130, 0.1) 0 8%, transparent 22%),
+        url("assets/generated-scattered-petals.webp"),
         linear-gradient(132deg, var(--color-cream) 0%, var(--color-paper) 44%, var(--color-paper-deep) 100%);
-      --page-bg-size: auto, 92px 122px, 104px 136px, 116px 146px, 108px 142px, auto, auto, auto;
-      --page-bg-position: center, 0 8px, 42px 28px, -22px 68px, 26px 104px, center, center, center;
+      --page-bg-size: auto, auto, auto, 540px 540px, auto;
+      --page-bg-position: center, center, center, center top, center;
     }
 
     body.bg-leaves {
       --page-bg:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.52), rgba(30, 71, 43, 0.22)),
+        linear-gradient(145deg, rgba(255, 248, 236, 0.38), rgba(30, 71, 43, 0.34)),
         radial-gradient(circle at 66% 34%, rgba(169, 38, 99, 0.1) 0 6%, transparent 20%),
         radial-gradient(circle at 18% 90%, rgba(214, 154, 31, 0.08) 0 7%, transparent 22%),
-        url("assets/leaf-forest-small.svg"),
+        url("assets/generated-branch-forest.webp"),
         repeating-linear-gradient(124deg, rgba(39, 57, 36, 0.08) 0 1px, transparent 1px 11px),
         linear-gradient(132deg, #f8ead4 0%, #d4b99a 44%, #789067 100%);
-      --page-bg-size: auto, auto, auto, 144px 108px, auto, auto;
-      --page-bg-position: center, center, center, -12px 4px, center, center;
+      --page-bg-size: auto, auto, auto, 520px 520px, auto, auto;
+      --page-bg-position: center, center, center, center top, center, center;
     }
 
     body.bg-leaves-fine {
@@ -686,12 +683,10 @@
 
     .bg-option[data-bg="paisley"] .bg-preview {
       background:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.24), rgba(43, 18, 43, 0.1)),
-        radial-gradient(circle at 18% 20%, rgba(201, 46, 88, 0.38), transparent 32%),
-        radial-gradient(circle at 82% 70%, rgba(23, 110, 183, 0.34), transparent 34%),
-        url("assets/noisy-paisley-textile.svg");
-      background-size: auto, auto, auto, 122px 100px;
-      background-position: center, center, center, 14px 12px;
+        linear-gradient(145deg, rgba(255, 248, 236, 0.18), rgba(43, 18, 43, 0.18)),
+        url("assets/generated-dark-paisley.webp");
+      background-size: auto, 116px 116px;
+      background-position: center, center;
     }
 
     .bg-option[data-bg="botanical"] .bg-preview {
@@ -707,23 +702,19 @@
 
     .bg-option[data-bg="petals"] .bg-preview {
       background:
-        radial-gradient(ellipse 12px 30px at 18% 16%, rgba(185, 83, 109, 0.48) 0 58%, transparent 60%),
-        radial-gradient(ellipse 12px 32px at 76% 20%, rgba(49, 184, 173, 0.42) 0 58%, transparent 60%),
-        radial-gradient(ellipse 13px 34px at 28% 78%, rgba(68, 76, 157, 0.4) 0 58%, transparent 60%),
-        radial-gradient(ellipse 12px 32px at 76% 78%, rgba(240, 193, 48, 0.44) 0 58%, transparent 60%),
-        repeating-linear-gradient(118deg, rgba(70, 53, 43, 0.04) 0 1px, transparent 1px 11px),
-        linear-gradient(135deg, var(--color-cream), var(--color-paper-deep));
-      background-size: 62px 80px, 72px 88px, 70px 90px, 74px 92px, auto, auto;
-      background-position: 0 0, 20px 10px, 6px 42px, 34px 44px, center, center;
+        linear-gradient(145deg, rgba(255, 248, 236, 0.12), rgba(222, 194, 164, 0.14)),
+        url("assets/generated-scattered-petals.webp");
+      background-size: auto, 116px 116px;
+      background-position: center, center;
     }
 
     .bg-option[data-bg="leaves"] .bg-preview {
       background:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.2), rgba(17, 61, 39, 0.18)),
-        url("assets/leaf-forest-small.svg"),
+        linear-gradient(145deg, rgba(255, 248, 236, 0.12), rgba(17, 61, 39, 0.16)),
+        url("assets/generated-branch-forest.webp"),
         linear-gradient(135deg, #f6e0bd, #6f925f);
-      background-size: auto, 84px 69px, auto;
-      background-position: center, -10px 4px, center;
+      background-size: auto, 116px 116px, auto;
+      background-position: center, center, center;
     }
 
     .bg-option[data-bg="leaves-fine"] .bg-preview {
