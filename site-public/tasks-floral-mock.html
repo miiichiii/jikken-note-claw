@@ -8,7 +8,7 @@
   <style>
     /* Hallmark · pre-emit critique: P5 H5 E5 S5 R3 V5 */
     /* Textile source: local hand-authored noisy paisley tile for this mock. */
-    /* Paint source: local hand-authored slow-mixed paint tile for this mock. */
+    /* Paint source: generated raster texture, compressed to WebP for page weight. */
     /* Dense paisley is intentionally limited to the hero card and category buttons. */
     :root {
       --color-paper: #f4e4cf;
@@ -164,11 +164,11 @@
         linear-gradient(145deg, rgba(255, 248, 236, 0.42), rgba(36, 29, 39, 0.24)),
         radial-gradient(circle at 14% 16%, rgba(201, 46, 88, 0.16) 0 8%, transparent 23%),
         radial-gradient(circle at 86% 18%, rgba(23, 110, 183, 0.16) 0 9%, transparent 24%),
-        url("assets/slow-mixed-paint.svg"),
+        url("assets/slow-mixed-paint-generated.webp"),
         repeating-linear-gradient(122deg, rgba(49, 34, 39, 0.06) 0 1px, transparent 1px 12px),
         linear-gradient(132deg, #f0d5b1 0%, #ba9368 44%, #516d57 100%);
-      --page-bg-size: auto, auto, auto, 232px 180px, auto, auto;
-      --page-bg-position: center, center, center, -34px 12px, center, center;
+      --page-bg-size: auto, auto, auto, 520px 520px, auto, auto;
+      --page-bg-position: center, center, center, center top, center, center;
     }
 
     button {
@@ -747,10 +747,10 @@
     .bg-option[data-bg="paint"] .bg-preview {
       background:
         linear-gradient(145deg, rgba(255, 248, 236, 0.14), rgba(36, 29, 39, 0.22)),
-        url("assets/slow-mixed-paint.svg"),
+        url("assets/slow-mixed-paint-generated.webp"),
         linear-gradient(135deg, #f0d5b1, #516d57);
-      background-size: auto, 132px 103px, auto;
-      background-position: center, -20px 0, center;
+      background-size: auto, 116px 116px, auto;
+      background-position: center, center, center;
     }
 
     .bg-option-title {
