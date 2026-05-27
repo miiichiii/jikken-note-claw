@@ -8,6 +8,7 @@
   <style>
     /* Hallmark · pre-emit critique: P5 H5 E5 S5 R3 V5 */
     /* Textile source: local hand-authored noisy paisley tile for this mock. */
+    /* Paint source: local hand-authored slow-mixed paint tile for this mock. */
     /* Dense paisley is intentionally limited to the hero card and category buttons. */
     :root {
       --color-paper: #f4e4cf;
@@ -156,6 +157,18 @@
         linear-gradient(132deg, #f4e0c4 0%, #b8b67f 42%, #5f845e 100%);
       --page-bg-size: auto, auto, 166px 132px, auto, auto;
       --page-bg-position: center, center, -22px -4px, center, center;
+    }
+
+    body.bg-paint {
+      --page-bg:
+        linear-gradient(145deg, rgba(255, 248, 236, 0.42), rgba(36, 29, 39, 0.24)),
+        radial-gradient(circle at 14% 16%, rgba(201, 46, 88, 0.16) 0 8%, transparent 23%),
+        radial-gradient(circle at 86% 18%, rgba(23, 110, 183, 0.16) 0 9%, transparent 24%),
+        url("assets/slow-mixed-paint.svg"),
+        repeating-linear-gradient(122deg, rgba(49, 34, 39, 0.06) 0 1px, transparent 1px 12px),
+        linear-gradient(132deg, #f0d5b1 0%, #ba9368 44%, #516d57 100%);
+      --page-bg-size: auto, auto, auto, 232px 180px, auto, auto;
+      --page-bg-position: center, center, center, -34px 12px, center, center;
     }
 
     button {
@@ -731,6 +744,15 @@
       background-position: center, -14px -2px, center;
     }
 
+    .bg-option[data-bg="paint"] .bg-preview {
+      background:
+        linear-gradient(145deg, rgba(255, 248, 236, 0.14), rgba(36, 29, 39, 0.22)),
+        url("assets/slow-mixed-paint.svg"),
+        linear-gradient(135deg, #f0d5b1, #516d57);
+      background-size: auto, 132px 103px, auto;
+      background-position: center, -20px 0, center;
+    }
+
     .bg-option-title {
       display: block;
       overflow: hidden;
@@ -1001,13 +1023,13 @@
     }
 
     .task-card.is-done {
-      opacity: 0.56;
+      opacity: 0.68;
       border-color: rgba(255, 255, 255, 0.34);
       background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 248, 236, 0.12)),
-        radial-gradient(circle at 100% 4%, rgba(111, 169, 162, 0.1), transparent 32%);
-      -webkit-backdrop-filter: blur(4px) saturate(1.02);
-      backdrop-filter: blur(4px) saturate(1.02);
+        linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 248, 236, 0.09)),
+        radial-gradient(circle at 100% 4%, rgba(111, 169, 162, 0.08), transparent 32%);
+      -webkit-backdrop-filter: blur(2px) saturate(1.04);
+      backdrop-filter: blur(2px) saturate(1.04);
       box-shadow: 0 7px 16px rgba(51, 57, 39, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.34);
     }
 
@@ -1317,7 +1339,7 @@
     }
   </style>
 </head>
-<body class="bg-leaves-mixed">
+<body class="bg-paint">
   <div class="app">
     <div class="floral-field" aria-hidden="true">
       <div class="flower one"><span></span><i></i><b></b></div>
@@ -1378,7 +1400,7 @@
         <div class="background-lab-head">
           <div>
             <p class="background-lab-label">Background candidates</p>
-            <p class="background-lab-title">紙面の奥に敷く柄を6方向で比較</p>
+            <p class="background-lab-title">紙面の奥に敷く柄を7方向で比較</p>
           </div>
           <p class="background-lab-note">押すと背景が切り替わります</p>
         </div>
@@ -1418,11 +1440,18 @@
               <span class="bg-option-title">細枝の密生</span>
             </span>
           </button>
-          <button class="bg-option is-active" type="button" data-bg="leaves-mixed" aria-pressed="true">
+          <button class="bg-option" type="button" data-bg="leaves-mixed" aria-pressed="false">
             <span class="bg-preview" aria-hidden="true"></span>
             <span>
               <span class="bg-option-label">F</span>
               <span class="bg-option-title">枝葉ミックス</span>
+            </span>
+          </button>
+          <button class="bg-option is-active" type="button" data-bg="paint" aria-pressed="true">
+            <span class="bg-preview" aria-hidden="true"></span>
+            <span>
+              <span class="bg-option-label">G</span>
+              <span class="bg-option-title">絵の具の尾</span>
             </span>
           </button>
         </div>
@@ -1553,7 +1582,7 @@
     bgOptions.forEach((option) => {
       option.addEventListener("click", () => {
         const selected = option.dataset.bg;
-        document.body.classList.remove("bg-paisley", "bg-botanical", "bg-petals", "bg-leaves", "bg-leaves-fine", "bg-leaves-mixed");
+        document.body.classList.remove("bg-paisley", "bg-botanical", "bg-petals", "bg-leaves", "bg-leaves-fine", "bg-leaves-mixed", "bg-paint");
         document.body.classList.add(`bg-${selected}`);
         bgOptions.forEach((candidate) => {
           const active = candidate === option;

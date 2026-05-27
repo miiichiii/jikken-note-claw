@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="280" viewBox="0 0 360 280">
+  <defs>
+    <filter id="paint-grain" x="-12%" y="-12%" width="124%" height="124%">
+      <feTurbulence type="fractalNoise" baseFrequency=".018 .052" numOctaves="4" seed="23"/>
+      <feColorMatrix type="saturate" values=".18"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .24"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7e2c5"/>
+      <stop offset=".48" stop-color="#d9b184"/>
+      <stop offset="1" stop-color="#596d56"/>
+    </linearGradient>
+    <linearGradient id="rose-ribbon" x1="0" x2="1">
+      <stop offset="0" stop-color="#611643"/>
+      <stop offset=".36" stop-color="#b62a63"/>
+      <stop offset=".67" stop-color="#e05e3d"/>
+      <stop offset="1" stop-color="#f0bd35"/>
+    </linearGradient>
+    <linearGradient id="blue-ribbon" x1="0" x2="1">
+      <stop offset="0" stop-color="#18356f"/>
+      <stop offset=".42" stop-color="#276fa8"/>
+      <stop offset=".72" stop-color="#1a9c8c"/>
+      <stop offset="1" stop-color="#d8c84f"/>
+    </linearGradient>
+    <linearGradient id="violet-ribbon" x1="0" x2="1">
+      <stop offset="0" stop-color="#311b55"/>
+      <stop offset=".34" stop-color="#773980"/>
+      <stop offset=".7" stop-color="#c33a67"/>
+      <stop offset="1" stop-color="#e5a33f"/>
+    </linearGradient>
+    <linearGradient id="green-ribbon" x1="0" x2="1">
+      <stop offset="0" stop-color="#172d22"/>
+      <stop offset=".35" stop-color="#2f7650"/>
+      <stop offset=".65" stop-color="#819d44"/>
+      <stop offset="1" stop-color="#d9a531"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="280" fill="url(#paper)"/>
+  <g opacity=".52" filter="url(#paint-grain)">
+    <rect width="360" height="280" fill="#261d22"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-34 40 C30 12 68 38 114 62 C172 92 210 56 262 34 C304 16 350 28 398 62" stroke="url(#rose-ribbon)" stroke-width="46" opacity=".82"/>
+    <path d="M-28 78 C48 128 98 116 154 88 C226 52 284 74 392 124" stroke="#f6d04f" stroke-width="18" opacity=".36"/>
+    <path d="M-36 122 C20 96 66 112 118 144 C174 178 230 162 284 126 C326 98 366 102 400 128" stroke="url(#blue-ribbon)" stroke-width="54" opacity=".78"/>
+    <path d="M-24 170 C42 206 92 208 146 182 C218 146 260 170 310 202 C344 224 378 222 404 202" stroke="url(#violet-ribbon)" stroke-width="48" opacity=".76"/>
+    <path d="M-40 228 C32 198 84 230 138 248 C190 266 242 252 298 218 C340 192 376 196 400 214" stroke="url(#green-ribbon)" stroke-width="44" opacity=".76"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".72">
+    <path d="M-20 58 C42 44 76 60 122 88 C172 118 220 96 276 64 C314 42 346 48 384 76" stroke="#f8e5a9" stroke-width="5"/>
+    <path d="M8 108 C74 146 122 136 174 112 C232 86 290 102 358 142" stroke="#332134" stroke-width="7" opacity=".46"/>
+    <path d="M18 160 C90 202 146 188 210 158 C258 136 308 152 382 192" stroke="#ffe6be" stroke-width="4" opacity=".62"/>
+    <path d="M-12 226 C54 210 102 236 158 250 C210 262 262 242 332 204" stroke="#1c3627" stroke-width="6" opacity=".54"/>
+  </g>
+  <g opacity=".42">
+    <path d="M64 31 C92 53 112 70 146 75" fill="none" stroke="#ffefe0" stroke-width="2"/>
+    <path d="M224 47 C252 30 286 25 326 42" fill="none" stroke="#162c47" stroke-width="3"/>
+    <path d="M73 141 C112 155 144 153 185 130" fill="none" stroke="#f3bb37" stroke-width="3"/>
+    <path d="M218 191 C260 196 296 216 336 202" fill="none" stroke="#7ad2ae" stroke-width="2"/>
+  </g>
+</svg>
