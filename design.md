@@ -236,6 +236,8 @@ site-public/tasks.json
 
 Local browser checking is temporary UI state only. Agent-side permanent updates must edit `Meta TODO.md`, regenerate `tasks.json`, commit, push, and deploy.
 
+The on-page sync memo should say that the board reads `tasks.json` generated from Obsidian `Meta TODO`, and that permanent changes are written back to Meta TODO.
+
 ## Responsive Rules
 
 Verify these widths after visual edits:
