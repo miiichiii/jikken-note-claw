@@ -168,7 +168,7 @@ Task cards are the main UI object. Preserve:
 - category-like color variation through `nth-of-type` styling so only task cards are counted, not category headings
 - category panels must stay highly translucent on desktop; use only very low-opacity glass (`~0.1` cream/white layers) so they organize tasks without becoming a white backing card that hides the selected background behind completed tasks
 - visible but restrained color on unfinished cards, using rose, teal, blue, and honey tints so uncompleted tasks do not read as plain beige
-- unfinished cards should feel like small ceramic plates: raised rim, glazed shine, shallow concave center, and tactile shadow. The center must read as recessed, not inflated: use a subtle upper inner shadow and lower inner highlight, plus the `::after` inner rim. Do this with layered gradients and inset shadows rather than making the whole card an opaque white slab.
+- unfinished cards should feel like small ceramic plates: raised rim, glazed shine, shallow concave center, tactile shadow, and a subtle hand-finished surface. The center must read as recessed, not inflated: use a subtle upper inner shadow and lower inner highlight, plus the `::after` inner rim. Add ceramic character with very low-contrast speckling/crazing and restrained rim decoration, closer to Japanese glazed pottery or quiet Noritake trim than flat glass. Keep texture faint enough that task text remains dominant, and do not make the whole card an opaque white slab.
 
 Do not show implementation/meta tags (`#id`, `@assignee`, `Priority`, status chips, source IDs, or sync explanations) in the visible card list. Those can exist in `tasks.json` for internal logic but should not clutter the public UI.
 
