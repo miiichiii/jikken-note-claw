@@ -211,8 +211,10 @@ Obsidian `Meta TODO.md` is the upstream task source. The public board must not b
 Generate the public JSON with:
 
 ```bash
-python3 scripts/meta_todo_to_tasks_json.py
+python3 scripts/meta_todo_task_board_agent.py
 ```
+
+The lower-level generator remains `scripts/meta_todo_to_tasks_json.py`, but normal operation should use the dedicated MetaTODO Task Board Agent so privacy checks, commit/push, Vercel deploy, and public verification all happen together.
 
 Production `tasks.html` must read the generated static task data from:
 
@@ -234,7 +236,7 @@ Then regenerate and publish:
 site-public/tasks.json
 ```
 
-Local browser checking is temporary UI state only. Agent-side permanent updates must edit `Meta TODO.md`, regenerate `tasks.json`, commit, push, and deploy.
+Local browser checking is temporary UI state only. Agent-side permanent updates must edit `Meta TODO.md`, run the MetaTODO Task Board Agent, and let it regenerate `tasks.json`, commit, push, deploy, and verify.
 
 The on-page sync memo should say that the board reads `tasks.json` generated from Obsidian `Meta TODO`, and that permanent changes are written back to Meta TODO.
 
