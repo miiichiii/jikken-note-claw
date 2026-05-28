@@ -159,7 +159,7 @@ Default background should be `paint` unless the user asks otherwise.
 Task cards are the main UI object. Preserve:
 - one task per rounded liquid-glass card
 - check button on the left
-- one-line task title on the right
+- full task title on the right with wrapping, especially in the 2/3-column PC layout
 - category grouping from Meta TODO headings
 - responsive PC layout with category panels in two or three columns when the window is wide enough
 - done tasks sorted after unfinished tasks
