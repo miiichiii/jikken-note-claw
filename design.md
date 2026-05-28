@@ -140,6 +140,8 @@ Current background assets:
 - `assets/generated-branch-forest.webp`
 - `assets/slow-mixed-paint-generated.webp`
 
+Do not put a milky white wash over the selected background image. Avoid page-wide pseudo overlays for the app shell; the bitmap texture itself should show without a pale membrane effect.
+
 Modes:
 - `paisley`: dense pattern, vivid and strongest
 - `petals`: light scattered floral

@@ -90,49 +90,45 @@
 
     body.bg-paisley {
       --page-bg:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.5), rgba(41, 20, 43, 0.24)),
         radial-gradient(circle at 8% 16%, rgba(201, 46, 88, 0.28) 0 10%, transparent 24%),
         radial-gradient(circle at 90% 12%, rgba(47, 69, 157, 0.24) 0 11%, transparent 25%),
         radial-gradient(circle at 20% 86%, rgba(213, 155, 23, 0.22) 0 12%, transparent 26%),
         url("assets/generated-dark-paisley.webp"),
         linear-gradient(132deg, var(--color-cream) 0%, var(--color-paper) 46%, var(--color-paper-deep) 100%);
-      --page-bg-size: auto, auto, auto, auto, 520px 520px, auto;
-      --page-bg-position: center, center, center, center, center top, center;
+      --page-bg-size: auto, auto, auto, 520px 520px, auto;
+      --page-bg-position: center, center, center, center top, center;
     }
 
     body.bg-petals {
       --page-bg:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.52), rgba(222, 194, 164, 0.3)),
         radial-gradient(circle at 44% 28%, rgba(201, 46, 88, 0.1) 0 7%, transparent 20%),
         radial-gradient(circle at 58% 92%, rgba(35, 140, 130, 0.1) 0 8%, transparent 22%),
         url("assets/generated-scattered-petals.webp"),
         linear-gradient(132deg, var(--color-cream) 0%, var(--color-paper) 44%, var(--color-paper-deep) 100%);
-      --page-bg-size: auto, auto, auto, 540px 540px, auto;
-      --page-bg-position: center, center, center, center top, center;
+      --page-bg-size: auto, auto, 540px 540px, auto;
+      --page-bg-position: center, center, center top, center;
     }
 
     body.bg-leaves {
       --page-bg:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.38), rgba(30, 71, 43, 0.34)),
         radial-gradient(circle at 66% 34%, rgba(169, 38, 99, 0.1) 0 6%, transparent 20%),
         radial-gradient(circle at 18% 90%, rgba(214, 154, 31, 0.08) 0 7%, transparent 22%),
         url("assets/generated-branch-forest.webp"),
         repeating-linear-gradient(124deg, rgba(39, 57, 36, 0.08) 0 1px, transparent 1px 11px),
         linear-gradient(132deg, #f8ead4 0%, #d4b99a 44%, #789067 100%);
-      --page-bg-size: auto, auto, auto, 520px 520px, auto, auto;
-      --page-bg-position: center, center, center, center top, center, center;
+      --page-bg-size: auto, auto, 520px 520px, auto, auto;
+      --page-bg-position: center, center, center top, center, center;
     }
 
     body.bg-paint {
       --page-bg:
-        linear-gradient(145deg, rgba(255, 248, 236, 0.42), rgba(36, 29, 39, 0.24)),
         radial-gradient(circle at 14% 16%, rgba(201, 46, 88, 0.16) 0 8%, transparent 23%),
         radial-gradient(circle at 86% 18%, rgba(23, 110, 183, 0.16) 0 9%, transparent 24%),
         url("assets/slow-mixed-paint-generated.webp"),
         repeating-linear-gradient(122deg, rgba(49, 34, 39, 0.06) 0 1px, transparent 1px 12px),
         linear-gradient(132deg, #f0d5b1 0%, #ba9368 44%, #516d57 100%);
-      --page-bg-size: auto, auto, auto, 520px 520px, auto, auto;
-      --page-bg-position: center, center, center, center top, center, center;
+      --page-bg-size: auto, auto, 520px 520px, auto, auto;
+      --page-bg-position: center, center, center top, center, center;
     }
 
     button {
@@ -145,20 +141,6 @@
       min-height: 100dvh;
       padding: max(18px, env(safe-area-inset-top)) 18px max(24px, env(safe-area-inset-bottom));
       isolation: isolate;
-    }
-
-    .app::before {
-      position: fixed;
-      inset: -80px -120px auto -120px;
-      height: 260px;
-      content: "";
-      z-index: -1;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 20% 64%, rgba(245, 169, 184, 0.18), transparent 26%),
-        radial-gradient(circle at 58% 18%, rgba(244, 205, 99, 0.16), transparent 28%),
-        radial-gradient(circle at 84% 56%, rgba(157, 200, 223, 0.14), transparent 30%);
-      filter: blur(2px);
     }
 
     .floral-field {
