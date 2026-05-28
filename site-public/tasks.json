@@ -1,42 +1,42 @@
 [
   {
     "id": "mtodo-scansnap-20260522-kll3458",
-    "title": "要確認: 給与通知書の確認と提出。ScanSnap自動判定で締切/日付/内容を確定できず。Source PDF: `90_Processed/ScanSnap_PDFs/20260522_(kll3458).pdf`",
+    "title": "要確認: 給与通知書の確認と提出。ScanSnap自動判定で締切/日付/内容を確定できず",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
   },
   {
     "id": "mtodo-scansnap-20260522-labor-conditions",
-    "title": "5/31まで: 労働条件通知書を読み、非常勤講師の業務内容・労働条件を確認/理解する。Source PDF: `90_Processed/ScanSnap_PDFs/20260522_労働条件通知書.pdf`",
+    "title": "5/31まで: 労働条件通知書を読み、非常勤講師の業務内容・労働条件を確認/理解する",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
   },
   {
     "id": "mtodo-4d44671c961b",
-    "title": "5/29目安（ScanSnap通知は5/31）: 令和7年度後期 科目別満足度調査・学生からの自由意見に対する教員回答を作成・送付する。Source PDF: `90_Processed/ScanSnap_PDFs/20260529_令和7年度後期科目別満足度調査学生からの自由意見に対する教員の回答について_001.pdf`",
+    "title": "5/29目安（ScanSnap通知は5/31）: 令和7年度後期 科目別満足度調査・学生からの自由意見に対する教員回答を作成・送付する",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
   },
   {
     "id": "mtodo-scansnap-20260518-satisfaction-results",
-    "title": "5/29まで: 令和7年度後期 科目別満足度調査結果を学内公表し、教員からの回答を受付・整理する。Source PDF: `90_Processed/ScanSnap_PDFs/20260518_令和7年度後期科目別満足度調査の結果について.pdf`",
+    "title": "5/29まで: 令和7年度後期 科目別満足度調査結果を学内公表し、教員からの回答を受付・整理する",
     "status": "todo",
     "priority": "A",
     "assignee": "Bot"
   },
   {
     "id": "mtodo-0e8f385e521d",
-    "title": "5/24（日）まで: 研究支援に、マウス飼育費について確認するメールを書く。Source: センセイ Telegram 2026-05-19 05:13, 05:15",
+    "title": "5/24（日）まで: 研究支援に、マウス飼育費について確認するメールを書く",
     "status": "todo",
     "priority": "A",
     "assignee": "Bot"
   },
   {
     "id": "mtodo-5a1a68650639",
-    "title": "6/11（木）16:00: 同 基盤Cの研究成果報告書を提出する。Source: センセイ Telegram 2026-05-12 21:15",
+    "title": "6/11（木）16:00: 同 基盤Cの研究成果報告書を提出する",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
@@ -71,14 +71,14 @@
   },
   {
     "id": "mtodo-65e40eb66245",
-    "title": "6/2(火) 第17回 筑波大学系統解剖実習ショートレクチャー資料を準備する（頭部離断・咽頭・喉頭／腹膜・腹膜腔・腹部内臓）。Source: [[10_Projects/Education/筑波大学/解剖学実習/2026-04-23_系統解剖実習予定とショートレクチャー]]; 2026-05-19確認では専用完成資料未発見",
+    "title": "6/2(火) 第17回 筑波大学系統解剖実習ショートレクチャー資料を準備する（頭部離断・咽頭・喉頭／腹膜・腹膜腔・腹部内臓）",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
   },
   {
     "id": "mtodo-b4544dc69c37",
-    "title": "6/16(火) 第27回 筑波大学系統解剖実習ショートレクチャー資料を準備する（翼突管・頚動脈管・耳神経節／骨盤壁・骨盤内臓）。Source: [[10_Projects/Education/筑波大学/解剖学実習/2026-04-23_系統解剖実習予定とショートレクチャー]]; 2026-05-19確認では専用完成資料未発見",
+    "title": "6/16(火) 第27回 筑波大学系統解剖実習ショートレクチャー資料を準備する（翼突管・頚動脈管・耳神経節／骨盤壁・骨盤内臓）",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
@@ -148,7 +148,7 @@
   },
   {
     "id": "mtodo-2cb0da52ae5c",
-    "title": "5/20: AMED関連提出を行う（Source: センセイ Telegram 2026-05-20 13:18）",
+    "title": "5/20: AMED関連提出を行う（",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
@@ -309,42 +309,42 @@
   },
   {
     "id": "mtodo-e6e2dadf69f5",
-    "title": "2026-05-31 【重要】武田科学振興財団：研究結果報告の提出について（日下先生） 締切（メール: \"日下 浩樹\" <kusaka.koki.gu@un.tsukuba.ac.jp> / RE: 【重要】武田科学振興財団：研究結果報告の提出について / id:19e3ef12e5f181cf）",
+    "title": "2026-05-31 【重要】武田科学振興財団：研究結果報告の提出について（日下先生） 締切",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
   },
   {
     "id": "mtodo-87ef3154cb23",
-    "title": "2028-03-31 【重要】武田科学振興財団：研究結果報告の提出について（日下先生） 締切（メール: \"日下 浩樹\" <kusaka.koki.gu@un.tsukuba.ac.jp> / RE: 【重要】武田科学振興財団：研究結果報告の提出について / id:19e3ef12e5f181cf）",
+    "title": "2028-03-31 【重要】武田科学振興財団：研究結果報告の提出について（日下先生） 締切",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
   },
   {
     "id": "mtodo-0fb5433d0ef2",
-    "title": "2026-05-31 【重要】武田科学振興財団：研究結果報告の提出について 締切（メール: Yukiyo IDA <ms00i218@md.tsukuba.ac.jp> / Re: 【重要】武田科学振興財団：研究結果報告の提出について / id:19e3f3b1f4499963）",
+    "title": "2026-05-31 【重要】武田科学振興財団：研究結果報告の提出について 締切",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
   },
   {
     "id": "mtodo-79d3c93a7f09",
-    "title": "2028-03-31 【重要】武田科学振興財団：研究結果報告の提出について 締切（メール: Yukiyo IDA <ms00i218@md.tsukuba.ac.jp> / Re: 【重要】武田科学振興財団：研究結果報告の提出について / id:19e3f3b1f4499963）",
+    "title": "2028-03-31 【重要】武田科学振興財団：研究結果報告の提出について 締切",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
   },
   {
     "id": "mtodo-7d02208f4b92",
-    "title": "2026-05-19 アドリアマイシン投与_糸球体単離実験 締切（メール: Eiji WARABI <warabi-e@md.tsukuba.ac.jp> / Re: アドリアマイシン投与_糸球体単離実験 / id:19e4017af69c333b）",
+    "title": "2026-05-19 アドリアマイシン投与_糸球体単離実験 締切",
     "status": "todo",
     "priority": "A",
     "assignee": "Me"
   },
   {
     "id": "mtodo-93014281f844",
-    "title": "2026-05-20 [ipu] Fw: （追加連絡）【依頼：５/20（水）〆切】R８前期科目 締切（メール: hamamicchi@gmail.com / [ipu] Fw: （追加連絡）【依頼：５/20（水）〆切】R８前期科目の成績評価方法及び期末試験日程について / id:19e3f88e0a0d2acf）完了: 2026-05-20 センセイ報告",
+    "title": "2026-05-20 [ipu] Fw: （追加連絡）【依頼：５/20（水）〆切】R８前期科目 締切 【依頼：５/20（水）〆切】R８前期科目の成績評価方法及び期末試験日程について / ）完了: 2026-05-20 センセイ報告",
     "status": "done",
     "priority": "C",
     "assignee": "Me"

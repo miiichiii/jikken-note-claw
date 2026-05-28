@@ -22,8 +22,13 @@ CHECKBOX_RE = re.compile(
 
 def clean_title(body: str) -> str:
     body = re.sub(r"\s*<!--.*?-->\s*", " ", body)
+    body = re.sub(r"\s*Source PDF:\s*`[^`]+`", " ", body)
+    body = re.sub(r"\s*Source:\s*[^（(]+(?:\d{4}-\d{2}-\d{2}[^）)]*)?", " ", body)
+    body = re.sub(r"\s*[（(]メール:\s*[^）)]+[）)]", " ", body)
+    body = re.sub(r"\s*id:[A-Za-z0-9_-]+", " ", body)
+    body = re.sub(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]", lambda m: m.group(2) or Path(m.group(1)).name, body)
     body = re.sub(r"\s+", " ", body)
-    return body.strip()
+    return body.strip(" ;、。")
 
 
 def priority_for(title: str, status: str) -> str:
