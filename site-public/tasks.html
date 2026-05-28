@@ -949,6 +949,8 @@
       --check-b: var(--color-teal);
       --check-glow: rgba(47, 156, 104, 0.32);
       --strike-color: rgba(47, 156, 104, 0.68);
+      --task-tint: rgba(49, 184, 173, 0.18);
+      --task-line: rgba(49, 184, 173, 0.055);
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 13px;
@@ -958,10 +960,11 @@
       border: 1px solid rgba(255, 255, 255, 0.58);
       border-radius: var(--radius-card);
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 46%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.62), var(--color-cream-glass)),
-        radial-gradient(circle at 100% 0%, rgba(183, 166, 223, 0.08), transparent 34%),
-        repeating-linear-gradient(132deg, transparent 0 16px, rgba(111, 109, 168, 0.035) 17px 18px, transparent 19px 34px);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 44%),
+        radial-gradient(circle at 96% 8%, var(--task-tint), transparent 42%),
+        radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.34), transparent 40%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.68), rgba(255, 248, 236, 0.64)),
+        repeating-linear-gradient(132deg, transparent 0 16px, var(--task-line) 17px 18px, transparent 19px 34px);
       -webkit-backdrop-filter: var(--blur-glass);
       backdrop-filter: var(--blur-glass);
       box-shadow: var(--shadow-liquid);
@@ -999,64 +1002,81 @@
       transform: scale(0.985);
     }
 
-    .task-card:nth-child(1) {
+    .task-card:nth-of-type(4n + 1) {
       --check-a: var(--color-berry);
       --check-b: var(--color-clay);
       --check-glow: rgba(169, 35, 99, 0.36);
       --strike-color: rgba(169, 35, 99, 0.72);
+      --task-tint: rgba(217, 95, 118, 0.32);
+      --task-line: rgba(217, 95, 118, 0.072);
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 46%),
-        radial-gradient(circle at 100% 4%, rgba(217, 95, 118, 0.22), transparent 34%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.62), var(--color-cream-glass)),
-        repeating-linear-gradient(132deg, transparent 0 16px, rgba(217, 95, 118, 0.036) 17px 18px, transparent 19px 34px);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 44%),
+        radial-gradient(circle at 96% 8%, var(--task-tint), transparent 42%),
+        radial-gradient(circle at 4% 96%, rgba(240, 193, 48, 0.14), transparent 38%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.68), rgba(255, 248, 236, 0.62)),
+        repeating-linear-gradient(132deg, transparent 0 16px, var(--task-line) 17px 18px, transparent 19px 34px);
     }
 
-    .task-card:nth-child(2) {
+    .task-card:nth-of-type(4n + 2) {
       --check-a: var(--color-aqua);
       --check-b: var(--color-blueberry);
       --check-glow: rgba(49, 184, 173, 0.34);
       --strike-color: rgba(49, 184, 173, 0.72);
+      --task-tint: rgba(49, 184, 173, 0.3);
+      --task-line: rgba(49, 184, 173, 0.07);
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 46%),
-        radial-gradient(circle at 100% 4%, rgba(111, 169, 162, 0.22), transparent 34%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.62), var(--color-cream-glass)),
-        repeating-linear-gradient(132deg, transparent 0 16px, rgba(111, 169, 162, 0.04) 17px 18px, transparent 19px 34px);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 44%),
+        radial-gradient(circle at 96% 8%, var(--task-tint), transparent 42%),
+        radial-gradient(circle at 4% 96%, rgba(23, 110, 183, 0.13), transparent 38%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.68), rgba(255, 248, 236, 0.62)),
+        repeating-linear-gradient(132deg, transparent 0 16px, var(--task-line) 17px 18px, transparent 19px 34px);
     }
 
-    .task-card:nth-child(3) {
+    .task-card:nth-of-type(4n + 3) {
       --check-a: var(--color-cobalt);
       --check-b: var(--color-indigo);
       --check-glow: rgba(23, 110, 183, 0.35);
       --strike-color: rgba(23, 110, 183, 0.72);
+      --task-tint: rgba(77, 134, 201, 0.3);
+      --task-line: rgba(77, 134, 201, 0.068);
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 46%),
-        radial-gradient(circle at 100% 4%, rgba(77, 134, 201, 0.21), transparent 34%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.62), var(--color-cream-glass)),
-        repeating-linear-gradient(132deg, transparent 0 16px, rgba(77, 134, 201, 0.035) 17px 18px, transparent 19px 34px);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 44%),
+        radial-gradient(circle at 96% 8%, var(--task-tint), transparent 42%),
+        radial-gradient(circle at 4% 96%, rgba(183, 166, 223, 0.14), transparent 38%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.68), rgba(255, 248, 236, 0.62)),
+        repeating-linear-gradient(132deg, transparent 0 16px, var(--task-line) 17px 18px, transparent 19px 34px);
     }
 
-    .task-card:nth-child(4) {
+    .task-card:nth-of-type(4n) {
       --check-a: var(--color-citrine);
       --check-b: var(--color-rust);
       --check-glow: rgba(213, 155, 23, 0.36);
       --strike-color: rgba(213, 155, 23, 0.74);
+      --task-tint: rgba(223, 157, 56, 0.34);
+      --task-line: rgba(164, 102, 159, 0.07);
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 46%),
-        radial-gradient(circle at 100% 4%, rgba(223, 157, 56, 0.24), transparent 34%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.62), var(--color-cream-glass)),
-        repeating-linear-gradient(132deg, transparent 0 16px, rgba(164, 102, 159, 0.035) 17px 18px, transparent 19px 34px);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 44%),
+        radial-gradient(circle at 96% 8%, var(--task-tint), transparent 42%),
+        radial-gradient(circle at 4% 96%, rgba(164, 102, 159, 0.14), transparent 38%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.68), rgba(255, 248, 236, 0.62)),
+        repeating-linear-gradient(132deg, transparent 0 16px, var(--task-line) 17px 18px, transparent 19px 34px);
     }
 
     .task-card.is-done {
-      opacity: 0.72;
-      border-color: rgba(255, 255, 255, 0.5);
+      opacity: 0.58;
+      border-color: rgba(255, 255, 255, 0.34);
       background:
-        linear-gradient(145deg, rgba(55, 31, 54, 0.36), rgba(22, 91, 84, 0.24)),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 248, 236, 0.06)),
-        radial-gradient(circle at 100% 4%, rgba(111, 169, 162, 0.08), transparent 32%);
-      -webkit-backdrop-filter: blur(2px) saturate(1.04);
-      backdrop-filter: blur(2px) saturate(1.04);
-      box-shadow: 0 15px 30px rgba(31, 34, 30, 0.18), inset 0 2px 0 rgba(255, 255, 255, 0.42), inset 0 -18px 28px rgba(31, 20, 24, 0.2);
+        linear-gradient(145deg, rgba(55, 31, 54, 0.2), rgba(22, 91, 84, 0.12)),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 248, 236, 0.02)),
+        radial-gradient(circle at 100% 4%, rgba(255, 248, 236, 0.08), transparent 34%);
+      -webkit-backdrop-filter: blur(1px) saturate(0.92);
+      backdrop-filter: blur(1px) saturate(0.92);
+      box-shadow: 0 10px 22px rgba(31, 34, 30, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.26), inset 0 -12px 22px rgba(31, 20, 24, 0.12);
+    }
+
+    .task-card.is-done::before {
+      opacity: 0.26;
+      mix-blend-mode: normal;
     }
 
     .task-card.is-done .task-name {

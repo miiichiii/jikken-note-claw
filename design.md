@@ -163,13 +163,15 @@ Task cards are the main UI object. Preserve:
 - category grouping from Meta TODO headings
 - responsive PC layout with category panels in two or three columns when the window is wide enough
 - done tasks sorted after unfinished tasks
-- category-like color variation through `nth-child` styling
+- category-like color variation through `nth-of-type` styling so only task cards are counted, not category headings
+- visible but restrained color on unfinished cards, using rose, teal, blue, and honey tints so uncompleted tasks do not read as plain beige
 
 Do not show implementation/meta tags (`#id`, `@assignee`, `Priority`, status chips, source IDs, or sync explanations) in the visible card list. Those can exist in `tasks.json` for internal logic but should not clutter the public UI.
 
 Done state:
 - use `.task-card.is-done`
-- reduce opacity to around `0.72`
+- reduce opacity to around `0.58`
+- keep the surface translucent enough that the selected background texture is visibly present through completed cards
 - no strikethrough
 - task title becomes white-ish gray:
 
