@@ -191,6 +191,7 @@ Check completion behavior:
 - Delay visual status change by `100ms`
 - Keep the tiny pause; it makes the tap feel intentional
 - When a task is checked done locally, keep it in its current unfinished-list position for 1 hour before releasing it into the completed section. This prevents tapped tasks from jumping out of view while the user is still scanning.
+- Do not call full `renderTasks()` before the sparkle finishes when marking a task done. First update the existing card to `.is-done`, fire `sparkle(card)`, refresh counters, then re-render after `sparkleDurationMs`. Immediate re-render removes the DOM node and hides the burst.
 - Trigger petal sparkle only when marking a task done
 - Keep reduced-motion support
 

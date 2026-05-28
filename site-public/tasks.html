@@ -1750,6 +1750,12 @@
       });
     }
 
+    function updateCardCompletionState(card, isDone) {
+      card.classList.toggle("is-done", isDone);
+      const button = card.querySelector(".check-button");
+      button.setAttribute("aria-label", isDone ? "タスクを未完了に戻す" : "タスクを完了にする");
+    }
+
     function toggleTask(card) {
       if (card.classList.contains("is-toggling")) return;
       const wasDone = card.classList.contains("is-done");
@@ -1764,9 +1770,16 @@
         writeLocalState(state);
         queued += 1;
         if (!wasDone) {
+          updateCardCompletionState(card, true);
           sparkle(card);
           if (navigator.vibrate) navigator.vibrate([10, 24, 16]);
+          refresh();
+          card.classList.remove("is-toggling");
+          button.disabled = false;
+          window.setTimeout(renderTasks, sparkleDurationMs);
+          return;
         }
+        updateCardCompletionState(card, false);
         renderTasks();
       }, toggleDelayMs);
     }
