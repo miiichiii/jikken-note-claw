@@ -402,6 +402,7 @@
       line-height: 0.98;
       letter-spacing: 0;
       text-shadow: 0 2px 14px rgba(25, 14, 24, 0.34);
+      white-space: nowrap;
     }
 
     .hero-copy {
@@ -590,7 +591,7 @@
     .background-lab {
       display: grid;
       gap: 10px;
-      margin: 12px 0 18px;
+      margin: 18px 0 92px;
       padding: 12px;
       border: 1px solid rgba(73, 48, 58, 0.16);
       border-radius: 27px;
@@ -903,7 +904,39 @@
 
     .task-list {
       display: grid;
+      gap: 16px;
+    }
+
+    .category-group {
+      display: grid;
+      gap: 9px;
+    }
+
+    .category-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 12px;
+      margin: 2px 4px 0;
+      color: var(--color-ink);
+    }
+
+    .category-title h3 {
+      margin: 0;
+      min-width: 0;
+      overflow: hidden;
+      font-size: 15px;
+      line-height: 1.25;
+      font-weight: 950;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .category-title span {
+      flex: 0 0 auto;
+      color: var(--color-ink-soft);
+      font-size: 11px;
+      font-weight: 900;
     }
 
     .task-card {
@@ -917,8 +950,8 @@
       grid-template-columns: auto 1fr;
       gap: 13px;
       align-items: center;
-      min-height: 84px;
-      padding: 14px;
+      min-height: 66px;
+      padding: 10px 13px;
       border: 1px solid rgba(255, 255, 255, 0.58);
       border-radius: var(--radius-card);
       background:
@@ -1096,10 +1129,13 @@
     }
 
     .task-name {
-      margin: 0 0 5px;
+      margin: 0;
+      overflow: hidden;
       font-size: 15px;
       font-weight: 900;
-      line-height: 1.45;
+      line-height: 1.35;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .task-meta {
@@ -1254,7 +1290,8 @@
     @media (min-width: 760px) {
       body {
         display: grid;
-        place-items: center;
+        align-items: start;
+        justify-items: center;
       }
 
       .app {
@@ -1262,7 +1299,44 @@
       }
 
       .shell {
+        width: min(100%, 720px);
         padding: 18px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 24px;
+        align-items: center;
+        padding: 18px 20px;
+      }
+
+      .hero-copy {
+        display: none;
+      }
+
+      .progress-row {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        margin-top: 0;
+      }
+
+      .segment {
+        margin: 12px 0;
+      }
+
+      .task-list {
+        gap: 14px;
+      }
+
+      .category-group {
+        padding: 10px;
+        border: 1px solid var(--color-line);
+        border-radius: 25px;
+        background: rgba(255, 248, 236, 0.5);
+        -webkit-backdrop-filter: var(--blur-glass);
+        backdrop-filter: var(--blur-glass);
+        box-shadow: 0 12px 24px rgba(116, 79, 45, 0.1), inset 0 1px 0 var(--color-white);
       }
     }
 
@@ -1380,49 +1454,37 @@
       <section class="hero" aria-labelledby="today-title">
         <p class="eyebrow">Mission Control · Task Board</p>
         <h1 id="today-title">今日のタスク</h1>
-        <p class="hero-copy">
-          研究・メール・生活のタスクを、やわらかい紙面で一枚にまとめます。
-        </p>
         <div class="progress-row">
           <div class="progress-orb" id="progressOrb" style="--progress: 0">
             <span id="progressText">0%</span>
           </div>
           <div class="progress-text">
             <p class="progress-title" id="progressTitle">タスクを読み込み中</p>
-            <p class="progress-detail">チェック後は0.1秒だけためて反映し、完了カードは横線なしの白っぽいグレーで表示します。</p>
+            <p class="progress-detail">チェック後1時間はその場に残します。</p>
           </div>
         </div>
       </section>
 
-      <section class="textile-board" aria-label="装飾素材の試作">
-        <article class="textile-card">
-          <div class="textile-image" aria-hidden="true">
-          </div>
-          <div class="textile-copy">
-            <p class="textile-label">Color sample</p>
-            <p class="textile-title">柄はタイトルとカテゴリだけに残す</p>
-            <p class="textile-note">本文カードは読みやすく、色面だけで強さを出します。</p>
-          </div>
-        </article>
+      <div class="segment" role="tablist" aria-label="表示モード">
+        <button class="seg-button is-active" type="button" data-filter="all">全部</button>
+        <button class="seg-button" type="button" data-filter="me">自分</button>
+        <button class="seg-button" type="button" data-filter="bot">Bot</button>
+      </div>
 
-        <article class="palette-card">
-          <div>
-            <p class="palette-label">Color trial</p>
-            <p class="palette-title">カテゴリごとに違うチェック色</p>
-          </div>
-          <div class="color-field" aria-hidden="true">
-            <span></span><span></span><span></span><span></span><span></span><span></span>
-          </div>
-        </article>
+      <section class="section-title">
+        <h2 id="listTitle">全部のタスク</h2>
+        <span id="remainingCount">読み込み中</span>
+      </section>
+
+      <section class="task-list" id="taskList" aria-label="タスク一覧">
       </section>
 
       <section class="background-lab" aria-label="背景候補">
         <div class="background-lab-head">
           <div>
-            <p class="background-lab-label">Background candidates</p>
-            <p class="background-lab-title">紙面の奥に敷く生成画像を4方向で比較</p>
+            <p class="background-lab-label">Background</p>
+            <p class="background-lab-title">背景を変える</p>
           </div>
-          <p class="background-lab-note">押すと背景が切り替わります</p>
         </div>
         <div class="bg-options">
           <button class="bg-option" type="button" data-bg="paisley" aria-pressed="false">
@@ -1454,28 +1516,6 @@
             </span>
           </button>
         </div>
-      </section>
-
-      <div class="segment" role="tablist" aria-label="表示モード">
-        <button class="seg-button is-active" type="button" data-filter="all">全部</button>
-        <button class="seg-button" type="button" data-filter="me">自分</button>
-        <button class="seg-button" type="button" data-filter="bot">Bot</button>
-      </div>
-
-      <section class="section-title">
-        <h2 id="listTitle">全部のタスク</h2>
-        <span id="remainingCount">読み込み中</span>
-      </section>
-
-      <section class="task-list" id="taskList" aria-label="タスク一覧">
-      </section>
-
-      <section class="sync-card" aria-label="同期メモ">
-        <p>
-          <strong>同期の見え方:</strong>
-          この画面は Obsidian の <span>Meta TODO</span> から生成した <span>tasks.json</span> を読みます。
-          画面上のチェックはブラウザ内に保存し、必要な恒久反映は私がMeta TODOへ書き戻します。
-        </p>
       </section>
 
       <footer class="bottom-actions">
@@ -1563,11 +1603,8 @@
       return String(task.assignee || "Unassigned");
     }
 
-    function taskMeta(task, status) {
-      const tags = [`#${task.id}`, `@${taskAssignee(task)}`];
-      if (task.priority) tags.push(`Priority ${task.priority}`);
-      tags.push(status === "done" ? "完了済み" : status === "in-progress" ? "進行中" : "未完了");
-      return tags;
+    function taskCategory(task) {
+      return String(task.category || "未分類");
     }
 
     function visibleTasks() {
@@ -1598,8 +1635,7 @@
       card.innerHTML = `
         <button class="check-button" type="button" aria-label="${status === "done" ? "タスクを未完了に戻す" : "タスクを完了にする"}"></button>
         <div class="task-copy">
-          <p class="task-name">${escapeHtml(task.title)}</p>
-          <p class="task-meta">${taskMeta(task, status).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</p>
+          <p class="task-name" title="${escapeHtml(task.title)}">${escapeHtml(task.title)}</p>
         </div>
         <div class="petal-burst" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       `;
@@ -1621,18 +1657,39 @@
       queueCount.textContent = `未同期 ${queued}`;
     }
 
-    function renderTasks() {
-      const items = visibleTasks();
-      const now = Date.now();
-      taskList.innerHTML = "";
-      items
+    function sortVisibleGroup(items, now) {
+      return items
         .slice()
         .sort((a, b) => {
           const aDoneAndReleased = taskStatus(a) === "done" && !isRecentlyDone(a, now);
           const bDoneAndReleased = taskStatus(b) === "done" && !isRecentlyDone(b, now);
           return Number(aDoneAndReleased) - Number(bDoneAndReleased);
-        })
-        .forEach((task) => taskList.appendChild(createCard(task)));
+        });
+    }
+
+    function renderTasks() {
+      const items = visibleTasks();
+      const now = Date.now();
+      const groups = new Map();
+      taskList.innerHTML = "";
+      items.forEach((task) => {
+        const category = taskCategory(task);
+        if (!groups.has(category)) groups.set(category, []);
+        groups.get(category).push(task);
+      });
+      groups.forEach((tasks, category) => {
+        const group = document.createElement("section");
+        group.className = "category-group";
+        const remaining = tasks.filter((task) => taskStatus(task) !== "done").length;
+        group.innerHTML = `
+          <div class="category-title">
+            <h3>${escapeHtml(category)}</h3>
+            <span>${remaining ? `残り${remaining}` : "完了"}</span>
+          </div>
+        `;
+        sortVisibleGroup(tasks, now).forEach((task) => group.appendChild(createCard(task)));
+        taskList.appendChild(group);
+      });
       refresh();
       scheduleDoneHoldRefresh(now);
     }
@@ -1713,7 +1770,7 @@
         console.error(error);
         allTasks = [];
         syncLabel.textContent = "読み込みに失敗";
-        taskList.innerHTML = '<article class="task-card"><div class="task-copy"><p class="task-name">tasks.json を読み込めませんでした</p><p class="task-meta"><span class="tag">再読み込みしてください</span></p></div></article>';
+        taskList.innerHTML = '<article class="task-card"><div class="task-copy"><p class="task-name">tasks.json を読み込めませんでした</p></div></article>';
       }
       setFilter(activeFilter);
     }

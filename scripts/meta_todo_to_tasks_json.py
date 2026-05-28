@@ -18,6 +18,7 @@ DEFAULT_OUTPUT = Path(__file__).resolve().parents[1] / "site-public" / "tasks.js
 CHECKBOX_RE = re.compile(
     r"^(?P<indent>\s*)-\s+\[(?P<mark>[ xX])\]\s+(?P<body>.*?)(?:\s*<!--\s*mtodo:(?P<id>[^>\s]+)\s*-->)?\s*$"
 )
+HEADING_RE = re.compile(r"^(?P<level>#{2,3})\s+(?P<title>.+?)\s*$")
 
 
 def clean_title(body: str) -> str:
@@ -29,6 +30,11 @@ def clean_title(body: str) -> str:
     body = re.sub(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]", lambda m: m.group(2) or Path(m.group(1)).name, body)
     body = re.sub(r"\s+", " ", body)
     return body.strip(" ;、。")
+
+
+def clean_heading(title: str) -> str:
+    title = re.sub(r"^\d+[.．、]\s*", "", title.strip())
+    return title.strip(" ;、。")
 
 
 def priority_for(title: str, status: str) -> str:
@@ -69,8 +75,20 @@ def assignee_for(title: str) -> str:
 def parse_meta_todo(path: Path) -> list[dict[str, str]]:
     tasks: list[dict[str, str]] = []
     seen_ids: set[str] = set()
+    current_category = "未分類"
+    current_section = ""
 
     for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        heading = HEADING_RE.match(line)
+        if heading:
+            title = clean_heading(heading.group("title"))
+            if heading.group("level") == "##":
+                current_category = title or "未分類"
+                current_section = ""
+            else:
+                current_section = title
+            continue
+
         match = CHECKBOX_RE.match(line)
         if not match:
             continue
@@ -97,6 +115,9 @@ def parse_meta_todo(path: Path) -> list[dict[str, str]]:
                 "status": status,
                 "priority": priority_for(title, status),
                 "assignee": assignee_for(title),
+                "category": current_section or current_category,
+                "parentCategory": current_category,
+                "section": current_section,
             }
         )
 

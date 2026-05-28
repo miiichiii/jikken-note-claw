@@ -31,28 +31,20 @@ Avoid:
 
 ## Canonical Page Structure
 
-Preserve this order unless the user explicitly asks for a structural redesign:
+Current production order:
 
 1. Top navigation with back button, sync pill, and small settings button
-2. Floral hero card: `Mission Control · Task Board`, `今日のタスク`, progress orb, short behavioral note
-3. Two small textile/material cards:
-   - `Color sample`
-   - `Color trial`
-4. Background switcher:
-   - 濃いペイズリー
-   - 花びら散布
-   - 枝葉の森
-   - 絵の具の尾
-5. Segmented filter:
+2. Compact floral hero card: `Mission Control · Task Board`, one-line `今日のタスク`, progress orb, short hold-note only
+3. Segmented filter:
    - 全部
    - 自分
    - Bot
-6. Section title and count
-7. One-column task list
-8. Sync memo
-9. Sticky bottom action bar
+4. Section title and count
+5. Categorized task list, grouped by headings parsed from Obsidian `Meta TODO.md`
+6. Background switcher, below the task list so tasks appear immediately
+7. Sticky bottom action bar
 
-The page should stay centered in a narrow mobile-first shell. Desktop may center the same shell; do not turn it into a wide multi-column dashboard by default.
+The page should stay mobile-first and centered. Desktop should be wider than phone (`~720px`) so task titles are easier to scan, but still remain a single focused column rather than a broad dashboard.
 
 ## Typography
 
@@ -65,7 +57,7 @@ Use the rounded Japanese UI stack from the current HTML:
 Keep type compact and dense:
 - Hero title: large, rounded, high weight, but not a landing-page hero scale
 - Task title: about `15px`, heavy weight, line-height around `1.45`
-- Meta tags: small, rounded, dense
+- Task titles render as one-line ellipsized rows in production for faster scanning
 - Buttons: bold, rounded, symbol-friendly
 
 Do not introduce serif display fonts, tech monospace branding, or oversized marketing typography.
@@ -134,6 +126,7 @@ Liquid glass applies to whole task cards, not only buttons. Cards should have de
 ## Background System
 
 The user explicitly wants background mood switching. Preserve the four-mode switcher and local preference storage.
+The switcher should not appear before tasks. Keep it below the task list or otherwise out of the first task-scanning area.
 
 Current background assets:
 - `assets/generated-dark-paisley.webp`
@@ -160,10 +153,12 @@ Default background should be `paint` unless the user asks otherwise.
 Task cards are the main UI object. Preserve:
 - one task per rounded liquid-glass card
 - check button on the left
-- task title and meta tags on the right
-- `#id`, `@assignee`, `Priority`, and status tags
+- one-line task title on the right
+- category grouping from Meta TODO headings
 - done tasks sorted after unfinished tasks
 - category-like color variation through `nth-child` styling
+
+Do not show implementation/meta tags (`#id`, `@assignee`, `Priority`, status chips, source IDs, or sync explanations) in the visible card list. Those can exist in `tasks.json` for internal logic but should not clutter the public UI.
 
 Done state:
 - use `.task-card.is-done`
@@ -240,7 +235,7 @@ site-public/tasks.json
 
 Local browser checking is temporary UI state only. Agent-side permanent updates must edit `Meta TODO.md`, run the MetaTODO Task Board Agent, and let it regenerate `tasks.json`, commit, push, deploy, and verify.
 
-The on-page sync memo should say that the board reads `tasks.json` generated from Obsidian `Meta TODO`, and that permanent changes are written back to Meta TODO.
+The normal production UI should not show a long sync memo before or after the task list. If debugging text is temporarily needed, it may say that the board reads `tasks.json` generated from Obsidian `Meta TODO`, but operational notes should stay out of the normal task-scanning flow.
 
 ## Responsive Rules
 
