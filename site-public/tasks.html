@@ -1500,10 +1500,12 @@
     const localStateKey = "taskBoardLocalStateV2";
     const backgroundKey = "taskBoardBackgroundChoiceV2";
     const toggleDelayMs = 100;
+    const doneHoldMs = 60 * 60 * 1000;
     const sparkleDurationMs = 1280;
     let queued = 0;
     let allTasks = [];
     let activeFilter = localStorage.getItem("taskBoardFilterV2") || "all";
+    let doneHoldTimer = null;
 
     function escapeHtml(value) {
       return String(value ?? "").replace(/[&<>"']/g, (char) => ({
@@ -1529,6 +1531,32 @@
 
     function taskStatus(task) {
       return readLocalState()[task.id]?.status || task.status || "todo";
+    }
+
+    function taskLocalState(task) {
+      return readLocalState()[task.id] || {};
+    }
+
+    function isRecentlyDone(task, now = Date.now()) {
+      const state = taskLocalState(task);
+      if (state.status !== "done" || !state.updatedAt) return false;
+      return now - state.updatedAt < doneHoldMs;
+    }
+
+    function scheduleDoneHoldRefresh(now = Date.now()) {
+      window.clearTimeout(doneHoldTimer);
+      const nextRelease = visibleTasks()
+        .map((task) => {
+          const state = taskLocalState(task);
+          if (state.status !== "done" || !state.updatedAt) return null;
+          const remaining = doneHoldMs - (now - state.updatedAt);
+          return remaining > 0 ? remaining : null;
+        })
+        .filter(Boolean)
+        .sort((a, b) => a - b)[0];
+      if (nextRelease) {
+        doneHoldTimer = window.setTimeout(renderTasks, nextRelease + 250);
+      }
     }
 
     function taskAssignee(task) {
@@ -1595,12 +1623,18 @@
 
     function renderTasks() {
       const items = visibleTasks();
+      const now = Date.now();
       taskList.innerHTML = "";
       items
         .slice()
-        .sort((a, b) => Number(taskStatus(a) === "done") - Number(taskStatus(b) === "done"))
+        .sort((a, b) => {
+          const aDoneAndReleased = taskStatus(a) === "done" && !isRecentlyDone(a, now);
+          const bDoneAndReleased = taskStatus(b) === "done" && !isRecentlyDone(b, now);
+          return Number(aDoneAndReleased) - Number(bDoneAndReleased);
+        })
         .forEach((task) => taskList.appendChild(createCard(task)));
       refresh();
+      scheduleDoneHoldRefresh(now);
     }
 
     function sparkle(card) {

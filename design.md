@@ -186,6 +186,7 @@ Do not restore black text, heavy deletion lines, or old dark-card completion sty
 Check completion behavior:
 - Delay visual status change by `100ms`
 - Keep the tiny pause; it makes the tap feel intentional
+- When a task is checked done locally, keep it in its current unfinished-list position for 1 hour before releasing it into the completed section. This prevents tapped tasks from jumping out of view while the user is still scanning.
 - Trigger petal sparkle only when marking a task done
 - Keep reduced-motion support
 
@@ -195,6 +196,7 @@ Canonical constants:
 const localStateKey = "taskBoardLocalStateV2";
 const backgroundKey = "taskBoardBackgroundChoiceV2";
 const toggleDelayMs = 100;
+const doneHoldMs = 60 * 60 * 1000;
 const sparkleDurationMs = 1280;
 ```
 
