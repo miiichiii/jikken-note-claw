@@ -206,7 +206,15 @@ Petal sparkle:
 
 ## Data Rules
 
-Production `tasks.html` must read public static task data from:
+Obsidian `Meta TODO.md` is the upstream task source. The public board must not be edited by hand as an independent source of truth.
+
+Generate the public JSON with:
+
+```bash
+python3 scripts/meta_todo_to_tasks_json.py
+```
+
+Production `tasks.html` must read the generated static task data from:
 
 ```js
 fetch("tasks.json", { cache: "no-store" })
@@ -214,13 +222,19 @@ fetch("tasks.json", { cache: "no-store" })
 
 Do not make the public static page depend on `/api/task-board/tasks` unless that endpoint is actually implemented and verified. A previous regression came from pointing the page at a missing API.
 
-Permanent task changes belong in:
+Permanent task changes belong upstream in:
+
+```text
+/Users/michito/Library/Mobile Documents/iCloud~md~obsidian/Documents/Hamada_Obsidian/Meta TODO.md
+```
+
+Then regenerate and publish:
 
 ```text
 site-public/tasks.json
 ```
 
-Local browser checking is temporary UI state only. Agent-side permanent updates must edit `tasks.json`, commit, push, and deploy.
+Local browser checking is temporary UI state only. Agent-side permanent updates must edit `Meta TODO.md`, regenerate `tasks.json`, commit, push, and deploy.
 
 ## Responsive Rules
 

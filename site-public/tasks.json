@@ -1,407 +1,352 @@
 [
   {
-    "id": "task-0",
-    "title": "4月の授業予定（医療大学・筑波大学・看護学校）をカレンダーに登録する",
+    "id": "mtodo-scansnap-20260522-kll3458",
+    "title": "要確認: 給与通知書の確認と提出。ScanSnap自動判定で締切/日付/内容を確定できず。Source PDF: `90_Processed/ScanSnap_PDFs/20260522_(kll3458).pdf`",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-scansnap-20260522-labor-conditions",
+    "title": "5/31まで: 労働条件通知書を読み、非常勤講師の業務内容・労働条件を確認/理解する。Source PDF: `90_Processed/ScanSnap_PDFs/20260522_労働条件通知書.pdf`",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-4d44671c961b",
+    "title": "5/29目安（ScanSnap通知は5/31）: 令和7年度後期 科目別満足度調査・学生からの自由意見に対する教員回答を作成・送付する。Source PDF: `90_Processed/ScanSnap_PDFs/20260529_令和7年度後期科目別満足度調査学生からの自由意見に対する教員の回答について_001.pdf`",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-scansnap-20260518-satisfaction-results",
+    "title": "5/29まで: 令和7年度後期 科目別満足度調査結果を学内公表し、教員からの回答を受付・整理する。Source PDF: `90_Processed/ScanSnap_PDFs/20260518_令和7年度後期科目別満足度調査の結果について.pdf`",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot"
+  },
+  {
+    "id": "mtodo-0e8f385e521d",
+    "title": "5/24（日）まで: 研究支援に、マウス飼育費について確認するメールを書く。Source: センセイ Telegram 2026-05-19 05:13, 05:15",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot"
+  },
+  {
+    "id": "mtodo-5a1a68650639",
+    "title": "6/11（木）16:00: 同 基盤Cの研究成果報告書を提出する。Source: センセイ Telegram 2026-05-12 21:15",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-a590005f387d",
+    "title": "5/20締切: R8前期 成績評価方法・期末試験日程調査への回答（2026-05-20 センセイ報告: 成績方法登録済み）",
     "status": "done",
-    "priority": "B",
-    "assignee": "Bot"
-  },
-  {
-    "id": "task-1",
-    "title": "兼業届（筑波大解剖実習・看護学校授業）を至急作成・提出する",
-    "status": "todo",
-    "priority": "B",
+    "priority": "C",
     "assignee": "Me"
   },
   {
-    "id": "task-2",
-    "title": "生化学会の会費を3月末までに支払う",
+    "id": "mtodo-10b0aab96161",
+    "title": "5/27〜29: 助産学専攻科 学内選抜 出願受付",
     "status": "todo",
-    "priority": "B",
+    "priority": "A",
     "assignee": "Me"
   },
   {
-    "id": "task-3",
-    "title": "令和８年度動物実験計画書及び令和７年度動物実験結果報告書を作成し、3/23(月)までに提出",
+    "id": "mtodo-1d41c5079d46",
+    "title": "5/31: 大学院入試説明会の可能性",
     "status": "todo",
-    "priority": "B",
+    "priority": "A",
     "assignee": "Me"
   },
   {
-    "id": "task-4",
-    "title": "納豆抽出物をタカのフーズから受け取る",
+    "id": "mtodo-30c026599f62",
+    "title": "6/1: 入試実施部会",
     "status": "todo",
-    "priority": "B",
-    "assignee": "Bot"
-  },
-  {
-    "id": "task-5",
-    "title": "MCTOの次のtodoは末梢血解析",
-    "status": "todo",
-    "priority": "B",
+    "priority": "A",
     "assignee": "Me"
   },
   {
-    "id": "task-6",
-    "title": "高橋先生の退官記念式典についての昨日の会議のまとめをやる",
+    "id": "mtodo-65e40eb66245",
+    "title": "6/2(火) 第17回 筑波大学系統解剖実習ショートレクチャー資料を準備する（頭部離断・咽頭・喉頭／腹膜・腹膜腔・腹部内臓）。Source: [[10_Projects/Education/筑波大学/解剖学実習/2026-04-23_系統解剖実習予定とショートレクチャー]]; 2026-05-19確認では専用完成資料未発見",
     "status": "todo",
-    "priority": "B",
-    "assignee": "Bot"
-  },
-  {
-    "id": "task-7",
-    "title": "MCTO FACS解析の進捗を整理・実施する",
-    "status": "todo",
-    "priority": "B",
+    "priority": "A",
     "assignee": "Me"
   },
   {
-    "id": "task-8",
-    "title": "ユージニアさんに餌の購入要否を確認する",
+    "id": "mtodo-b4544dc69c37",
+    "title": "6/16(火) 第27回 筑波大学系統解剖実習ショートレクチャー資料を準備する（翼突管・頚動脈管・耳神経節／骨盤壁・骨盤内臓）。Source: [[10_Projects/Education/筑波大学/解剖学実習/2026-04-23_系統解剖実習予定とショートレクチャー]]; 2026-05-19確認では専用完成資料未発見",
     "status": "todo",
-    "priority": "B",
+    "priority": "A",
     "assignee": "Me"
   },
   {
-    "id": "task-9",
-    "title": "動物実験従事者登録関連の手続き（更新/書類提出など）を整理して進める",
+    "id": "mtodo-23508cda7fa7",
+    "title": "5/22・5/29: 総合画像情報特論（重複登録あり、要確認）",
     "status": "todo",
-    "priority": "B",
+    "priority": "A",
     "assignee": "Me"
   },
   {
-    "id": "task-10",
-    "title": "確定申告の準備（必要書類の収集・期限確認）を進める",
+    "id": "mtodo-38b5c91dbddb",
+    "title": "2026-08-05(水) 2限 10:40-12:10: 人体の構造 期末試験（Google Calendar登録済み）",
     "status": "todo",
-    "priority": "B",
+    "priority": "A",
     "assignee": "Me"
   },
   {
-    "id": "task-11",
-    "title": "実習室で使う頭蓋骨の3Dプリント模型をもう一つ作る",
+    "id": "mtodo-d6ab63c9f589",
+    "title": "2026-08-10(月) 2限 10:40-12:10: 人体の構造と機能 期末試験（Google Calendar登録済み）",
     "status": "todo",
-    "priority": "B",
+    "priority": "A",
     "assignee": "Me"
   },
   {
-    "id": "task-12",
-    "title": "実習室のサンプルが乾燥しないよう、新しい乾燥剤を置きに行く",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-13",
-    "title": "実習室で追加購入が必要なものを確認し、リスト化する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-14",
-    "title": "可能なら実習室のプロジェクターを更新する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-15",
-    "title": "不要な巨大レーザープリンターの廃棄を進める",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-16",
-    "title": "人の赤ちゃんの骨の模型を展示できるよう工夫する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-17",
-    "title": "生化学会の2026年度会費支払い状況を確認し、未納なら3/31までに手続きする",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-18",
-    "title": "組換えDNA実験の提出書類（従事者登録申請書・計画承認申請書・計画書・経過/終了報告書）を3/17正午締切に向けて準備し、教務課の鈴木先生へ本日の進捗報告を送る",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-19",
-    "title": "【退官記念】高橋先生との面談を実施し、日程・会場・形式・演者方針を確認する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-20",
-    "title": "【退官記念】LINEやFacebookでつながっている方々に案内を送る",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-21",
-    "title": "【退官記念】伊田さんに共有するための業者リストを作成する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-22",
-    "title": "【退官記念】鈴木孝文先生に共有するため、東北大の先生方のリストを作成する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-23",
-    "title": "【年度替わり片付け案件】退職・異動に伴う実験台、冷凍冷蔵庫、-30℃フリーザー、4階マウス室、ロッカー周りの整理をまとめて進める",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-24",
-    "title": "筋肉G用に、Liaoくん・大木さんが使っていた実験台と横のシャープ製冷凍冷蔵庫の中身を整理・空にする",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-25",
-    "title": "壁面の-30℃フリーザー3台のうち、中央下段の2BOX（ラベルなし）を整理する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-26",
-    "title": "4階マウス室のラック整理が必要になる可能性あり。状況確認する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-27",
-    "title": "ロッカーの片付けを進める",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-28",
-    "title": "Jeonさんに論文について連絡する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-29",
-    "title": "【退官記念】高橋先生→川口先生→水野先生の順で合意形成を進める",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-30",
-    "title": "【退官記念】国際会議場の予約金5万円と、その後の4月支払いのフローを確定する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-31",
-    "title": "【退官記念】主要演者への日程確保依頼・候補リスト整理",
+    "id": "mtodo-3be5996235ec",
+    "title": "研究業績・高橋研業績リストの整理（退官記念ポスター/資料用）",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-32",
-    "title": "【退官記念】横村氏を含めた招待者リストの漏れ確認を行う",
+    "id": "mtodo-06c90705ebc7",
+    "title": "発表/講義資料の整理（5月授業・研究会）",
     "status": "todo",
     "priority": "B",
     "assignee": "Bot"
   },
   {
-    "id": "task-33",
-    "title": "【退官記念】協賛候補企業リストと協賛メニュー草案を作成する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Bot"
-  },
-  {
-    "id": "task-34",
-    "title": "【退官記念】案内状・出欠フォームの設計を開始する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Bot"
-  },
-  {
-    "id": "task-35",
-    "title": "【退官記念】当日運営のためのOB/OG・学生協力体制のたたき台を作る",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Bot"
-  },
-  {
-    "id": "task-36",
-    "title": "【退官記念】内藤先生（※要確認）に話す",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-37",
-    "title": "【退官記念】組み換えの件を出す",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-38",
-    "title": "team.html を毎晩コーディングAIで見直し・更新する自動運用を回す",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Bot"
-  },
-  {
-    "id": "task-39",
-    "title": "R7の動物実験計画書を工藤先生へ提出する（3/15締切）",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-40",
-    "title": "PubMed論文（PMID: 40416011）の要約を作成してセンセイに報告する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Bot"
-  },
-  {
-    "id": "task-41",
-    "title": "Science Feedbackの記事（COVIDワクチンと日本のデータに関する誤った主張のファクトチェック）を要約して保存する",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Bot"
-  },
-  {
-    "id": "task-42",
-    "title": "Aqua Voice Pro を解約する（4/14）",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-43",
-    "title": "R7の計画書に対応する動物実験結果報告書を作成する",
+    "id": "mtodo-e86c396e5415",
+    "title": "5/14・5/21: RUNX実験",
     "status": "done",
-    "priority": "B",
+    "priority": "C",
     "assignee": "Me"
   },
   {
-    "id": "task-44",
-    "title": "R7-8の動物実験計画書を作成する",
+    "id": "mtodo-730dafe7d364",
+    "title": "毎週土曜: マウス確認",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-45",
-    "title": "Northwestern Mafb flox マウスMTA対応（高橋先生より依頼）",
+    "id": "mtodo-6b1524e988b2",
+    "title": "AMED予算300万円を研究にどう活かすか、具体策を考える",
     "status": "todo",
     "priority": "B",
     "assignee": "Me"
   },
   {
-    "id": "task-46",
-    "title": "論文プレスリリース：筑波大広報局との共同リリース調整状況の把握",
+    "id": "mtodo-6bb507a61297",
+    "title": "AMEDヒアリング（林先生）: 5/13までにスライド協力・確認、5/28 14:45〜待機/15:00開始（Google Calendar登録済み）",
     "status": "todo",
-    "priority": "B",
+    "priority": "A",
     "assignee": "Me"
   },
   {
-    "id": "task-47",
-    "title": "退官記念パーティー未回答OBOG（約60名）への連絡・リマインド依頼対応",
+    "id": "mtodo-2cb0da52ae5c",
+    "title": "5/20: AMED関連提出を行う（Source: センセイ Telegram 2026-05-20 13:18）",
     "status": "todo",
-    "priority": "B",
+    "priority": "A",
     "assignee": "Me"
   },
   {
-    "id": "task-48",
-    "title": "高橋先生退官行事の出欠回答（期限: 3/31、https://forms.gle/AW5mttJk9veSUyLK8）",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-49",
-    "title": "組織解析室のロッカー移動（旧Natashaエリア）",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-50",
-    "title": "実験室の整理：Liaoくん/大木さんの実験台・冷蔵庫を空にする、-30℃フリーザー下段2BOXの整理",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-51",
-    "title": "遺伝子組換え書類の更新確認（Excelピンク色の欄）",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-52",
-    "title": "遺伝子組換え書類の更新確認（Excelピンク色の欄）",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-53",
-    "title": "増田先生の書類を事務に提出",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-54",
-    "title": "メールの容量を追加申請するメール",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-55",
-    "title": "モバイルwifiの購入を申請するメール",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "id": "task-56",
-    "title": "GraciaをMeta Questでダウンロードする",
-    "status": "todo",
-    "priority": "B",
-    "assignee": "Me"
-  },
-  {
-    "title": "研究支援課へ学振外国人特別研究員受け入れの件を連絡",
+    "id": "mtodo-53a0582d1fec",
+    "title": "高橋先生へ、ヒアリング進出・申請書上の筑波大生命科学動物資源センター実施計画・研究協力者記載を共有する",
     "status": "done",
-    "priority": "high",
-    "notes": "大学の研究支援課（または事務局の学術振興担当）へ連絡する。伝える内容: 『学振の外国人特別研究員を受け入れたいと考えている』『河野副学長には相談済みで、内諾をいただいている』『学内での申請締切と、必要な提出書類を教えてほしい』。副学長案件として迅速対応を促す意図。"
+    "priority": "C",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-948d370b110b",
+    "title": "筑波大での実施体制を確認する（客員研究員扱い、動物実験委員会承認、場所、人員、経胎盤移植/出生後解析の分担）",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-88bafe6ed22a",
+    "title": "最終提出PDF `E0204R01_20260218085758.pdf` をGmailからSynology科研費フォルダへ保存する",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-150ef3769800",
+    "title": "武田科学振興財団: 5/31までに研究結果報告提出",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-97fedf188190",
+    "title": "第一三共生命科学研究振興財団: 5/25開始に向けたメモ整理",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot"
+  },
+  {
+    "id": "mtodo-10198068b12d",
+    "title": "タカノフーズ共同研究契約書: 先方到着確認待ち",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-aa9d1606ed9f",
+    "title": "納豆プロジェクト: 実験記録・解析方針の整理",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "mtodo-50f46fb57048",
+    "title": "メール不明5名の扱いを決める（追加検索 / ハガキ / 他の先生に確認）",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "mtodo-e63dbe4cf214",
+    "title": "シンポジスト候補6名を整理（山本研3名・高橋研3名）",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "mtodo-229d3fad955a",
+    "title": "協賛依頼先・依頼文を作る",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "mtodo-e76775b6dc55",
+    "title": "会計/振込先情報を確定（井田さん既存ゆうちょ口座）",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-44d49fd04a86",
+    "title": "ポスター・写真素材・業績リストを整理",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "mtodo-5eae906f6e27",
+    "title": "井田さんに「マウス飼育費として50万円を出す」旨のメールを送る",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-971393a68c94",
+    "title": "毎週月曜など: お迎え予定確認",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-92ec855652e4",
+    "title": "5/6: 瑠生さんのアトピー治療薬注射（45分室温）",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-5ccd1573dde7",
+    "title": "5/15: 肉を買いに行く",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-6c9dc7f9e31f",
+    "title": "家族・学校関連メール（修学旅行/ベネッセ等）は必要時のみ確認",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-84b5d7be1925",
+    "title": "Google Cloud Billing 100% budget alert確認",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-47501e0853dd",
+    "title": "GitHub paper-curator Daily Paper Search failed の復旧要否確認",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "mtodo-80eafcb4c430",
+    "title": "5/13: WORLDコイン受け取り",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-495dac665ccc",
+    "title": "実習室で見つかった、おそらく新生児の骨標本（段ボール保管）を展示できるよう対応する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-fde83f0c93bd",
+    "title": "Gmail/カレンダー由来TODOの定期見直し",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot"
+  },
+  {
+    "id": "mtodo-e6e2dadf69f5",
+    "title": "2026-05-31 【重要】武田科学振興財団：研究結果報告の提出について（日下先生） 締切（メール: \"日下 浩樹\" <kusaka.koki.gu@un.tsukuba.ac.jp> / RE: 【重要】武田科学振興財団：研究結果報告の提出について / id:19e3ef12e5f181cf）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-87ef3154cb23",
+    "title": "2028-03-31 【重要】武田科学振興財団：研究結果報告の提出について（日下先生） 締切（メール: \"日下 浩樹\" <kusaka.koki.gu@un.tsukuba.ac.jp> / RE: 【重要】武田科学振興財団：研究結果報告の提出について / id:19e3ef12e5f181cf）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-0fb5433d0ef2",
+    "title": "2026-05-31 【重要】武田科学振興財団：研究結果報告の提出について 締切（メール: Yukiyo IDA <ms00i218@md.tsukuba.ac.jp> / Re: 【重要】武田科学振興財団：研究結果報告の提出について / id:19e3f3b1f4499963）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-79d3c93a7f09",
+    "title": "2028-03-31 【重要】武田科学振興財団：研究結果報告の提出について 締切（メール: Yukiyo IDA <ms00i218@md.tsukuba.ac.jp> / Re: 【重要】武田科学振興財団：研究結果報告の提出について / id:19e3f3b1f4499963）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-7d02208f4b92",
+    "title": "2026-05-19 アドリアマイシン投与_糸球体単離実験 締切（メール: Eiji WARABI <warabi-e@md.tsukuba.ac.jp> / Re: アドリアマイシン投与_糸球体単離実験 / id:19e4017af69c333b）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me"
+  },
+  {
+    "id": "mtodo-93014281f844",
+    "title": "2026-05-20 [ipu] Fw: （追加連絡）【依頼：５/20（水）〆切】R８前期科目 締切（メール: hamamicchi@gmail.com / [ipu] Fw: （追加連絡）【依頼：５/20（水）〆切】R８前期科目の成績評価方法及び期末試験日程について / id:19e3f88e0a0d2acf）完了: 2026-05-20 センセイ報告",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me"
   }
 ]
