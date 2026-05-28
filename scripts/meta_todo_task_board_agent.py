@@ -224,6 +224,16 @@ def main() -> int:
         )
 
         if not changed:
+            public_verify = verify_public(timeout_seconds=15)
+            state["public_verify"] = public_verify
+            if not public_verify.get("ok") and not args.dry_run and not args.no_deploy:
+                state["deploy"] = deploy()
+                state["public_verify"] = verify_public()
+                state["status"] = "redeployed_drift" if state["public_verify"].get("ok") else "deploy_unverified"
+                state["finished_at"] = datetime.now(timezone.utc).isoformat()
+                write_state(state)
+                print(json.dumps(state, ensure_ascii=False, indent=2))
+                return 0
             write_state(state)
             print(f"no change ({len(tasks)} tasks, {state['done']} done)")
             return 0
