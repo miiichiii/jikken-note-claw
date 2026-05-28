@@ -44,7 +44,13 @@ Current production order:
 6. Background switcher, below the task list so tasks appear immediately
 7. Sticky bottom action bar
 
-The page should stay mobile-first and centered. Desktop should be wider than phone (`~720px`) so task titles are easier to scan, but still remain a single focused column rather than a broad dashboard.
+The page should stay mobile-first and centered on phones. Desktop should widen with the viewport:
+- phone: one task/category column
+- tablet/narrow desktop: one readable `~720px` column
+- desktop: two category columns from `1040px`
+- wide desktop: three category columns from `1360px`
+
+Do not turn it into a dense admin dashboard. The wider layout is only for faster PC scanning: category panels should wrap into two or three calm columns while preserving the floral notebook feeling.
 
 ## Typography
 
@@ -155,6 +161,7 @@ Task cards are the main UI object. Preserve:
 - check button on the left
 - one-line task title on the right
 - category grouping from Meta TODO headings
+- responsive PC layout with category panels in two or three columns when the window is wide enough
 - done tasks sorted after unfinished tasks
 - category-like color variation through `nth-child` styling
 
