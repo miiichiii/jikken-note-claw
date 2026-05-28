@@ -34,6 +34,7 @@
         }
     </script>
     <style>
+        /* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 */
         body {
             background-color: #020617;
             background-image:
@@ -120,19 +121,52 @@
         }
 
         body.floral-task-board {
+            --mood-wash: linear-gradient(145deg, rgba(244, 228, 207, 0.66), rgba(29, 45, 38, 0.22));
+            --mood-spot-one: radial-gradient(circle at 14% 16%, rgba(141, 189, 139, 0.18) 0 8%, transparent 23%);
+            --mood-spot-two: radial-gradient(circle at 86% 18%, rgba(35, 140, 130, 0.16) 0 9%, transparent 24%);
+            --mood-texture: url("assets/generated-branch-forest.webp");
+            --mood-base: linear-gradient(132deg, #d7c8a4 0%, #7f8a62 44%, #253f38 100%);
+            --mood-texture-size: 560px 560px;
             color: var(--color-ink);
             font-family: var(--font-ui);
             font-feature-settings: "palt" 1;
             background:
-                linear-gradient(145deg, rgba(255, 248, 236, 0.42), rgba(36, 29, 39, 0.24)),
-                radial-gradient(circle at 14% 16%, rgba(201, 46, 88, 0.16) 0 8%, transparent 23%),
-                radial-gradient(circle at 86% 18%, rgba(23, 110, 183, 0.16) 0 9%, transparent 24%),
-                url("assets/slow-mixed-paint-generated.webp"),
+                var(--mood-wash),
+                var(--mood-spot-one),
+                var(--mood-spot-two),
+                var(--mood-texture),
                 repeating-linear-gradient(122deg, rgba(49, 34, 39, 0.06) 0 1px, transparent 1px 12px),
-                linear-gradient(132deg, #f0d5b1 0%, #ba9368 44%, #516d57 100%);
-            background-size: auto, auto, auto, 520px 520px, auto, auto;
+                var(--mood-base);
+            background-size: auto, auto, auto, var(--mood-texture-size), auto, auto;
             background-position: center, center, center, center top, center, center;
             min-height: 100dvh;
+        }
+
+        body.floral-task-board[data-bg="paint"] {
+            --mood-wash: linear-gradient(145deg, rgba(255, 248, 236, 0.42), rgba(36, 29, 39, 0.24));
+            --mood-spot-one: radial-gradient(circle at 14% 16%, rgba(201, 46, 88, 0.16) 0 8%, transparent 23%);
+            --mood-spot-two: radial-gradient(circle at 86% 18%, rgba(23, 110, 183, 0.16) 0 9%, transparent 24%);
+            --mood-texture: url("assets/slow-mixed-paint-generated.webp");
+            --mood-base: linear-gradient(132deg, #f0d5b1 0%, #ba9368 44%, #516d57 100%);
+            --mood-texture-size: 520px 520px;
+        }
+
+        body.floral-task-board[data-bg="petals"] {
+            --mood-wash: linear-gradient(145deg, rgba(255, 248, 236, 0.52), rgba(76, 38, 58, 0.24));
+            --mood-spot-one: radial-gradient(circle at 16% 18%, rgba(213, 140, 150, 0.22) 0 9%, transparent 25%);
+            --mood-spot-two: radial-gradient(circle at 84% 16%, rgba(240, 193, 48, 0.16) 0 8%, transparent 23%);
+            --mood-texture: url("assets/generated-scattered-petals.webp");
+            --mood-base: linear-gradient(132deg, #f2d9bf 0%, #c28f87 42%, #526a62 100%);
+            --mood-texture-size: 560px 560px;
+        }
+
+        body.floral-task-board[data-bg="paisley"] {
+            --mood-wash: linear-gradient(145deg, rgba(255, 248, 236, 0.34), rgba(33, 23, 46, 0.44));
+            --mood-spot-one: radial-gradient(circle at 14% 16%, rgba(183, 166, 223, 0.18) 0 9%, transparent 25%);
+            --mood-spot-two: radial-gradient(circle at 84% 18%, rgba(226, 107, 67, 0.16) 0 8%, transparent 24%);
+            --mood-texture: url("assets/generated-dark-paisley.webp");
+            --mood-base: linear-gradient(132deg, #d8c5b2 0%, #8d6c77 46%, #35345c 100%);
+            --mood-texture-size: 560px 560px;
         }
 
         .floral-task-board .scanline {
@@ -181,7 +215,7 @@
         }
 
         .floral-task-board .glass-panel {
-            background: linear-gradient(155deg, rgba(255, 248, 236, 0.62), rgba(255, 255, 255, 0.34));
+            background: linear-gradient(155deg, rgba(255, 248, 236, 0.76), rgba(255, 255, 255, 0.48));
             border: 1px solid rgba(255, 255, 255, 0.42);
             box-shadow: var(--shadow-liquid);
             color: var(--color-ink);
@@ -261,10 +295,61 @@
             line-height: 1.7;
         }
 
+        .mood-toolbar {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-top: 4px;
+        }
+
+        .mood-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            min-height: 34px;
+            padding: 0 11px 0 8px;
+            border: 1px solid rgba(255, 255, 255, 0.36);
+            border-radius: 999px;
+            color: var(--color-ink-soft);
+            background: rgba(255, 255, 255, 0.32);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.44);
+            font-size: 11px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform 160ms ease, background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+        }
+
+        .mood-button:hover,
+        .mood-button.is-active {
+            color: var(--color-ink);
+            background: rgba(255, 248, 236, 0.58);
+            box-shadow: var(--shadow-liquid);
+        }
+
+        .mood-button:active {
+            transform: translateY(1px);
+            box-shadow: var(--shadow-liquid-pressed);
+        }
+
+        .mood-swatch {
+            width: 18px;
+            height: 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.62);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mood-swatch.forest { background-image: url("assets/generated-branch-forest.webp"); }
+        .mood-swatch.paint { background-image: url("assets/slow-mixed-paint-generated.webp"); }
+        .mood-swatch.petals { background-image: url("assets/generated-scattered-petals.webp"); }
+        .mood-swatch.paisley { background-image: url("assets/generated-dark-paisley.webp"); }
+
         .task-column {
             padding: 14px;
             border-radius: 28px;
-            background: rgba(255, 248, 236, 0.32);
+            background: rgba(255, 248, 236, 0.54);
             border: 1px solid rgba(255, 255, 255, 0.32);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
         }
@@ -489,6 +574,16 @@
                 grid-template-columns: 1fr;
             }
 
+            .mood-toolbar {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .mood-button {
+                justify-content: flex-start;
+                width: 100%;
+            }
+
             .progress-orb {
                 width: 74px;
                 height: 74px;
@@ -583,6 +678,20 @@
                 <p class="board-summary-detail">
                     チェック操作は0.1秒だけためてから反映し、完了カードは横線なしの白っぽいグレーで表示します。
                 </p>
+            </div>
+            <div class="mood-toolbar" aria-label="背景">
+                <button type="button" class="mood-button" data-background-choice="forest" aria-pressed="false">
+                    <span class="mood-swatch forest" aria-hidden="true"></span>Forest
+                </button>
+                <button type="button" class="mood-button" data-background-choice="paint" aria-pressed="false">
+                    <span class="mood-swatch paint" aria-hidden="true"></span>Paint
+                </button>
+                <button type="button" class="mood-button" data-background-choice="petals" aria-pressed="false">
+                    <span class="mood-swatch petals" aria-hidden="true"></span>Petals
+                </button>
+                <button type="button" class="mood-button" data-background-choice="paisley" aria-pressed="false">
+                    <span class="mood-swatch paisley" aria-hidden="true"></span>Paisley
+                </button>
             </div>
         </section>
 
@@ -706,9 +815,11 @@
         const OWNER_TOKEN_KEY = 'taskBoardOwnerToken';
         const OWNER_SESSION_KEY = 'taskBoardOwnerSession';
         const OWNER_SESSION_EXP_KEY = 'taskBoardOwnerSessionExpiresAt';
+        const BACKGROUND_CHOICE_KEY = 'taskBoardBackgroundChoice';
         const BRIDGE_PENDING_SECONDS = 10;
         const LOAD_INTERVAL_MS = 30000;
         const TOGGLE_DELAY_MS = 100;
+        const BACKGROUND_CHOICES = new Set(['forest', 'paint', 'petals', 'paisley']);
 
         let lastLoadedTasks = [];
         let syncState = 'offline';
@@ -744,6 +855,22 @@
                 '"': '&quot;',
                 "'": '&#39;'
             }[char]));
+        }
+
+        function getBackgroundChoice() {
+            const stored = localStorage.getItem(BACKGROUND_CHOICE_KEY) || '';
+            return BACKGROUND_CHOICES.has(stored) ? stored : 'forest';
+        }
+
+        function applyBackgroundChoice(choice) {
+            const selected = BACKGROUND_CHOICES.has(choice) ? choice : 'forest';
+            document.body.dataset.bg = selected;
+            localStorage.setItem(BACKGROUND_CHOICE_KEY, selected);
+            document.querySelectorAll('[data-background-choice]').forEach(button => {
+                const isActive = button.dataset.backgroundChoice === selected;
+                button.classList.toggle('is-active', isActive);
+                button.setAttribute('aria-pressed', String(isActive));
+            });
         }
 
         function getOwnerToken() { return localStorage.getItem(OWNER_TOKEN_KEY) || ''; }
@@ -966,6 +1093,12 @@
         }
 
         document.addEventListener('click', async e => {
+            const backgroundButton = e.target.closest('button[data-background-choice]');
+            if (backgroundButton) {
+                applyBackgroundChoice(backgroundButton.dataset.backgroundChoice);
+                return;
+            }
+
             const btn = e.target.closest('button[data-action]');
             if (!btn) return;
             const { action, taskId } = btn.dataset;
@@ -1057,6 +1190,7 @@
         };
 
         // Init
+        applyBackgroundChoice(getBackgroundChoice());
         loadTasks();
         setInterval(loadTasks, LOAD_INTERVAL_MS);
     </script>
