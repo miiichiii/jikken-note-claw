@@ -68,6 +68,8 @@ def load_tasks() -> list[dict[str, object]]:
     data = json.loads(TASKS_JSON.read_text(encoding="utf-8"))
     if not isinstance(data, list):
         raise RuntimeError("tasks.json must contain a JSON array")
+    if not data:
+        raise RuntimeError("refusing to publish 0 tasks from Meta TODO")
     for index, task in enumerate(data):
         if not isinstance(task, dict):
             raise RuntimeError(f"task #{index + 1} is not an object")
@@ -85,9 +87,9 @@ def prepare_meta_todo_source() -> Path | None:
     result = run(
         [
             OBSIDIAN_BIN,
-            f"vault={OBSIDIAN_VAULT_NAME}",
             "read",
             f"path={OBSIDIAN_SOURCE_REL}",
+            f"vault={OBSIDIAN_VAULT_NAME}",
         ]
     )
     source_copy.write_text(result.stdout, encoding="utf-8")
