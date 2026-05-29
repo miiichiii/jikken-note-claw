@@ -290,6 +290,126 @@
     "section": "共同研究・グラント"
   },
   {
+    "id": "mtodo-private-grants-20260531-setup",
+    "title": "2026-05-31まで: 民間研究助成2026の大学事務一括照会メール、公式要項保存、代表業績/添付論文候補、Core A/B骨子、鈴木万平セットアップ説明段落を準備する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260601-office-lotte",
+    "title": "2026-06-01午前: 民間研究助成候補一覧と内部締切を大学事務へ照会し、ロッテB共同研究者候補へ打診する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260603-lotte-gate",
+    "title": "2026-06-03: ロッテ財団Bの35歳以下共同研究者候補を確定し、Go/No-Go判定する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260605-sunbor-suzuki",
+    "title": "2026-06-05: SUNBOR適合/研究費制限を確認し、鈴木万平セットアップ助成の必要書類と推薦者ルートを確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260610-chugai-terumo",
+    "title": "2026-06-10: 中外創薬科学財団はSRG2022か研究助成金Iのどちらかに決め、テルモの推薦・押印が間に合うか判断する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260612-suzuki-lotte",
+    "title": "2026-06-12: 鈴木万平セットアップ助成の申請ストーリーを固定し、ロッテBを出す場合は本文80%まで作る",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260617-june-80pct",
+    "title": "2026-06-17: 6月締切の民間研究助成本文を80%完成させ、未達なら応募先をさらに絞る",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260622-deadlines",
+    "title": "2026-06-22まで: ロッテB提出、SUNBOR提出、鈴木万平セットアップの仮学内締切対応を進める",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260629-june-submit-suzuki",
+    "title": "2026-06-29まで: 中外提出、テルモは推薦・押印が通る場合のみ提出候補完成、鈴木万平本文・予算・推薦書類をほぼ完成させる",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260703-suzuki-submit",
+    "title": "2026-07-03まで: 鈴木万平糖尿病財団セットアップ調査研究助成を提出する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260728-ono-submit",
+    "title": "2026-07-28まで: 小野医学研究財団をCore Aから脂質代謝異常/NASH/代謝炎症向けに整え、提出する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260901-uehara-submit",
+    "title": "2026-09-01まで: 上原記念生命科学財団の研究助成金を提出する。特定研究助成を出す場合は2026-08-07公式締切に合わせて前倒しする",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
     "id": "mtodo-10198068b12d",
     "title": "タカノフーズ共同研究契約書: 先方到着確認待ち",
     "status": "done",
