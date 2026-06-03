@@ -51,7 +51,7 @@
   },
   {
     "id": "mtodo-4d44671c961b",
-    "title": "5/29目安（ScanSnap通知は5/31）: 令和7年度後期 科目別満足度調査・学生からの自由意見に対する教員回答を作成・送付する",
+    "title": "5/29目安（ScanSnap通知は5/31）: 令和7年度後期 科目別満足度調査・学生からの自由意見に対する教員回答を送付する。2026-06-03に回答済みExcelと大学メール下書き作成済み、センセイ確認後に送信。回答項目: 人体の構造と機能実習のネットワーク/学修環境、健康障害の成り立ちIのクイズ難度とレジュメ文字サイズ",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -252,8 +252,8 @@
   {
     "id": "mtodo-6bb507a61297",
     "title": "AMEDヒアリング（林先生）: 5/13までにスライド協力・確認、5/28 14:45〜待機/15:00開始（Google Calendar登録済み）",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
@@ -262,8 +262,8 @@
   {
     "id": "mtodo-2cb0da52ae5c",
     "title": "5/20: AMED関連提出を行う（",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
@@ -642,8 +642,8 @@
   {
     "id": "mtodo-80eafcb4c430",
     "title": "5/13: WORLDコイン受け取り",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
