@@ -120,6 +120,16 @@
     "section": "今すぐ/期限あり"
   },
   {
+    "id": "mtodo-20260603-nursing-school-first-class-prep",
+    "title": "2026-06-04夜まで: 看護学校初回授業の資料を昨年度版ベースで更新し、Webクイズを確認し、印刷依頼まで完了する。6/5(金)授業開始",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "授業・教育",
+    "parentCategory": "大学の業務",
+    "section": "授業・教育"
+  },
+  {
     "id": "mtodo-65e40eb66245",
     "title": "6/2(火) 第17回 筑波大学系統解剖実習ショートレクチャー資料を準備する（頭部離断・咽頭・喉頭／腹膜・腹膜腔・腹部内臓）",
     "status": "todo",
@@ -214,6 +224,16 @@
     "title": "AMED予算300万円を研究にどう活かすか、具体策を考える",
     "status": "todo",
     "priority": "B",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験"
+  },
+  {
+    "id": "mtodo-20260603-natto-facs-antibody-quote-decision",
+    "title": "2026-06-04: NattoプロジェクトのFACS抗体見積もり（約48万円）について、MASH肝臓フローサイトメトリー分とin vitro NAT添加後FACS解析分を分けて、一括購入か段階購入か判断し、発注方針を決める",
+    "status": "todo",
+    "priority": "A",
     "assignee": "Me",
     "category": "実験",
     "parentCategory": "研究・共同研究",
@@ -410,6 +430,56 @@
     "section": "共同研究・グラント"
   },
   {
+    "id": "mtodo-20260603-ippo-science-fellowship-finish",
+    "title": "2026-06-12目標: 一歩の冒研 Science Fellowship 2026 の申請書を完成させる",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-20260603-spread-mafb-after-briefing",
+    "title": "2026-06-05 16:30説明会後: SPReAD MafB Conservation AI 2026 について、説明会内容を踏まえて応募可否・必要書類・担当分担を決める",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-20260603-private-grants-maximize-applications",
+    "title": "2026-06月中: 民間研究助成_2026 は、既存候補を少しずつCodexで書類化し、応募数を最大化する。ただし無理なものはGo/No-Goで絞る",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-20260603-heisei-placenta-hayashi-collaborator",
+    "title": "平成記念研究助成_2027_胎盤幹細胞移植: Zeynabさんとの相談を踏まえ、林先生に共同研究者になってもらう依頼/確認を行う",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-20260603-heisei-eugenia-kaushalia-consider",
+    "title": "平成記念研究助成_2027_Eugenia: 共同研究者としてスリランカに行った卒業生のカウシャリアさんを加えるべきか検討する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
     "id": "mtodo-10198068b12d",
     "title": "タカノフーズ共同研究契約書: 先方到着確認待ち",
     "status": "done",
@@ -428,6 +498,16 @@
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
     "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-20260603-takahashi-party-tohoku-speaker-email",
+    "title": "2026-06-03/04至急: 東北大の発表者の先生へ、高橋先生退官記念パーティー関連メールの文案を作り、センセイ確認後に送信する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "高橋先生退官記念事業",
+    "parentCategory": "高橋先生退官記念事業",
+    "section": ""
   },
   {
     "id": "mtodo-50f46fb57048",
