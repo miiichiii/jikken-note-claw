@@ -451,7 +451,7 @@
   },
   {
     "id": "mtodo-20260603-ippo-science-fellowship-finish",
-    "title": "2026-06-12目標: 一歩の冒研 Science Fellowship 2026 の申請書を完成させる",
+    "title": "2026-06-12目標: 一歩の冒研 Science Fellowship 2026 の申請書を完成させる。2026-06-03全員ミーティング: センセイは申請準備、ZeynabさんはCV documents準備",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -481,7 +481,27 @@
   },
   {
     "id": "mtodo-20260603-heisei-placenta-hayashi-collaborator",
-    "title": "平成記念研究助成_2027_胎盤幹細胞移植: Zeynabさんとの相談を踏まえ、林先生に共同研究者になってもらう依頼/確認を行う",
+    "title": "平成記念研究助成_2027_胎盤幹細胞移植: 林先生へ共同研究依頼を送り、申請に必要な参考資料の送付も依頼する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-20260603-heisei-placenta-add-takahashi-hayashi",
+    "title": "平成記念研究助成_2027_胎盤幹細胞移植: 高橋先生・林先生を共同研究者として申請書に反映する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-20260603-heisei-natto-fit-check",
+    "title": "平成記念研究助成_2027_納豆プロジェクト案: 「healthy dietによる疾病予防/治療」フレームで応募可能かGo/No-Goを判断する",
     "status": "todo",
     "priority": "B",
     "assignee": "Me",
