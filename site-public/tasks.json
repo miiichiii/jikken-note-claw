@@ -1,5 +1,15 @@
 [
   {
+    "id": "mtodo-20260603-child-allowance-current-status-docs",
+    "title": "2026-06-18(木)まで: 児童手当の現況確認書類を総務課 給与担当へ提出する。まず6/1以降取得の住民票謄本（世帯全員・マイナンバーなし・続柄/筆頭者あり）と令和8年度所得証明書/課税証明書（原則本人・配偶者分）を取得する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり"
+  },
+  {
     "id": "mtodo-scansnap-20260522-kll3458",
     "title": "要確認: 給与通知書の確認と提出。ScanSnap自動判定で締切/日付/内容を確定できず",
     "status": "todo",
