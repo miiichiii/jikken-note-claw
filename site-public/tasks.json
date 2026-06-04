@@ -670,6 +670,46 @@
     "section": ""
   },
   {
+    "id": "mtodo-20260604-chatgpt-pro-reimbursement-june05",
+    "title": "2026-06-05: ChatGPT Pro研究費契約について、4/27・5/27分の決済証憑（氏名入りカード明細、利用画面スクリーンショット）が揃っているか確認し、経理係へ精算できるものを提出する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "システム・お金・雑務",
+    "parentCategory": "システム・お金・雑務",
+    "section": ""
+  },
+  {
+    "id": "mtodo-20260604-chatgpt-pro-continuation-check-june20",
+    "title": "2026-06-20: ChatGPT Pro研究費契約について、7/27以降も研究費で継続できるか経理係へ確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "システム・お金・雑務",
+    "parentCategory": "システム・お金・雑務",
+    "section": ""
+  },
+  {
+    "id": "mtodo-20260604-chatgpt-pro-third-payment-evidence",
+    "title": "2026-06-27: ChatGPT Pro 3か月目決済後、クレジットカード明細・利用画面スクリーンショットを保存し、精算準備をする",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "システム・お金・雑務",
+    "parentCategory": "システム・お金・雑務",
+    "section": ""
+  },
+  {
+    "id": "mtodo-20260604-chatgpt-pro-july-continuation-decision",
+    "title": "2026-07-15: ChatGPT Proを7/27以降も継続する場合の承認・予算・精算方法を確定する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "システム・お金・雑務",
+    "parentCategory": "システム・お金・雑務",
+    "section": ""
+  },
+  {
     "id": "mtodo-84b5d7be1925",
     "title": "Google Cloud Billing 100% budget alert確認",
     "status": "todo",
