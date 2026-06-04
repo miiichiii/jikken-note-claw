@@ -710,6 +710,16 @@
     "section": ""
   },
   {
+    "id": "mtodo-20260604-chatgpt-pro-final-continuation-check",
+    "title": "2026-07-23: ChatGPT Proを7/27以降も継続する手続きが済んでいるか最終確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "システム・お金・雑務",
+    "parentCategory": "システム・お金・雑務",
+    "section": ""
+  },
+  {
     "id": "mtodo-84b5d7be1925",
     "title": "Google Cloud Billing 100% budget alert確認",
     "status": "todo",
