@@ -480,6 +480,26 @@
     "section": "共同研究・グラント"
   },
   {
+    "id": "mtodo-20260604-kakenhi-kibanb-2027-prepare",
+    "title": "2026-07-15まで: 科研費 基盤B 2027 のv4を令和9年度様式待ち前提で整理し、図1・研究遂行能力/研究環境・業績・経費欄・重複説明の不足を洗い出す",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-20260604-kakenhi-challenging-2027-go-nogo",
+    "title": "2026-07-22まで: 科研費 挑戦的研究（萌芽）2027（経胎盤移植案）の1ページ骨子を作り、基盤B・AMED林先生系・平成記念・SPReADとの重複を避けられるかGo/No-Go判定する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
     "id": "mtodo-20260603-heisei-placenta-hayashi-collaborator",
     "title": "平成記念研究助成_2027_胎盤幹細胞移植: 林先生へ共同研究依頼を送り、申請に必要な参考資料の送付も依頼する",
     "status": "todo",
