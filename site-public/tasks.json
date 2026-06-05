@@ -440,6 +440,26 @@
     "section": "共同研究・グラント"
   },
   {
+    "id": "mtodo-private-grants-20260701-nakajima-gate",
+    "title": "2026-07-01まで: 中島記念国際交流財団 独立研究者始動助成金について、年齢条件・研究室立ち上げ時期・重複制限・学内手続を確認してGo/No-Goを決める",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
+    "id": "mtodo-private-grants-20260801-nakajima-system-check",
+    "title": "2026-08-01以降: 中島記念国際交流財団の申請システムで独立研究者始動助成金の必要添付欄・入力項目を確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント"
+  },
+  {
     "id": "mtodo-private-grants-20260901-uehara-submit",
     "title": "2026-09-01まで: 上原記念生命科学財団の研究助成金を提出する。特定研究助成を出す場合は2026-08-07公式締切に合わせて前倒しする",
     "status": "todo",
