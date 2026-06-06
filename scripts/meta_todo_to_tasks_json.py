@@ -5,18 +5,22 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from pathlib import Path
 
 
 DEFAULT_META_TODO = Path(
-    "/Users/michito/Library/Mobile Documents/iCloud~md~obsidian/Documents/"
-    "Hamada_Obsidian/Meta TODO.md"
+    os.environ.get(
+        "METATODO_PATH",
+        "/Users/michito/Library/Mobile Documents/iCloud~md~obsidian/Documents/"
+        "Hamada_Obsidian/Meta TODO.md",
+    )
 )
-DEFAULT_OUTPUT = Path(__file__).resolve().parents[1] / "site-public" / "tasks.json"
+DEFAULT_OUTPUT = Path(os.environ.get("TASK_BOARD_TASKS_JSON", Path(__file__).resolve().parents[1] / "site-public" / "tasks.json"))
 
 CHECKBOX_RE = re.compile(
-    r"^(?P<indent>\s*)-\s+\[(?P<mark>[ xX])\]\s+(?P<body>.*?)(?:\s*<!--\s*mtodo:(?P<id>[^>\s]+)\s*-->)?\s*$"
+    r"^(?P<indent>\s*)[-*]\s+\[(?P<mark>[ xX])\]\s+(?P<body>.*?)(?:\s*<!--\s*mtodo:(?P<id>[^>\s]+)\s*-->)?\s*$"
 )
 HEADING_RE = re.compile(r"^(?P<level>#{2,3})\s+(?P<title>.+?)\s*$")
 
@@ -73,7 +77,7 @@ def assignee_for(title: str) -> str:
 
 
 def parse_meta_todo(path: Path) -> list[dict[str, str]]:
-    tasks: list[dict[str, str]] = []
+    tasks: list[dict[str, str | bool]] = []
     seen_ids: set[str] = set()
     current_category = "未分類"
     current_section = ""
@@ -98,14 +102,13 @@ def parse_meta_todo(path: Path) -> list[dict[str, str]]:
             continue
 
         status = "done" if match.group("mark").lower() == "x" else "todo"
-        task_id = match.group("id") or f"meta-todo-line-{line_number}"
+        explicit_id = match.group("id")
+        task_id = explicit_id or f"meta-todo-line-{line_number}"
 
+        if explicit_id and task_id in seen_ids:
+            raise ValueError(f"duplicate mtodo id on line {line_number}: {task_id}")
         if task_id in seen_ids:
-            suffix = 2
-            base_id = task_id
-            while f"{base_id}-{suffix}" in seen_ids:
-                suffix += 1
-            task_id = f"{base_id}-{suffix}"
+            raise ValueError(f"duplicate generated task id on line {line_number}: {task_id}")
 
         seen_ids.add(task_id)
         tasks.append(
@@ -118,6 +121,7 @@ def parse_meta_todo(path: Path) -> list[dict[str, str]]:
                 "category": current_section or current_category,
                 "parentCategory": current_category,
                 "section": current_section,
+                "syncable": bool(explicit_id),
             }
         )
 

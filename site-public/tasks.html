@@ -314,6 +314,21 @@
       box-shadow: 0 0 0 4px rgba(141, 189, 139, 0.22);
     }
 
+    .sync-pill.is-pending .sync-dot {
+      background: var(--color-mimosa);
+      box-shadow: 0 0 0 4px rgba(240, 193, 48, 0.22);
+    }
+
+    .sync-pill.is-failed .sync-dot {
+      background: var(--color-coral);
+      box-shadow: 0 0 0 4px rgba(226, 107, 67, 0.2);
+    }
+
+    .sync-pill.is-local .sync-dot {
+      background: var(--color-cobalt);
+      box-shadow: 0 0 0 4px rgba(23, 110, 183, 0.18);
+    }
+
     .hero {
       position: relative;
       overflow: hidden;
@@ -1177,6 +1192,30 @@
       word-break: normal;
     }
 
+    .task-sync-note {
+      margin: 7px 0 0;
+      color: var(--color-ink-soft);
+      font-size: 11px;
+      font-weight: 760;
+      line-height: 1.35;
+    }
+
+    .task-sync-note.is-pending {
+      color: var(--color-honey);
+    }
+
+    .task-sync-note.is-synced {
+      color: var(--color-leaf-deep);
+    }
+
+    .task-sync-note.is-partial {
+      color: var(--color-cobalt);
+    }
+
+    .task-sync-note.is-failed {
+      color: var(--color-clay);
+    }
+
     .task-meta {
       display: flex;
       flex-wrap: wrap;
@@ -1514,7 +1553,7 @@
           <span class="sync-dot" aria-hidden="true"></span>
           <span id="syncLabel">tasks.json 読み込み中</span>
         </div>
-        <button class="icon-button" type="button" aria-label="設定">⌘</button>
+        <button class="icon-button" type="button" id="syncSettings" aria-label="同期設定">⌘</button>
       </nav>
 
       <section class="hero" aria-labelledby="today-title">
@@ -1603,15 +1642,20 @@
     const filterButtons = [...document.querySelectorAll("[data-filter]")];
     const listTitle = document.querySelector("#listTitle");
     const syncLabel = document.querySelector("#syncLabel");
-    const localStateKey = "taskBoardLocalStateV2";
+    const syncPill = document.querySelector(".sync-pill");
+    const syncSettings = document.querySelector("#syncSettings");
+    const localStateKey = "taskBoardLocalStateV3";
     const backgroundKey = "taskBoardBackgroundChoiceV2";
+    const syncConfigKey = "taskBoardSyncConfigV1";
+    const syncBridgeBaseUrl = "http://127.0.0.1:8765";
     const toggleDelayMs = 100;
     const doneHoldMs = 60 * 60 * 1000;
     const sparkleDurationMs = 1280;
-    let queued = 0;
     let allTasks = [];
     let activeFilter = localStorage.getItem("taskBoardFilterV2") || "all";
     let doneHoldTimer = null;
+    let syncBridgeReachable = false;
+    let syncProbeStarted = false;
 
     function escapeHtml(value) {
       return String(value ?? "").replace(/[&<>"']/g, (char) => ({
@@ -1635,12 +1679,88 @@
       localStorage.setItem(localStateKey, JSON.stringify(state));
     }
 
+    function updateLocalTaskState(taskId, patch) {
+      const state = readLocalState();
+      state[taskId] = {
+        ...(state[taskId] || {}),
+        ...patch
+      };
+      writeLocalState(state);
+      return state[taskId];
+    }
+
     function taskStatus(task) {
       return readLocalState()[task.id]?.status || task.status || "todo";
     }
 
     function taskLocalState(task) {
       return readLocalState()[task.id] || {};
+    }
+
+    function readSyncConfig() {
+      try {
+        const config = JSON.parse(localStorage.getItem(syncConfigKey) || "{}");
+        return {
+          token: String(config.token || "").trim()
+        };
+      } catch {
+        return { token: "" };
+      }
+    }
+
+    function writeSyncConfig(config) {
+      localStorage.setItem(syncConfigKey, JSON.stringify(config));
+    }
+
+    function taskSyncMeta(task) {
+      const state = taskLocalState(task);
+      const error = state.error || "";
+      if (state.syncState === "pending") return { text: "同期中", className: "is-pending" };
+      if (state.syncState === "synced") return { text: "同期済み", className: "is-synced" };
+      if (state.syncState === "partial") return { text: "正本更新済み / 公開待ち", className: "is-partial" };
+      if (state.syncState === "failed_conflict") return { text: error || "競合で停止", className: "is-failed" };
+      if (state.syncState === "failed") return { text: error || "同期失敗", className: "is-failed" };
+      if (task.syncable === false) return { text: "安定ID未設定のため逆同期不可", className: "is-failed" };
+      return { text: "", className: "" };
+    }
+
+    function syncCounters() {
+      const state = readLocalState();
+      const values = Object.values(state);
+      return {
+        pending: values.filter((item) => item?.syncState === "pending").length,
+        partial: values.filter((item) => item?.syncState === "partial").length,
+        failed: values.filter((item) => ["failed", "failed_conflict"].includes(item?.syncState)).length,
+        synced: values.filter((item) => item?.syncState === "synced").length
+      };
+    }
+
+    function refreshSyncChrome() {
+      const config = readSyncConfig();
+      const counters = syncCounters();
+      syncPill.classList.remove("is-pending", "is-failed", "is-local");
+      if (counters.pending) {
+        syncPill.classList.add("is-pending");
+        syncLabel.textContent = `同期中 ${counters.pending}件`;
+      } else if (counters.failed) {
+        syncPill.classList.add("is-failed");
+        syncLabel.textContent = `同期失敗 ${counters.failed}件`;
+      } else if (counters.partial) {
+        syncPill.classList.add("is-local");
+        syncLabel.textContent = `正本更新済み / 公開待ち ${counters.partial}件`;
+      } else if (!syncProbeStarted) {
+        syncLabel.textContent = "tasks.json 読み込み中";
+      } else if (!syncBridgeReachable) {
+        syncPill.classList.add("is-local");
+        syncLabel.textContent = config.token ? "同期ブリッジ停止中" : "ローカル同期未接続";
+      } else if (!config.token) {
+        syncPill.classList.add("is-local");
+        syncLabel.textContent = "同期トークン未設定";
+      } else if (counters.synced) {
+        syncLabel.textContent = "同期済み";
+      } else {
+        syncLabel.textContent = `${allTasks.length}件を読み込み済み`;
+      }
     }
 
     function isRecentlyDone(task, now = Date.now()) {
@@ -1698,10 +1818,19 @@
       const card = document.createElement("article");
       card.className = `task-card ${status === "done" ? "is-done" : ""}`;
       card.dataset.task = task.id;
+      card.dataset.syncable = task.syncable === false ? "false" : "true";
+      const syncMeta = taskSyncMeta(task);
+      const isSyncable = task.syncable !== false;
+      const buttonLabel = !isSyncable
+        ? "このタスクは逆同期できません"
+        : status === "done"
+          ? "タスクを未完了に戻す"
+          : "タスクを完了にする";
       card.innerHTML = `
-        <button class="check-button" type="button" aria-label="${status === "done" ? "タスクを未完了に戻す" : "タスクを完了にする"}"></button>
+        <button class="check-button" type="button" aria-label="${buttonLabel}" ${isSyncable ? "" : "disabled"}></button>
         <div class="task-copy">
           <p class="task-name" title="${escapeHtml(task.title)}">${escapeHtml(task.title)}</p>
+          <p class="task-sync-note ${syncMeta.className}" ${syncMeta.text ? "" : "hidden"}>${escapeHtml(syncMeta.text)}</p>
         </div>
         <div class="petal-burst" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       `;
@@ -1714,13 +1843,23 @@
       const total = allTasks.length;
       const remaining = total - done;
       const percent = total ? Math.round((done / total) * 100) : 0;
+      const counters = syncCounters();
 
       progressOrb.style.setProperty("--progress", percent);
       progressText.textContent = `${percent}%`;
       progressTitle.textContent = total ? `${done}件完了、あと${remaining}件` : "タスクがありません";
       const shown = visibleTasks().length;
       remainingCount.textContent = remaining === 0 ? "全部完了" : `表示 ${shown}件 / 残り ${remaining}件`;
-      queueCount.textContent = `未同期 ${queued}`;
+      if (counters.pending) {
+        queueCount.textContent = `同期中 ${counters.pending}`;
+      } else if (counters.partial) {
+        queueCount.textContent = `公開待ち ${counters.partial}`;
+      } else if (counters.failed) {
+        queueCount.textContent = `失敗 ${counters.failed}`;
+      } else {
+        queueCount.textContent = "同期待ち 0";
+      }
+      refreshSyncChrome();
     }
 
     function sortVisibleGroup(items, now) {
@@ -1774,31 +1913,84 @@
       button.setAttribute("aria-label", isDone ? "タスクを未完了に戻す" : "タスクを完了にする");
     }
 
-    function toggleTask(card) {
+    async function reverseSyncTask(taskId, desiredStatus, expectedCurrentStatus) {
+      const { token } = readSyncConfig();
+      if (!token) {
+        const error = new Error("同期トークンが未設定です");
+        error.syncCode = "token_missing";
+        throw error;
+      }
+      const response = await fetch(`${syncBridgeBaseUrl}/v1/task-board/reverse-sync`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          taskId,
+          desiredStatus,
+          expectedCurrentStatus
+        })
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok && response.status !== 202) {
+        const error = new Error(payload.message || `sync_${response.status}`);
+        error.syncCode = payload.code || `http_${response.status}`;
+        throw error;
+      }
+      return payload;
+    }
+
+    async function toggleTask(card) {
       if (card.classList.contains("is-toggling")) return;
+      if (card.dataset.syncable === "false") return;
       const wasDone = card.classList.contains("is-done");
       const button = card.querySelector(".check-button");
+      const taskId = card.dataset.task;
+      const task = allTasks.find((candidate) => candidate.id === taskId);
+      if (!task) return;
+      const nextStatus = wasDone ? "todo" : "done";
+      const baselineStatus = task.status || "todo";
       card.classList.add("is-toggling");
       button.disabled = true;
-      window.setTimeout(() => {
-        const state = readLocalState();
-        const taskId = card.dataset.task;
-        const nextStatus = wasDone ? "todo" : "done";
-        state[taskId] = { status: nextStatus, updatedAt: Date.now() };
-        writeLocalState(state);
-        queued += 1;
-        if (!wasDone) {
-          updateCardCompletionState(card, true);
-          sparkle(card);
-          if (navigator.vibrate) navigator.vibrate([10, 24, 16]);
-          refresh();
+      window.setTimeout(async () => {
+        updateLocalTaskState(taskId, {
+          status: nextStatus,
+          updatedAt: Date.now(),
+          syncState: "pending",
+          error: ""
+        });
+        updateCardCompletionState(card, nextStatus === "done");
+        refresh();
+        try {
+          const result = await reverseSyncTask(taskId, nextStatus, baselineStatus);
+          task.status = nextStatus;
+          updateLocalTaskState(taskId, {
+            status: nextStatus,
+            updatedAt: Date.now(),
+            syncState: result.status === "ok" || result.status === "noop" ? "synced" : "partial",
+            error: result.warning || ""
+          });
+          if (!wasDone) {
+            sparkle(card);
+            if (navigator.vibrate) navigator.vibrate([10, 24, 16]);
+            window.setTimeout(renderTasks, sparkleDurationMs);
+          } else {
+            renderTasks();
+          }
+        } catch (error) {
+          updateLocalTaskState(taskId, {
+            status: baselineStatus,
+            updatedAt: Date.now(),
+            syncState: error.syncCode === "stale_status" ? "failed_conflict" : "failed",
+            error: error.message || "同期失敗"
+          });
+          renderTasks();
+        } finally {
           card.classList.remove("is-toggling");
           button.disabled = false;
-          window.setTimeout(renderTasks, sparkleDurationMs);
-          return;
+          refresh();
         }
-        updateCardCompletionState(card, false);
-        renderTasks();
       }, toggleDelayMs);
     }
 
@@ -1806,12 +1998,12 @@
       const button = event.target.closest(".check-button");
       if (!button) return;
       const card = button.closest("[data-task]");
-      toggleTask(card);
+      void toggleTask(card);
     });
 
     completeNext.addEventListener("click", () => {
-      const next = [...document.querySelectorAll("[data-task]")].find((task) => !task.classList.contains("is-done"));
-      if (next) toggleTask(next);
+      const next = [...document.querySelectorAll("[data-task]")].find((task) => !task.classList.contains("is-done") && task.dataset.syncable !== "false");
+      if (next) void toggleTask(next);
     });
 
     bgOptions.forEach((option) => {
@@ -1839,15 +2031,41 @@
       if (button) button.click();
     }
 
+    async function probeSyncBridge() {
+      syncProbeStarted = true;
+      try {
+        const response = await fetch(`${syncBridgeBaseUrl}/v1/task-board/status`, { cache: "no-store" });
+        syncBridgeReachable = response.ok;
+      } catch {
+        syncBridgeReachable = false;
+      }
+      refreshSyncChrome();
+    }
+
+    syncSettings.addEventListener("click", async () => {
+      const current = readSyncConfig();
+      const entered = window.prompt("ローカル逆同期トークンを入力してください。`clear` で解除します。", current.token);
+      if (entered === null) return;
+      const normalized = entered.trim();
+      if (normalized.toLowerCase() === "clear") {
+        writeSyncConfig({ token: "" });
+      } else {
+        writeSyncConfig({ token: normalized });
+      }
+      await probeSyncBridge();
+      renderTasks();
+    });
+
     async function loadTasks() {
       try {
         const response = await fetch("tasks.json", { cache: "no-store" });
         if (!response.ok) throw new Error(`tasks_json_${response.status}`);
         allTasks = await response.json();
-        syncLabel.textContent = `${allTasks.length}件を読み込み済み`;
+        refreshSyncChrome();
       } catch (error) {
         console.error(error);
         allTasks = [];
+        syncPill.classList.add("is-failed");
         syncLabel.textContent = "読み込みに失敗";
         taskList.innerHTML = '<article class="task-card"><div class="task-copy"><p class="task-name">tasks.json を読み込めませんでした</p></div></article>';
       }
@@ -1855,6 +2073,7 @@
     }
 
     restoreBackground();
+    probeSyncBridge();
     loadTasks();
   </script>
 </body>
