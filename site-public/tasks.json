@@ -7,7 +7,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-20260603-child-allowance-current-status-docs",
@@ -17,7 +18,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-scansnap-20260522-kll3458",
@@ -27,7 +29,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-20260529-ethics-training-makeup-check",
@@ -37,7 +40,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-scansnap-20260522-labor-conditions",
@@ -47,7 +51,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-20260528-facilities-practice-room",
@@ -57,7 +62,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-4d44671c961b",
@@ -67,7 +73,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-scansnap-20260518-satisfaction-results",
@@ -77,7 +84,8 @@
     "assignee": "Bot",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-0e8f385e521d",
@@ -87,7 +95,8 @@
     "assignee": "Bot",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-5a1a68650639",
@@ -97,7 +106,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-a590005f387d",
@@ -107,7 +117,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-10b0aab96161",
@@ -117,7 +128,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-1d41c5079d46",
@@ -127,7 +139,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-30c026599f62",
@@ -137,7 +150,8 @@
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
-    "section": "今すぐ/期限あり"
+    "section": "今すぐ/期限あり",
+    "syncable": true
   },
   {
     "id": "mtodo-20260603-nursing-school-first-class-prep",
@@ -147,7 +161,8 @@
     "assignee": "Me",
     "category": "授業・教育",
     "parentCategory": "大学の業務",
-    "section": "授業・教育"
+    "section": "授業・教育",
+    "syncable": true
   },
   {
     "id": "mtodo-65e40eb66245",
@@ -157,7 +172,8 @@
     "assignee": "Me",
     "category": "授業・教育",
     "parentCategory": "大学の業務",
-    "section": "授業・教育"
+    "section": "授業・教育",
+    "syncable": true
   },
   {
     "id": "mtodo-b4544dc69c37",
@@ -167,7 +183,8 @@
     "assignee": "Me",
     "category": "授業・教育",
     "parentCategory": "大学の業務",
-    "section": "授業・教育"
+    "section": "授業・教育",
+    "syncable": true
   },
   {
     "id": "mtodo-23508cda7fa7",
@@ -177,7 +194,8 @@
     "assignee": "Me",
     "category": "授業・教育",
     "parentCategory": "大学の業務",
-    "section": "授業・教育"
+    "section": "授業・教育",
+    "syncable": true
   },
   {
     "id": "mtodo-38b5c91dbddb",
@@ -187,7 +205,8 @@
     "assignee": "Me",
     "category": "授業・教育",
     "parentCategory": "大学の業務",
-    "section": "授業・教育"
+    "section": "授業・教育",
+    "syncable": true
   },
   {
     "id": "mtodo-d6ab63c9f589",
@@ -197,7 +216,8 @@
     "assignee": "Me",
     "category": "授業・教育",
     "parentCategory": "大学の業務",
-    "section": "授業・教育"
+    "section": "授業・教育",
+    "syncable": true
   },
   {
     "id": "mtodo-3be5996235ec",
@@ -207,7 +227,8 @@
     "assignee": "Bot",
     "category": "論文・発表・広報",
     "parentCategory": "論文・発表・広報",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-06c90705ebc7",
@@ -217,7 +238,8 @@
     "assignee": "Bot",
     "category": "論文・発表・広報",
     "parentCategory": "論文・発表・広報",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-e86c396e5415",
@@ -227,7 +249,8 @@
     "assignee": "Me",
     "category": "実験",
     "parentCategory": "研究・共同研究",
-    "section": "実験"
+    "section": "実験",
+    "syncable": true
   },
   {
     "id": "mtodo-730dafe7d364",
@@ -237,7 +260,8 @@
     "assignee": "Me",
     "category": "実験",
     "parentCategory": "研究・共同研究",
-    "section": "実験"
+    "section": "実験",
+    "syncable": true
   },
   {
     "id": "mtodo-6b1524e988b2",
@@ -247,7 +271,8 @@
     "assignee": "Me",
     "category": "実験",
     "parentCategory": "研究・共同研究",
-    "section": "実験"
+    "section": "実験",
+    "syncable": true
   },
   {
     "id": "mtodo-20260603-natto-facs-antibody-quote-decision",
@@ -257,7 +282,8 @@
     "assignee": "Me",
     "category": "実験",
     "parentCategory": "研究・共同研究",
-    "section": "実験"
+    "section": "実験",
+    "syncable": true
   },
   {
     "id": "mtodo-6bb507a61297",
@@ -267,7 +293,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-2cb0da52ae5c",
@@ -277,7 +304,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-53a0582d1fec",
@@ -287,7 +315,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-948d370b110b",
@@ -297,7 +326,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-88bafe6ed22a",
@@ -307,7 +337,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-150ef3769800",
@@ -317,7 +348,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-97fedf188190",
@@ -327,7 +359,8 @@
     "assignee": "Bot",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260531-setup",
@@ -337,7 +370,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260601-office-lotte",
@@ -347,7 +381,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260603-lotte-gate",
@@ -357,7 +392,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260605-sunbor-suzuki",
@@ -367,7 +403,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260610-chugai-terumo",
@@ -377,7 +414,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260612-suzuki-lotte",
@@ -387,7 +425,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260617-june-80pct",
@@ -397,7 +436,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260622-deadlines",
@@ -407,7 +447,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260629-june-submit-suzuki",
@@ -417,7 +458,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260703-suzuki-submit",
@@ -427,7 +469,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260728-ono-submit",
@@ -437,7 +480,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260701-nakajima-gate",
@@ -447,7 +491,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260801-nakajima-system-check",
@@ -457,7 +502,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-private-grants-20260901-uehara-submit",
@@ -467,7 +513,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-20260603-ippo-science-fellowship-finish",
@@ -477,7 +524,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-20260603-spread-mafb-after-briefing",
@@ -487,7 +535,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-20260603-private-grants-maximize-applications",
@@ -497,7 +546,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-20260604-kakenhi-kibanb-2027-prepare",
@@ -507,7 +557,8 @@
     "assignee": "Bot",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-20260604-kakenhi-challenging-2027-go-nogo",
@@ -517,7 +568,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-20260603-heisei-placenta-hayashi-collaborator",
@@ -527,7 +579,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-20260603-heisei-placenta-add-takahashi-hayashi",
@@ -537,7 +590,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-20260603-heisei-natto-fit-check",
@@ -547,7 +601,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-20260603-heisei-eugenia-kaushalia-consider",
@@ -557,7 +612,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-10198068b12d",
@@ -567,7 +623,8 @@
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-aa9d1606ed9f",
@@ -577,7 +634,8 @@
     "assignee": "Bot",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
-    "section": "共同研究・グラント"
+    "section": "共同研究・グラント",
+    "syncable": true
   },
   {
     "id": "mtodo-20260603-takahashi-party-tohoku-speaker-email",
@@ -587,7 +645,8 @@
     "assignee": "Me",
     "category": "高橋先生退官記念事業",
     "parentCategory": "高橋先生退官記念事業",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-20260604-takahashi-igarashi-reminder",
@@ -597,7 +656,8 @@
     "assignee": "Me",
     "category": "高橋先生退官記念事業",
     "parentCategory": "高橋先生退官記念事業",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-50f46fb57048",
@@ -607,7 +667,8 @@
     "assignee": "Bot",
     "category": "高橋先生退官記念事業",
     "parentCategory": "高橋先生退官記念事業",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-e63dbe4cf214",
@@ -617,7 +678,8 @@
     "assignee": "Bot",
     "category": "高橋先生退官記念事業",
     "parentCategory": "高橋先生退官記念事業",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-229d3fad955a",
@@ -627,7 +689,8 @@
     "assignee": "Bot",
     "category": "高橋先生退官記念事業",
     "parentCategory": "高橋先生退官記念事業",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-e76775b6dc55",
@@ -637,7 +700,8 @@
     "assignee": "Me",
     "category": "高橋先生退官記念事業",
     "parentCategory": "高橋先生退官記念事業",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-44d49fd04a86",
@@ -647,7 +711,8 @@
     "assignee": "Bot",
     "category": "高橋先生退官記念事業",
     "parentCategory": "高橋先生退官記念事業",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-5eae906f6e27",
@@ -657,7 +722,8 @@
     "assignee": "Me",
     "category": "高橋先生退官記念事業",
     "parentCategory": "高橋先生退官記念事業",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-971393a68c94",
@@ -667,7 +733,8 @@
     "assignee": "Me",
     "category": "生活・家庭・健康",
     "parentCategory": "生活・家庭・健康",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-92ec855652e4",
@@ -677,7 +744,8 @@
     "assignee": "Me",
     "category": "生活・家庭・健康",
     "parentCategory": "生活・家庭・健康",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-5ccd1573dde7",
@@ -687,7 +755,8 @@
     "assignee": "Me",
     "category": "生活・家庭・健康",
     "parentCategory": "生活・家庭・健康",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-6c9dc7f9e31f",
@@ -697,7 +766,8 @@
     "assignee": "Me",
     "category": "生活・家庭・健康",
     "parentCategory": "生活・家庭・健康",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-20260604-chatgpt-pro-reimbursement-june05",
@@ -707,7 +777,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-20260604-chatgpt-pro-continuation-check-june20",
@@ -717,7 +788,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-20260604-chatgpt-pro-third-payment-evidence",
@@ -727,7 +799,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-20260604-chatgpt-pro-july-continuation-decision",
@@ -737,7 +810,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-20260604-chatgpt-pro-final-continuation-check",
@@ -747,7 +821,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-84b5d7be1925",
@@ -757,7 +832,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-47501e0853dd",
@@ -767,7 +843,8 @@
     "assignee": "Bot",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-80eafcb4c430",
@@ -777,7 +854,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-495dac665ccc",
@@ -787,7 +865,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-fde83f0c93bd",
@@ -797,7 +876,8 @@
     "assignee": "Bot",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-e6e2dadf69f5",
@@ -807,7 +887,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-87ef3154cb23",
@@ -817,7 +898,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-0fb5433d0ef2",
@@ -827,7 +909,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-79d3c93a7f09",
@@ -837,7 +920,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-7d02208f4b92",
@@ -847,7 +931,8 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   },
   {
     "id": "mtodo-93014281f844",
@@ -857,6 +942,7 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
-    "section": ""
+    "section": "",
+    "syncable": true
   }
 ]
