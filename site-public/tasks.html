@@ -1644,18 +1644,24 @@
     const syncLabel = document.querySelector("#syncLabel");
     const syncPill = document.querySelector(".sync-pill");
     const syncSettings = document.querySelector("#syncSettings");
-    const localStateKey = "taskBoardLocalStateV3";
+    const localStateKey = "taskBoardLocalStateV4";
     const backgroundKey = "taskBoardBackgroundChoiceV2";
-    const syncConfigKey = "taskBoardSyncConfigV1";
-    const syncBridgeBaseUrl = "http://127.0.0.1:8765";
+    const syncConfigKey = "taskBoardSyncConfigV2";
+    const syncBridgeBaseUrl = `${window.location.origin}/api/task-board-reverse-sync`;
     const toggleDelayMs = 100;
     const doneHoldMs = 60 * 60 * 1000;
     const sparkleDurationMs = 1280;
+    const syncPollIntervalMs = 4000;
+    const syncPollTimeoutMs = 120000;
+    const syncSetupNoticeMs = 12000;
+    const syncTokenHashKeys = ["sync-token", "task-board-sync-token"];
     let allTasks = [];
     let activeFilter = localStorage.getItem("taskBoardFilterV2") || "all";
     let doneHoldTimer = null;
+    let pendingSyncTimer = null;
     let syncBridgeReachable = false;
     let syncProbeStarted = false;
+    let syncSetupMessage = "";
 
     function escapeHtml(value) {
       return String(value ?? "").replace(/[&<>"']/g, (char) => ({
@@ -1699,7 +1705,7 @@
 
     function readSyncConfig() {
       try {
-        const config = JSON.parse(localStorage.getItem(syncConfigKey) || "{}");
+        const config = JSON.parse(sessionStorage.getItem(syncConfigKey) || "{}");
         return {
           token: String(config.token || "").trim()
         };
@@ -1709,7 +1715,62 @@
     }
 
     function writeSyncConfig(config) {
-      localStorage.setItem(syncConfigKey, JSON.stringify(config));
+      sessionStorage.setItem(syncConfigKey, JSON.stringify(config));
+    }
+
+    function clearUrlHash() {
+      if (!window.location.hash) return;
+      const cleanUrl = `${window.location.pathname}${window.location.search}`;
+      window.history.replaceState({}, document.title, cleanUrl);
+    }
+
+    function consumeSyncTokenFromUrl() {
+      const hash = window.location.hash.startsWith("#") ? window.location.hash.slice(1) : "";
+      if (!hash) return;
+      const params = new URLSearchParams(hash);
+      const token = syncTokenHashKeys
+        .map((key) => String(params.get(key) || "").trim())
+        .find(Boolean);
+      if (!token) return;
+      writeSyncConfig({ token });
+      syncSetupMessage = "初回設定トークンを読み込みました";
+      clearUrlHash();
+      window.setTimeout(() => {
+        syncSetupMessage = "";
+        refreshSyncChrome();
+      }, syncSetupNoticeMs);
+    }
+
+    function syncSettingsPrompt(currentToken) {
+      if (currentToken) {
+        return "逆同期トークンを更新できます。端末を閉じるまでこのブラウザだけで保持します。`clear` で解除します。";
+      }
+      return "初回設定リンクが届いている場合は、そのリンクをこのブラウザで1回だけ開いてください。手入力する場合だけ、Telegram DM の逆同期トークンをここに貼ってください。`clear` で解除します。";
+    }
+
+    async function buildSignedHeaders(method, requestPath, bodyText = "") {
+      const { token } = readSyncConfig();
+      if (!token) {
+        const error = new Error("同期トークンが未設定です");
+        error.syncCode = "token_missing";
+        throw error;
+      }
+      const timestamp = String(Date.now());
+      const encoder = new TextEncoder();
+      const key = await crypto.subtle.importKey(
+        "raw",
+        encoder.encode(token),
+        { name: "HMAC", hash: "SHA-256" },
+        false,
+        ["sign"]
+      );
+      const payload = [String(method || "").toUpperCase(), requestPath, timestamp, bodyText].join("\n");
+      const signatureBuffer = await crypto.subtle.sign("HMAC", key, encoder.encode(payload));
+      const signature = [...new Uint8Array(signatureBuffer)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+      return {
+        "X-Task-Board-Timestamp": timestamp,
+        "X-Task-Board-Signature": signature
+      };
     }
 
     function taskSyncMeta(task) {
@@ -1751,11 +1812,14 @@
       } else if (!syncProbeStarted) {
         syncLabel.textContent = "tasks.json 読み込み中";
       } else if (!syncBridgeReachable) {
+        syncPill.classList.add("is-failed");
+        syncLabel.textContent = "逆同期 API 未到達";
+      } else if (syncSetupMessage) {
         syncPill.classList.add("is-local");
-        syncLabel.textContent = config.token ? "同期ブリッジ停止中" : "ローカル同期未接続";
+        syncLabel.textContent = syncSetupMessage;
       } else if (!config.token) {
         syncPill.classList.add("is-local");
-        syncLabel.textContent = "同期トークン未設定";
+        syncLabel.textContent = "逆同期未設定 ⌘で初回設定";
       } else if (counters.synced) {
         syncLabel.textContent = "同期済み";
       } else {
@@ -1913,32 +1977,81 @@
       button.setAttribute("aria-label", isDone ? "タスクを未完了に戻す" : "タスクを完了にする");
     }
 
-    async function reverseSyncTask(taskId, desiredStatus, expectedCurrentStatus) {
-      const { token } = readSyncConfig();
-      if (!token) {
-        const error = new Error("同期トークンが未設定です");
-        error.syncCode = "token_missing";
-        throw error;
-      }
-      const response = await fetch(`${syncBridgeBaseUrl}/v1/task-board/reverse-sync`, {
+    async function queueReverseSyncTask(taskId, desiredStatus, expectedCurrentStatus) {
+      const clientRequestId = typeof crypto?.randomUUID === "function"
+        ? `req-${crypto.randomUUID()}`
+        : `req-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+      const requestPath = `${new URL(syncBridgeBaseUrl).pathname}/request`;
+      const body = JSON.stringify({
+        taskId,
+        desiredStatus,
+        expectedCurrentStatus,
+        clientRequestId
+      });
+      const response = await fetch(`${syncBridgeBaseUrl}/request`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
+          ...await buildSignedHeaders("POST", requestPath, body)
         },
-        body: JSON.stringify({
-          taskId,
-          desiredStatus,
-          expectedCurrentStatus
-        })
+        body
       });
       const payload = await response.json().catch(() => ({}));
-      if (!response.ok && response.status !== 202) {
+      if (!response.ok) {
         const error = new Error(payload.message || `sync_${response.status}`);
         error.syncCode = payload.code || `http_${response.status}`;
         throw error;
       }
       return payload;
+    }
+
+    async function fetchSyncRequestStatus(requestId) {
+      const requestPath = `${new URL(syncBridgeBaseUrl).pathname}/status?requestId=${encodeURIComponent(requestId)}`;
+      const response = await fetch(`${syncBridgeBaseUrl}/status?requestId=${encodeURIComponent(requestId)}`, {
+        cache: "no-store",
+        headers: await buildSignedHeaders("GET", requestPath)
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        const error = new Error(payload.message || `sync_status_${response.status}`);
+        error.syncCode = payload.code || `http_${response.status}`;
+        throw error;
+      }
+      return payload;
+    }
+
+    function clearSyncRequest(taskId) {
+      updateLocalTaskState(taskId, { requestId: "", error: "" });
+    }
+
+    function buildRemoteSyncError(payload) {
+      const message = payload.result?.error?.message || payload.result?.warning || "同期失敗";
+      const error = new Error(message);
+      error.syncCode = payload.result?.error?.code || payload.syncState || "sync_failed";
+      return error;
+    }
+
+    async function waitForSyncResult(requestId) {
+      const deadline = Date.now() + syncPollTimeoutMs;
+      while (Date.now() < deadline) {
+        const payload = await fetchSyncRequestStatus(requestId);
+        if (["synced", "partial"].includes(payload.syncState)) return payload;
+        if (["failed", "failed_conflict"].includes(payload.syncState)) {
+          throw buildRemoteSyncError(payload);
+        }
+        await new Promise((resolve) => window.setTimeout(resolve, syncPollIntervalMs));
+      }
+      return null;
+    }
+
+    function setQueuedTimeoutState(taskId, nextStatus, requestId) {
+      updateLocalTaskState(taskId, {
+        status: nextStatus,
+        updatedAt: Date.now(),
+        syncState: "pending",
+        requestId,
+        error: "同期キュー処理待ち"
+      });
     }
 
     async function toggleTask(card) {
@@ -1963,13 +2076,21 @@
         updateCardCompletionState(card, nextStatus === "done");
         refresh();
         try {
-          const result = await reverseSyncTask(taskId, nextStatus, baselineStatus);
+          const queued = await queueReverseSyncTask(taskId, nextStatus, baselineStatus);
+          updateLocalTaskState(taskId, { requestId: queued.requestId, error: "" });
+          const result = await waitForSyncResult(queued.requestId);
+          if (!result) {
+            setQueuedTimeoutState(taskId, nextStatus, queued.requestId);
+            refresh();
+            return;
+          }
           task.status = nextStatus;
+          clearSyncRequest(taskId);
           updateLocalTaskState(taskId, {
             status: nextStatus,
             updatedAt: Date.now(),
-            syncState: result.status === "ok" || result.status === "noop" ? "synced" : "partial",
-            error: result.warning || ""
+            syncState: result.syncState,
+            error: result.result?.warning || ""
           });
           if (!wasDone) {
             sparkle(card);
@@ -1979,6 +2100,7 @@
             renderTasks();
           }
         } catch (error) {
+          clearSyncRequest(taskId);
           updateLocalTaskState(taskId, {
             status: baselineStatus,
             updatedAt: Date.now(),
@@ -1992,6 +2114,47 @@
           refresh();
         }
       }, toggleDelayMs);
+    }
+
+    async function resumePendingSyncs() {
+      const { token } = readSyncConfig();
+      if (!token) return;
+      const state = readLocalState();
+      for (const [taskId, local] of Object.entries(state)) {
+        if (local?.syncState !== "pending" || !local?.requestId) continue;
+        try {
+          const payload = await fetchSyncRequestStatus(local.requestId);
+          if (payload.syncState === "pending") continue;
+          const task = allTasks.find((candidate) => candidate.id === taskId);
+          if (["synced", "partial"].includes(payload.syncState)) {
+            if (task) task.status = local.status || task.status;
+            clearSyncRequest(taskId);
+            updateLocalTaskState(taskId, {
+              syncState: payload.syncState,
+              error: payload.result?.warning || ""
+            });
+          } else {
+            const fallbackStatus = local.status === "done" ? "todo" : "done";
+            if (task) task.status = fallbackStatus;
+            clearSyncRequest(taskId);
+            updateLocalTaskState(taskId, {
+              status: fallbackStatus,
+              syncState: payload.syncState === "failed_conflict" ? "failed_conflict" : "failed",
+              error: payload.result?.error?.message || "同期失敗"
+            });
+          }
+        } catch (error) {
+          if (error.syncCode === "unauthorized") break;
+        }
+      }
+      renderTasks();
+    }
+
+    function schedulePendingSyncs() {
+      window.clearInterval(pendingSyncTimer);
+      pendingSyncTimer = window.setInterval(() => {
+        if (syncCounters().pending) void resumePendingSyncs();
+      }, syncPollIntervalMs);
     }
 
     taskList.addEventListener("click", (event) => {
@@ -2034,7 +2197,7 @@
     async function probeSyncBridge() {
       syncProbeStarted = true;
       try {
-        const response = await fetch(`${syncBridgeBaseUrl}/v1/task-board/status`, { cache: "no-store" });
+        const response = await fetch(`${syncBridgeBaseUrl}/status`, { cache: "no-store" });
         syncBridgeReachable = response.ok;
       } catch {
         syncBridgeReachable = false;
@@ -2044,7 +2207,7 @@
 
     syncSettings.addEventListener("click", async () => {
       const current = readSyncConfig();
-      const entered = window.prompt("ローカル逆同期トークンを入力してください。`clear` で解除します。", current.token);
+      const entered = window.prompt(syncSettingsPrompt(current.token), current.token);
       if (entered === null) return;
       const normalized = entered.trim();
       if (normalized.toLowerCase() === "clear") {
@@ -2062,6 +2225,7 @@
         if (!response.ok) throw new Error(`tasks_json_${response.status}`);
         allTasks = await response.json();
         refreshSyncChrome();
+        await resumePendingSyncs();
       } catch (error) {
         console.error(error);
         allTasks = [];
@@ -2073,7 +2237,9 @@
     }
 
     restoreBackground();
+    consumeSyncTokenFromUrl();
     probeSyncBridge();
+    schedulePendingSyncs();
     loadTasks();
   </script>
 </body>
