@@ -397,9 +397,9 @@
   },
   {
     "id": "mtodo-private-grants-20260605-sunbor-suzuki",
-    "title": "2026-06-05: SUNBOR適合/研究費制限を確認し、鈴木万平セットアップ助成の必要書類と推薦者ルートを確認する",
-    "status": "todo",
-    "priority": "A",
+    "title": "2026-06-05: SUNBOR適合/研究費制限を確認する。2026年度テーマがケミカルバイオロジー寄りで、現行の納豆/MASH/食品予防ラインとズレるため、2026-06-07にNo-Go。鈴木万平セットアップ助成の必要書類と推薦者ルート確認は別タスクで継続",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
@@ -441,7 +441,7 @@
   },
   {
     "id": "mtodo-private-grants-20260622-deadlines",
-    "title": "2026-06-22まで: ロッテB提出、SUNBOR提出、鈴木万平セットアップの仮学内締切対応を進める",
+    "title": "2026-06-22まで: ロッテB提出、鈴木万平セットアップの仮学内締切対応を進める。SUNBORは2026-06-07にNo-Go",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
