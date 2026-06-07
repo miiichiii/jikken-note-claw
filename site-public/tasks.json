@@ -156,8 +156,8 @@
   {
     "id": "mtodo-30c026599f62",
     "title": "6/1: 入試実施部会",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
@@ -266,8 +266,8 @@
   {
     "id": "mtodo-730dafe7d364",
     "title": "毎週土曜: マウス確認",
-    "status": "todo",
-    "priority": "B",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "実験",
     "parentCategory": "研究・共同研究",
