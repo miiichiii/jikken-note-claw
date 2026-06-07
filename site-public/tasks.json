@@ -385,8 +385,8 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20260607-lotte-zeynab-confirm-jun08",
-    "title": "2026-06-08(月): ロッテ財団Bについて、Zeynabさんを35歳以下共同研究者として出す方針を確認し、本人了承・2026-04-01時点年齢・筑波大学大学院博士後期課程表記を確認する",
+    "id": "mtodo-20260607-japanprize-zeynab-confirm-jun08",
+    "title": "2026-06-08(月): Japan Prize / 平成記念研究助成のZeynabさん代表案について、本人了承・応募資格・2027年4月以降の国内所属見込み・筑波大学大学院博士後期課程表記を確認する",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -397,7 +397,7 @@
   },
   {
     "id": "mtodo-20260607-grants-office-inquiry-jun08",
-    "title": "2026-06-08(月): 大学事務へ、ロッテB・中外SRG2022・鈴木万平セットアップの学内締切、機関承認、推薦/押印、間接経費、提出方法を照会する。SUNBORはNo-Goとして含めない",
+    "title": "2026-06-08(月): 大学事務へ、Japan Prize / 平成記念研究助成（Zeynab代表案）・中外SRG2022・鈴木万平セットアップの学内締切、応募資格、機関承認、推薦/押印、間接経費、提出方法を照会する。SUNBORはNo-Goとして含めない",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -440,8 +440,8 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20260607-ippo-final-lotte80-suzuki-route-jun12",
-    "title": "2026-06-12(金): 一歩の冒研 Science Fellowship 2026 の提出候補を完成させる。並行して、ロッテB本文80%と鈴木万平セットアップの推薦ルート/必要書類確認を済ませる",
+    "id": "mtodo-20260607-ippo-final-japanprize80-suzuki-route-jun12",
+    "title": "2026-06-12(金): 一歩の冒研 Science Fellowship 2026 の提出候補を完成させる。並行して、Japan Prize / 平成記念研究助成のZeynab代表案v2骨子と鈴木万平セットアップの推薦ルート/必要書類確認を済ませる",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -463,7 +463,7 @@
   },
   {
     "id": "mtodo-20260607-ippo-submit-jun15-noon",
-    "title": "2026-06-15(月) 12:00: 一歩の冒研 Science Fellowship 2026 を提出する。提出後はロッテBを最優先へ戻す",
+    "title": "2026-06-15(月) 12:00: 一歩の冒研 Science Fellowship 2026 を提出する。提出後はJapan Prize / 平成記念研究助成のZeynab代表案を優先へ戻す",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -473,8 +473,8 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20260607-lotte-zeynab-version-jun16",
-    "title": "2026-06-16(火): ロッテ財団BのZeynabさん確認版を完成させ、共同研究者役割・研究費内訳・公式様式割付を確認する",
+    "id": "mtodo-20260607-japanprize-zeynab-version-jun16",
+    "title": "2026-06-16(火): Japan Prize / 平成記念研究助成のZeynab代表案確認版を完成させ、代表者適格性・2027年4月以降の国内所属・共同研究者構成・公式様式割付を確認する",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -485,7 +485,7 @@
   },
   {
     "id": "mtodo-20260607-june-grants-80pct-gate-jun17",
-    "title": "2026-06-17(水): 6月締切案件の進捗判定を行い、ロッテBと中外SRG2022の本文が80%未満なら応募先をさらに絞る",
+    "title": "2026-06-17(水): 6-7月締切案件の進捗判定を行い、Japan Prize / 平成記念研究助成Zeynab代表案と中外SRG2022の本文が80%未満なら応募先をさらに絞る",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -495,8 +495,8 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20260607-lotte-submit-candidate-chugai80-jun19",
-    "title": "2026-06-19(金): ロッテ財団Bの提出候補を完成させ、中外SRG2022は本文80%とフォーム項目確認まで進める",
+    "id": "mtodo-20260607-japanprize-candidate-chugai80-jun19",
+    "title": "2026-06-19(金): Japan Prize / 平成記念研究助成のZeynab代表案v2候補を完成させ、中外SRG2022は本文80%とフォーム項目確認まで進める",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -506,8 +506,8 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20260607-lotte-submit-jun22-noon",
-    "title": "2026-06-22(月) 12:00: ロッテ財団Bを提出する。同日までに鈴木万平セットアップの仮学内締切対応も進める",
+    "id": "mtodo-20260607-japanprize-review-jun22",
+    "title": "2026-06-22(月): Japan Prize / 平成記念研究助成のZeynab代表案をレビュー可能な状態にし、2026-07-31締切へ向けた残作業を確定する。同日までに鈴木万平セットアップの仮学内締切対応も進める",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
