@@ -1,5 +1,16 @@
 [
   {
+    "id": "mtodo-20260607-ide-practice-room-network",
+    "title": "井出先生に実習室のネットワークについて相談する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260603-software-install-kuramochi-draft",
     "title": "2026-06-11(木)候補: 倉持さんへソフトウェア・インストール申請書の件の日程返信を送信する。2026-06-03に大学メール下書き作成済み、6/11(木)15:00-15:30を仮押さえ",
     "status": "done",
