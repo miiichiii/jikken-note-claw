@@ -715,6 +715,72 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260608-spread-second-call-docs-check-jun09",
+    "title": "2026-06-09(火): SPReAD第2回の公募要領・様式0/1/2を公式ページから再確認し、v23提出候補との差分と不足書類を洗い出す",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260608-spread-compute-briefing-jun12",
+    "title": "2026-06-12(金) 16:00-18:00: SPReAD計算資源提供者による説明会に参加またはアーカイブ確認し、計算資源/API予算説明へ反映する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260608-spread-forms-erad-check-jun17",
+    "title": "2026-06-17(水): SPReAD v23のExcel実機表示/PDF化、様式0チェックリスト、様式2同意確認書、e-Rad所属機関コード・部局表記を確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260608-spread-final-candidate-jun24",
+    "title": "2026-06-24(水): SPReAD第2回提出候補を固定し、事務局締切前レビューへ回す",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260608-spread-office-submit-jun26-noon",
+    "title": "2026-06-26(金) 12:00: SPReAD第2回を大学事務局締切に合わせて提出/提出確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260608-spread-official-deadline-jul03-noon",
+    "title": "2026-07-03(金) 12:00: SPReAD第2回公式締切。大学事務局経由の最終提出状態を確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260603-private-grants-maximize-applications",
     "title": "2026-06月中: 民間研究助成_2026 は、既存候補を少しずつCodexで書類化し、応募数を最大化する。ただし無理なものはGo/No-Goで絞る",
     "status": "todo",
