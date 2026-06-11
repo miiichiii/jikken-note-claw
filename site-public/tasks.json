@@ -1012,6 +1012,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260611-soxl-watch-166",
+    "title": "SOXL 1株指値166ドルの監視用 cron を運用し、166以下到達時はTelegram DMで通知、通常時は静かな定期報告にする",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "システム・お金・雑務",
+    "parentCategory": "システム・お金・雑務",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260604-chatgpt-pro-reimbursement-june05",
     "title": "2026-06-05: ChatGPT Pro研究費契約について、4/27・5/27分の決済証憑（氏名入りカード明細、利用画面スクリーンショット）が揃っているか確認し、経理係へ精算できるものを提出する",
     "status": "todo",
@@ -1184,6 +1195,28 @@
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260609-takei-eugenia-anatomy-consult",
+    "title": "武井先生宛にガーナ人留学生ユージニアの実習室仕様共有について相談するメール下書きを確認・送信する (",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "2026-06-09 追加 (Takana-yania/Eugenia 件)",
+    "parentCategory": "2026-06-09 追加 (Takana-yania/Eugenia 件)",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260616-takei-eugenia-anatomy-decision",
+    "title": "2026-06-16 (火) 午後の解剖実習後に武井先生から返答をもらい、ユージニア同伴の実習室実測可否・学内対応手順を最終確認する (",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "2026-06-09 追加 (Takana-yania/Eugenia 件)",
+    "parentCategory": "2026-06-09 追加 (Takana-yania/Eugenia 件)",
     "section": "",
     "syncable": true
   }
