@@ -134,8 +134,8 @@
   {
     "id": "mtodo-10b0aab96161",
     "title": "5/27〜29: 助産学専攻科 学内選抜 出願受付",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
@@ -1012,6 +1012,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260613-shotaro-summer-crash-course-decision",
+    "title": "2026-06-14(日) 07:00-08:00: 正太郎の塾の夏期講習を申し込むかどうかを検討・判断する。08:15-09:15 に「正太郎 夏期講習申し込む」(既存予定) の前に意思決定を完了させる。Google Calendar event id `8dqiug59jpq4avc5i92j4kpi74`、リマインダー 60分/10分前",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260611-soxl-watch-166",
     "title": "SOXL 1株指値166ドルの監視用 cron を運用し、166以下到達時はTelegram DMで通知、通常時は静かな定期報告にする",
     "status": "todo",
@@ -1179,8 +1190,8 @@
   {
     "id": "mtodo-7d02208f4b92",
     "title": "2026-05-19 アドリアマイシン投与_糸球体単離実験 締切",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "システム・お金・雑務",
     "parentCategory": "システム・お金・雑務",
