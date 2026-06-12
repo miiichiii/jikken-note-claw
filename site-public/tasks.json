@@ -924,6 +924,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260613-tsukuba3-symposiast-decision-and-send",
+    "title": "2026-06-20(土) まで: 筑波大側 (=高橋研) 発表者3名候補を高橋先生と相談の上で決定し、講演依頼メールを送信する。高橋研出身者で案内の25名リストにいる候補: 鈴木教郎・西川恵三・張替秀郎・若林伸直・守田匡伸 ほか。東北大側3名は2026-06-04送信済み、進行遅延気味のため今週中に仕切りたい",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "高橋先生退官記念事業",
+    "parentCategory": "高橋先生退官記念事業",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-229d3fad955a",
     "title": "協賛依頼先・依頼文を作る",
     "status": "todo",
