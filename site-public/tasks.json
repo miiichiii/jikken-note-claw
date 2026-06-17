@@ -1,6 +1,6 @@
 [
   {
-    "id": "meta-todo-line-8",
+    "id": "mtodo-20260615-mouse-cost-donation-route",
     "title": "プロジェクト研究費のマウス飼育費: 筑波大 高橋研への寄附ルートを確立する",
     "status": "todo",
     "priority": "B",
@@ -8,10 +8,10 @@
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-9",
+    "id": "mtodo-20260615-mouse-cost-donation-route-kobayashi-reply",
     "title": "筑波大研究支援 小林さんから回答取得（寄附ルート案、共通経費10%、高橋先生を受入先候補）",
     "status": "done",
     "priority": "C",
@@ -19,10 +19,10 @@
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-10",
+    "id": "mtodo-20260615-mouse-cost-donation-route-thunderbird-sent",
     "title": "Thunderbird 経由で筑波大研究支援へ高橋先生宛の寄附受入を打診（2026-06-15 13:29 センセイ送信済み）",
     "status": "done",
     "priority": "C",
@@ -30,10 +30,10 @@
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-11",
+    "id": "mtodo-20260615-mouse-cost-donation-route-ipu-inquiry",
     "title": "IPU 総務部 鈴木さんへプロジェクト研究費の外部大学寄附可否を問い合わせ（Desknet's。メールアドレスは私的記録側で確認）",
     "status": "todo",
     "priority": "B",
@@ -41,10 +41,10 @@
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-12",
+    "id": "mtodo-20260615-mouse-cost-donation-route-docs",
     "title": "回答を待って、寄附申込書（添付.docx）または代替案を準備",
     "status": "todo",
     "priority": "B",
@@ -52,10 +52,10 @@
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-13",
+    "id": "mtodo-20260615-mouse-cost-donation-route-tsukuba-coordinate",
     "title": "高橋先生・井田さんと筑波大側受入可否を調整",
     "status": "todo",
     "priority": "B",
@@ -63,10 +63,10 @@
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-14",
+    "id": "mtodo-20260615-mouse-cost-donation-route-execute",
     "title": "寄附実行（または代替ルート確定）と、7月以降の請求タイミング決定",
     "status": "todo",
     "priority": "B",
@@ -74,7 +74,7 @@
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": false
+    "syncable": true
   },
   {
     "id": "mtodo-20260607-ide-practice-room-network",
@@ -110,7 +110,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-19",
+    "id": "mtodo-20260603-child-allowance-resident-record",
     "title": "住民票謄本を取得（6/1以降発行、続柄・筆頭者あり、マイナンバーなし）",
     "status": "done",
     "priority": "C",
@@ -118,10 +118,10 @@
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-20",
+    "id": "mtodo-20260603-child-allowance-income-cert-self",
     "title": "令和8年度所得証明書を取得（本人）",
     "status": "done",
     "priority": "C",
@@ -129,10 +129,10 @@
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-21",
+    "id": "mtodo-20260603-child-allowance-income-cert-spouse",
     "title": "令和8年度所得証明書を取得（配偶者）",
     "status": "done",
     "priority": "C",
@@ -140,10 +140,10 @@
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-22",
+    "id": "mtodo-20260603-child-allowance-submit",
     "title": "総務課 給与担当へ提出（2026-06-15 完了）",
     "status": "done",
     "priority": "C",
@@ -151,7 +151,7 @@
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": false
+    "syncable": true
   },
   {
     "id": "mtodo-scansnap-20260522-kll3458",
@@ -363,7 +363,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-46",
+    "id": "mtodo-20260616-aav-pvp-preprint-data-gap-check",
     "title": "manuscript.mdの現状完成度と不足データ/図の確認（in vitro HEK/HeLa/MEF/CHO/RAW + in vivo IV / subretinal のデータ/図の過不足）",
     "status": "todo",
     "priority": "B",
@@ -371,10 +371,10 @@
     "category": "論文・発表・広報",
     "parentCategory": "論文・発表・広報",
     "section": "",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-47",
+    "id": "mtodo-20260616-aav-pvp-preprint-coauthor-approval",
     "title": "全共著者（Natalia, Thi-Hang, Eugenia, Mayuko, Fukuda, Takahashi, Hamada）の最終確認・Acknowledgement取得",
     "status": "todo",
     "priority": "B",
@@ -382,10 +382,10 @@
     "category": "論文・発表・広報",
     "parentCategory": "論文・発表・広報",
     "section": "",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-48",
+    "id": "mtodo-20260616-aav-pvp-preprint-submission-prep",
     "title": "投稿先プレプリントサーバ（bioRxiv想定）の選択・投稿準備・Supplementary情報整備",
     "status": "todo",
     "priority": "B",
@@ -393,10 +393,10 @@
     "category": "論文・発表・広報",
     "parentCategory": "論文・発表・広報",
     "section": "",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-49",
+    "id": "mtodo-20260616-aav-pvp-preprint-biorxiv-submit",
     "title": "bioRxivへ投稿し、7/19(日)時点で公開済みであることを確認",
     "status": "todo",
     "priority": "A",
@@ -404,7 +404,7 @@
     "category": "論文・発表・広報",
     "parentCategory": "論文・発表・広報",
     "section": "",
-    "syncable": false
+    "syncable": true
   },
   {
     "id": "mtodo-3be5996235ec",
