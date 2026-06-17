@@ -739,8 +739,8 @@
   {
     "id": "mtodo-private-grants-20260603-lotte-gate",
     "title": "2026-06-03: ロッテ財団Bの35歳以下共同研究者候補を確定し、Go/No-Go判定する",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
