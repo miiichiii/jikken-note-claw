@@ -1,5 +1,82 @@
 [
   {
+    "id": "meta-todo-line-8",
+    "title": "プロジェクト研究費のマウス飼育費: 筑波大 高橋研への寄附ルートを確立する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-9",
+    "title": "筑波大研究支援 小林さんから回答取得（寄附ルート案、共通経費10%、高橋先生を受入先候補）",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-10",
+    "title": "Thunderbird 経由で筑波大研究支援へ高橋先生宛の寄附受入を打診（2026-06-15 13:29 センセイ送信済み）",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-11",
+    "title": "IPU 総務部 鈴木さんへプロジェクト研究費の外部大学寄附可否を問い合わせ（Desknet's。メールアドレスは私的記録側で確認）",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-12",
+    "title": "回答を待って、寄附申込書（添付.docx）または代替案を準備",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-13",
+    "title": "高橋先生・井田さんと筑波大側受入可否を調整",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-14",
+    "title": "寄附実行（または代替ルート確定）と、7月以降の請求タイミング決定",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": false
+  },
+  {
     "id": "mtodo-20260607-ide-practice-room-network",
     "title": "井出先生に実習室のネットワークについて相談する",
     "status": "todo",
@@ -23,7 +100,7 @@
   },
   {
     "id": "mtodo-20260603-child-allowance-current-status-docs",
-    "title": "2026-06-18(木)まで: 児童手当の現況確認書類を総務課 給与担当へ提出する。まず6/1以降取得の住民票謄本（世帯全員・マイナンバーなし・続柄/筆頭者あり）と令和8年度所得証明書/課税証明書（原則本人・配偶者分）を取得する",
+    "title": "2026-06-18(木)まで: 児童手当の現況確認書類を総務課 給与担当へ提出する。**2026-06-15 提出完了**。住民票謄本（6/1以降発行、世帯全員・マイナンバーなし・続柄/筆頭者あり）と令和8年度所得証明書/課税証明書（本人・配偶者分）。 （2026-06-02 09:28 受信、6/15 12:24 書類取得確認、6/15 提出完了）",
     "status": "done",
     "priority": "C",
     "assignee": "Me",
@@ -31,6 +108,50 @@
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
     "syncable": true
+  },
+  {
+    "id": "meta-todo-line-19",
+    "title": "住民票謄本を取得（6/1以降発行、続柄・筆頭者あり、マイナンバーなし）",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-20",
+    "title": "令和8年度所得証明書を取得（本人）",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-21",
+    "title": "令和8年度所得証明書を取得（配偶者）",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-22",
+    "title": "総務課 給与担当へ提出（2026-06-15 完了）",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": false
   },
   {
     "id": "mtodo-scansnap-20260522-kll3458",
@@ -229,6 +350,61 @@
     "parentCategory": "大学の業務",
     "section": "授業・教育",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20260616-aav-pvp-preprint-jul19",
+    "title": "2026-07-19(日)まで: AAV-PVP論文のプレプリント公開を完了させる（ナターシャ先生＝Natalia GogolevaのJSGCT2026学会発表向け、7/23学会前に投稿・公開まで持っていく）。原稿ドラフト: `/Volumes/SSD2TB/SynologyDownload/AAV PVP draft_V2_filesのコピー/manuscript.md`、共著者: Natalia Gogoleva, Thi-Hang Tran, Eugenia Kumaga, Mayuko Oki, Shinichi Fukuda, Satoru Takahashi, Michito Hamada。対応著者: Hamada/Gogoleva/Takahashi。 （ナターシャ先生からの転送）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "meta-todo-line-46",
+    "title": "manuscript.mdの現状完成度と不足データ/図の確認（in vitro HEK/HeLa/MEF/CHO/RAW + in vivo IV / subretinal のデータ/図の過不足）",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-47",
+    "title": "全共著者（Natalia, Thi-Hang, Eugenia, Mayuko, Fukuda, Takahashi, Hamada）の最終確認・Acknowledgement取得",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-48",
+    "title": "投稿先プレプリントサーバ（bioRxiv想定）の選択・投稿準備・Supplementary情報整備",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-49",
+    "title": "bioRxivへ投稿し、7/19(日)時点で公開済みであることを確認",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": false
   },
   {
     "id": "mtodo-3be5996235ec",
@@ -924,11 +1100,11 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20260613-tsukuba3-symposiast-decision-and-send",
-    "title": "2026-06-20(土) まで: 筑波大側 (=高橋研) 発表者3名候補を高橋先生と相談の上で決定し、講演依頼メールを送信する。高橋研出身者で案内の25名リストにいる候補: 鈴木教郎・西川恵三・張替秀郎・若林伸直・守田匡伸 ほか。東北大側3名は2026-06-04送信済み、進行遅延気味のため今週中に仕切りたい",
+    "id": "mtodo-721bd4c0d3cf",
+    "title": "2026-06-18(木)まで: 依馬先生・一條先生へ講演依頼メールを送る（筑波大側残り2名）。2026-06-17 DMでセンセイが送付予定と確認",
     "status": "todo",
     "priority": "A",
-    "assignee": "Bot",
+    "assignee": "Me",
     "category": "高橋先生退官記念事業",
     "parentCategory": "高橋先生退官記念事業",
     "section": "",
@@ -975,6 +1151,61 @@
     "assignee": "Me",
     "category": "高橋先生退官記念事業",
     "parentCategory": "高橋先生退官記念事業",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-8999de7ee4ae",
+    "title": "2026-06-18(木)まで: 依馬先生・一條先生 個別講演依頼メールを送る。4. 高橋先生退官記念事業の同一タスクにも反映済み",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "4-2. 高橋先生退官記念: 6月後半の着手5本 (2026-06-13 01:33 DM)",
+    "parentCategory": "4-2. 高橋先生退官記念: 6月後半の着手5本 (2026-06-13 01:33 DM)",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-52eace309d2c",
+    "title": "企業への案内メール (協賛依頼文ベース、TODO.md「協賛依頼文を作る」参照)",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot",
+    "category": "4-2. 高橋先生退官記念: 6月後半の着手5本 (2026-06-13 01:33 DM)",
+    "parentCategory": "4-2. 高橋先生退官記念: 6月後半の着手5本 (2026-06-13 01:33 DM)",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-ac858c2594cf",
+    "title": "2026-06-18(木)まで: 東北大側フォーム未回答者へ柔らかいリマインドを送る。対象候補: 蓬田健太郎・諏訪部徳芳・太田潤・赤坂純逸・黒羽高志 の5名（送信前に未回答リストを再確認）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "4-2. 高橋先生退官記念: 6月後半の着手5本 (2026-06-13 01:33 DM)",
+    "parentCategory": "4-2. 高橋先生退官記念: 6月後半の着手5本 (2026-06-13 01:33 DM)",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-57c5611b7577",
+    "title": "連絡がつかない先生方へ往復ハガキのオンライン注文 (上記 5名+メール不明者向け)",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "4-2. 高橋先生退官記念: 6月後半の着手5本 (2026-06-13 01:33 DM)",
+    "parentCategory": "4-2. 高橋先生退官記念: 6月後半の着手5本 (2026-06-13 01:33 DM)",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-365751ad73c9",
+    "title": "筑波大学側の教員と事務職員への連絡 (依馬・一條個別依頼とは別系統の同報ご案内)",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "4-2. 高橋先生退官記念: 6月後半の着手5本 (2026-06-13 01:33 DM)",
+    "parentCategory": "4-2. 高橋先生退官記念: 6月後半の着手5本 (2026-06-13 01:33 DM)",
     "section": "",
     "syncable": true
   },
