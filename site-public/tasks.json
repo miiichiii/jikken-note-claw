@@ -474,7 +474,7 @@
   },
   {
     "id": "mtodo-20260617-kudo-recombinant-dna-update",
-    "title": "工藤先生メール: 遺伝子組換え関連の更新（期限未設定）",
+    "title": "工藤先生メール: 実験動物計画書の更新（期限未設定）",
     "status": "todo",
     "priority": "B",
     "assignee": "Me",
@@ -496,7 +496,7 @@
   },
   {
     "id": "mtodo-20260617-kudo-recombinant-dna-update-aav-ad-crispr-overexpression",
-    "title": "アデノ随伴ウイルスベクターとアデノウイルスベクターを用いたマウス胎児へのCRISPR/Cas9系、遺伝子過剰発現系の確立",
+    "title": "アデノ随伴ウイルスベクターおよびアデノウイルスベクターを用いた、マウス胎児へのCRISPR/Cas9系・遺伝子過剰発現系の確立",
     "status": "todo",
     "priority": "B",
     "assignee": "Me",
