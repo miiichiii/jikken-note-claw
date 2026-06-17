@@ -793,7 +793,40 @@
   },
   {
     "id": "mtodo-private-grants-20260622-deadlines",
-    "title": "2026-06-22まで: ロッテB提出、鈴木万平セットアップの仮学内締切対応を進める。SUNBORは2026-06-07にNo-Go",
+    "title": "2026-06-22(月) 12:00: ロッテ財団 奨励研究助成〖B〗実装型共同研究助成をWeb提出する。鈴木万平セットアップ助成の仮学内締切対応は別タスクで並行。SUNBORは2026-06-07にNo-Go",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260617-lotteb-materials-jun19",
+    "title": "2026-06-19(金)まで: ロッテ財団Bの申請書本文（7ページ以内）、予算、代表論文2報、共同研究者情報を揃える",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260617-lotteb-eligibility-check-jun20",
+    "title": "2026-06-20(土)まで: ロッテ財団Bの応募要件（35歳以下共同研究者、異分野・別所属、機関承認、Web申請要件）を最終確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260617-lotteb-web-finalcheck-jun21",
+    "title": "2026-06-21(日)まで: ロッテ財団BのWeb入力・添付アップロード・送信前チェックを完了する",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -1212,8 +1245,8 @@
   {
     "id": "mtodo-971393a68c94",
     "title": "毎週月曜など: お迎え予定確認",
-    "status": "todo",
-    "priority": "B",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "生活・家庭・健康",
     "parentCategory": "生活・家庭・健康",
