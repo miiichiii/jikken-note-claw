@@ -473,6 +473,39 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260617-kudo-recombinant-dna-update",
+    "title": "工藤先生メール: 遺伝子組換え関連の更新（期限未設定）",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260617-kudo-recombinant-dna-update-nsg-hsc",
+    "title": "NSGマウスを用いたヒト幹細胞の機能解析",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260617-kudo-recombinant-dna-update-aav-ad-crispr-overexpression",
+    "title": "アデノ随伴ウイルスベクターとアデノウイルスベクターを用いたマウス胎児へのCRISPR/Cas9系、遺伝子過剰発現系の確立",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
     "id": "mtodo-6bb507a61297",
     "title": "AMEDヒアリング（林先生）: 5/13までにスライド協力・確認、5/28 14:45〜待機/15:00開始（Google Calendar登録済み）",
     "status": "done",
