@@ -352,6 +352,72 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260618-zeynab-srep-major-revision",
+    "title": "来週(2026-06-24目安)まで: Zeynabさん（Zeynab Javan）担当論文のScientific Reports Major Revisionを完成・再投稿する（胎児膵臓原基をWTとPDX1KOに移植 / Submission ID `175b4763-01a6-4f9c-a3cc-1662ecdfe537`、Decision: major revision）。PDX1KO移植実験への厳しいコメントに対応するため、追実験なしで主張を抑えて書き直し、ポイント・バイ・ポイント回答を添付して再投稿する。 ( )",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-zeynab-srep-major-revision-deadline-check",
+    "title": "投稿ページ `https://submission.springernature.com/submission-details/175b4763-01a6-4f9c-a3cc-1662ecdfe537` で正式締切日と再投稿必要物（.docxテンプレ、Supplementary、cover letter 等）を確認",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-zeynab-srep-major-revision-draft-share",
+    "title": "修正版 manuscript（PDX1KO 主張を弱めた版）と point-by-point response のドラフトを作成し、Zeynabさんと共有",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-zeynab-srep-major-revision-coauthor-align",
+    "title": "高橋先生・高橋研メンバーへ修正方針とスケジュールを共有し、共著者確認を取る",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-zeynab-srep-major-revision-resubmit",
+    "title": "submission portal から再投稿し、受付確認メールを保存",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-zeynab-srep-major-revision-apc",
+    "title": "APC（Article Processing Charge）について：2026-06-15 着信メール本文にはAPC記載なし。Accept後のAPC請求メールが来た時点で、科研費（代表: Hamada / 高橋先生ライン）/ IPU 予算 / 高橋研予算 のどれで支払うか、Zeynabさん・高橋先生と役割分担を整理する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260616-aav-pvp-preprint-jul19",
     "title": "2026-07-19(日)まで: AAV-PVP論文のプレプリント公開を完了させる（ナターシャ先生＝Natalia GogolevaのJSGCT2026学会発表向け、7/23学会前に投稿・公開まで持っていく）。原稿ドラフト: `/Volumes/SSD2TB/SynologyDownload/AAV PVP draft_V2_filesのコピー/manuscript.md`、共著者: Natalia Gogoleva, Thi-Hang Tran, Eugenia Kumaga, Mayuko Oki, Shinichi Fukuda, Satoru Takahashi, Michito Hamada。対応著者: Hamada/Gogoleva/Takahashi。 （ナターシャ先生からの転送）",
     "status": "todo",
