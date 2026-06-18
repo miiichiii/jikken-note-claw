@@ -1,5 +1,71 @@
 [
   {
+    "id": "mtodo-20260618-r9-parttime-special-lecturer-input",
+    "title": "2026-07-03(金)まで: R9年度 非常勤講師A・授業内特別講師の確認とJドライブExcel入力を完了する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-r9-parttime-special-lecturer-input-pdf-check",
+    "title": "2026-06-19(金): 転送メール添付 `R9年度非常勤講師.pdf` と医科学センター会議メモを確認し、入力対象・判断基準を整理する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-r9-parttime-special-lecturer-input-jdrive-check",
+    "title": "2026-06-23(火): Jドライブ `医科学フォルダー（J:）＞●作業依頼＞（医科学）非常勤A・授業内特別講師入力用.xlsx` を開き、センセイ担当分の入力要否と不足情報を確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-r9-parttime-special-lecturer-input-draft",
+    "title": "2026-06-27(土): 入力対象がある場合、科目責任者・担当教員・非常勤講師コマ数・授業内特別講師区分を一次入力する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-r9-parttime-special-lecturer-input-finalcheck",
+    "title": "2026-07-01(水): 入力内容を最終確認し、不明点が残る場合は井出先生または事務へ確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-r9-parttime-special-lecturer-input-deadline",
+    "title": "2026-07-03(金): 締切当日確認。Excel入力済みであることを確認し、必要なら完了報告または未入力事項を処理する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260615-mouse-cost-donation-route",
     "title": "プロジェクト研究費のマウス飼育費: 筑波大 高橋研への寄附ルートを確立する",
     "status": "todo",
