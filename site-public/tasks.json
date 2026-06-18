@@ -1397,6 +1397,72 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260618-shotaro-highschool-briefing-apply-jun25",
+    "title": "2026-06-25(木)まで: 正太郎さんの高校説明会候補を絞り、土浦第二など6月末締切の申込要否を判断する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-shotaro-tsuchiura2-jun26",
+    "title": "2026-06-26(金)締切: 土浦第二の学校説明会を申し込むか決める",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-shotaro-jun30-schools",
+    "title": "2026-06-30(火)締切: 石岡第一・牛久栄進・つくばサイエンス・水海道第二の申込要否を確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-shotaro-jul03-schools",
+    "title": "2026-07-03(金)締切: 土浦第三・土浦工業・伊奈・守谷・牛久の申込要否を確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-shotaro-jul10-schools",
+    "title": "2026-07-10(金)締切: 土浦第一・取手第一・取手松陽・茎崎・水海道第一の申込要否を確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260618-shotaro-takezono-jul15",
+    "title": "2026-07-15(水)締切: 竹園の学校説明会を申し込むか決める",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260613-shotaro-summer-crash-course-decision",
     "title": "2026-06-14(日) 07:00-08:00: 正太郎の塾の夏期講習を申し込むかどうかを検討・判断する。08:15-09:15 に「正太郎 夏期講習申し込む」(既存予定) の前に意思決定を完了させる。Google Calendar event id `8dqiug59jpq4avc5i92j4kpi74`、リマインダー 60分/10分前",
     "status": "todo",
