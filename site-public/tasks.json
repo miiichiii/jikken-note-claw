@@ -77,6 +77,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260618-disposal-list-stamp-return",
+    "title": "物品棄却10件: 学内メールで届く棄却備品一覧（A3判）の「立合者②」欄に押印し、松崎さんへ返送する。代替品購入の要否は「現時点では不要」方針",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260607-ide-practice-room-network",
     "title": "人体構造実習室への無線LAN設置状況を確認し、未設置または不明なら井出先生・施設担当へ相談する",
     "status": "todo",
