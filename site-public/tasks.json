@@ -605,6 +605,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260619-natto-component-macrophage-lit",
+    "title": "**2026-06-19 完了**: 納豆成分（分解物を含む）がマクロファージ・免疫細胞に作用している既存論文を調査する。Takanofoods 担当者に具体的な成分改変条件を相談する前に、既存研究の論点・手法・未解決問題を把握するのが目的。調査結果: 2026-06-19 納豆成分 × マクロファージ 文献レビュー（**13 報**、Taniguchi 2019 J Biosci Bioeng が最重要、**筑波大 Sci Rep 2023 は Hamada M 先生共著の IPU 側 in vitro 計画直結の既報**）。報告先: Telegram 納豆プロジェクトグループ `telegram:-5211329237`（正本再投稿 message 17374）+ ナツグループ `-5249050279` へ誤投稿訂正（message 17372）+ 研究費グループ `-1003800491468` へ全リスト＋Hamada 既報訂正（message 120）。次のアクション候補 A-D はセンセイ選択待ち",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Bot",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260603-natto-facs-antibody-quote-decision",
     "title": "2026-06-04: NattoプロジェクトのFACS抗体見積もり（約48万円）について、MASH肝臓フローサイトメトリー分とin vitro NAT添加後FACS解析分を分けて、一括購入か段階購入か判断し、発注方針を決める",
     "status": "todo",
