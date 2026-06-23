@@ -649,6 +649,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260623-kudo-animal-plan-update-today",
+    "title": "2026-06-23(火): 工藤先生メールを確認し、実験動物計画書の変更依頼内容と今日対応すべき手続きを整理・着手する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260617-kudo-recombinant-dna-update-nsg-hsc",
     "title": "NSGマウスを用いたヒト幹細胞の機能解析",
     "status": "todo",
