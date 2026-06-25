@@ -1,5 +1,16 @@
 [
   {
+    "id": "mtodo-20260625-contact-masuda-jun26",
+    "title": "2026-06-26(金)まで: 増田先生に連絡する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260618-r9-parttime-special-lecturer-input",
     "title": "2026-07-03(金)まで: R9年度 非常勤講師A・授業内特別講師の確認とJドライブExcel入力を完了する",
     "status": "todo",
