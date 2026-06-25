@@ -1,5 +1,16 @@
 [
   {
+    "id": "mtodo-20260626-reply-eugenia-line",
+    "title": "2026-06-26(金): ユージニアさんのLINEに返事する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260625-contact-masuda-jun26",
     "title": "2026-06-26(金)まで: 増田先生に連絡する",
     "status": "todo",
@@ -640,6 +651,17 @@
   {
     "id": "mtodo-20260620-fcm-antibody-order-jun22",
     "title": "2026-06-22(月): FCM抗体の注文を行う。必要なら上記FACS抗体見積もり・発注方針タスクの判断内容を踏まえて発注内容を確定する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260625-albino-hcd-natto-intestinal-absorption-priority",
+    "title": "2026-06-25: Albino HCD + 納豆の腸管吸収・免疫 優先設計を 同ノート に保存。4 段階（部位別 bulk/qPCR → 吸収機能 → 盲腸/大腸 FACS → Ccl2 RNAscope）で攻める方針。FACS は盲腸/大腸 + 十二指腸/空腸の 2 か所限定",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
