@@ -1331,6 +1331,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260628-japanprize-ichikawa-japanese-doc",
+    "title": "2026-07-04(土)まで: Japan Prize / 平成記念研究助成の日本語版書類を作成し、市川先生へ共有して助言を依頼する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
     "id": "mtodo-10198068b12d",
     "title": "タカノフーズ共同研究契約書: 先方到着確認待ち",
     "status": "done",
