@@ -1,5 +1,16 @@
 [
   {
+    "id": "mtodo-20260628-forward-tamori-email-iimura",
+    "title": "田守さんからのメールを大学事務の飯村さんへ転送する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260626-reply-eugenia-line",
     "title": "2026-06-26(金): ユージニアさんのLINEに返事する",
     "status": "todo",
