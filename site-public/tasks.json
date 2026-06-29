@@ -11,10 +11,21 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20260626-reply-eugenia-line",
-    "title": "2026-06-26(金): ユージニアさんのLINEに返事する",
+    "id": "mtodo-20260629-hr-evaluation-sheet-jun30",
+    "title": "2026-06-30(火)まで: 人事評価シートを6月中に作成・提出する",
     "status": "todo",
     "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260626-reply-eugenia-line",
+    "title": "2026-06-26(金): ユージニアさんのLINEに返事する",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
