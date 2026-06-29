@@ -638,6 +638,83 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260629-shuu-gfp-bm-short-biodistribution-jul21",
+    "title": "2026-07-21頃まで: Shuuさん卒研/Runx1 paper補助データ候補として、GFP骨髄細胞の経胎盤移植後短期分布解析の最小実験計画を確定し、中間発表スライドへ反映する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260629-shuu-gfp-bm-mouse-number-plan",
+    "title": "必要なマウス数を試算する（GFP donor、recipient妊娠マウス、Zeynaさん提供WTマウスの掛け合わせ分を含む）",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260629-shuu-zeyna-wt-mice-dissection-help",
+    "title": "Zeynaさんから提供可能なWTマウス数と、解析/解剖補助を頼める範囲を確認する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260629-shuu-gfp-bm-fcm-hsc-practice",
+    "title": "GFP骨髄細胞を使い、FCMでGFP+細胞とHSC markerを見る練習を計画する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260629-shuu-fcm-antibody-panel-hsc-lineage",
+    "title": "FCM抗体パネルを決める（最低限GFP/CD45、可能ならHSC markerやlineage markerまで）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260629-shuu-jul21-before-after-scope",
+    "title": "7月21日までにできることと、7月21日以降に回すことを分ける",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260629-shuu-ipi-timepoints-24-48-72",
+    "title": "IPI後の回収時点を決める（24h/48h/72hのどこまで実施するか）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
     "id": "mtodo-6b1524e988b2",
     "title": "AMED予算300万円を研究にどう活かすか、具体策を考える",
     "status": "done",
