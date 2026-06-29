@@ -1705,7 +1705,15 @@
 
     function readSyncConfig() {
       try {
-        const config = JSON.parse(sessionStorage.getItem(syncConfigKey) || "{}");
+        const persistentConfig = JSON.parse(localStorage.getItem(syncConfigKey) || "{}");
+        const sessionConfig = JSON.parse(sessionStorage.getItem(syncConfigKey) || "{}");
+        const config = {
+          ...persistentConfig,
+          ...sessionConfig
+        };
+        if (sessionConfig.token && sessionConfig.token !== persistentConfig.token) {
+          writeSyncConfig({ token: sessionConfig.token });
+        }
         return {
           token: String(config.token || "").trim()
         };
@@ -1715,6 +1723,7 @@
     }
 
     function writeSyncConfig(config) {
+      localStorage.setItem(syncConfigKey, JSON.stringify(config));
       sessionStorage.setItem(syncConfigKey, JSON.stringify(config));
     }
 
@@ -1743,7 +1752,7 @@
 
     function syncSettingsPrompt(currentToken) {
       if (currentToken) {
-        return "逆同期トークンを更新できます。端末を閉じるまでこのブラウザだけで保持します。`clear` で解除します。";
+        return "逆同期トークンを更新できます。このブラウザに保存されます。`clear` で解除します。";
       }
       return "初回設定リンクが届いている場合は、そのリンクをこのブラウザで1回だけ開いてください。手入力する場合だけ、Telegram DM の逆同期トークンをここに貼ってください。`clear` で解除します。";
     }
