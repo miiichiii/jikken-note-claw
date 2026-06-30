@@ -1221,6 +1221,28 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260630-suzuki-docs-completion-check",
+    "title": "2026-06-30(火) 今日: 鈴木万平糖尿病財団セットアップ調査研究助成の書類が完成しているか確認し、不足があれば今日中に埋める",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260630-suzuki-ide-signature",
+    "title": "2026-06-30(火) 今日: 鈴木万平糖尿病財団セットアップ調査研究助成の書類について、井出先生にサインをもらう",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
     "id": "mtodo-private-grants-20260703-suzuki-submit",
     "title": "2026-07-03まで: 鈴木万平糖尿病財団セットアップ調査研究助成を提出する",
     "status": "todo",
