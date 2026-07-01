@@ -1738,6 +1738,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260701-care-manager-ichihara-followup",
+    "title": "介護相談: 病院の月初介護度判定結果が出たら、日立側ケアマネ調整の担当者名・連絡先と、つくばのいちはら病院/関連老健への問い合わせ結果を確認する。退院まで約60日見込みのため、日立方面とつくば方面の老健候補を並行比較する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260623-natsu-ear-recheck-jun27",
     "title": "2026-06-27(土) 完了扱い: ナツ（ビーグル）の外耳炎再診。5mg/日ステロイド内服中の経過確認のためライフメイト動物病院つくばへ。2026-06-29時点で「かなり良くなっている。とりあえず1か月様子を見る」方針に更新",
     "status": "done",
