@@ -793,9 +793,9 @@
   },
   {
     "id": "mtodo-20260620-fcm-antibody-order-jun22",
-    "title": "2026-06-22(月): FCM抗体の注文を行う。必要なら上記FACS抗体見積もり・発注方針タスクの判断内容を踏まえて発注内容を確定する",
-    "status": "todo",
-    "priority": "A",
+    "title": "2026-06-22(月): FCM抗体の注文を行う。必要なら上記FACS抗体見積もり・発注方針タスクの判断内容を踏まえて発注内容を確定する。2026-07-02納品確認: PE anti-mouse I-A/I-E 50 ug、APC anti-mouse CD86 25 ug、PE/Cy7 anti-mouse CD206",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "実験",
     "parentCategory": "研究・共同研究",
