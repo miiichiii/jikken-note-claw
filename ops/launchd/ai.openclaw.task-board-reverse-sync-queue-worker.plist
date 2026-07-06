@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>ai.openclaw.task-board-reverse-sync-queue-worker</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/usr/bin/env</string>
+      <string>python3</string>
+      <string>/Users/michito/Documents/clawd/jikken-note-claw/scripts/task_board_reverse_sync_queue_worker.py</string>
+      <string>--loop</string>
+      <string>--poll-interval</string>
+      <string>15</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/michito/Documents/clawd/jikken-note-claw</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/michito/.openclaw/logs/task_board_reverse_sync_queue_worker.stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/michito/.openclaw/logs/task_board_reverse_sync_queue_worker.stderr.log</string>
+  </dict>
+</plist>

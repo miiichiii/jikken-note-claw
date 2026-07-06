@@ -1323,6 +1323,78 @@
       color: var(--color-ink);
     }
 
+    .sync-auth-card {
+      margin: 14px 0 18px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.58);
+      border-radius: 24px;
+      background:
+        linear-gradient(152deg, rgba(255, 255, 255, 0.7), rgba(255, 248, 236, 0.48)),
+        radial-gradient(circle at 14% 18%, rgba(23, 110, 183, 0.1), transparent 36%),
+        radial-gradient(circle at 88% 20%, rgba(201, 46, 88, 0.1), transparent 34%);
+      -webkit-backdrop-filter: var(--blur-glass);
+      backdrop-filter: var(--blur-glass);
+      box-shadow: 0 16px 28px rgba(116, 79, 45, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.64);
+    }
+
+    .sync-auth-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .sync-auth-copy {
+      min-width: 0;
+    }
+
+    .sync-auth-title {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-cobalt);
+    }
+
+    .sync-auth-note,
+    .sync-auth-meta {
+      margin: 6px 0 0;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--color-ink-soft);
+    }
+
+    .sync-auth-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .sync-auth-button {
+      min-height: 40px;
+      padding: 0 16px;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 999px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 44%),
+        linear-gradient(150deg, rgba(255, 255, 255, 0.84), rgba(255, 244, 229, 0.52));
+      box-shadow: var(--shadow-liquid);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    #googleSignInButton {
+      min-height: 40px;
+    }
+
+    #googleSignInButton:empty {
+      display: none;
+    }
+
     .bottom-actions {
       position: sticky;
       bottom: max(12px, env(safe-area-inset-bottom));
@@ -1537,6 +1609,7 @@
       }
     }
   </style>
+  <script src="https://accounts.google.com/gsi/client" async defer onload="window.__taskBoardGoogleLoaded && window.__taskBoardGoogleLoaded()"></script>
 </head>
 <body class="bg-paint">
   <div class="app">
@@ -1555,6 +1628,21 @@
         </div>
         <button class="icon-button" type="button" id="syncSettings" aria-label="同期設定">⌘</button>
       </nav>
+
+      <section class="sync-auth-card" id="syncAuthCard" hidden aria-live="polite">
+        <div class="sync-auth-head">
+          <div class="sync-auth-copy">
+            <p class="sync-auth-title">Reverse Sync Login</p>
+            <p class="sync-auth-note" id="syncAuthMessage">Google アカウントで逆同期できます。</p>
+          </div>
+          <button class="icon-button" type="button" id="syncAuthRefresh" aria-label="Google ログインを更新">↻</button>
+        </div>
+        <div class="sync-auth-actions">
+          <div id="googleSignInButton" aria-label="Google ログイン"></div>
+          <button class="sync-auth-button" type="button" id="syncAuthClear">ログアウト</button>
+        </div>
+        <p class="sync-auth-meta" id="syncAuthMeta">Google が使えない場合だけ、⌘ から従来トークンを設定できます。</p>
+      </section>
 
       <section class="hero" aria-labelledby="today-title">
         <p class="eyebrow">Mission Control · Task Board</p>
@@ -1644,6 +1732,12 @@
     const syncLabel = document.querySelector("#syncLabel");
     const syncPill = document.querySelector(".sync-pill");
     const syncSettings = document.querySelector("#syncSettings");
+    const syncAuthCard = document.querySelector("#syncAuthCard");
+    const syncAuthMessage = document.querySelector("#syncAuthMessage");
+    const syncAuthMeta = document.querySelector("#syncAuthMeta");
+    const syncAuthRefresh = document.querySelector("#syncAuthRefresh");
+    const syncAuthClear = document.querySelector("#syncAuthClear");
+    const googleSignInButton = document.querySelector("#googleSignInButton");
     const localStateKey = "taskBoardLocalStateV4";
     const backgroundKey = "taskBoardBackgroundChoiceV2";
     const syncConfigKey = "taskBoardSyncConfigV2";
@@ -1662,6 +1756,24 @@
     let syncBridgeReachable = false;
     let syncProbeStarted = false;
     let syncSetupMessage = "";
+    let syncBridgeStatus = {
+      authModes: {
+        signedToken: false,
+        google: false
+      },
+      googleAuth: {
+        enabled: false,
+        clientId: ""
+      },
+      queueConfigured: false
+    };
+    let googleIdentityInitialized = false;
+    let googleAutoPromptAttempted = false;
+    let resolveGoogleIdentityReady;
+    const googleIdentityReady = new Promise((resolve) => {
+      resolveGoogleIdentityReady = resolve;
+    });
+    window.__taskBoardGoogleLoaded = () => resolveGoogleIdentityReady?.();
 
     function escapeHtml(value) {
       return String(value ?? "").replace(/[&<>"']/g, (char) => ({
@@ -1671,6 +1783,41 @@
         '"': "&quot;",
         "'": "&#39;"
       }[char]));
+    }
+
+    function normalizeSyncConfig(config) {
+      const normalized = {
+        token: String(config?.token || "").trim()
+      };
+      const googleIdToken = String(config?.googleIdToken || "").trim();
+      const googleEmail = String(config?.googleEmail || "").trim().toLowerCase();
+      const googleExpiresAt = Number(config?.googleExpiresAt || 0);
+      if (googleIdToken && Number.isFinite(googleExpiresAt) && googleExpiresAt > Date.now() + 10000) {
+        normalized.googleIdToken = googleIdToken;
+        normalized.googleEmail = googleEmail;
+        normalized.googleExpiresAt = googleExpiresAt;
+      }
+      return normalized;
+    }
+
+    function hasGoogleCredential(config = readSyncConfig()) {
+      return Boolean(config.googleIdToken && Number(config.googleExpiresAt || 0) > Date.now() + 10000);
+    }
+
+    function googleAuthEnabled() {
+      return Boolean(syncBridgeStatus.authModes?.google && String(syncBridgeStatus.googleAuth?.clientId || "").trim());
+    }
+
+    function decodeJwtPayload(token) {
+      const parts = String(token || "").split(".");
+      if (parts.length < 2) return null;
+      const base64 = parts[1].replace(/-/g, "+").replace(/_/g, "/");
+      const padded = base64 + "=".repeat((4 - (base64.length % 4 || 4)) % 4);
+      try {
+        return JSON.parse(window.atob(padded));
+      } catch {
+        return null;
+      }
     }
 
     function readLocalState() {
@@ -1705,26 +1852,58 @@
 
     function readSyncConfig() {
       try {
-        const persistentConfig = JSON.parse(localStorage.getItem(syncConfigKey) || "{}");
-        const sessionConfig = JSON.parse(sessionStorage.getItem(syncConfigKey) || "{}");
-        const config = {
+        const persistentConfig = normalizeSyncConfig(JSON.parse(localStorage.getItem(syncConfigKey) || "{}"));
+        const sessionConfig = normalizeSyncConfig(JSON.parse(sessionStorage.getItem(syncConfigKey) || "{}"));
+        const config = normalizeSyncConfig({
           ...persistentConfig,
           ...sessionConfig
-        };
-        if (sessionConfig.token && sessionConfig.token !== persistentConfig.token) {
-          writeSyncConfig({ token: sessionConfig.token });
+        });
+        if (JSON.stringify(config) !== JSON.stringify(persistentConfig)) {
+          localStorage.setItem(syncConfigKey, JSON.stringify(config));
         }
-        return {
-          token: String(config.token || "").trim()
-        };
+        if (JSON.stringify(config) !== JSON.stringify(sessionConfig)) {
+          sessionStorage.setItem(syncConfigKey, JSON.stringify(config));
+        }
+        return config;
       } catch {
         return { token: "" };
       }
     }
 
     function writeSyncConfig(config) {
-      localStorage.setItem(syncConfigKey, JSON.stringify(config));
-      sessionStorage.setItem(syncConfigKey, JSON.stringify(config));
+      const normalized = normalizeSyncConfig(config);
+      localStorage.setItem(syncConfigKey, JSON.stringify(normalized));
+      sessionStorage.setItem(syncConfigKey, JSON.stringify(normalized));
+    }
+
+    function clearGoogleCredential() {
+      const current = readSyncConfig();
+      writeSyncConfig({
+        ...current,
+        googleIdToken: "",
+        googleEmail: "",
+        googleExpiresAt: 0
+      });
+    }
+
+    function storeGoogleCredential(credential) {
+      const payload = decodeJwtPayload(credential);
+      const expiresAt = Number(payload?.exp || 0) * 1000;
+      if (!payload || !expiresAt || expiresAt <= Date.now()) {
+        throw new Error("Google ログイン情報の期限が切れています");
+      }
+      const googleEmail = String(payload.email || "").trim().toLowerCase();
+      writeSyncConfig({
+        ...readSyncConfig(),
+        googleIdToken: credential,
+        googleEmail,
+        googleExpiresAt: expiresAt
+      });
+      syncSetupMessage = googleEmail ? `Google接続: ${googleEmail}` : "Googleで接続しました";
+      window.setTimeout(() => {
+        syncSetupMessage = "";
+        refreshSyncChrome();
+      }, syncSetupNoticeMs);
     }
 
     function clearUrlHash() {
@@ -1741,7 +1920,10 @@
         .map((key) => String(params.get(key) || "").trim())
         .find(Boolean);
       if (!token) return;
-      writeSyncConfig({ token });
+      writeSyncConfig({
+        ...readSyncConfig(),
+        token
+      });
       syncSetupMessage = "初回設定トークンを読み込みました";
       clearUrlHash();
       window.setTimeout(() => {
@@ -1751,6 +1933,12 @@
     }
 
     function syncSettingsPrompt(currentToken) {
+      if (googleAuthEnabled()) {
+        if (currentToken) {
+          return "Google ログインが優先で使われます。この入力欄は従来トークンの予備設定です。`clear` で解除します。";
+        }
+        return "Google ログインが使えない場合だけ、従来トークンをここに設定します。通常は上の Google ボタンを使ってください。`clear` で解除します。";
+      }
       if (currentToken) {
         return "逆同期トークンを更新できます。このブラウザに保存されます。`clear` で解除します。";
       }
@@ -1758,10 +1946,16 @@
     }
 
     async function buildSignedHeaders(method, requestPath, bodyText = "") {
-      const { token } = readSyncConfig();
+      const config = readSyncConfig();
+      if (googleAuthEnabled() && hasGoogleCredential(config)) {
+        return {
+          Authorization: `Bearer ${config.googleIdToken}`
+        };
+      }
+      const token = String(config.token || "").trim();
       if (!token) {
-        const error = new Error("同期トークンが未設定です");
-        error.syncCode = "token_missing";
+        const error = new Error(googleAuthEnabled() ? "Google ログインまたは同期トークン設定が必要です" : "同期トークンが未設定です");
+        error.syncCode = googleAuthEnabled() ? "google_login_required" : "token_missing";
         throw error;
       }
       const timestamp = String(Date.now());
@@ -1805,6 +1999,83 @@
       };
     }
 
+    async function ensureGoogleIdentityClient() {
+      if (!googleAuthEnabled()) return false;
+      if (window.google?.accounts?.id) {
+        resolveGoogleIdentityReady?.();
+      }
+      await googleIdentityReady;
+      if (!window.google?.accounts?.id) return false;
+      if (!googleIdentityInitialized) {
+        window.google.accounts.id.initialize({
+          client_id: String(syncBridgeStatus.googleAuth?.clientId || ""),
+          callback: handleGoogleCredentialResponse,
+          auto_select: true,
+          cancel_on_tap_outside: false,
+          itp_support: true,
+          use_fedcm_for_prompt: true
+        });
+        googleIdentityInitialized = true;
+      }
+      return true;
+    }
+
+    async function renderGoogleLoginButton() {
+      if (!googleAuthEnabled()) {
+        googleSignInButton.innerHTML = "";
+        return;
+      }
+      if (!await ensureGoogleIdentityClient()) return;
+      googleSignInButton.innerHTML = "";
+      window.google.accounts.id.renderButton(googleSignInButton, {
+        type: "standard",
+        theme: "outline",
+        text: "signin_with",
+        shape: "pill",
+        size: "large",
+        logo_alignment: "left",
+        width: Math.min(320, Math.max(220, Math.floor(syncAuthCard.clientWidth - 32)))
+      });
+    }
+
+    async function maybePromptGoogleLogin() {
+      if (googleAutoPromptAttempted || !googleAuthEnabled() || hasGoogleCredential(readSyncConfig())) return;
+      if (!await ensureGoogleIdentityClient()) return;
+      googleAutoPromptAttempted = true;
+      window.google.accounts.id.prompt();
+    }
+
+    function handleGoogleCredentialResponse(response) {
+      if (!response?.credential) return;
+      try {
+        storeGoogleCredential(response.credential);
+        refreshSyncChrome();
+        updateSyncAuthCard();
+        void resumePendingSyncs();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    function updateSyncAuthCard() {
+      const config = readSyncConfig();
+      const googleEnabled = googleAuthEnabled();
+      const signedIn = hasGoogleCredential(config);
+      syncAuthCard.hidden = !googleEnabled;
+      if (!googleEnabled) return;
+      syncAuthMessage.textContent = signedIn
+        ? "このブラウザは Google アカウントで逆同期できます。"
+        : "1回 Google ログインすると、毎回トークンを貼らずにチェック保存できます。";
+      syncAuthMeta.textContent = signedIn
+        ? `${config.googleEmail || "Google アカウント"} で接続中です。⌘ から従来トークン設定も残せます。`
+        : "Google が使えない場合だけ、⌘ から従来トークンを設定できます。";
+      syncAuthClear.hidden = !signedIn;
+      googleSignInButton.hidden = signedIn;
+      if (!signedIn) {
+        void renderGoogleLoginButton();
+      }
+    }
+
     function refreshSyncChrome() {
       const config = readSyncConfig();
       const counters = syncCounters();
@@ -1826,6 +2097,15 @@
       } else if (syncSetupMessage) {
         syncPill.classList.add("is-local");
         syncLabel.textContent = syncSetupMessage;
+      } else if (googleAuthEnabled() && hasGoogleCredential(config)) {
+        syncPill.classList.add("is-local");
+        syncLabel.textContent = config.googleEmail ? `Google接続中` : "Google接続済み";
+      } else if (googleAuthEnabled() && config.token) {
+        syncPill.classList.add("is-local");
+        syncLabel.textContent = "トークン接続中 / Google可";
+      } else if (googleAuthEnabled()) {
+        syncPill.classList.add("is-local");
+        syncLabel.textContent = "Googleで逆同期ログイン";
       } else if (!config.token) {
         syncPill.classList.add("is-local");
         syncLabel.textContent = "逆同期未設定 ⌘で初回設定";
@@ -1834,6 +2114,7 @@
       } else {
         syncLabel.textContent = `${allTasks.length}件を読み込み済み`;
       }
+      updateSyncAuthCard();
     }
 
     function isRecentlyDone(task, now = Date.now()) {
@@ -2033,6 +2314,14 @@
       updateLocalTaskState(taskId, { requestId: "", error: "" });
     }
 
+    async function handleSyncAuthFailure(error) {
+      if (!["unauthorized", "google_login_required"].includes(String(error?.syncCode || ""))) return;
+      clearGoogleCredential();
+      refreshSyncChrome();
+      updateSyncAuthCard();
+      await maybePromptGoogleLogin();
+    }
+
     function buildRemoteSyncError(payload) {
       const message = payload.result?.error?.message || payload.result?.warning || "同期失敗";
       const error = new Error(message);
@@ -2109,6 +2398,7 @@
             renderTasks();
           }
         } catch (error) {
+          await handleSyncAuthFailure(error);
           clearSyncRequest(taskId);
           updateLocalTaskState(taskId, {
             status: baselineStatus,
@@ -2126,8 +2416,8 @@
     }
 
     async function resumePendingSyncs() {
-      const { token } = readSyncConfig();
-      if (!token) return;
+      const config = readSyncConfig();
+      if (!config.token && !hasGoogleCredential(config)) return;
       const state = readLocalState();
       for (const [taskId, local] of Object.entries(state)) {
         if (local?.syncState !== "pending" || !local?.requestId) continue;
@@ -2153,7 +2443,8 @@
             });
           }
         } catch (error) {
-          if (error.syncCode === "unauthorized") break;
+          await handleSyncAuthFailure(error);
+          if (["unauthorized", "google_login_required"].includes(String(error.syncCode || ""))) break;
         }
       }
       renderTasks();
@@ -2208,6 +2499,25 @@
       try {
         const response = await fetch(`${syncBridgeBaseUrl}/status`, { cache: "no-store" });
         syncBridgeReachable = response.ok;
+        const payload = await response.json().catch(() => ({}));
+        if (response.ok && payload && typeof payload === "object") {
+          syncBridgeStatus = {
+            ...syncBridgeStatus,
+            ...payload,
+            authModes: {
+              ...syncBridgeStatus.authModes,
+              ...(payload.authModes || {})
+            },
+            googleAuth: {
+              ...syncBridgeStatus.googleAuth,
+              ...(payload.googleAuth || {})
+            }
+          };
+          if (googleAuthEnabled()) {
+            await renderGoogleLoginButton();
+            await maybePromptGoogleLogin();
+          }
+        }
       } catch {
         syncBridgeReachable = false;
       }
@@ -2220,12 +2530,34 @@
       if (entered === null) return;
       const normalized = entered.trim();
       if (normalized.toLowerCase() === "clear") {
-        writeSyncConfig({ token: "" });
+        writeSyncConfig({
+          ...current,
+          token: ""
+        });
       } else {
-        writeSyncConfig({ token: normalized });
+        writeSyncConfig({
+          ...current,
+          token: normalized
+        });
       }
       await probeSyncBridge();
       renderTasks();
+    });
+
+    syncAuthRefresh.addEventListener("click", async () => {
+      googleAutoPromptAttempted = false;
+      await renderGoogleLoginButton();
+      await maybePromptGoogleLogin();
+    });
+
+    syncAuthClear.addEventListener("click", () => {
+      clearGoogleCredential();
+      if (window.google?.accounts?.id?.disableAutoSelect) {
+        window.google.accounts.id.disableAutoSelect();
+      }
+      googleAutoPromptAttempted = false;
+      refreshSyncChrome();
+      updateSyncAuthCard();
     });
 
     async function loadTasks() {
@@ -2247,6 +2579,7 @@
 
     restoreBackground();
     consumeSyncTokenFromUrl();
+    updateSyncAuthCard();
     probeSyncBridge();
     schedulePendingSyncs();
     loadTasks();

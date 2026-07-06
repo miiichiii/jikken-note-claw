@@ -12,6 +12,8 @@ const DEFAULT_REPO = "miiichiii/jikken-note-claw";
 const STATUS_LABELS = [PROCESSING_LABEL, SUCCESS_LABEL, PARTIAL_LABEL, FAILED_LABEL, CONFLICT_LABEL];
 const TASK_ID_RE = /^[A-Za-z0-9][A-Za-z0-9._-]{2,160}$/;
 const SIGNATURE_WINDOW_MS = 5 * 60 * 1000;
+const GOOGLE_TOKENINFO_URL = "https://oauth2.googleapis.com/tokeninfo";
+const GOOGLE_ISSUERS = new Set(["accounts.google.com", "https://accounts.google.com"]);
 
 function sendJson(res, statusCode, payload) {
   res.statusCode = statusCode;
@@ -28,6 +30,33 @@ function compareSecret(provided, expected) {
   return crypto.timingSafeEqual(providedBuffer, expectedBuffer);
 }
 
+function splitEnvList(value) {
+  return String(value || "")
+    .split(/[,\n\r\t ]+/)
+    .map((item) => item.trim().toLowerCase())
+    .filter(Boolean);
+}
+
+function googleClientId() {
+  return String(process.env.TASK_BOARD_GOOGLE_CLIENT_ID || "").trim();
+}
+
+function googleAllowedEmails() {
+  return new Set(splitEnvList(process.env.TASK_BOARD_GOOGLE_ALLOWED_EMAILS));
+}
+
+function googleAllowedDomains() {
+  return new Set(splitEnvList(process.env.TASK_BOARD_GOOGLE_ALLOWED_DOMAINS));
+}
+
+function googleAuthConfigured() {
+  return Boolean(googleClientId()) && (googleAllowedEmails().size > 0 || googleAllowedDomains().size > 0);
+}
+
+function queueConfigured() {
+  return Boolean(String(process.env.TASK_BOARD_SYNC_QUEUE_GITHUB_TOKEN || "").trim());
+}
+
 function signaturePayload(method, requestPath, timestamp, bodyText) {
   return [String(method || "").toUpperCase(), String(requestPath || ""), String(timestamp || ""), String(bodyText || "")].join("\n");
 }
@@ -36,7 +65,7 @@ function createSignature(secret, method, requestPath, timestamp, bodyText = "") 
   return crypto.createHmac("sha256", secret).update(signaturePayload(method, requestPath, timestamp, bodyText)).digest("hex");
 }
 
-function requireAuth(req, { bodyText = "" } = {}) {
+function requireSignedTokenAuth(req, { bodyText = "" } = {}) {
   const expected = String(process.env.TASK_BOARD_SYNC_CLIENT_TOKEN || "").trim();
   if (!expected) {
     const error = new Error("task-board sync token is not configured");
@@ -66,6 +95,84 @@ function requireAuth(req, { bodyText = "" } = {}) {
     error.code = "unauthorized";
     throw error;
   }
+}
+
+function googleAuthError(message, { statusCode = 401, code = "unauthorized" } = {}) {
+  const error = new Error(message);
+  error.statusCode = statusCode;
+  error.code = code;
+  return error;
+}
+
+function googleEmailAllowed(email) {
+  const normalized = String(email || "").trim().toLowerCase();
+  if (!normalized) return false;
+  const allowedEmails = googleAllowedEmails();
+  if (allowedEmails.has(normalized)) return true;
+  const domain = normalized.split("@")[1] || "";
+  return googleAllowedDomains().has(domain);
+}
+
+async function verifyGoogleIdToken(idToken) {
+  if (!googleAuthConfigured()) {
+    throw googleAuthError("google auth is not configured", {
+      statusCode: 503,
+      code: "google_auth_not_configured"
+    });
+  }
+  const response = await fetch(`${GOOGLE_TOKENINFO_URL}?id_token=${encodeURIComponent(String(idToken || "").trim())}`, {
+    headers: {
+      "Accept": "application/json",
+      "User-Agent": "task-board-reverse-sync"
+    }
+  });
+  if (!response.ok) {
+    throw googleAuthError("invalid Google ID token");
+  }
+  const payload = await response.json().catch(() => null);
+  const audience = String(payload?.aud || "").trim();
+  const issuer = String(payload?.iss || "").trim();
+  const email = String(payload?.email || "").trim().toLowerCase();
+  const emailVerified = payload?.email_verified === true || String(payload?.email_verified || "").trim().toLowerCase() === "true";
+  if (!audience || audience !== googleClientId()) {
+    throw googleAuthError("Google token audience mismatch");
+  }
+  if (!GOOGLE_ISSUERS.has(issuer)) {
+    throw googleAuthError("Google token issuer mismatch");
+  }
+  if (!emailVerified || !email) {
+    throw googleAuthError("Google account email is not verified");
+  }
+  if (!googleEmailAllowed(email)) {
+    throw googleAuthError("Google account is not allowed for task board sync", {
+      statusCode: 403,
+      code: "forbidden"
+    });
+  }
+  return {
+    email,
+    subject: String(payload?.sub || "").trim()
+  };
+}
+
+async function requireGoogleAuth(req) {
+  const header = String(req.headers?.authorization || req.headers?.Authorization || "").trim();
+  if (!header.startsWith("Bearer ")) {
+    throw googleAuthError("missing Google bearer token");
+  }
+  const idToken = header.slice(7).trim();
+  if (!idToken) {
+    throw googleAuthError("missing Google bearer token");
+  }
+  return verifyGoogleIdToken(idToken);
+}
+
+async function requireAuth(req, { bodyText = "" } = {}) {
+  const header = String(req.headers?.authorization || req.headers?.Authorization || "").trim();
+  if (header.startsWith("Bearer ")) {
+    return requireGoogleAuth(req);
+  }
+  return requireSignedTokenAuth(req, { bodyText });
 }
 
 function readJson(req) {
@@ -320,10 +427,13 @@ module.exports = {
   compareSecret,
   createQueueIssue,
   createSignature,
+  googleAuthConfigured,
+  googleClientId,
   loadIssueStatus,
   parseMarkedJson,
   parseRequestIssue,
   parseResultComments,
+  queueConfigured,
   queueRepo,
   signaturePayload,
   readJson,

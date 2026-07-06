@@ -1,5 +1,8 @@
 const {
+  googleAuthConfigured,
+  googleClientId,
   loadIssueStatus,
+  queueConfigured,
   queueRepo,
   requireAuth,
   sendJson
@@ -20,11 +23,23 @@ module.exports = async function handler(req, res) {
         bridge: "github-issue-queue",
         repo: queueRepo(),
         authRequired: true,
-        queueConfigured: Boolean(process.env.TASK_BOARD_SYNC_CLIENT_TOKEN && process.env.TASK_BOARD_SYNC_QUEUE_GITHUB_TOKEN)
+        queueConfigured: queueConfigured(),
+        authModes: {
+          signedToken: Boolean(process.env.TASK_BOARD_SYNC_CLIENT_TOKEN),
+          google: googleAuthConfigured()
+        },
+        googleAuth: googleAuthConfigured()
+          ? {
+              enabled: true,
+              clientId: googleClientId()
+            }
+          : {
+              enabled: false
+            }
       });
       return;
     }
-    requireAuth(req);
+    await requireAuth(req);
     const payload = await loadIssueStatus(requestId);
     sendJson(res, 200, { status: "ok", ...payload });
   } catch (error) {

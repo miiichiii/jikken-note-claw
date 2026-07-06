@@ -15,7 +15,7 @@ module.exports = async function handler(req, res) {
 
   try {
     const { raw, payload } = await readJson(req);
-    requireAuth(req, { bodyText: raw });
+    await requireAuth(req, { bodyText: raw });
     const validated = validatePayload(payload);
     const issue = await createQueueIssue(validated);
     sendJson(res, 202, {
