@@ -1320,6 +1320,83 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260707-taneds-natto-mash-application-nov04",
+    "title": "2026-11-04(水)まで: 第一三共 TaNeDS 2026応募候補（納豆/MASH・マクロファージ系）を1ページ構想→9月ドラフト→最終提出判断まで進める。候補テーマ: 発酵大豆由来成分によるMASH関連マクロファージ炎症制御機構の解明と創薬シード探索。Google Calendar登録済み",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260707-taneds-1page-start-aug03",
+    "title": "2026-08-03(月) 09:00: 納豆/MASH案の1ページ構想を書き始める（Calendar event: qlddpeu1vb3tutt6vdb8i0gj7k）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260707-taneds-ip-disclosure-aug24",
+    "title": "2026-08-24(月) 09:00: 未公開データ・知財・企業共同研究での開示範囲を整理する（Calendar event: ck5qqi2bdm38b4t831lr82n5h4）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260707-taneds-draft-start-sep07",
+    "title": "2026-09-07(月) 09:00: TaNeDS提案書ドラフトを本格開始する（Calendar event: ueannpb9drd1b54tjnsdsvv6rs）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260707-taneds-first-review-oct05",
+    "title": "2026-10-05(月) 09:00: 初稿レビュー・共同研究体制・予算感を確認する（Calendar event: v7mk6hhs2bbl0df0pt2c4geh7g）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260707-taneds-finalize-oct26",
+    "title": "2026-10-26(月) 09:00: 提案書最終化・Web応募項目と提出手順を確認する（Calendar event: b1lfqph115smu8ljgvkab2umqo）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260707-taneds-submit-deadline-nov04",
+    "title": "2026-11-04(水) 09:00: TaNeDS 2026 提案応募の締切日確認・提出（Calendar event: sbf0uki7446jmdudpvernsf6ao）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260603-ippo-science-fellowship-finish",
     "title": "2026-06-12目標: 一歩の冒研 Science Fellowship 2026 の申請書を完成させる。2026-06-03 Zeynabさんとのミーティング: センセイは申請準備、ZeynabさんはCV documents準備",
     "status": "todo",
