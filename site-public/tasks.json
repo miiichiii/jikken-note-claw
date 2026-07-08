@@ -1881,6 +1881,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260708-third-floor-room-decision",
+    "title": "2026-07-12(日)まで: 3階の部屋づくり判断に着手する。見積内容を確認し、費用・工期・必要性を家族で整理して、作る/作らないの判断材料を揃える",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260708-minecraft-mod-release-prep",
     "title": "2026-07-12(日)まで: Minecraft MODの公開準備に着手する。今週中に、手元のMODファイル確認と公開先候補の絞り込みまで進める。公開前確認・ライセンス/README整備・配布先選定を順に進める",
     "status": "todo",
