@@ -1,5 +1,16 @@
 [
   {
+    "id": "mtodo-20260708-share-yesterday-meeting-result-kuno",
+    "title": "2026-07-08(水) 今日: 昨日のミーティング結果を久野先生へ共有する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260630-marufuku-certificate-copy-jul17",
     "title": "2026-07-17(金)まで: 医療福祉費支給制度（マル福）の該当がある場合、医療福祉費受給者証コピーを総務課へ提出する。茨城県内居住で小児医療助成制度対象の被扶養者分は提出不要",
     "status": "todo",
