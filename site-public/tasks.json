@@ -1881,6 +1881,50 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260708-minecraft-mod-release-prep",
+    "title": "Minecraft MODの公開準備。家族作成MODについて、公開前確認・ライセンス/README整備・配布先選定を進める",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260708-minecraft-mod-release-prep-prepublish-check",
+    "title": "公開前に、配布してよい内容か、個人情報や不要データが含まれていないか、対応バージョンや必要前提MODを確認する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260708-minecraft-mod-release-prep-readme-license",
+    "title": "ライセンス方針を決め、READMEに導入方法・対応バージョン・スクリーンショット・更新方針を整理する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260708-minecraft-mod-release-prep-distribution-choice",
+    "title": "配布先候補を Modrinth / CurseForge / GitHub から選び、最初に出す形を決める",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260624-care-home-data-summary-jun26",
     "title": "2026-06-26(金)まで: 介護相談の住環境確認データをまとめる。要介護4前提で「1階だけで生活が完結するか」を主判断軸にし、玄関、寝室候補、寝室からトイレまでの動線、トイレ、浴室、外動線を優先して写真・寸法・気づきを整理する。2階は今の寝室、重要な荷物、衣類、仏壇、洗濯物干し場、トイレ/浴室/生活動線との関係がある場合のみ、階段全体、手すり、幅、勾配、2階部屋全体が分かる写真を軽く残す",
     "status": "todo",
