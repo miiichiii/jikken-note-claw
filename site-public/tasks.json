@@ -33,6 +33,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260708-jalas-annual-fee-2026-pay-by-aug31",
+    "title": "2026-08-31(月)まで: 日本実験動物学会（JALAS）2026年度年会費 15,000円について、支払い済みか確認し、未払いなら会員マイページから支払う。必要に応じて請求書をダウンロードし、会員情報も確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260630-dependent-allowance-certificate-spouse-workplace",
     "title": "要対応: 共同扶養関係の書類として、添付の「07_(様式第2号) 手当等に関する証明書」を配偶者勤務先で発行してもらい、総務課へ提出する。所得証明書は児童手当現況確認時に提出済みのコピーを総務課で利用",
     "status": "todo",
