@@ -1859,6 +1859,28 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260708-home-task-inventory",
+    "title": "2026-07-12(日)まで: 家タスクの棚卸しをする。未着手の家タスクを洗い出し、今月中に動くものから優先順位をつける",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260708-backyard-stone-planning",
+    "title": "2026-07-12(日)まで: 家の後ろの石敷きの段取りに着手する。まずは範囲確認、材料/量の見積もり、施工日決めまで進める",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260708-minecraft-mod-release-prep",
     "title": "2026-07-12(日)まで: Minecraft MODの公開準備に着手する。今週中に、手元のMODファイル確認と公開先候補の絞り込みまで進める。公開前確認・ライセンス/README整備・配布先選定を順に進める",
     "status": "todo",
