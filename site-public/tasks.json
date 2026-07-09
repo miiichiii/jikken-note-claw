@@ -704,6 +704,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260709-factor-xiii-measurement-kit-purchase",
+    "title": "要対応: Factor XIII（第XIII因子）測定キットを購入する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
     "id": "mtodo-e86c396e5415",
     "title": "5/14・5/21: RUNX実験",
     "status": "done",
