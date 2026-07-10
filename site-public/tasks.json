@@ -550,6 +550,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260710-student-conference-poster-results-review-tonight",
+    "title": "2026-07-10(金) 夜: 学生の学会ポスター資料を確認し、Results sectionの整理案・方向性を返す",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260618-zeynab-srep-major-revision",
     "title": "来週(2026-06-24目安)まで: Zeynabさん（Zeynab Javan）担当論文のScientific Reports Major Revisionを完成・再投稿する（胎児膵臓原基をWTとPDX1KOに移植 / Submission ID `175b4763-01a6-4f9c-a3cc-1662ecdfe537`、Decision: major revision）。PDX1KO移植実験への厳しいコメントに対応するため、追実験なしで主張を抑えて書き直し、ポイント・バイ・ポイント回答を添付して再投稿する。 ( )",
     "status": "todo",
