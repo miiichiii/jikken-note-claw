@@ -484,6 +484,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260710-nursing-school-anatomy-physiology-iii-exam-questions",
+    "title": "要対応: 看護学校 解剖生理学IIIの試験問題を作成し、学校事務局へ提出する（試験日 7/29、60分、自由形式、100点）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "授業・教育",
+    "parentCategory": "大学の業務",
+    "section": "授業・教育",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260603-nursing-school-first-class-prep",
     "title": "2026-06-04夜まで: 看護学校初回授業の資料を昨年度版ベースで更新し、Webクイズを確認し、印刷依頼まで完了する。6/5(金)授業開始。2026-06-03: SynologyDocumentに2026年度フォルダを作成し、第1回を `260605 第1回` として準備メモ作成済み。2026-06-03 センセイ報告: IPU宛メールはI.P.U.アドレスから送る必要があるため自身で送信し、完了",
     "status": "done",
