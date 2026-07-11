@@ -1,5 +1,16 @@
 [
   {
+    "id": "mtodo-20260712-reply-nagasue-teaching-materials-bambu",
+    "title": "2026-07-12(日) 今日: 永末さんへ、教材購入（Bambu関連）の業者確認事項に返信する。確認項目: ノズル付きホットエンドの互換性、SuperTack/PEIプレートのA1 mini指定、PTFEチューブのタイプ・色、PLA Basicのカラー・スプール有無",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260708-share-yesterday-meeting-result-kuno",
     "title": "2026-07-08(水) 今日: 昨日のミーティング結果を久野先生へ共有する。Gmail返信下書きはコスト・機器比較に絞った簡潔版へ修正済み。送信前に文面・宛先を確認する",
     "status": "todo",
