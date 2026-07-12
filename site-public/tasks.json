@@ -11,6 +11,28 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260713-wet-lab-startup-consult",
+    "title": "医療大学でウェット実験を立ち上げるため、学内相談先にベンチ/作業台・共用機器・安全ルール・最低限購入品を相談する。詳細: 2026-07-13_個人研究費60万円_買いたいものリスト",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260713-wet-lab-startup-prioritize",
+    "title": "相談結果をもとに、ウェット実験立ち上げ候補を「必須」「できれば」「後回し」に分類する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260712-reply-nagasue-teaching-materials-bambu",
     "title": "2026-07-12(日) 今日: 永末さんへ、教材購入（Bambu関連）の業者確認事項に返信する。確認項目: ノズル付きホットエンドの互換性、SuperTack/PEIプレートのA1 mini指定、PTFEチューブのタイプ・色、PLA Basicのカラー・スプール有無",
     "status": "todo",
