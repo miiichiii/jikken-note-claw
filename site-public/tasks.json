@@ -11,6 +11,39 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260713-research-fund-source-member-inventory",
+    "title": "研究費ごとに、残額・支出期限・支出ルール・メンバー/配分責任を棚卸しする。詳細: 2026-07-13_研究費棚卸し",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260713-research-fund-obligations-first",
+    "title": "学会費・既決支出・発注済み候補を先に差し引き、残りを購入候補へ回す順番を決める",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260713-kaken-member-allocation-check",
+    "title": "科研費の内田先生/善法先生等のメンバー・分担金/配分義務を、公式情報または学内台帳で確認する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260713-wet-lab-startup-consult",
     "title": "医療大学でウェット実験を立ち上げるため、学内相談先にベンチ/作業台・共用機器・安全ルール・最低限購入品を相談する。詳細: 2026-07-13_個人研究費60万円_買いたいものリスト",
     "status": "todo",
