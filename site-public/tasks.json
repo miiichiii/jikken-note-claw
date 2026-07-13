@@ -321,8 +321,8 @@
   {
     "id": "mtodo-20260615-mouse-cost-donation-route-docs",
     "title": "回答を待って、寄附申込書（添付.docx）または代替案を準備",
-    "status": "todo",
-    "priority": "B",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
