@@ -343,8 +343,8 @@
   {
     "id": "mtodo-20260615-mouse-cost-donation-route-execute",
     "title": "寄附実行（または代替ルート確定）と、7月以降の請求タイミング決定",
-    "status": "todo",
-    "priority": "B",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
