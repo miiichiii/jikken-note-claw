@@ -1,5 +1,16 @@
 [
   {
+    "id": "mtodo-20260713-prepare-human-structure-lecture-slides",
+    "title": "2026-07-13(月) 今日: 人体の構造の講義スライドを準備する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260713-personal-research-fund-600k-review",
     "title": "2026-07-13(月) 午前: 個人研究費（約60万円）の残額・使途候補・優先順位を整理し、今日中に使途判断/問い合わせ/発注候補へ分解する",
     "status": "todo",
@@ -1020,6 +1031,17 @@
     "category": "実験",
     "parentCategory": "研究・共同研究",
     "section": "実験",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260713-finish-kiban-b",
+    "title": "2026-07-13(月) 今日: 基盤Bを仕上げる",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
     "syncable": true
   },
   {
