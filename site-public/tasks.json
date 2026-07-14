@@ -957,6 +957,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260714-liver-fibrosis-macrophage-cytoflex-panel-redesign",
+    "title": "肝線維化関連マクロファージを含むFACSマーカー／パネルを再検討する。前回案はCytoFLEX実機のレーザー・フィルター・使用可能チャンネルを考慮していないため、まず実機構成を確認し、目的マーカー、蛍光色、compensation、FMO/単染色対照を再設計する。抗体8品はこの検討完了まで発注確定扱いにしない",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260620-fcm-antibody-order-jun22",
     "title": "2026-06-22(月): FCM抗体の注文を行う。必要なら上記FACS抗体見積もり・発注方針タスクの判断内容を踏まえて発注内容を確定する。2026-07-02納品確認: PE anti-mouse I-A/I-E 50 ug、APC anti-mouse CD86 25 ug、PE/Cy7 anti-mouse CD206",
     "status": "done",
