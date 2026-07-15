@@ -1453,9 +1453,9 @@
   },
   {
     "id": "mtodo-private-grants-20260703-suzuki-submit",
-    "title": "2026-07-03まで: 鈴木万平糖尿病財団セットアップ調査研究助成を提出する",
-    "status": "todo",
-    "priority": "A",
+    "title": "2026-07-03まで: 鈴木万平糖尿病財団セットアップ調査研究助成を提出する。2026-07-06最終アップロード用フォルダに提出ファイル一式を集約し、提出済みとして記録",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
@@ -1465,6 +1465,17 @@
   {
     "id": "mtodo-private-grants-20260728-ono-submit",
     "title": "2026-07-28まで: 小野医学研究財団をCore Aから脂質代謝異常/NASH/代謝炎症向けに整え、提出する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260715-ono-recommendation-letter-public-seal",
+    "title": "2026-07-17(金)まで: 小野医学研究財団 2026研究助成の推薦者・公印ルートを確認し、指定様式の推薦書を作成・押印依頼してWeb申請用カラーPDFを準備する",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
