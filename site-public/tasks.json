@@ -2057,6 +2057,50 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260721-ayame-teams-registration",
+    "title": "あやめのTeams登録をする",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260721-home-room-addition-repair",
+    "title": "家の部屋増設・修復を進める",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260721-backyard-open-stone-bags",
+    "title": "家の後ろの石の袋を空ける",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260721-yard-mowing",
+    "title": "家の庭の芝刈りをする",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "生活・家庭・健康",
+    "parentCategory": "生活・家庭・健康",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260708-minecraft-mod-release-prep",
     "title": "2026-07-12(日)まで: Minecraft MODの公開準備に着手する。今週中に、手元のMODファイル確認と公開先候補の絞り込みまで進める。公開前確認・ライセンス/README整備・配布先選定を順に進める",
     "status": "todo",
