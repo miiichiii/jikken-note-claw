@@ -661,7 +661,7 @@
   },
   {
     "id": "mtodo-20260618-zeynab-srep-major-revision",
-    "title": "来週(2026-06-24目安)まで: Zeynabさん（Zeynab Javan）担当論文のScientific Reports Major Revisionを完成・再投稿する（胎児膵臓原基をWTとPDX1KOに移植 / Submission ID `175b4763-01a6-4f9c-a3cc-1662ecdfe537`、Decision: major revision）。PDX1KO移植実験への厳しいコメントに対応するため、追実験なしで主張を抑えて書き直し、ポイント・バイ・ポイント回答を添付して再投稿する。 ( )",
+    "title": "2026-07-26(日)まで・今週末最優先: Zeynabさん（Zeynab Javan）担当のScientific Reports IPT論文 Major Revisionを完成・再投稿する（胎児膵臓原基をWTとPDX1KOに移植 / Submission ID `175b4763-01a6-4f9c-a3cc-1662ecdfe537`、Decision: major revision）。PDX1KO移植実験への厳しいコメントに対応するため、追実験なしで主張を抑えて書き直し、ポイント・バイ・ポイント回答を添付して再投稿する。 ( ) / Zeynab with Bot LINE 2026-07-24 11:27",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -1267,6 +1267,17 @@
   {
     "id": "mtodo-20260607-japanprize-review-jun22",
     "title": "2026-06-22(月): Japan Prize / 平成記念研究助成のZeynab代表案をレビュー可能な状態にし、2026-07-31締切へ向けた残作業を確定する。同日までに鈴木万平セットアップの仮学内締切対応も進める",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260724-zeynab-japanprize-submit-jul26",
+    "title": "2026-07-26(日)まで・今週末最優先: ZeynabさんのJapan Prize / 平成記念研究助成申請を提出する。提出前に公式様式、添付書類、共同研究者確認、機関承認・提出方法を最終確認し、提出後に受付記録を保存する",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
