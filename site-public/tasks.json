@@ -2506,5 +2506,16 @@
     "parentCategory": "2026-06-09 追加 (Takana-yania/Eugenia 件)",
     "section": "",
     "syncable": true
+  },
+  {
+    "id": "meta-todo-line-277",
+    "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "2026-06-09 追加 (Takana-yania/Eugenia 件)",
+    "parentCategory": "2026-06-09 追加 (Takana-yania/Eugenia 件)",
+    "section": "",
+    "syncable": false
   }
 ]
