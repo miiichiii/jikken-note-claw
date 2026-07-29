@@ -1826,6 +1826,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260729-olink-mouse-cytokine-followup",
+    "title": "Olinkマウス用サイトカインパネル発注検討: 理科研の担当者名・メールアドレスをセツロテックへ共有し、候補血清10検体で各20 µL（最低10 µL）を確保できるか確認する。資料受領後、43/48項目の不一致、収載項目、マウスELISA比較、見積条件を確認する。詳細: 2026-07-29_Olinkマウスサイトカインパネル面談メモ",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260603-takahashi-party-tohoku-speaker-email",
     "title": "2026-06-03/04至急: 東北大側発表者3名（山本雅之先生・五十嵐和彦先生・本橋ほづみ先生）へ、高橋智先生退官記念シンポジウム講演依頼メールを送信する。2026-06-04送信済み。山本先生・本橋先生は前向き返信あり。本橋先生へは講演趣旨の確認返信も送信済み",
     "status": "done",
@@ -2508,7 +2519,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-277",
+    "id": "meta-todo-line-278",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
