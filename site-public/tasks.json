@@ -968,6 +968,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260730-natto-peritoneal-facs-cd86-analysis",
+    "title": "前回の腹腔マクロファージFACS予備実験で測定した未解析のCD86データを解析する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260620-fcm-antibody-order-jun22",
     "title": "2026-06-22(月): FCM抗体の注文を行う。必要なら上記FACS抗体見積もり・発注方針タスクの判断内容を踏まえて発注内容を確定する。2026-07-02納品確認: PE anti-mouse I-A/I-E 50 ug、APC anti-mouse CD86 25 ug、PE/Cy7 anti-mouse CD206",
     "status": "done",
@@ -2519,7 +2530,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-278",
+    "id": "meta-todo-line-279",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
