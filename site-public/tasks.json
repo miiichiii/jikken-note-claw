@@ -1530,7 +1530,7 @@
   },
   {
     "id": "mtodo-private-grants-20260801-nakajima-system-check",
-    "title": "2026-08-01以降: 中島記念国際交流財団の申請システムで独立研究者始動助成金の必要添付欄・入力項目を確認する",
+    "title": "2026-08-01開始・2026-08-20 17:00締切: 中島記念国際交流財団のマイページ取得、独立研究者始動助成金の申請システム確認、提出書類チェックを進める",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -1538,6 +1538,39 @@
     "parentCategory": "研究・共同研究",
     "section": "共同研究・グラント",
     "syncable": true
+  },
+  {
+    "id": "meta-todo-line-167",
+    "title": "マイページの新規登録または既存アカウントでログインできることを確認する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-168",
+    "title": "申請フォームの全入力項目・文字数制限・必須添付欄を記録する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": false
+  },
+  {
+    "id": "meta-todo-line-169",
+    "title": "提出書類、推薦・所属機関承認、重複受給制限、最終送信手順を確認する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": false
   },
   {
     "id": "mtodo-private-grants-20260901-uehara-submit",
@@ -2541,7 +2574,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-280",
+    "id": "meta-todo-line-283",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
