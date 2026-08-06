@@ -22,6 +22,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260806-notify-office-makeup-exam-schedule",
+    "title": "学生の追試験について、確定した日程を事務へ連絡する（会場は未定）",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260731-curriculum-wg-july-materials-check",
     "title": "7月のカリキュラム改訂WG資料をスキャン・確認し、専門基礎科目がR10改訂の対象か、科目分離案を提出できるか・いつ提出するかを確認する",
     "status": "todo",
@@ -1562,7 +1573,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-169",
+    "id": "meta-todo-line-170",
     "title": "マイページの新規登録または既存アカウントでログインできることを確認する",
     "status": "todo",
     "priority": "B",
@@ -1573,7 +1584,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-170",
+    "id": "meta-todo-line-171",
     "title": "申請フォームの全入力項目・文字数制限・必須添付欄を記録する",
     "status": "todo",
     "priority": "B",
@@ -1584,7 +1595,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-171",
+    "id": "meta-todo-line-172",
     "title": "提出書類、推薦・所属機関承認、重複受給制限、最終送信手順を確認する",
     "status": "todo",
     "priority": "B",
@@ -2607,7 +2618,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-286",
+    "id": "meta-todo-line-287",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
