@@ -121,6 +121,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260808-rokid-glasses-research-fund-candidate",
+    "title": "Rokid Glasses の購入候補について、研究費で購入できるかを確認し、用途・必要性説明と購入前技術確認を整理する。詳細: 2026-07-13_個人研究費60万円_買いたいものリスト。要約: 自作研究支援アプリの試作・評価用として、一人称画像/音声記録、研究ノート自動整理、画像認識/AI連携、研究資料読解・研究打合せのハンズフリー支援を想定。公式URL: https://jp.rokid.com/products/rokid-glasses / https://open.rokid.com/",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260712-reply-nagasue-teaching-materials-bambu",
     "title": "2026-07-12(日) 今日: 永末さんへ、教材購入（Bambu関連）の業者確認事項に返信する。確認項目: ノズル付きホットエンドの互換性、SuperTack/PEIプレートのA1 mini指定、PTFEチューブのタイプ・色、PLA Basicのカラー・スプール有無",
     "status": "todo",
@@ -1573,7 +1584,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-170",
+    "id": "meta-todo-line-171",
     "title": "マイページの新規登録または既存アカウントでログインできることを確認する",
     "status": "todo",
     "priority": "B",
@@ -1584,7 +1595,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-171",
+    "id": "meta-todo-line-172",
     "title": "申請フォームの全入力項目・文字数制限・必須添付欄を記録する",
     "status": "todo",
     "priority": "B",
@@ -1595,7 +1606,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-172",
+    "id": "meta-todo-line-173",
     "title": "提出書類、推薦・所属機関承認、重複受給制限、最終送信手順を確認する",
     "status": "todo",
     "priority": "B",
@@ -2618,7 +2629,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-287",
+    "id": "meta-todo-line-288",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
