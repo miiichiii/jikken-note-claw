@@ -715,6 +715,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260812-finish-scientific-reports-proofs",
+    "title": "2026-08-12(水) 夜まで: Scientific Reports のゲラ校正を完了する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260710-student-conference-poster-results-review-tonight",
     "title": "2026-07-10(金) 夜: 学生の学会ポスター資料を確認し、Results sectionの整理案・方向性を返す",
     "status": "todo",
@@ -1595,7 +1606,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-172",
+    "id": "meta-todo-line-173",
     "title": "マイページの新規登録または既存アカウントでログインできることを確認する",
     "status": "todo",
     "priority": "B",
@@ -1606,7 +1617,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-173",
+    "id": "meta-todo-line-174",
     "title": "申請フォームの全入力項目・文字数制限・必須添付欄を記録する",
     "status": "todo",
     "priority": "B",
@@ -1617,7 +1628,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-174",
+    "id": "meta-todo-line-175",
     "title": "提出書類、推薦・所属機関承認、重複受給制限、最終送信手順を確認する",
     "status": "todo",
     "priority": "B",
@@ -2640,7 +2651,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-289",
+    "id": "meta-todo-line-290",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
