@@ -1991,6 +1991,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260817-takahashi-corporate-email-send",
+    "title": "2026-08-17 今日: 高橋先生の企業メール送信",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "高橋先生退官記念事業",
+    "parentCategory": "高橋先生退官記念事業",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260806-progress-takahashi-retirement-project",
     "title": "2026-08-06(木) 今日中: 高橋先生の退官記念事業の対応を進める",
     "status": "todo",
@@ -2684,7 +2695,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-293",
+    "id": "meta-todo-line-294",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
