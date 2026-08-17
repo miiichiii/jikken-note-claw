@@ -1,5 +1,27 @@
 [
   {
+    "id": "mtodo-20260817-email-uchida-kibanb",
+    "title": "2026-08-17 今日: 科研費・基盤Bについて内田先生にメールする",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260817-grade-human-structure-function-contact-sumi",
+    "title": "2026-08-17 今日: 「人体の構造と機能」の成績をつけてから、角先生に連絡する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260806-share-curriculum-reform-decisions-medical-science-center",
     "title": "カリキュラム改定委員会で決まったことを医科学センター内に共有する",
     "status": "todo",
@@ -1606,7 +1628,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-173",
+    "id": "meta-todo-line-175",
     "title": "マイページの新規登録または既存アカウントでログインできることを確認する",
     "status": "todo",
     "priority": "B",
@@ -1617,7 +1639,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-174",
+    "id": "meta-todo-line-176",
     "title": "申請フォームの全入力項目・文字数制限・必須添付欄を記録する",
     "status": "todo",
     "priority": "B",
@@ -1628,7 +1650,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-175",
+    "id": "meta-todo-line-177",
     "title": "提出書類、推薦・所属機関承認、重複受給制限、最終送信手順を確認する",
     "status": "todo",
     "priority": "B",
@@ -2651,7 +2673,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-290",
+    "id": "meta-todo-line-292",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
