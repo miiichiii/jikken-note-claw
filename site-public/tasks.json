@@ -1672,10 +1672,76 @@
     "syncable": false
   },
   {
-    "id": "mtodo-private-grants-20260901-uehara-submit",
-    "title": "2026-09-01まで: 上原記念生命科学財団の研究助成金を提出する。特定研究助成を選択し、2026-08-07センセイ申告により提出済みとして記録",
+    "id": "mtodo-20260807-uehara-special-submit",
+    "title": "2026-08-07: 上原記念生命科学財団「特定研究助成金」を提出する。2026-08-07センセイ申告により提出済み",
     "status": "done",
     "priority": "C",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-private-grants-20260901-uehara-submit",
+    "title": "2026-09-01提出目標・2026-09-03公式締切: 上原記念生命科学財団の通常「研究助成金」を、提出済みの特定研究助成とは別枠で申請する。2026-08-18に通常枠専用フォルダ、公式要項、要件チェックリストを作成し、研究内容2ページの初稿を開始。押印済み学長推薦書が必要。公開公式資料は締切時刻を明記していないため、マイページで時刻と完全な添付一覧を確認する。既存記録の学内締切は2026-08-27 10:00で要再確認",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260818-uehara-standard-institutional-check",
+    "title": "2026-08-18: IPU研究支援担当へ学長推薦枠、学内締切、推薦書・公印、間接経費免除手続を確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260818-uehara-standard-mypage-check",
+    "title": "2026-08-18: 申請マイページで財団締切時刻、正式な添付一覧、ファイル形式・容量上限を確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260820-uehara-standard-draft-budget",
+    "title": "2026-08-20: 研究内容2ページ初稿を所定Word様式へ流し込み、800万円予算案とWeb入力項目を作る",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260824-uehara-standard-critic-overlap",
+    "title": "2026-08-24: CriticAIと非専門家レビューを実施し、特定枠・鈴木万平・小野・科研費との非重複を確定する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260826-uehara-standard-final-candidate",
+    "title": "2026-08-26: 学長推薦・公印書類と提出候補を完成させる",
+    "status": "todo",
+    "priority": "A",
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
@@ -2695,7 +2761,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-294",
+    "id": "meta-todo-line-300",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
