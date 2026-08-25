@@ -924,6 +924,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260825-embryonic-early-late-umap-mafb-reanalysis",
+    "title": "後日: 公開シングルセルデータについて、発生初期と発生後期を分け、UMAP上でMafbなど関連遺伝子の発現データを再解析する。 (2026) https://doi.org/10.1038/s41556-026-01971-3 / OMIX014646 https://ngdc.cncb.ac.cn/omix/release/OMIX014646",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260709-factor-xiii-measurement-kit-purchase",
     "title": "要対応: Factor XIII（第XIII因子）測定キットを購入する",
     "status": "todo",
@@ -1639,7 +1650,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-176",
+    "id": "meta-todo-line-177",
     "title": "マイページの新規登録または既存アカウントでログインできることを確認する",
     "status": "todo",
     "priority": "B",
@@ -1650,7 +1661,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-177",
+    "id": "meta-todo-line-178",
     "title": "申請フォームの全入力項目・文字数制限・必須添付欄を記録する",
     "status": "todo",
     "priority": "B",
@@ -1661,7 +1672,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-178",
+    "id": "meta-todo-line-179",
     "title": "提出書類、推薦・所属機関承認、重複受給制限、最終送信手順を確認する",
     "status": "todo",
     "priority": "B",
@@ -2761,7 +2772,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-300",
+    "id": "meta-todo-line-301",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
