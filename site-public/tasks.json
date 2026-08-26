@@ -2629,6 +2629,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260826-chatgpt-pro-oct-dec-approval-followup",
+    "title": "大学側の受付・承認内容を確認し、研究費ダッシュボードの状態と各月の実支払額を更新する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "システム・お金・雑務",
+    "parentCategory": "システム・お金・雑務",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260604-chatgpt-pro-final-continuation-check",
     "title": "2026-07-23: ChatGPT Proを7/27以降も継続する手続きが済んでいるか最終確認する",
     "status": "todo",
@@ -2783,7 +2794,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-302",
+    "id": "meta-todo-line-304",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
