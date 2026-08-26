@@ -12,7 +12,7 @@
   },
   {
     "id": "mtodo-20260817-grade-human-structure-function-contact-sumi",
-    "title": "2026-08-17 今日: 「人体の構造と機能」の成績をつけてから、角先生に連絡する",
+    "title": "2026-08-26 今日: 「人体の構造と機能」の構造領域成績を確定し、角先生に合算方法・共有先・共有形式を確認する。その他の先生への成績共有は、必要性と正式ルートを確認してから行う",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -1067,6 +1067,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260826-natto-mash-quotes-furuya-funding-priority",
+    "title": "2026-08-26 今日: 古谷先生と納豆/MASH関連の見積案件を一覧化し、各案件の財源・優先順位・発注/保留・担当・期限を決める",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260603-natto-facs-antibody-quote-decision",
     "title": "Nattoプロジェクトの肝マクロファージ分離・FACS見積（理科研 ACAA00052247-1、14品、税込482,350円）は段階購入とする。**2026-07-14、肝組織分散・分離試薬4品を購入する旨を心臓血管外科の先生方CCでメール送信済み**。対象は Collagenase Type IV、DNase I Type IV、Percoll、RBC Lysis Buffer（元見積ベース税抜97,500円／税込107,250円）。現在は見積期限切れのため、**更新見積待ち→金額確認後に発注**。抗体8品・染色補助/定量2品は今回の発注対象外。詳細: 2026-06-03_理科研_肝マクロファージ分離FACS見積_ACAA00052247-1",
     "status": "todo",
@@ -1650,7 +1661,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-177",
+    "id": "meta-todo-line-178",
     "title": "マイページの新規登録または既存アカウントでログインできることを確認する",
     "status": "todo",
     "priority": "B",
@@ -1661,7 +1672,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-178",
+    "id": "meta-todo-line-179",
     "title": "申請フォームの全入力項目・文字数制限・必須添付欄を記録する",
     "status": "todo",
     "priority": "B",
@@ -1672,7 +1683,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-179",
+    "id": "meta-todo-line-180",
     "title": "提出書類、推薦・所属機関承認、重複受給制限、最終送信手順を確認する",
     "status": "todo",
     "priority": "B",
@@ -2772,7 +2783,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-301",
+    "id": "meta-todo-line-302",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
