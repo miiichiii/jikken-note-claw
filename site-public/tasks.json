@@ -209,6 +209,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260830-ipu-graduate-curriculum-map-check",
+    "title": "2026-08-31(月)まで: 大学院カリキュラムマップについて、自分が科目責任者の担当科目があるか確認し、該当する場合は共通フォルダの博士前期／後期シートにDP対応（◎／〇）を入力する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260708-jalas-annual-fee-2026-pay-by-aug31",
     "title": "2026-08-31(月)まで: 日本実験動物学会（JALAS）2026年度年会費 15,000円について、支払い済みか確認し、未払いなら会員マイページから支払う。必要に応じて請求書をダウンロードし、会員情報も確認する",
     "status": "todo",
@@ -1661,7 +1672,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-178",
+    "id": "meta-todo-line-179",
     "title": "マイページの新規登録または既存アカウントでログインできることを確認する",
     "status": "todo",
     "priority": "B",
@@ -1672,7 +1683,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-179",
+    "id": "meta-todo-line-180",
     "title": "申請フォームの全入力項目・文字数制限・必須添付欄を記録する",
     "status": "todo",
     "priority": "B",
@@ -1683,7 +1694,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-180",
+    "id": "meta-todo-line-181",
     "title": "提出書類、推薦・所属機関承認、重複受給制限、最終送信手順を確認する",
     "status": "todo",
     "priority": "B",
@@ -2805,7 +2816,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-305",
+    "id": "meta-todo-line-306",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
