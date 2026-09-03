@@ -1,5 +1,16 @@
 [
   {
+    "id": "mtodo-20260904-kakenhi-registration",
+    "title": "2026-09-04 今日・最優先: 科研費登録を行う",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260817-email-uchida-kibanb",
     "title": "2026-08-17 今日: 科研費・基盤Bについて内田先生にメールする",
     "status": "done",
@@ -935,6 +946,28 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260904-mcto-experiment-preparation",
+    "title": "2026-09-04 今日・最優先: MCTO実験の準備をする",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260904-3d-printer-printing-consideration",
+    "title": "2026-09-04 今日: 3D printerでの印刷を検討する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260825-embryonic-early-late-umap-mafb-reanalysis",
     "title": "後日: 公開シングルセルデータについて、発生初期と発生後期を分け、UMAP上でMafbなど関連遺伝子の発現データを再解析する。 (2026) https://doi.org/10.1038/s41556-026-01971-3 / OMIX014646 https://ngdc.cncb.ac.cn/omix/release/OMIX014646",
     "status": "todo",
@@ -1672,7 +1705,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-179",
+    "id": "meta-todo-line-182",
     "title": "マイページの新規登録または既存アカウントでログインできることを確認する",
     "status": "todo",
     "priority": "B",
@@ -1683,7 +1716,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-180",
+    "id": "meta-todo-line-183",
     "title": "申請フォームの全入力項目・文字数制限・必須添付欄を記録する",
     "status": "todo",
     "priority": "B",
@@ -1694,7 +1727,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-181",
+    "id": "meta-todo-line-184",
     "title": "提出書類、推薦・所属機関承認、重複受給制限、最終送信手順を確認する",
     "status": "todo",
     "priority": "B",
@@ -2849,7 +2882,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-309",
+    "id": "meta-todo-line-312",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
