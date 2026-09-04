@@ -1705,7 +1705,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-182",
+    "id": "meta-todo-line-183",
     "title": "マイページの新規登録または既存アカウントでログインできることを確認する",
     "status": "todo",
     "priority": "B",
@@ -1716,7 +1716,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-183",
+    "id": "meta-todo-line-184",
     "title": "申請フォームの全入力項目・文字数制限・必須添付欄を記録する",
     "status": "todo",
     "priority": "B",
@@ -1727,7 +1727,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-184",
+    "id": "meta-todo-line-185",
     "title": "提出書類、推薦・所属機関承認、重複受給制限、最終送信手順を確認する",
     "status": "todo",
     "priority": "B",
@@ -2882,7 +2882,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-312",
+    "id": "meta-todo-line-313",
     "title": "2026-08-21 [ipu] 【確認依頼】次年度時間割希望調査です 締切",
     "status": "todo",
     "priority": "A",
