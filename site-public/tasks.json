@@ -1320,6 +1320,105 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260907-iijima-office-recommendation-check",
+    "title": "2026-09-10まで: 飯島藤十郎記念食品科学振興財団 学術研究助成について、所属機関長推薦、IPU学内締切、推薦書・公印、間接経費、提出経路を事務へ確認する。公式要項PDF・記入要領PDF・申請書Wordは作業フォルダへ保存済み",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260907-iijima-1page-outline",
+    "title": "2026-09-18まで: 飯島藤十郎記念食品科学振興財団向けに、納豆摂取がMASH初期病変と肝マクロファージ応答に及ぼす影響を軸にした1ページ骨子と個人/共同枠の判断材料を作る",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260907-iijima-submit-oct07",
+    "title": "2026-10-07 17:00締切: 飯島藤十郎記念食品科学振興財団 学術研究助成を提出する。提出前に公式要項、推薦、添付、Web入力、他助成との非重複説明を最終確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260907-foodlife-a3-plan",
+    "title": "2026-09-20まで: 食生活研究会 2027年度研究助成について、A3 1ページに入れる問いを「納豆による肝傷害変化と肝マクロファージ応答」に絞り、A3横PDFで崩れない作成ルートを決める。申請書Wordは保存済み",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260907-foodlife-submit-oct31",
+    "title": "2026-10-31締切: 食生活研究会 2027年度研究助成を提出する。120万円・1年間スコープとして、病理・血清・FACS/qPCRの最低限セットと既存助成との非重複説明を整える",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260907-noda-go-nogo",
+    "title": "2026-09-15まで: 野田産業科学研究所 2027年度研究助成〈発酵化学〉は、納豆菌/発酵産物を研究の主語にできるか、大型公的研究費・他財団制限に抵触しないか、郵送9部の負担を含めてGo/No-Go判断する。公式要項PDFと電子申請提出方法PDFは保存済み",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260907-noda-submit-sep30",
+    "title": "2026-09-30 12:00締切: Goの場合のみ、野田産業科学研究所 2027年度研究助成〈発酵化学〉をWeb提出し、2026-10-05必着の申請書コピー9部郵送まで管理する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260907-sasakawa-student-eligibility",
+    "title": "2026-09-18まで: 笹川科学研究助成 2027年度について、研究助成IIなどに応募可能な学生/任期付き若手候補がいるか確認し、学生代表で語れる独立テーマを1つ選ぶ",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260907-sasakawa-submit-oct15",
+    "title": "2026-10-15 17:00締切: 条件を満たす学生/若手候補がいる場合のみ、笹川科学研究助成 2027年度へ申請する。申請書、推薦文、研究倫理・動物実験承認、既存研究との役割分担を確認する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260607-ippo-jun08-eligibility-cv-recommender",
     "title": "2026-06-08(月) 午前: 一歩の冒研 Science Fellowship 2026 について、Zeynabさんの応募資格、CV不足情報、推薦状依頼先、応募者本人が提出できる状態かを確定する。2026-09-05: センセイ確認により、提出後ヒアリングまで進んだが不採択。申請前タスクとして完了扱い",
     "status": "done",
