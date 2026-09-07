@@ -2673,6 +2673,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260907-stock-autotrader",
+    "title": "株式自動売買システムを構築する。売買ルールの過去検証・模擬売買を実装中。次は実データでの検証と接続先の確定。詳細: 2026-09-07_株式自動売買システム",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "システム・お金・雑務",
+    "parentCategory": "システム・お金・雑務",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260611-soxl-watch-166",
     "title": "SOXL 1株指値166ドルの監視用 cron を運用し、166以下到達時はTelegram DMで通知、通常時は静かな定期報告にする",
     "status": "todo",
