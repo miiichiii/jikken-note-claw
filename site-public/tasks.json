@@ -1,5 +1,27 @@
 [
   {
+    "id": "mtodo-20260909-practical-progress",
+    "title": "2026-09-09 今日: 実習について進める",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260909-review",
+    "title": "2026-09-09 今日: レビューをする",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260904-kakenhi-registration",
     "title": "2026-09-04 今日・最優先: 科研費登録を行う",
     "status": "todo",
