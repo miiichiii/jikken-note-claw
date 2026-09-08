@@ -1843,7 +1843,38 @@
     }
 
     function taskStatus(task) {
-      return readLocalState()[task.id]?.status || task.status || "todo";
+      const local = readLocalState()[task.id];
+      // Only an in-flight or source-confirmed change may override the published snapshot.
+      return ["pending", "partial"].includes(local?.syncState)
+        ? local.status || task.status || "todo"
+        : task.status || "todo";
+    }
+
+    function reconcileLocalTaskState() {
+      const state = readLocalState();
+      const tasksById = new Map(allTasks.map((task) => [task.id, task]));
+      for (const [taskId, local] of Object.entries(state)) {
+        const task = tasksById.get(taskId);
+        if (!task) {
+          // Keep outstanding request tracking, but discard obsolete display history.
+          if (local?.syncState !== "pending") delete state[taskId];
+          continue;
+        }
+        if (local?.syncState === "pending") continue;
+        if (["failed", "failed_conflict"].includes(local?.syncState)) {
+          // Legacy failures stored the rolled-back baseline, not the attempted value.
+          const desired = local.desiredStatus || (local.status === "done" ? "todo" : local.status === "todo" ? "done" : "");
+          if (desired && task.status === desired) {
+            delete state[taskId];
+          } else {
+            state[taskId] = { ...local, status: task.status, desiredStatus: desired,
+              error: "前回の変更は未反映です。現在の正本を表示しています。再度チェックして再試行できます。" };
+          }
+        } else if (local?.syncState !== "partial" || task.status === local.status) {
+          delete state[taskId];
+        }
+      }
+      writeLocalState(state);
     }
 
     function taskLocalState(task) {
@@ -1852,18 +1883,13 @@
 
     function readSyncConfig() {
       try {
-        const persistentConfig = normalizeSyncConfig(JSON.parse(localStorage.getItem(syncConfigKey) || "{}"));
-        const sessionConfig = normalizeSyncConfig(JSON.parse(sessionStorage.getItem(syncConfigKey) || "{}"));
-        const config = normalizeSyncConfig({
-          ...persistentConfig,
-          ...sessionConfig
-        });
-        if (JSON.stringify(config) !== JSON.stringify(persistentConfig)) {
-          localStorage.setItem(syncConfigKey, JSON.stringify(config));
-        }
-        if (JSON.stringify(config) !== JSON.stringify(sessionConfig)) {
-          sessionStorage.setItem(syncConfigKey, JSON.stringify(config));
-        }
+        const persistentRaw = localStorage.getItem(syncConfigKey);
+        const sessionRaw = sessionStorage.getItem(syncConfigKey);
+        // Persistent storage is authoritative across tabs, including explicit logout.
+        // Only migrate session-only legacy settings when no persistent entry exists.
+        const config = normalizeSyncConfig(JSON.parse(persistentRaw ?? sessionRaw ?? "{}"));
+        localStorage.setItem(syncConfigKey, JSON.stringify(config));
+        sessionStorage.setItem(syncConfigKey, JSON.stringify(config));
         return config;
       } catch {
         return { token: "" };
@@ -1990,7 +2016,7 @@
 
     function syncCounters() {
       const state = readLocalState();
-      const values = Object.values(state);
+      const values = allTasks.map((task) => state[task.id]).filter(Boolean);
       return {
         pending: values.filter((item) => item?.syncState === "pending").length,
         partial: values.filter((item) => item?.syncState === "partial").length,
@@ -2326,6 +2352,7 @@
       const message = payload.result?.error?.message || payload.result?.warning || "同期失敗";
       const error = new Error(message);
       error.syncCode = payload.result?.error?.code || payload.syncState || "sync_failed";
+      error.remoteTerminal = true;
       return error;
     }
 
@@ -2362,6 +2389,7 @@
       if (!task) return;
       const nextStatus = wasDone ? "todo" : "done";
       const baselineStatus = task.status || "todo";
+      if (taskLocalState(task).syncState === "pending") return;
       card.classList.add("is-toggling");
       button.disabled = true;
       window.setTimeout(async () => {
@@ -2369,6 +2397,9 @@
           status: nextStatus,
           updatedAt: Date.now(),
           syncState: "pending",
+          desiredStatus: nextStatus,
+          baselineStatus,
+          requestId: "",
           error: ""
         });
         updateCardCompletionState(card, nextStatus === "done");
@@ -2399,6 +2430,14 @@
           }
         } catch (error) {
           await handleSyncAuthFailure(error);
+          // An accepted request may succeed despite a polling/network/auth failure.
+          // Retain its identity so background recovery queries, never resubmits, it.
+          const acceptedRequestId = taskLocalState(task).requestId;
+          if (acceptedRequestId && !error.remoteTerminal) {
+            setQueuedTimeoutState(taskId, nextStatus, acceptedRequestId);
+            renderTasks();
+            return;
+          }
           clearSyncRequest(taskId);
           updateLocalTaskState(taskId, {
             status: baselineStatus,
@@ -2433,7 +2472,7 @@
               error: payload.result?.warning || ""
             });
           } else {
-            const fallbackStatus = local.status === "done" ? "todo" : "done";
+            const fallbackStatus = task?.status || local.baselineStatus || (local.status === "done" ? "todo" : "done");
             if (task) task.status = fallbackStatus;
             clearSyncRequest(taskId);
             updateLocalTaskState(taskId, {
@@ -2565,6 +2604,7 @@
         const response = await fetch("tasks.json", { cache: "no-store" });
         if (!response.ok) throw new Error(`tasks_json_${response.status}`);
         allTasks = await response.json();
+        reconcileLocalTaskState();
         refreshSyncChrome();
         await resumePendingSyncs();
       } catch (error) {
