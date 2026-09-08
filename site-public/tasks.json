@@ -759,6 +759,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260909-open-codex-paper-submission",
+    "title": "2026-09-09(水): 論文投稿のためにCodexのスレッドを開く",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260812-send-press-release-documents-yamashita",
     "title": "2026-08-12(水) 夜まで: プレスリリースの書類を山下先生に送る",
     "status": "todo",
