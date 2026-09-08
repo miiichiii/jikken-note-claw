@@ -2111,7 +2111,7 @@
         syncLabel.textContent = `同期中 ${counters.pending}件`;
       } else if (counters.failed) {
         syncPill.classList.add("is-failed");
-        syncLabel.textContent = `同期失敗 ${counters.failed}件`;
+        syncLabel.textContent = `未反映の変更 ${counters.failed}件`;
       } else if (counters.partial) {
         syncPill.classList.add("is-local");
         syncLabel.textContent = `正本更新済み / 公開待ち ${counters.partial}件`;
@@ -2390,6 +2390,19 @@
       const nextStatus = wasDone ? "todo" : "done";
       const baselineStatus = task.status || "todo";
       if (taskLocalState(task).syncState === "pending") return;
+      const config = readSyncConfig();
+      if (!hasGoogleCredential(config) && !config.token) {
+        syncSetupMessage = "チェックを保存するには、先に Google ログインしてください。変更はまだ送信していません。";
+        refreshSyncChrome();
+        updateSyncAuthCard();
+        if (googleAuthEnabled()) {
+          syncAuthMessage.textContent = syncSetupMessage;
+          syncAuthCard.scrollIntoView?.({ behavior: "smooth", block: "nearest" });
+          googleAutoPromptAttempted = false;
+          void maybePromptGoogleLogin();
+        }
+        return;
+      }
       card.classList.add("is-toggling");
       button.disabled = true;
       window.setTimeout(async () => {

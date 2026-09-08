@@ -72,6 +72,7 @@ async function simulateToggle({ accepted = true, terminal = false }) {
   const failure = Object.assign(new Error('test transport failure'), {syncCode:'unauthorized',remoteTerminal:terminal});
   const ctx = context([...localFns,'clearSyncRequest','setQueuedTimeoutState','toggleTask'], {
     allTasks:[{id:'a',status:'todo'}],window:{setTimeout: fn=>{callback=fn;}},toggleDelayMs:0,
+    readSyncConfig:()=>({token:'test-only-placeholder'}),hasGoogleCredential:()=>false,
     queueReverseSyncTask:async()=>{if(!accepted) throw failure; return {requestId:'accepted-id'};},
     waitForSyncResult:async()=>{throw failure;},handleSyncAuthFailure:async()=>{},
     updateCardCompletionState:()=>{},refresh:()=>{},renderTasks:()=>{}
@@ -95,4 +96,31 @@ test('pre-accept failure and terminal rejection remain actionable failures', asy
     assert.equal(state.status,'todo');
     assert.equal(state.desiredStatus,'done');
   }
+});
+
+test('unauthenticated checkbox requests login without changing task state or sending request', async () => {
+  let queued = 0;
+  let prompted = 0;
+  let scheduled = 0;
+  const classes = new Set();
+  const button = {disabled:false};
+  const card = {classList:{contains:x=>classes.has(x),add:x=>classes.add(x)},dataset:{task:'a'},querySelector:()=>button};
+  const ctx = context([...localFns,'toggleTask'], {
+    allTasks:[{id:'a',status:'todo'}],window:{setTimeout:()=>{scheduled++;}},
+    readSyncConfig:()=>({token:''}),hasGoogleCredential:()=>false,googleAuthEnabled:()=>true,
+    queueReverseSyncTask:async()=>{queued++;},maybePromptGoogleLogin:async()=>{prompted++;},
+    refreshSyncChrome:()=>{},updateSyncAuthCard:()=>{},syncAuthMessage:{textContent:''},syncAuthCard:{},
+    syncSetupMessage:'',googleAutoPromptAttempted:true
+  });
+  ctx.writeLocalState({a:{status:'todo',syncState:'failed',desiredStatus:'done',error:'previous unsaved change'}});
+  const before = ctx.localStorage.getItem('state');
+  await ctx.toggleTask(card);
+  assert.equal(ctx.localStorage.getItem('state'),before);
+  assert.equal(queued,0);
+  assert.equal(scheduled,0);
+  assert.equal(prompted,1);
+  assert.equal(button.disabled,false);
+  assert.equal(classes.size,0);
+  assert.match(ctx.syncAuthMessage.textContent,/先に Google ログイン/);
+  assert.match(ctx.syncAuthMessage.textContent,/まだ送信していません/);
 });
