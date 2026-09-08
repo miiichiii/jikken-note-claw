@@ -1232,6 +1232,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260908-hayashi-challenging-theme-change-report",
+    "title": "2026-09-08 今日中: 林先生に、挑戦的研究（萌芽）を経胎盤移植案からMASH・MAFB課題へ変更し、9/7に学内提出したことを本人から報告する。事前連絡ができなかった点をお詫びし、経胎盤移植の共同研究の今後は別途相談する。本文案作成済み・未送信",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260713-finish-kiban-b",
     "title": "2026-07-14(火) 今日・最優先: 基盤Bを仕上げる（7/13から繰越、未完了）",
     "status": "todo",
@@ -2113,9 +2124,9 @@
   },
   {
     "id": "mtodo-20260604-kakenhi-challenging-2027-go-nogo",
-    "title": "2026-07-22まで: 科研費 挑戦的研究（萌芽）2027は、ZeynabのJapan Prize経胎盤移植案を母体に1ページ骨子へ変換し、基盤B・AMED林先生系・平成記念・SPReADとの重複を避けられるかGo/No-Go判定する",
-    "status": "todo",
-    "priority": "A",
+    "title": "科研費 挑戦的研究（萌芽）2027のテーマGo/No-Go判断。旧経胎盤移植案の申請準備は2026-08-28に終了し、MASH・MAFBの別テーマで2026-09-07に応募者から所属機関への提出完了を本人確認済み。林先生への変更連絡は別タスクで未完了",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "共同研究・グラント",
     "parentCategory": "研究・共同研究",
