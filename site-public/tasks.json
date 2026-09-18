@@ -1,5 +1,27 @@
 [
   {
+    "id": "mtodo-20260918-bone-practical-materials",
+    "title": "2026-09-18 今日: 実習の骨の回の資料を完璧に仕上げる",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260918-joint-grant-recommendation",
+    "title": "2026-09-18 今日: 研究費の共同研究への応募を進め、大学の推薦書について確認・準備する（助成名は未指定。既存の飯島財団共同研究・推薦確認タスクが関連候補）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260909-practical-progress",
     "title": "2026-09-09 今日: 実習について進める",
     "status": "todo",
@@ -1266,7 +1288,7 @@
   },
   {
     "id": "mtodo-20260908-hayashi-challenging-theme-change-report",
-    "title": "林先生へ、挑戦的研究（萌芽）の申請内容を報告し、今後の研究計画を相談する。2026-09-17に個人Gmail下書き保存・確認済み。本人が送信する",
+    "title": "2026-09-18 今日: 林先生へメールする。挑戦的研究（萌芽）の申請内容を報告し、今後の研究計画を相談する。2026-09-17に個人Gmail下書き保存・確認済み。本人が送信する",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
