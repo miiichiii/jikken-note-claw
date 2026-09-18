@@ -1,5 +1,16 @@
 [
   {
+    "id": "mtodo-20260918-career-path-seminar",
+    "title": "2026-09-18 今日: キャリアパスセミナーの準備を進める。「いろいろな逃げ道はあったほうがいい」というメッセージを構成に盛り込む",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260918-bone-practical-materials",
     "title": "2026-09-18 今日: 実習の骨の回の資料を完璧に仕上げる",
     "status": "todo",
