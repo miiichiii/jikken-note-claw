@@ -1,5 +1,49 @@
 [
   {
+    "id": "mtodo-20260925-anatomy-practical-first-prep",
+    "title": "2026-09-27(日)まで: 10/2「人体の構造実習」第1回の準備方針を確定する（当日の進行、担当、実習書・配布資料、骨学資料、クイズ、出席方法、使用標本・消耗品、教室設備を確認）。Google Calendar: 2026-10-02 09:00-12:10",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260925-anatomy-practical-first-final",
+    "title": "2026-09-30(水)まで: 10/2「人体の構造実習」第1回の資料・クイズ・出席・物品を最終確認し、印刷・配置・不足品対応を完了する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260925-health-disorder-first-design",
+    "title": "2026-09-28(月)まで: 10/5「健康障害の成り立ちI」第1回の授業設計を決める（到達目標、90分構成、既存スライド更新、配布資料、出席、クイズ実施有無・問題数・難度・配点・回答方法）。既存Webクイズは第1〜7回・計140問。Google Calendar: 2026-10-05 16:30-18:00。 （kenkoushogai1）]]",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20260925-health-disorder-first-final",
+    "title": "2026-10-03(土)まで: 10/5「健康障害の成り立ちI」第1回のスライド・配布資料・クイズ・初回説明・動作確認を完了する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260918-career-path-seminar",
     "title": "2026-09-18 今日: キャリアパスセミナーの準備を進める。「いろいろな逃げ道はあったほうがいい」というメッセージを構成に盛り込む",
     "status": "todo",
