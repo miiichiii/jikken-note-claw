@@ -275,8 +275,19 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260925-realityscan-request-entry-complete",
+    "title": "RealityScan撮影機材7明細（合計238,667円）をR8教育用消耗品購入要求書へ入力し、センセイ側の注文手続きを完了した。これは外部発注・支払いの完了を意味しない",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260918-realityscan-capture-kit-purchase",
-    "title": "RealityScan撮影機材一式（`PUR-2026-0918-02`、登録額238,667円）は、2026-09-25に河村先生取りまとめのR8教育用消耗品購入要求書へ7明細を入力済み。研究費メインボードの「IPUで注文」転記候補からは除外し、申請・手続中／未発注／未払いとして履歴を保持。次は河村先生の取りまとめ提出後、採択・発注連絡を確認する。詳細: 2026-09-16_大型プラスチネーション標本_RealityScan撮影機材_改訂案",
+    "title": "RealityScan撮影機材一式（`PUR-2026-0918-02`、登録額238,667円）は、河村先生の取りまとめ後の採択・発注連絡待ち。研究費メインボードの「IPUで注文」転記候補からは除外し、申請・手続中／未発注／未払いとして履歴を保持する。詳細: 2026-09-16_大型プラスチネーション標本_RealityScan撮影機材_改訂案",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
