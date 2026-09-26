@@ -1813,5 +1813,16 @@
     "parentCategory": "研究・共同研究",
     "section": "共同研究・グラント",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20260926-mackee-mall-additional-purchase",
+    "title": "教育研究費で、マッキー極細約50本とモール追加分を購入する。既存モール案件 `PUR-2026-0828-01` は発注済みのため変更しない。マッキーの色と、「モールをもう2倍」が最終的に2倍か既存分の2倍を追加かを確認後、新しい案件IDで研究費メインボードへ登録する。詳細: 2026-09-26_教育研究費_マッキー極細とモール追加",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "2026-09-24 Vendor orders follow-up",
+    "parentCategory": "2026-09-24 Vendor orders follow-up",
+    "section": "",
+    "syncable": true
   }
 ]
