@@ -1023,6 +1023,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20260616-aav-pvp-preprint-coauthor-approval",
+    "title": "全共著者（Natalia, Thi-Hang, Eugenia, Mayuko, Fukuda, Takahashi, Hamada）の最終確認・Acknowledgement取得",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260616-aav-pvp-preprint-submission-prep",
     "title": "投稿先プレプリントサーバ（bioRxiv想定）の選択・投稿準備・Supplementary情報整備",
     "status": "todo",
