@@ -902,6 +902,28 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261001-anat132-registration",
+    "title": "2026-12-21(月)23:59まで: 第132回日本解剖学会（2027/3/18〜20・岡山）の前期参加登録・カード決済を完了する。予定・締切・事前通知は設定済み、申込・決済は未実施",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20261001-anat132-travel",
+    "title": "2027-02-25(木)まで: 第132回日本解剖学会の交通・宿泊を手配する（公式JTB宿泊を使う場合は23:59締切）",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260909-open-codex-paper-submission",
     "title": "2026-09-09(水): 論文投稿のためにCodexのスレッドを開く",
     "status": "todo",
