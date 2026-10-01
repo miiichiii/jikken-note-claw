@@ -242,6 +242,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261001-wd40-purchase",
+    "title": "WD-40 Multi-Use Productを購入する（購入候補・未発注）。容量・型番・数量・販売店・価格・用途・財源を確認する。詳細: 2026-10-01_WD-40_Multi-Use_Product_購入候補",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260713-research-fund-source-member-inventory",
     "title": "研究費ごとに、残額・支出期限・支出ルール・メンバー/配分責任を棚卸しする。詳細: 2026-07-13_研究費棚卸し",
     "status": "todo",
