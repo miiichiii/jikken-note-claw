@@ -1408,6 +1408,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261008-kudo-recombinant-application",
+    "title": "**2026-10-12〜10-18（来週中）**: 工藤先生の組換え申請書を作成する。本人の作業目標。10/13（火）09:00 JSTに通知登録済み",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "実験",
+    "parentCategory": "研究・共同研究",
+    "section": "実験",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260617-kudo-recombinant-dna-update",
     "title": "工藤先生メール: 実験動物計画書の更新（期限未設定）",
     "status": "todo",
