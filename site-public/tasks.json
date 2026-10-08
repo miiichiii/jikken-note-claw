@@ -1650,6 +1650,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261008-kanehara-template",
+    "title": "2026-11-01以降: 金原財団「生体の科学賞」の現行Word申請書を取得し、記入欄・添付条件を確認する。資料フォルダ・募集要項等は2026-10-08準備済み。締切2026-11-30 23:59。金原財団2026下期・生体の科学賞",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "共同研究・グラント",
+    "parentCategory": "研究・共同研究",
+    "section": "共同研究・グラント",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20260607-ippo-jun08-eligibility-cv-recommender",
     "title": "2026-06-08(月) 午前: 一歩の冒研 Science Fellowship 2026 について、Zeynabさんの応募資格、CV不足情報、推薦状依頼先、応募者本人が提出できる状態かを確定する。2026-09-05: センセイ確認により、提出後ヒアリングまで進んだが不採択。申請前タスクとして完了扱い",
     "status": "done",
