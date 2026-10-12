@@ -1756,6 +1756,7 @@
     let syncBridgeReachable = false;
     let syncProbeStarted = false;
     let syncSetupMessage = "";
+    let rejectedSyncToken = "";
     let syncBridgeStatus = {
       authModes: {
         signedToken: false,
@@ -1806,6 +1807,12 @@
 
     function googleAuthEnabled() {
       return Boolean(syncBridgeStatus.authModes?.google && String(syncBridgeStatus.googleAuth?.clientId || "").trim());
+    }
+
+    function hasSignedTokenConfig(config = readSyncConfig()) {
+      const token = String(config.token || "").trim();
+      // Configured is not verified: request authentication and save checks still run.
+      return Boolean(syncBridgeStatus.authModes?.signedToken && token && token !== rejectedSyncToken);
     }
 
     function decodeJwtPayload(token) {
@@ -1950,7 +1957,7 @@
         ...readSyncConfig(),
         token
       });
-      syncSetupMessage = "初回設定トークンを読み込みました";
+      syncSetupMessage = "接続設定を読み込みました。";
       clearUrlHash();
       window.setTimeout(() => {
         syncSetupMessage = "";
@@ -2047,11 +2054,12 @@
     }
 
     async function renderGoogleLoginButton() {
-      if (!googleAuthEnabled()) {
+      if (!googleAuthEnabled() || hasSignedTokenConfig()) {
         googleSignInButton.innerHTML = "";
         return;
       }
       if (!await ensureGoogleIdentityClient()) return;
+      if (hasSignedTokenConfig()) return;
       googleSignInButton.innerHTML = "";
       window.google.accounts.id.renderButton(googleSignInButton, {
         type: "standard",
@@ -2065,8 +2073,10 @@
     }
 
     async function maybePromptGoogleLogin() {
-      if (googleAutoPromptAttempted || !googleAuthEnabled() || hasGoogleCredential(readSyncConfig())) return;
+      const config = readSyncConfig();
+      if (googleAutoPromptAttempted || !googleAuthEnabled() || hasGoogleCredential(config) || hasSignedTokenConfig(config)) return;
       if (!await ensureGoogleIdentityClient()) return;
+      if (hasSignedTokenConfig() || hasGoogleCredential(readSyncConfig())) return;
       googleAutoPromptAttempted = true;
       window.google.accounts.id.prompt();
     }
@@ -2087,8 +2097,8 @@
       const config = readSyncConfig();
       const googleEnabled = googleAuthEnabled();
       const signedIn = hasGoogleCredential(config);
-      syncAuthCard.hidden = !googleEnabled;
-      if (!googleEnabled) return;
+      syncAuthCard.hidden = !googleEnabled || hasSignedTokenConfig(config);
+      if (syncAuthCard.hidden) return;
       syncAuthMessage.textContent = signedIn
         ? "このブラウザは Google アカウントで逆同期できます。"
         : "1回 Google ログインすると、毎回トークンを貼らずにチェック保存できます。";
@@ -2126,9 +2136,9 @@
       } else if (googleAuthEnabled() && hasGoogleCredential(config)) {
         syncPill.classList.add("is-local");
         syncLabel.textContent = config.googleEmail ? `Google接続中` : "Google接続済み";
-      } else if (googleAuthEnabled() && config.token) {
+      } else if (hasSignedTokenConfig(config)) {
         syncPill.classList.add("is-local");
-        syncLabel.textContent = "トークン接続中 / Google可";
+        syncLabel.textContent = "接続設定済み";
       } else if (googleAuthEnabled()) {
         syncPill.classList.add("is-local");
         syncLabel.textContent = "Googleで逆同期ログイン";
@@ -2342,6 +2352,10 @@
 
     async function handleSyncAuthFailure(error) {
       if (!["unauthorized", "google_login_required"].includes(String(error?.syncCode || ""))) return;
+      const config = readSyncConfig();
+      if (!hasGoogleCredential(config) && config.token) {
+        rejectedSyncToken = String(config.token).trim();
+      }
       clearGoogleCredential();
       refreshSyncChrome();
       updateSyncAuthCard();

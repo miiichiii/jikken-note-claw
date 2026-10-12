@@ -124,3 +124,85 @@ test('unauthenticated checkbox requests login without changing task state or sen
   assert.match(ctx.syncAuthMessage.textContent,/先に Google ログイン/);
   assert.match(ctx.syncAuthMessage.textContent,/まだ送信していません/);
 });
+
+const authChromeFns = ['hasGoogleCredential', 'googleAuthEnabled', 'hasSignedTokenConfig', 'renderGoogleLoginButton', 'maybePromptGoogleLogin', 'updateSyncAuthCard', 'refreshSyncChrome'];
+function authChrome(config = {}, signedToken = true, counters = {}) {
+  const calls = {identity:0, render:0, prompt:0};
+  const ctx = context(authChromeFns, {
+    readSyncConfig:()=>config,
+    rejectedSyncToken:'',
+    syncBridgeStatus:{authModes:{signedToken,google:true},googleAuth:{clientId:'fixture-client'}},
+    syncAuthCard:{hidden:false,clientWidth:350},syncAuthMessage:{},syncAuthMeta:{},syncAuthClear:{},
+    googleSignInButton:{innerHTML:'fixture-button'},
+    syncPill:{classList:{remove:()=>{},add:()=>{}}},syncLabel:{},
+    syncCounters:()=>({pending:0,failed:0,partial:0,synced:0,...counters}),
+    syncProbeStarted:true,syncBridgeReachable:true,syncSetupMessage:'',googleAutoPromptAttempted:false,
+    ensureGoogleIdentityClient:async()=>{calls.identity++;return true;},
+    window:{google:{accounts:{id:{renderButton:()=>{calls.render++;},prompt:()=>{calls.prompt++;}}}}}
+  });
+  return {ctx,calls};
+}
+test('configured signed-token MiniApp hides Google card and never waits for or prompts Google', async () => {
+  const {ctx,calls} = authChrome({token:'fixture-only-credential'});
+  ctx.refreshSyncChrome();
+  await ctx.renderGoogleLoginButton();
+  await ctx.maybePromptGoogleLogin();
+  assert.equal(ctx.syncAuthCard.hidden,true);
+  assert.equal(ctx.syncLabel.textContent,'接続設定済み');
+  assert.equal(ctx.googleSignInButton.innerHTML,'');
+  assert.deepEqual(calls,{identity:0,render:0,prompt:0});
+});
+test('missing, expired Google, or unavailable signed-token auth retains Google login', async () => {
+  for (const [config,signedToken] of [
+    [{},true],
+    [{googleIdToken:'fixture-expired',googleExpiresAt:1},true],
+    [{token:'fixture-only-credential'},false]
+  ]) {
+    const {ctx,calls} = authChrome(config,signedToken);
+    ctx.refreshSyncChrome();
+    await ctx.maybePromptGoogleLogin();
+    // updateSyncAuthCard renders asynchronously; one microtask completes it.
+    await Promise.resolve();
+    assert.equal(ctx.syncAuthCard.hidden,false);
+    assert.equal(ctx.googleSignInButton.hidden,false);
+    assert.match(ctx.syncAuthMessage.textContent,/Google ログイン/);
+    assert.equal(calls.render,1);
+    assert.equal(calls.prompt,1);
+  }
+});
+test('actual signed-token auth rejection keeps failure visible and offers Google fallback', async () => {
+  const {ctx,calls} = authChrome({token:'fixture-rejected'},true,{failed:1});
+  ctx.clearGoogleCredential=()=>{};
+  vm.runInContext(functionSource('handleSyncAuthFailure'),ctx);
+  await ctx.handleSyncAuthFailure({syncCode:'unauthorized'});
+  assert.equal(ctx.syncAuthCard.hidden,false);
+  assert.equal(ctx.syncLabel.textContent,'未反映の変更 1件');
+  assert.equal(calls.prompt,1);
+  assert.equal(ctx.hasSignedTokenConfig(),false);
+});
+test('configured auth never masks pending, failed, or partial publication status', () => {
+  for (const [counters,label] of [
+    [{pending:2},'同期中 2件'],
+    [{failed:1},'未反映の変更 1件'],
+    [{partial:3},'正本更新済み / 公開待ち 3件']
+  ]) {
+    const {ctx} = authChrome({token:'fixture-only-credential'},true,counters);
+    ctx.refreshSyncChrome();
+    assert.equal(ctx.syncLabel.textContent,label);
+    assert.equal(ctx.syncAuthCard.hidden,true);
+  }
+});
+test('setup import uses plain connection language and removes credential fragment', () => {
+  let cleaned = false;
+  let stored;
+  const ctx = context(['consumeSyncTokenFromUrl'], {
+    syncTokenHashKeys:['sync-token','task-board-sync-token'],URLSearchParams,
+    window:{location:{hash:'#sync-token=fixture-only-credential'},setTimeout:()=>{}},
+    readSyncConfig:()=>({}),writeSyncConfig:config=>{stored=config;},
+    clearUrlHash:()=>{cleaned=true;},syncSetupMessage:'',syncSetupNoticeMs:12000
+  });
+  ctx.consumeSyncTokenFromUrl();
+  assert.equal(stored.token,'fixture-only-credential');
+  assert.equal(cleaned,true);
+  assert.equal(ctx.syncSetupMessage,'接続設定を読み込みました。');
+});
