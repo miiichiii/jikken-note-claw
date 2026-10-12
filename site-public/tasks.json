@@ -1069,8 +1069,8 @@
   {
     "id": "mtodo-20260618-zeynab-srep-major-revision-apc",
     "title": "APC（Article Processing Charge）について：2026-06-15 着信メール本文にはAPC記載なし。Accept後のAPC請求メールが来た時点で、科研費（代表: Hamada / 高橋先生ライン）/ IPU 予算 / 高橋研予算 のどれで支払うか、Zeynabさん・高橋先生と役割分担を整理する",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Bot",
     "category": "論文・発表・広報",
     "parentCategory": "論文・発表・広報",
