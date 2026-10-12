@@ -1618,9 +1618,10 @@
     .miniapp-mode .shell { max-width: 640px; padding-bottom: 24px; }
     .miniapp-mode .hero, .miniapp-mode .segment, .miniapp-mode .background-lab,
     .miniapp-mode .bottom-actions, .miniapp-mode .back-button, .miniapp-mode .floral-field { display: none; }
-    .miniapp-mode .topbar { justify-content: flex-end; }
+    .miniapp-mode .topbar { display: flex; justify-content: flex-end; }
+    .miniapp-mode .sync-pill { flex: 1; min-width: 0; }
     .miniapp-mode .miniapp-header { display: block; margin: 18px 0 14px; }
-    .miniapp-header h1 { margin: 0; font-size: 26px; }
+    .miniapp-header h1 { margin: 0; font-size: 26px; color: var(--color-ink); text-shadow: none; }
     .miniapp-header p { margin: 7px 0 0; color: var(--color-ink-soft); font-size: 13px; }
     .miniapp-mode .miniapp-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
     .miniapp-tabs button, .miniapp-pager button {
