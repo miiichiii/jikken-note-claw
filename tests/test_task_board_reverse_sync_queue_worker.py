@@ -1,8 +1,14 @@
 from __future__ import annotations
 
+import hashlib
+import json
+import subprocess
 import sys
+import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,6 +60,58 @@ class FakeGitHubClient:
 
 
 class QueueWorkerTests(unittest.TestCase):
+    def test_real_reverse_sync_public_proof_controls_partial_or_synced(self) -> None:
+        for public_ok, sync_state, label in (
+            (False, "partial", worker.PARTIAL_LABEL),
+            (True, "synced", worker.SUCCESS_LABEL),
+        ):
+            with self.subTest(public_ok=public_ok), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                note = root / "Meta TODO.md"
+                tasks_json = root / "tasks.json"
+                agent_state = root / "agent-state.json"
+                note.write_text("- [ ] Task <!-- mtodo:mtodo-sample-1 -->\n", encoding="utf-8")
+                original_write_state = reverse_sync.write_state
+
+                def process(cmd, **_kwargs):
+                    canonical_tasks, _duplicates = reverse_sync.parse_source_tasks(note.read_text())
+                    tasks_json.write_text(json.dumps([
+                        {"id": task.task_id, "status": task.status}
+                        for task in canonical_tasks.values()
+                    ]), encoding="utf-8")
+                    current_hash = hashlib.sha256(tasks_json.read_bytes()).hexdigest()
+                    agent_state.write_text(json.dumps({
+                        "started_at": datetime.now(timezone.utc).isoformat(),
+                        "after_hash": current_hash,
+                        "public_verify": {"ok": public_ok, "hash": current_hash},
+                    }), encoding="utf-8")
+                    return subprocess.CompletedProcess(cmd, 0, stdout="exit zero", stderr="")
+
+                def runner(**kwargs):
+                    return reverse_sync.reverse_sync_task(
+                        **kwargs, meta_todo_path=note, tasks_json_path=tasks_json,
+                        backup_dir=root / "backups",
+                    )
+
+                github = FakeGitHubClient()
+                with (
+                    patch.object(reverse_sync, "LOCK_PATH", root / "sync.lock"),
+                    patch.object(reverse_sync, "AGENT_STATE_PATH", agent_state),
+                    patch.object(reverse_sync, "run", side_effect=process),
+                    patch.object(reverse_sync, "write_state", side_effect=lambda payload: original_write_state(
+                        payload, state_path=root / "sync-state.json"
+                    )),
+                ):
+                    result = worker.process_issue(
+                        request_issue(), github=github, reverse_sync_runner=runner
+                    )
+
+                self.assertEqual(result["syncState"], sync_state)
+                self.assertEqual(result["result"]["published"], public_ok)
+                self.assertTrue(result["result"]["source_updated"])
+                self.assertIn("- [x]", note.read_text())
+                self.assertEqual(github.updated[-1], (101, "closed", [worker.QUEUE_LABEL, label]))
+
     def test_validate_request_payload_rejects_bad_client_request_id(self) -> None:
         with self.assertRaises(worker.QueueWorkerError):
             worker.validate_request_payload(
