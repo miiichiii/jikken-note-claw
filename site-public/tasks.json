@@ -1025,8 +1025,8 @@
   {
     "id": "mtodo-20260618-zeynab-srep-major-revision-deadline-check",
     "title": "投稿ページ `https://submission.springernature.com/submission-details/175b4763-01a6-4f9c-a3cc-1662ecdfe537` で正式締切日と再投稿必要物（.docxテンプレ、Supplementary、cover letter 等）を確認",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "論文・発表・広報",
     "parentCategory": "論文・発表・広報",
