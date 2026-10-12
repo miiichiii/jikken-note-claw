@@ -1618,7 +1618,10 @@
     .miniapp-mode .shell { max-width: 640px; padding-bottom: 24px; }
     .miniapp-mode .hero, .miniapp-mode .segment, .miniapp-mode .background-lab,
     .miniapp-mode .bottom-actions, .miniapp-mode .back-button, .miniapp-mode .floral-field { display: none; }
-    .miniapp-mode .topbar { display: flex; justify-content: flex-end; }
+    .miniapp-hub-back { display: none; }
+    .miniapp-mode .miniapp-hub-back { display: inline-flex; align-items: center; min-height: 44px; white-space: nowrap; color: var(--color-ink); font-size: 12px; text-decoration: none; }
+    .miniapp-hub-back:focus-visible { outline: 3px solid var(--color-indigo); outline-offset: 3px; }
+    .miniapp-mode .topbar { display: flex; justify-content: flex-end; flex-wrap: wrap; }
     .miniapp-mode .sync-pill { flex: 1; min-width: 0; }
     .miniapp-mode .miniapp-header { display: block; margin: 18px 0 14px; }
     .miniapp-header h1 { margin: 0; font-size: 26px; color: var(--color-ink); text-shadow: none; }
@@ -1659,6 +1662,7 @@
     <main class="shell">
       <nav class="topbar" aria-label="task board navigation">
         <a class="back-button" href="index.html" aria-label="ホームへ戻る">‹</a>
+        <a class="miniapp-hub-back" id="miniappHubBack" href="apps.html">‹ アプリへ戻る</a>
         <div class="sync-pill" aria-label="同期状態">
           <span class="sync-dot" aria-hidden="true"></span>
           <span id="syncLabel">tasks.json 読み込み中</span>
@@ -1808,7 +1812,7 @@
     const syncSetupNoticeMs = 12000;
     const syncTokenHashKeys = ["sync-token", "task-board-sync-token"];
     let allTasks = [];
-    let activeFilter = localStorage.getItem("taskBoardFilterV2") || "all";
+    let activeFilter = (() => { try { return localStorage.getItem("taskBoardFilterV2") || "all"; } catch { return "all"; } })();
     let doneHoldTimer = null;
     let pendingSyncTimer = null;
     let syncBridgeReachable = false;
@@ -1886,15 +1890,17 @@
     }
 
     function readLocalState() {
+      if (globalThis.__taskBoardMemoryLocalState) return JSON.parse(JSON.stringify(globalThis.__taskBoardMemoryLocalState));
       try {
         return JSON.parse(localStorage.getItem(localStateKey) || "{}");
       } catch {
-        return {};
+        return JSON.parse(JSON.stringify(globalThis.__taskBoardMemoryLocalState || {}));
       }
     }
 
     function writeLocalState(state) {
-      localStorage.setItem(localStateKey, JSON.stringify(state));
+      try { localStorage.setItem(localStateKey, JSON.stringify(state)); globalThis.__taskBoardMemoryLocalState = null; }
+      catch { globalThis.__taskBoardMemoryLocalState = JSON.parse(JSON.stringify(state)); }
     }
 
     function updateLocalTaskState(taskId, patch) {
@@ -1947,24 +1953,29 @@
     }
 
     function readSyncConfig() {
-      try {
-        const persistentRaw = localStorage.getItem(syncConfigKey);
-        const sessionRaw = sessionStorage.getItem(syncConfigKey);
-        // Persistent storage is authoritative across tabs, including explicit logout.
-        // Only migrate session-only legacy settings when no persistent entry exists.
-        const config = normalizeSyncConfig(JSON.parse(persistentRaw ?? sessionRaw ?? "{}"));
-        localStorage.setItem(syncConfigKey, JSON.stringify(config));
-        sessionStorage.setItem(syncConfigKey, JSON.stringify(config));
-        return config;
-      } catch {
-        return { token: "" };
-      }
+      // RAM fallback is limited to a storage-denied document, never an auth bypass.
+      if (globalThis.__taskBoardMemorySyncConfig) return normalizeSyncConfig(globalThis.__taskBoardMemorySyncConfig);
+      let persistentRaw = null;
+      let sessionRaw = null;
+      try { persistentRaw = localStorage.getItem(syncConfigKey); } catch {}
+      try { sessionRaw = sessionStorage.getItem(syncConfigKey); } catch {}
+      let config;
+      try { config = normalizeSyncConfig(JSON.parse(persistentRaw ?? sessionRaw ?? "{}")); }
+      catch { config = { token: "" }; }
+      // A persistent entry remains authoritative, including explicit logout.
+      let savedPersistent = false;
+      try { localStorage.setItem(syncConfigKey, JSON.stringify(config)); savedPersistent = true; } catch {}
+      try { sessionStorage.setItem(syncConfigKey, JSON.stringify(config)); } catch {}
+      globalThis.__taskBoardMemorySyncConfig = savedPersistent ? null : config;
+      return config;
     }
 
     function writeSyncConfig(config) {
       const normalized = normalizeSyncConfig(config);
-      localStorage.setItem(syncConfigKey, JSON.stringify(normalized));
-      sessionStorage.setItem(syncConfigKey, JSON.stringify(normalized));
+      let savedPersistent = false;
+      try { localStorage.setItem(syncConfigKey, JSON.stringify(normalized)); savedPersistent = true; } catch {}
+      try { sessionStorage.setItem(syncConfigKey, JSON.stringify(normalized)); } catch {}
+      globalThis.__taskBoardMemorySyncConfig = savedPersistent ? null : normalized;
     }
 
     function clearGoogleCredential() {
@@ -2339,7 +2350,7 @@
         return;
       }
       activeFilter = ["all", "me", "bot"].includes(filter) ? filter : "all";
-      localStorage.setItem("taskBoardFilterV2", activeFilter);
+      try { localStorage.setItem("taskBoardFilterV2", activeFilter); } catch {}
       filterButtons.forEach((button) => {
         const active = button.dataset.filter === activeFilter;
         button.classList.toggle("is-active", active);
@@ -2708,7 +2719,7 @@
         const selected = option.dataset.bg;
         document.body.classList.remove("bg-paisley", "bg-petals", "bg-leaves", "bg-paint");
         document.body.classList.add(`bg-${selected}`);
-        localStorage.setItem(backgroundKey, selected);
+        try { localStorage.setItem(backgroundKey, selected); } catch {}
         bgOptions.forEach((candidate) => {
           const active = candidate === option;
           candidate.classList.toggle("is-active", active);
@@ -2739,8 +2750,18 @@
       renderTasks();
     });
 
+    document.querySelector("#miniappHubBack").addEventListener("click", openAppHub);
+
+    function openAppHub(event) {
+      const token = globalThis.__taskBoardMemorySyncConfig?.token;
+      if (!miniappMode || !token) return;
+      event.preventDefault();
+      window.location.assign(`apps.html#sync-token=${encodeURIComponent(token)}`);
+    }
+
     function restoreBackground() {
-      const stored = localStorage.getItem(backgroundKey);
+      let stored = null;
+      try { stored = localStorage.getItem(backgroundKey); } catch {}
       const selected = ["paisley", "petals", "leaves", "paint"].includes(stored) ? stored : "paint";
       const button = bgOptions.find((option) => option.dataset.bg === selected);
       if (button) button.click();
