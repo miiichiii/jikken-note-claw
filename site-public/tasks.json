@@ -1344,8 +1344,8 @@
   {
     "id": "mtodo-20260603-natto-facs-antibody-quote-decision",
     "title": "Nattoプロジェクトの肝マクロファージ分離・FACS見積（理科研 ACAA00052247-1、14品、税込482,350円）は段階購入とする。**2026-07-14、肝組織分散・分離試薬4品を購入する旨を心臓血管外科の先生方CCでメール送信済み**。対象は Collagenase Type IV、DNase I Type IV、Percoll、RBC Lysis Buffer（元見積ベース税抜97,500円／税込107,250円）。現在は見積期限切れのため、**更新見積待ち→金額確認後に発注**。抗体8品・染色補助/定量2品は今回の発注対象外。詳細: 2026-06-03_理科研_肝マクロファージ分離FACS見積_ACAA00052247-1",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "実験",
     "parentCategory": "研究・共同研究",
