@@ -192,9 +192,11 @@ def main() -> int:
 
     started = datetime.now(timezone.utc).isoformat()
     state: dict[str, object] = {"started_at": started, "root": str(ROOT)}
+    lock_acquired = False
 
     try:
         acquire_lock()
+        lock_acquired = True
         git_pull_if_configured()
         before_hash = sha256(TASKS_JSON)
         meta_todo_source = prepare_meta_todo_source()
@@ -260,14 +262,16 @@ def main() -> int:
         return 0
     except Exception as exc:
         state.update({"status": "error", "error": str(exc), "finished_at": datetime.now(timezone.utc).isoformat()})
-        write_state(state)
+        if lock_acquired:
+            write_state(state)
         print(f"MetaTODO Task Board Agent failed: {exc}", file=sys.stderr)
         return 1
     finally:
-        try:
-            LOCK_PATH.unlink()
-        except FileNotFoundError:
-            pass
+        if lock_acquired:
+            try:
+                LOCK_PATH.unlink()
+            except FileNotFoundError:
+                pass
 
 
 if __name__ == "__main__":
