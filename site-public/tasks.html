@@ -1609,6 +1609,42 @@
       }
     }
   </style>
+  <style>
+    .miniapp-header, .miniapp-tabs, .miniapp-scope, .miniapp-pager { display: none; }
+    .miniapp-mode body.bg-paint, .miniapp-mode body.bg-paisley,
+    .miniapp-mode body.bg-petals, .miniapp-mode body.bg-leaves {
+      background: var(--color-cream); background-image: none;
+    }
+    .miniapp-mode .shell { max-width: 640px; padding-bottom: 24px; }
+    .miniapp-mode .hero, .miniapp-mode .segment, .miniapp-mode .background-lab,
+    .miniapp-mode .bottom-actions, .miniapp-mode .back-button, .miniapp-mode .floral-field { display: none; }
+    .miniapp-mode .topbar { justify-content: flex-end; }
+    .miniapp-mode .miniapp-header { display: block; margin: 18px 0 14px; }
+    .miniapp-header h1 { margin: 0; font-size: 26px; }
+    .miniapp-header p { margin: 7px 0 0; color: var(--color-ink-soft); font-size: 13px; }
+    .miniapp-mode .miniapp-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+    .miniapp-tabs button, .miniapp-pager button {
+      border: 1px solid var(--color-line); border-radius: 999px; padding: 10px 12px;
+      background: var(--color-cream-glass); color: var(--color-ink); font: inherit; font-size: 13px;
+    }
+    .miniapp-tabs button[aria-selected="true"] { background: var(--color-leaf-deep); color: white; }
+    .miniapp-mode .miniapp-scope { display: block; font-size: 12px; line-height: 1.6; color: var(--color-ink-soft); margin: 0 0 14px; }
+    .miniapp-mode .task-list { display: flex; flex-direction: column; gap: 12px; }
+    .miniapp-mode .task-name { white-space: normal; overflow-wrap: anywhere; }
+    .miniapp-mode .task-card { margin: 0; }
+    .miniapp-date { margin: 5px 0 0; font-size: 12px; color: var(--color-ink-soft); }
+    .miniapp-details summary { cursor: pointer; }
+    .miniapp-details summary::marker { color: var(--color-leaf-deep); }
+    .miniapp-details .task-name { margin-top: 8px; }
+    .miniapp-empty { padding: 24px 12px; line-height: 1.7; }
+    .miniapp-mode .miniapp-pager { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 18px; }
+    #miniappPager[hidden] { display: none; }
+  </style>
+  <script>
+    if (new URLSearchParams(window.location.search).get("miniapp") === "1") {
+      document.documentElement.classList.add("miniapp-mode");
+    }
+  </script>
   <script src="https://accounts.google.com/gsi/client" async defer onload="window.__taskBoardGoogleLoaded && window.__taskBoardGoogleLoaded()"></script>
 </head>
 <body class="bg-paint">
@@ -1658,6 +1694,16 @@
         </div>
       </section>
 
+      <header class="miniapp-header">
+        <h1>タスク</h1>
+        <p>チェックするだけで保存。もう一度押すと戻せます。</p>
+      </header>
+      <div class="miniapp-tabs" role="tablist" aria-label="タスクの範囲">
+        <button type="button" data-mini-filter="focus" role="tab" aria-selected="true">今日・期限間近</button>
+        <button type="button" data-mini-filter="overdue" role="tab" aria-selected="false">期限切れ</button>
+        <button type="button" data-mini-filter="all" role="tab" aria-selected="false">すべて</button>
+      </div>
+      <p class="miniapp-scope" id="miniappScope"></p>
       <div class="segment" role="tablist" aria-label="表示モード">
         <button class="seg-button is-active" type="button" data-filter="all">全部</button>
         <button class="seg-button" type="button" data-filter="me">自分</button>
@@ -1671,6 +1717,11 @@
 
       <section class="task-list" id="taskList" aria-label="タスク一覧">
       </section>
+      <nav class="miniapp-pager" id="miniappPager" hidden aria-label="タスクのページ">
+        <button type="button" id="miniappPrevious">前へ</button>
+        <span id="miniappPageLabel"></span>
+        <button type="button" id="miniappNext">次へ</button>
+      </nav>
 
       <section class="background-lab" aria-label="背景候補">
         <div class="background-lab-head">
@@ -1719,6 +1770,12 @@
   </div>
 
   <script>
+    const miniappMode = new URLSearchParams(window.location.search).get("miniapp") === "1";
+    const miniappPageSize = 5;
+    let miniappFilter = "focus";
+    let miniappPage = 0;
+    let miniappDay = "";
+    let miniappPinnedOrder = [];
     const taskList = document.querySelector("#taskList");
     const progressOrb = document.querySelector("#progressOrb");
     const progressText = document.querySelector("#progressText");
@@ -2183,7 +2240,91 @@
       return String(task.category || "未分類");
     }
 
+    function jstDayNumber(now = Date.now()) {
+      return Math.floor((now + 9 * 60 * 60 * 1000) / 86400000);
+    }
+
+    function explicitDayNumber(year, month, day) {
+      const date = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)));
+      if (date.getUTCFullYear() !== Number(year) || date.getUTCMonth() + 1 !== Number(month) || date.getUTCDate() !== Number(day)) return null;
+      return Math.floor(date.getTime() / 86400000);
+    }
+
+    function miniappDateRange(task) {
+      const title = String(task.title || "").replace(/\*\*/g, "").trim();
+      // Only explicit planned/deadline dates; dates buried in source notes are not deadlines.
+      const match = title.match(/^(\d{4})[-/年](\d{1,2})[-/月](\d{1,2})(?:日)?(?!\d)/)
+        || title.match(/(?:締切|期限)\s*[:：]?\s*(\d{4})[-/年](\d{1,2})[-/月](\d{1,2})(?:日)?(?!\d)/);
+      if (!match) return null;
+      const start = explicitDayNumber(match[1], match[2], match[3]);
+      if (start === null) return false;
+      const tail = title.slice(match.index + match[0].length);
+      const range = tail.match(/^\s*[〜～~]\s*(?:(\d{4})[-/年])?(\d{1,2})[-/月](\d{1,2})(?:日)?(?!\d)/);
+      const sameMonthRange = !range && tail.match(/^\s*[〜～~]\s*(\d{1,2})(?:日)?(?!\d|[-/月])/);
+      const end = range ? explicitDayNumber(range[1] || match[1], range[2], range[3])
+        : sameMonthRange ? explicitDayNumber(match[1], match[2], sameMonthRange[1]) : start;
+      if (end === null || end < start) return false;
+      return { start, end };
+    }
+
+    function miniappTasks(now = Date.now()) {
+      const today = jstDayNumber(now);
+      if (miniappDay !== today) {
+        miniappDay = today;
+        miniappPinnedOrder = [];
+      }
+      const items = allTasks.filter((task) => {
+        if (miniappFilter === "all") return true;
+        if (taskStatus(task) === "done" && !isRecentlyDone(task, now)) return false;
+        const date = miniappDateRange(task);
+        if (miniappFilter === "overdue") return date && date.end < today;
+        return date ? date.end >= today && date.start <= today + 7
+          : date === null && String(task.priority).toUpperCase() === "A";
+      });
+      const previous = new Map(miniappPinnedOrder.map((id, index) => [id, index]));
+      items.sort((a, b) => {
+        const aReleased = taskStatus(a) === "done" && !isRecentlyDone(a, now);
+        const bReleased = taskStatus(b) === "done" && !isRecentlyDone(b, now);
+        if (aReleased !== bReleased) return Number(aReleased) - Number(bReleased);
+        if (previous.has(a.id) && previous.has(b.id)) return previous.get(a.id) - previous.get(b.id);
+        const aDate = miniappDateRange(a);
+        const bDate = miniappDateRange(b);
+        return (aDate ? aDate.start : Infinity) - (bDate ? bDate.start : Infinity);
+      });
+      miniappPinnedOrder = items.map((task) => task.id);
+      return items;
+    }
+
+    function miniappVisibleTasks(now = Date.now()) {
+      const items = miniappTasks(now);
+      miniappPage = Math.max(0, Math.min(miniappPage, Math.ceil(items.length / miniappPageSize) - 1));
+      return items.slice(miniappPage * miniappPageSize, (miniappPage + 1) * miniappPageSize);
+    }
+
+    function miniappDateLabel(task) {
+      const date = miniappDateRange(task);
+      if (!date) return date === false ? "日付を確認してください" : "日付未設定";
+      const format = (day) => new Date(day * 86400000).toISOString().slice(0, 10);
+      return date.start === date.end ? `日付 ${format(date.start)}` : `${format(date.start)}〜${format(date.end)}`;
+    }
+
+    function updateMiniappChrome() {
+      const items = miniappTasks();
+      const titles = { focus: "今日・期限間近", overdue: "期限切れ・過去の日付", all: "すべてのタスク" };
+      listTitle.textContent = titles[miniappFilter];
+      remainingCount.textContent = `${items.length}件`;
+      document.querySelector("#miniappScope").textContent = miniappFilter === "focus"
+        ? "今日〜7日以内と、日付のない優先タスク。1ページ5件。過去の日付は「期限切れ」にあります。"
+        : miniappFilter === "overdue" ? "過去の日付が書かれた未完了のタスクです。状況を確認して整理できます。"
+        : "日付・優先度にかかわらず全件。完了済みもここから戻せます。";
+      document.querySelector("#miniappPager").hidden = items.length <= miniappPageSize;
+      document.querySelector("#miniappPrevious").disabled = miniappPage === 0;
+      document.querySelector("#miniappNext").disabled = (miniappPage + 1) * miniappPageSize >= items.length;
+      document.querySelector("#miniappPageLabel").textContent = `${miniappPage + 1} / ${Math.max(1, Math.ceil(items.length / miniappPageSize))}`;
+    }
+
     function visibleTasks() {
+      if (miniappMode) return miniappVisibleTasks();
       return allTasks.filter((task) => {
         if (activeFilter === "me") return taskAssignee(task).toLowerCase() === "me";
         if (activeFilter === "bot") return taskAssignee(task).toLowerCase() === "bot";
@@ -2192,6 +2333,10 @@
     }
 
     function setFilter(filter) {
+      if (miniappMode) {
+        renderTasks();
+        return;
+      }
       activeFilter = ["all", "me", "bot"].includes(filter) ? filter : "all";
       localStorage.setItem("taskBoardFilterV2", activeFilter);
       filterButtons.forEach((button) => {
@@ -2216,10 +2361,15 @@
         : status === "done"
           ? "タスクを未完了に戻す"
           : "タスクを完了にする";
+      const title = escapeHtml(task.title);
+      const taskTitle = miniappMode && String(task.title).length > 120
+        ? `<details class="miniapp-details"><summary class="task-name">${escapeHtml(String(task.title).slice(0, 120))}…（詳細）</summary><p class="task-name">${title}</p></details>`
+        : `<p class="task-name" title="${title}">${title}</p>`;
       card.innerHTML = `
         <button class="check-button" type="button" aria-label="${buttonLabel}" ${isSyncable ? "" : "disabled"}></button>
         <div class="task-copy">
-          <p class="task-name" title="${escapeHtml(task.title)}">${escapeHtml(task.title)}</p>
+          ${taskTitle}
+          ${miniappMode ? `<p class="miniapp-date">${escapeHtml(miniappDateLabel(task))}</p>` : ""}
           <p class="task-sync-note ${syncMeta.className}" ${syncMeta.text ? "" : "hidden"}>${escapeHtml(syncMeta.text)}</p>
         </div>
         <div class="petal-burst" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
@@ -2240,6 +2390,7 @@
       progressTitle.textContent = total ? `${done}件完了、あと${remaining}件` : "タスクがありません";
       const shown = visibleTasks().length;
       remainingCount.textContent = remaining === 0 ? "全部完了" : `表示 ${shown}件 / 残り ${remaining}件`;
+      if (miniappMode) updateMiniappChrome();
       if (counters.pending) {
         queueCount.textContent = `同期中 ${counters.pending}`;
       } else if (counters.partial) {
@@ -2266,7 +2417,23 @@
       const items = visibleTasks();
       const now = Date.now();
       const groups = new Map();
+      const expandedTasks = miniappMode ? new Set([...taskList.querySelectorAll("details[open]")].map((detail) => detail.closest("[data-task]").dataset.task)) : null;
+      const focusedTask = miniappMode ? document.activeElement?.closest("[data-task]")?.dataset.task : null;
       taskList.innerHTML = "";
+      if (miniappMode) {
+        items.forEach((task) => {
+          const card = createCard(task);
+          if (expandedTasks.has(task.id) && card.querySelector("details")) card.querySelector("details").open = true;
+          taskList.appendChild(card);
+          if (task.id === focusedTask) card.querySelector(".check-button").focus({ preventScroll: true });
+        });
+        if (!items.length) {
+          taskList.innerHTML = `<p class="miniapp-empty">${miniappFilter === "focus" ? "今日・期限間近のタスクはありません。「すべて」から他のタスクを確認できます。" : miniappFilter === "overdue" ? "過去の日付の未完了タスクはありません。" : "タスクはありません。"}</p>`;
+        }
+        refresh();
+        scheduleDoneHoldRefresh(now);
+        return;
+      }
       items.forEach((task) => {
         const category = taskCategory(task);
         if (!groups.has(category)) groups.set(category, []);
@@ -2551,6 +2718,24 @@
 
     filterButtons.forEach((button) => {
       button.addEventListener("click", () => setFilter(button.dataset.filter));
+    });
+
+    document.querySelectorAll("[data-mini-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        miniappFilter = button.dataset.miniFilter;
+        miniappPage = 0;
+        miniappPinnedOrder = [];
+        document.querySelectorAll("[data-mini-filter]").forEach((tab) => tab.setAttribute("aria-selected", tab === button ? "true" : "false"));
+        renderTasks();
+      });
+    });
+    document.querySelector("#miniappPrevious").addEventListener("click", () => {
+      miniappPage--;
+      renderTasks();
+    });
+    document.querySelector("#miniappNext").addEventListener("click", () => {
+      miniappPage++;
+      renderTasks();
     });
 
     function restoreBackground() {
