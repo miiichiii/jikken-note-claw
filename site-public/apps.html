@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <title>アプリ</title>
+  <link rel="stylesheet" href="app-hub.css">
+  <script src="app-hub.js" defer></script>
+</head>
+<body>
+  <main class="app-hub" aria-labelledby="hub-title">
+    <header class="hub-heading">
+      <h1 id="hub-title">アプリ</h1>
+      <p>使いたいアプリを選んでください。</p>
+    </header>
+    <nav class="app-list" aria-label="アプリ一覧">
+      <section class="app-choice">
+        <a class="app-link" id="taskApp" href="tasks.html?miniapp=1"><span>タスク</span><span class="app-destination">開く <span aria-hidden="true">›</span></span></a>
+        <p>今日・期限間近のタスクをチェック。</p>
+      </section>
+      <section class="app-choice">
+        <a class="app-link" href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener noreferrer" data-external><span>予定</span><span class="app-destination">ブラウザで開く <span aria-hidden="true">↗</span></span></a>
+        <p>Googleカレンダーで予定を確認。</p>
+      </section>
+      <section class="app-choice">
+        <a class="app-link" href="https://miiichiii.github.io/research-fund-dashboard/" target="_blank" rel="noopener noreferrer" data-external><span>研究費</span><span class="app-destination">ブラウザで開く <span aria-hidden="true">↗</span></span></a>
+        <p>研究費ダッシュボードで確認。</p>
+      </section>
+    </nav>
+    <p class="hub-note">予定・研究費は、必要に応じてGoogleにログインしてください。</p>
+    <p class="hub-status" id="hubStatus" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-12",
+  "scope": "Telegram app launcher only",
+  "design_source": "design.md",
+  "font": "Existing rounded Japanese system UI stack (design.md Typography; site-public/tasks.html:48)",
+  "palette": "Existing warm cream, paper and brown ink tokens; launcher reduces decoration per current user preference",
+  "motion": "Cut; press displacement only, disabled under reduced motion",
+  "spacing": "4px named token scale",
+  "framework": "Vanilla HTML/CSS/JS",
+  "structure": "Three-link compact application directory, no marketing hero or footer",
+  "preserved": ["Task API authentication", "Canonical task source and task sync", "Existing task board design outside compact miniapp"],
+  "verification": "Node regressions run by implementation child; browser widths and deployment verified by parent"
+}

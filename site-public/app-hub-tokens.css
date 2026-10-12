@@ -1,0 +1,25 @@
+/* Hallmark · pre-emit critique: P4 H4 E4 S5 R5 V4
+ * Locked palette and rounded Japanese UI inherited from design.md; scoped launcher tokens. */
+:root {
+  --color-paper: #fff8ec;
+  --color-surface: #f4e4cf;
+  --color-surface-hover: #ead3b4;
+  --color-ink: #46352b;
+  --color-ink-soft: #6c5547;
+  --color-line: #bda58e;
+  --color-focus: #444c9d;
+  --color-error: #9f4d35;
+  --color-success: #416d49;
+  --font-ui: "Hiragino Maru Gothic ProN", "Hiragino Maru Gothic Pro", "Yu Gothic Rounded", "Tsukushi A Round Gothic", "Zen Maru Gothic", "M PLUS Rounded 1c", "Hiragino Sans", "Yu Gothic", "YuGothic", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --radius-link: 16px;
+  --text-small: 12px;
+  --text-body: 14px;
+  --text-link: 18px;
+  --text-heading: 28px;
+}
