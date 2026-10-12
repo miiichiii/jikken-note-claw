@@ -1135,8 +1135,8 @@
   {
     "id": "mtodo-20260616-aav-pvp-preprint-biorxiv-submit",
     "title": "bioRxivへ投稿し、7/19(日)時点で公開済みであることを確認",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "論文・発表・広報",
     "parentCategory": "論文・発表・広報",
