@@ -1934,5 +1934,16 @@
     "parentCategory": "2026-09-24 Vendor orders follow-up",
     "section": "",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20261013-g2telegram-133-public",
+    "title": "G2 Telegram 1.3.3の公開審査結果を確認し、承認後に同じ版を公開へ切り替えて登録結果を確認する。2026-10-13: 審査申請済み、公開完了は未確認",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
   }
 ]
