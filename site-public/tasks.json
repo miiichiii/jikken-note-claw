@@ -1947,6 +1947,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261020-g2telegram-143-public",
+    "title": "G2 Telegram 1.4.3とトピック対応の説明欄を公開する。2026-10-20: 審査8390へ提出済み、承認待ち。承認後にpublic昇格・ライブ反映を確認",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261017-g2clock-listing-image",
     "title": "G2 Clock 2.3.38と掲載画像5枚の公開審査・ライブ反映を確認する。2026-10-18: beta版の公開依頼により審査8273へ統合提出、審査待ち。1枚目維持、2 Botanical・3 Celestial Bloom・4 Paisley Bloom・5 HUD。承認後の公開反映まで対応",
     "status": "todo",
