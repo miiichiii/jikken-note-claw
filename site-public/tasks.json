@@ -1948,9 +1948,9 @@
   },
   {
     "id": "mtodo-20261020-g2telegram-143-public",
-    "title": "G2 Telegram 1.4.3とトピック対応の説明欄を公開する。2026-10-20: 審査8390へ提出済み、承認待ち。承認後にpublic昇格・ライブ反映を確認",
-    "status": "todo",
-    "priority": "A",
+    "title": "G2 Telegram 1.4.3とトピック対応の説明欄を公開する。2026-10-21: 審査承認後、public1.4.3へ切替・説明欄のライブ反映をAPI再取得確認済み",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
