@@ -946,6 +946,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261022-aav-pvp-resubmission-plan",
+    "title": "AAV-PVP論文：再投稿方針と改稿の次の作業を整理する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Bot",
+    "category": "論文・発表・広報",
+    "parentCategory": "論文・発表・広報",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261001-anat132-registration",
     "title": "2026-12-21(月)23:59まで: 第132回日本解剖学会（2027/3/18〜20・岡山）の前期参加登録・カード決済を完了する。予定・締切・事前通知は設定済み、申込・決済は未実施",
     "status": "todo",
