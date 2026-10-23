@@ -1,5 +1,27 @@
 [
   {
+    "id": "mtodo-20261023-anatomy-web-questions",
+    "title": "2027年度「人体の構造」に向けて、Webアプリ等による授業時間外も随時質問を受け付ける仕組みを準備する。回答頻度・匿名性・公開範囲を決めて動作確認する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "2027年度授業改善",
+    "parentCategory": "大学の業務",
+    "section": "2027年度授業改善",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20261023-anatomy-syllabus-revision",
+    "title": "2026年度の実際の授業内容・進行・課題・評価を基に、2027年度「人体の構造」のシラバス改訂案を作成する。到達目標・授業計画・質問受付・教材指定を実態と照合し、宿題負担と教科書購入の必要性も見直す",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "2027年度授業改善",
+    "parentCategory": "大学の業務",
+    "section": "2027年度授業改善",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261001-replace-provisional-teaching-2027",
     "title": "2027年度の正式な授業時間割・実習担当表が判明したら、登録済みの仮予定を正式日程に置き換え、学会との重なりを再確認する",
     "status": "done",
