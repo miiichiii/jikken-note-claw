@@ -1969,6 +1969,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261024-g2telegram-topic-emoji-reactions",
+    "title": "G2 Telegramトピック内の顔文字・絵文字の豆腐表示とリアクション欠落を通常グループとの共通処理で調査・修正。統合候補を別Astraで独立レビューし、beta配布・配布先確認・結果報告まで実施する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261024-g2telegram-animation-swipe-voice",
     "title": "G2 Telegramのメガネ処理中アニメーションを復旧し、「新しいメッセージ」選択後の追加スワイプで音声入力を開始できるようにする。5秒ライブ改善と統合・操作検証・beta配布・再確認・結果報告",
     "status": "todo",
