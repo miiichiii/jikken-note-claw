@@ -1969,6 +1969,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261024-g2telegram-recording-hints",
+    "title": "G2 Telegramのライブ文字起こしOFF時に操作案内を保持し、ON時だけ非表示にする。修正・表示検証・beta配布・サーバー再確認・依頼元報告まで",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261024-g2telegram-five-minute",
     "title": "G2 Telegramの録音上限5分と電話番号国番号プルダウンを統合しbeta配布・サーバー再確認を完了。2026-10-24: 245国/地域、端末内分割認識、ライブ再送制限、通信切断時停止と長文全文保持/編集、トピック尻尾を統合。独立QA新規16件・回帰16コマンド・実EHPK UI3コマンド・厳格監査2コマンド合格。beta2.0.5/version120816/60233009bytesを別API再取得確認。public1.4.3・審査8610対象2.0.2・掲載不変。実機確認は別タスク",
     "status": "done",
