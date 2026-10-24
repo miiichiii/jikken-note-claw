@@ -1981,7 +1981,7 @@
   },
   {
     "id": "mtodo-20261024-g2telegram-efficient-live",
-    "title": "G2 Telegramの5秒ライブ文字起こしをAstraで累積方式へ改善し、重複音声と最終全文再認識を削減。精度・利用量・停止と復旧を検証し、beta反映・配布先確認・結果報告まで完了する",
+    "title": "G2 Telegramの5秒ライブ文字起こしをAstraで累積方式へ改善し、重複音声と最終全文再認識を削減。精度・利用量・停止と復旧を検証し、実装後に別Astraの独立レビュー・指摘修正と再レビューを必須として、beta反映・配布先確認・結果報告まで完了する",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
