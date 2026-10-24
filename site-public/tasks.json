@@ -1969,6 +1969,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261024-g2telegram-five-minute",
+    "title": "G2 Telegramの録音上限を5分へ拡張し、検証・beta配布・サーバー再確認を行う。クラウドと端末内を対象に、音声バッファ・待ち時間・分割認識と結合を調整。停止/取消・送信前確認・復旧を維持し、トピック尻尾修正を含めて統合する。2026-10-24 App3616で本人指示、Codex実装中。実機検証は別記し、公開版・審査は変更しない",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261024-g2telegram-live-transcript-ui",
     "title": "G2 Telegramの設定整理・8行最新追従ライブ文字起こし・未読数修正を統合しbetaへ反映する。2026-10-24: Codex32/32回帰、表示既読27/27、Astra ultra独立19/19・25,000遷移、実EHPK画面/URL/STT/資産監査合格。beta2.0.3/version120781/60223039bytesをAPI再取得確認。既読OFF初期値・保存済み設定、停止/取消・下書き復旧・安全な再試行維持。public1.4.3/審査8610対象2.0.2/掲載情報不変。実機確認は別タスク",
     "status": "done",
