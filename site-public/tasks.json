@@ -1969,6 +1969,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261024-g2telegram-forum-unread-astra",
+    "title": "G2 Telegramのトピック未読・既読をAstra ultraで再確認し、通常グループとの共通処理を優先して修正・検証・beta配布する。自分の投稿と残る未読1件、他トピック隔離、描画成功条件、更新ループを確認",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261024-g2telegram-recording-hints",
     "title": "G2 Telegramのライブ文字起こしOFF時に操作案内を保持し、ON時だけ非表示にする。修正・表示検証・beta配布・サーバー再確認・依頼元報告まで",
     "status": "todo",
