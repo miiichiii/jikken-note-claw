@@ -1969,6 +1969,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261024-g2telegram-glasses-live-toggle",
+    "title": "G2 Telegramメガネ側Settingsにライブ文字起こしON/OFFを追加し、iPhone設定との同期・保存を検証、既存修正と統合してbeta反映・再確認・依頼元報告まで完了する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261024-g2telegram-live-interval",
     "title": "G2 Telegramライブ文字起こしの更新間隔を5秒/10秒から選択・保存できるようにし、初期値5秒で既存修正と統合、検証・beta配布・再確認・依頼元報告まで完了する",
     "status": "todo",
