@@ -1969,7 +1969,18 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-276",
+    "id": "mtodo-20261024-g2telegram-efficient-live",
+    "title": "G2 Telegramの5秒ライブ文字起こしをAstraで累積方式へ改善し、重複音声と最終全文再認識を削減。精度・利用量・停止と復旧を検証し、beta反映・配布先確認・結果報告まで完了する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "meta-todo-line-277",
     "title": "G2 Telegramメガネ側Settingsにライブ文字起こしON/OFFを追加し、iPhone設定との同期・保存を検証、既存修正と統合してbeta反映・再確認・依頼元報告まで完了する",
     "status": "done",
     "priority": "C",
@@ -1980,7 +1991,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-277",
+    "id": "meta-todo-line-278",
     "title": "G2 Telegramライブ文字起こしの更新間隔を5秒/10秒から選択・保存できるようにし、初期値5秒で既存修正と統合、検証・beta配布・再確認・依頼元報告まで完了する",
     "status": "done",
     "priority": "C",
@@ -1991,7 +2002,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-278",
+    "id": "meta-todo-line-279",
     "title": "G2 Telegramのトピック未読・既読をAstra ultraで再確認し、通常グループとの共通処理を優先して修正・検証・beta配布する。自分の投稿と残る未読1件、他トピック隔離、描画成功条件、更新ループを確認",
     "status": "done",
     "priority": "C",
@@ -2002,7 +2013,7 @@
     "syncable": false
   },
   {
-    "id": "meta-todo-line-279",
+    "id": "meta-todo-line-280",
     "title": "G2 Telegramのライブ文字起こしOFF時に操作案内を保持し、ON時だけ非表示にする。修正・表示検証・beta配布・サーバー再確認・依頼元報告まで",
     "status": "done",
     "priority": "C",
@@ -2035,7 +2046,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-282",
+    "id": "meta-todo-line-283",
     "title": "G2 Telegram beta2.0.6の実機確認を行う。2026-10-24: 設定整理・8行表示・未読修正に加え、5分録音/端末内分割/245国・地域選択とトピック内尻尾修正をbeta2.0.6/version120857へ統合・API再確認済み。通常/トピック/General×All/Own/Offの9表示、全文下書きと編集、取消・復旧はパッケージ検証合格。次は実iPhone/G2で5分録音の連続性と停止/取消/再録音、ライブ最新30秒と最終全文、端末内処理時間・精度・メモリ、電池/発熱、国番号選択保存とログイン引継ぎ、既読ON最終ページ後の件数減少、トピック尻尾を確認する。公開版1.4.3維持、審査8610/2.0.2は別タスク。 （既定5）、OFF時操作案内、共有未読処理はパッケージ検証済み。これらも実機確認する",
     "status": "todo",
     "priority": "A",
