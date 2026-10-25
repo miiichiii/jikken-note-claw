@@ -1969,6 +1969,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261025-g2telegram-live-silence-resume",
+    "title": "G2 Telegramの無音後にライブ認識が続かない症状を調査・修正する。Astra ultraの修正前レビュー、再発話の再現検証、実装、別Astra ultraの実パッケージ再レビュー、beta反映とサーバー再確認まで実施。間を置いた連続発話で表示が追従し、抜け・重複なく1タップ送信できることを評価。実機確認は別途継続",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-9460a0d8f44c",
     "title": "G2 Telegramトピック内の一時的な絵文字の豆腐表示・リアクション欠落と、未確認リアクション/本文未読の件数混同を通常グループとの共通処理で調査・修正。統合候補を別Astraで独立レビューし、beta配布・配布先確認・結果報告まで実施する",
     "status": "done",
