@@ -2090,6 +2090,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261025-g2telegram-live-tap-send",
+    "title": "G2 TelegramライブON時に累積テキストを1タップで送信できるよう改善する。追加認識・確認タップを省き、OFF確認フロー・重複送信防止・宛先固定・復旧を保持。2.0.8候補をAstraで実装し、別担当独立レビュー後にbeta配布・再確認・依頼元報告。審査中2.0.7は維持",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261024-g2telegram-201-public",
     "title": "G2 Telegram 2.0.7と更新済み説明文を公開し、ライブ反映を確認する。2026-10-25 App3663の本人公開指示により旧2.0.2審査8610を正式取消、検証済み2.0.7/version120922を審査8664へ提出。API再取得でIn review確認、public1.4.3・beta2.0.7維持。英語説明・掲載情報保持。未公開・外部承認待ち。次は8664承認後、既存権限でpublic2.0.7へ切り替え、ライブ版と説明を検証（新規自動監視なし）",
     "status": "todo",
