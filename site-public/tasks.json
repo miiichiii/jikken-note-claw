@@ -2190,9 +2190,9 @@
   },
   {
     "id": "mtodo-20261026-g2telegram-realtime-modes",
-    "title": "G2 Telegramで5秒・10秒・リアルタイムの文字起こし3モードを選べるようにする。Groqとオンデバイス双方の低遅延認識を調査・実装し、認識品質・負荷・送信境界を検証、独立レビュー後beta反映と再取得確認まで行う。公開審査中版は変更しない",
+    "title": "G2 Telegramの3モードをスマホ/G2実機で確認する。Groq・端末内の5秒/10秒/リアルタイム（試験版）は2.0.14候補実装済み、配布ファイル55項目通過。beta配布状態は作業証跡のverification.json/server-readback.jsonを確認。次は初回表示・継続更新・負荷・30秒超発話の確認導線、実Groq品質を確認する。既存ビルド来歴監査の欠損は未解決、公開対象2.0.13は維持",
     "status": "todo",
-    "priority": "A",
+    "priority": "B",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
