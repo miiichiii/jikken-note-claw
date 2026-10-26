@@ -2176,5 +2176,16 @@
     "parentCategory": "アプリ開発",
     "section": "",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20261026-g2telegram-i18n-copy",
+    "title": "G2 Telegram全体の表示言語をプルダウンで切り替え、選択を保存してスマホとメガネへ反映する。主要10言語対応とライブ設定説明の簡潔化を実装し、独立レビュー後にベータ配布・再確認する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
   }
 ]
