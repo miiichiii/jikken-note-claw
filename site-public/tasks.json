@@ -2187,5 +2187,16 @@
     "parentCategory": "アプリ開発",
     "section": "",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20261026-g2telegram-realtime-modes",
+    "title": "G2 Telegramで5秒・10秒・リアルタイムの文字起こし3モードを選べるようにする。Groqとオンデバイス双方の低遅延認識を調査・実装し、認識品質・負荷・送信境界を検証、独立レビュー後beta反映と再取得確認まで行う。公開審査中版は変更しない",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
   }
 ]
