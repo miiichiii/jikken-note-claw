@@ -1969,7 +1969,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-276",
+    "id": "mtodo-be1c6bafa2c3",
     "title": "G2 Telegramの無音後にライブ認識が続かない症状を調査・修正する。Astra ultraの修正前レビュー、再発話の再現検証、実装、別Astra ultraの実パッケージ再レビュー、beta反映とサーバー再確認まで実施。間を置いた連続発話で表示が追従し、抜け・重複なく1タップ送信できることを評価。実機確認は別途継続",
     "status": "done",
     "priority": "C",
@@ -1977,7 +1977,7 @@
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": false
+    "syncable": true
   },
   {
     "id": "mtodo-9460a0d8f44c",
@@ -2167,7 +2167,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-299",
+    "id": "mtodo-2e517885fa0c",
     "title": "G2 Telegramのライブ認識精度と5〜10秒無音後の停止を修正し、事前・事後独立レビュー、beta配布・確認まで進める。最新版でiPhone側も停止する本人報告を受領。以前のレビューで指摘された訂正文字重複も修正対象。2026-10-26本人より「治ったみたい」と改善報告",
     "status": "done",
     "priority": "C",
@@ -2175,10 +2175,10 @@
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": false
+    "syncable": true
   },
   {
-    "id": "meta-todo-line-301",
+    "id": "mtodo-62d4ec346df6",
     "title": "G2 Telegram全体の表示言語をプルダウンで切り替え、選択を保存してスマホとメガネへ反映する。主要10言語対応とライブ設定説明の簡潔化を実装し、独立レビュー後にベータ配布・再確認する",
     "status": "done",
     "priority": "C",
@@ -2186,6 +2186,6 @@
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": false
+    "syncable": true
   }
 ]
