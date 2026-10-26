@@ -2189,7 +2189,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-305",
+    "id": "mtodo-26cff8ea20c9",
     "title": "G2 Telegramの3モードをスマホ/G2実機で確認する。Groq・端末内の5秒/10秒/リアルタイム（試験版）は2.0.14候補実装済み、配布ファイル55項目通過。beta配布状態は作業証跡のverification.json/server-readback.jsonを確認。次は初回表示・継続更新・負荷・30秒超発話の確認導線、実Groq品質を確認する。既存ビルド来歴監査の欠損は未解決、公開対象2.0.13は維持。 （Groq5秒はある程度反応）。未解決として調査・修正中。配布コードの未確定発話30秒後の更新停止と初回待機表示を点検し、実機原因と区別する。詳細: 2026-10-26_G2Telegram_端末内ライブ更新停止_3731",
     "status": "todo",
     "priority": "A",
@@ -2197,6 +2197,6 @@
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": false
+    "syncable": true
   }
 ]
