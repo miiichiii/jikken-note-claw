@@ -2209,5 +2209,16 @@
     "parentCategory": "アプリ開発",
     "section": "",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20261028-g2telegram-group-longpress-read",
+    "title": "G2 Telegramでグループ選択中の長押しから、そのグループ内を全トピック含めて既読にできるようにする。Codex実装・通常/トピック/競合/失敗時の検証・独立レビュー・beta配布・サーバー確認まで。ほかのグループと一般公開2.0.16は変更しない",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
   }
 ]
