@@ -2198,5 +2198,16 @@
     "parentCategory": "アプリ開発",
     "section": "",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20261027-g2telegram-forum-unread-question",
+    "title": "G2 Telegramのトピック付きグループで未読数が疑問符になる表示をCodexで修正し、正しい数値・未確定時表示を検証してベータへ反映する。公開申請中の2.0.15は維持",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
   }
 ]
