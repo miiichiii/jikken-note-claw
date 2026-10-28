@@ -2234,9 +2234,9 @@
   },
   {
     "id": "mtodo-20261028-g2telegram-group-read-return",
-    "title": "G2 Telegramの全既読タップ後は追加画面を出さず一覧へ戻るようにし、検証・ベータ配布・確認する",
-    "status": "todo",
-    "priority": "B",
+    "title": "G2 Telegramの全既読タップ後は追加画面を出さず一覧へ戻るようにし、検証・ベータ配布・確認する。2026-10-28: Codex実装・親の独立レビュー・beta2.0.19（versionId124637）配布とサーバー確認済み。一般公開2.0.16維持、実機未確認",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
