@@ -22,6 +22,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261029-practical-parts-prep",
+    "title": "2026-10-29(木) 今日: 明日10/30(金)の実習を準備する。まず磁石をまだ付けていないパーツを探す",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "今すぐ/期限あり",
+    "parentCategory": "大学の業務",
+    "section": "今すぐ/期限あり",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261001-replace-provisional-teaching-2027",
     "title": "2027年度の正式な授業時間割・実習担当表が判明したら、登録済みの仮予定を正式日程に置き換え、学会との重なりを再確認する",
     "status": "done",
@@ -111,7 +122,7 @@
   },
   {
     "id": "mtodo-20260918-career-path-seminar",
-    "title": "2026-09-18 今日: キャリアパスセミナーの準備を進める。「いろいろな逃げ道はあったほうがいい」というメッセージを構成に盛り込む",
+    "title": "2026-10-29(木) 今日: フロンティア科学専攻のキャリアパスセミナーの準備を進める。「いろいろな逃げ道はあったほうがいい」というメッセージを構成に盛り込む",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
