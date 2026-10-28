@@ -1991,6 +1991,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261028-recorder-public",
+    "title": "Local Voice Recorder 0.1.17の公開審査結果を確認し、承認後に一般公開へ反映する。2026-10-28: 公開指示に基づき提出・受付確認済み、審査待ち",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-be1c6bafa2c3",
     "title": "G2 Telegramの無音後にライブ認識が続かない症状を調査・修正する。Astra ultraの修正前レビュー、再発話の再現検証、実装、別Astra ultraの実パッケージ再レビュー、beta反映とサーバー再確認まで実施。間を置いた連続発話で表示が追従し、抜け・重複なく1タップ送信できることを評価。実機確認は別途継続",
     "status": "done",
