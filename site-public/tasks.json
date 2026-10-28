@@ -2220,5 +2220,16 @@
     "parentCategory": "アプリ開発",
     "section": "",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20261028-g2telegram-group-read-simple",
+    "title": "G2 Telegramの全既読確認画面をグループ名と取消・実行の3要素に簡潔化し、検証・ベータ配布・確認する",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
   }
 ]
