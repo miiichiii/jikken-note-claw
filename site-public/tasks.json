@@ -2223,9 +2223,9 @@
   },
   {
     "id": "mtodo-20261028-g2telegram-group-read-simple",
-    "title": "G2 Telegramの全既読確認画面をグループ名と取消・実行の3要素に簡潔化し、検証・ベータ配布・確認する",
-    "status": "todo",
-    "priority": "B",
+    "title": "G2 Telegramの全既読確認画面をグループ名と取消・実行の3要素に簡潔化し、検証・ベータ配布・確認する。2026-10-28: Codex実装・親の独立レビュー・beta2.0.18（versionId124627）配布とサーバー確認済み。一般公開2.0.16維持、実機未確認",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
