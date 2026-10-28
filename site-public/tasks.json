@@ -1969,6 +1969,28 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261028-recorder-scroll-beta",
+    "title": "Local Voice Recorderの保存一覧スクロールを修正し、検証・ベータ配布まで完了する。2026-10-28: beta0.1.17反映・サーバー再取得、最大1000件を含むWebKit8ケースとChrome操作確認済み。public0.1.16維持",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20261028-recorder-scroll-device",
+    "title": "Local Voice Recorderベータ0.1.17をiPhone実機で開き直し、保存一覧の最古録音までタッチ操作で到達できることを確認する。再インストール・データ消去は不要",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-be1c6bafa2c3",
     "title": "G2 Telegramの無音後にライブ認識が続かない症状を調査・修正する。Astra ultraの修正前レビュー、再発話の再現検証、実装、別Astra ultraの実パッケージ再レビュー、beta反映とサーバー再確認まで実施。間を置いた連続発話で表示が追従し、抜け・重複なく1タップ送信できることを評価。実機確認は別途継続",
     "status": "done",
