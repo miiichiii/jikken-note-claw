@@ -2277,6 +2277,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261028-g2telegram-2021-review",
+    "title": "G2 Telegram 2.0.21の公開審査結果を確認する。2026-10-28: 申請・受付確認済み、審査待ち。一般公開版は維持",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261028-g2telegram-topic-voice-send",
     "title": "G2 Telegramのトピック内で音声ドラフトから送信できない症状と自己投稿の未読疑惑を調査し、実機で確認する。送信前3回失敗・送信要求0回、元原因未確定。Astra Ultra確認後、G2単独の安全な下書き破棄/再試行/戻る・復帰競合3件・トピック長押し既読を修正し、beta2.0.21へ配布・サーバー再取得確認済み。自己送信の未読加算はソフト検証で再現せず、推測補正なし。次は更新後の実機確認と症状再現直後・再起動前の診断取得。公開版2.0.16維持",
     "status": "todo",
