@@ -2242,5 +2242,16 @@
     "parentCategory": "アプリ開発",
     "section": "",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20261028-g2telegram-topic-voice-send",
+    "title": "G2 Telegramのトピック内で音声ドラフトから送信できない症状を調査し、必要な修正・検証・ベータ配布・確認を行う。通常メッセージは送信可能との本人報告。一般公開版は維持、実機原因は未確定",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
   }
 ]
