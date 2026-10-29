@@ -121,15 +121,15 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20260918-career-path-seminar",
-    "title": "2026-10-29(木) 今日: フロンティア科学専攻のキャリアパスセミナーの準備を進める。「いろいろな逃げ道はあったほうがいい」というメッセージを構成に盛り込む",
+    "id": "meta-todo-line-43",
+    "title": "2026-10-29(木) 今日: フロンティア科学専攻のキャリアパスセミナーの準備を進める。「いろいろな逃げ道はあったほうがいい」というメッセージを構成に盛り込む。 （未完成）。2026-10-29_キャリアパスセミナー構成とAI相談プロンプト_29946",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
     "category": "今すぐ/期限あり",
     "parentCategory": "大学の業務",
     "section": "今すぐ/期限あり",
-    "syncable": true
+    "syncable": false
   },
   {
     "id": "mtodo-20260918-bone-practical-materials",
