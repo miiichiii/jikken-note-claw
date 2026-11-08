@@ -2431,6 +2431,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261108-g2telegram-2022-public",
+    "title": "G2 Telegram 2.0.22と反転表示のビーグル掲載画像を公開する。配布済み版の審査申請・承認確認後public切替・サーバー再確認まで",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261028-g2telegram-topic-voice-send",
     "title": "G2 Telegramのトピック内で音声ドラフトから送信できない症状と自己投稿の未読疑惑を調査し、実機で確認する。送信前3回失敗・送信要求0回、元原因未確定。Astra Ultra確認後、G2単独の安全な下書き破棄/再試行/戻る・復帰競合3件・トピック長押し既読を修正し、beta2.0.21へ配布・サーバー再取得確認済み。自己送信の未読加算はソフト検証で再現せず、推測補正なし。次は更新後の実機確認と症状再現直後・再起動前の診断取得。2026-10-29: 本人指示により公開版も2.0.21へ昇格・API確認済み。元症状の実機確認は継続",
     "status": "todo",
