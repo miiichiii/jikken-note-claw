@@ -2069,9 +2069,9 @@
   },
   {
     "id": "mtodo-20261108-recorder-location-repair",
-    "title": "Local Voice Recorderの場所名タイトルが日時のままになる実機報告を調査し、取得状態・位置確認操作を改善して検証・ベータ配布・サーバー再確認を行う。Astra／極めて高いで継続。実機の位置許可画面は出ていないとの本人報告、原因は未特定",
-    "status": "todo",
-    "priority": "B",
+    "title": "Local Voice Recorderの位置取得・地名検索に診断表示と位置確認ボタンを追加し、待機処理を改善してベータ配布・サーバー再確認を行う。2026-11-08: Astra／極めて高い、beta0.1.19/build136200、親API照合済み。自動36・WebKit機能29/スクロール8件通過。実機で日時のままになる原因特定・改善確認は次の実機タスクへ継続",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
@@ -2080,7 +2080,7 @@
   },
   {
     "id": "mtodo-20261108-recorder-location-device",
-    "title": "Local Voice Recorder beta0.1.18をiPhone/G2実機で確認する。場所名設定ON・位置許可・新規タイトル・取得不可時の日時・既存録音とマイク動作",
+    "title": "Local Voice Recorder beta0.1.19をiPhone/G2実機で確認する。Check locationの表示で日時のままになる原因を切り分け、位置取得・新規タイトル保存・既存録音保持・マイク動作を確認。本人はEvenアプリ最新版利用",
     "status": "todo",
     "priority": "B",
     "assignee": "Me",
@@ -2102,7 +2102,7 @@
   },
   {
     "id": "mtodo-20261028-recorder-scroll-device",
-    "title": "Local Voice Recorderベータ0.1.18をiPhone実機で開き直し、保存一覧の最古録音までタッチ操作で到達できることを確認する。再インストール・データ消去は不要",
+    "title": "Local Voice Recorderベータ0.1.19をiPhone実機で開き直し、保存一覧の最古録音までタッチ操作で到達できることを確認する。再インストール・データ消去は不要",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
