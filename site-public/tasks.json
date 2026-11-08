@@ -2079,10 +2079,21 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20261108-recorder-location-device",
-    "title": "Local Voice Recorder beta0.1.19をiPhone/G2実機で確認する。Check locationの表示で日時のままになる原因を切り分け、位置取得・新規タイトル保存・既存録音保持・マイク動作を確認。本人はEvenアプリ最新版利用",
+    "id": "mtodo-20261108-recorder-geocoder-compact",
+    "title": "Local Voice Recorderの地名検索接続を修正し、トップ画面の長文を整理して検証・ベータ配布・サーバー再確認を行う。2026-11-08: 実機で位置取得成功・Photon接続不通。Astra／極めて高いで調査・修正中",
     "status": "todo",
-    "priority": "B",
+    "priority": "A",
+    "assignee": "Bot",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20261108-recorder-location-device",
+    "title": "Local Voice Recorderの場所名タイトルをiPhone/G2実機で確認する。2026-11-08: 本人のCheck locationで位置取得成功・Photon接続不通を確認。接続修正後、新規タイトル保存・既存録音保持・マイク動作を確認。本人はEvenアプリ最新版利用",
+    "status": "todo",
+    "priority": "A",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
