@@ -2091,7 +2091,7 @@
   },
   {
     "id": "mtodo-20261108-recorder-location-device",
-    "title": "Local Voice Recorder beta0.1.20の場所名タイトルをiPhone/G2実機で確認する。2026-11-08: 旧版で位置取得成功・Photon接続不通を本人確認。新betaは国内の国土地理院経路を追加。Settings → Check location、新規タイトル保存・既存録音保持・マイク動作を確認",
+    "title": "Local Voice Recorderの実機で場所名タイトルが取得できない原因を特定し、修正後のiPhone/G2動作を確認する。2026-11-08: beta0.1.20でも本人が場所名なしを報告。Details全文の確認とEvenホスト通信経路の再調査をAstra／極めて高いで継続。保存済み音声を保持",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
