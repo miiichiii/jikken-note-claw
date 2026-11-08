@@ -2376,7 +2376,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-369",
+    "id": "mtodo-11e01eedc36a",
     "title": "G2 Telegramの画像表示を白黒反転し、検証・beta配布・サーバー再取得確認まで行う。一般公開版は維持。実機での見やすさは別途確認。 （versionId136168）配布・独立API再取得確認済み。画素20項目・添付表示10分類合格、public2.0.21維持。実機未確認",
     "status": "done",
     "priority": "C",
@@ -2384,7 +2384,7 @@
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": false
+    "syncable": true
   },
   {
     "id": "mtodo-20261028-g2telegram-2021-review",
