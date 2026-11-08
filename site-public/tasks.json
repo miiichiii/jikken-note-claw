@@ -2058,9 +2058,20 @@
   },
   {
     "id": "mtodo-20261108-recorder-location-beta",
-    "title": "Local Voice Recorderに場所名による録音タイトル自動設定を追加し、検証・ベータ配布・サーバー再確認を完了する。2026-11-08: Astra／極めて高いで着手。位置情報取得不可時は日時、手動編集・既存録音保持",
+    "title": "Local Voice Recorderに場所名による録音タイトル自動設定を追加し、検証・ベータ配布・サーバー再確認を完了する。2026-11-08: Astra／極めて高いで実装、beta0.1.18/build136174反映・親API再確認済み。自動26件・WebKit機能21件/スクロール8件通過。実機未確認",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20261108-recorder-location-device",
+    "title": "Local Voice Recorder beta0.1.18をiPhone/G2実機で確認する。場所名設定ON・位置許可・新規タイトル・取得不可時の日時・既存録音とマイク動作",
     "status": "todo",
-    "priority": "A",
+    "priority": "B",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
@@ -2080,7 +2091,7 @@
   },
   {
     "id": "mtodo-20261028-recorder-scroll-device",
-    "title": "Local Voice Recorderベータ0.1.17をiPhone実機で開き直し、保存一覧の最古録音までタッチ操作で到達できることを確認する。再インストール・データ消去は不要",
+    "title": "Local Voice Recorderベータ0.1.18をiPhone実機で開き直し、保存一覧の最古録音までタッチ操作で到達できることを確認する。再インストール・データ消去は不要",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -2090,15 +2101,15 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20261028-recorder-public",
+    "id": "meta-todo-line-331",
     "title": "Local Voice Recorder 0.1.17の公開審査結果を確認し、承認後に一般公開へ反映する。2026-10-28: 公開指示に基づき提出・受付確認済み、審査待ち",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": true
+    "syncable": false
   },
   {
     "id": "mtodo-be1c6bafa2c3",
