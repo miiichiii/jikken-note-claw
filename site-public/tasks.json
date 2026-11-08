@@ -2101,7 +2101,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-331",
+    "id": "mtodo-03376ed7b89a",
     "title": "Local Voice Recorder 0.1.17の公開審査結果を確認し、承認後に一般公開へ反映する。2026-10-28: 公開指示に基づき提出・受付確認済み、審査待ち",
     "status": "done",
     "priority": "C",
@@ -2109,7 +2109,7 @@
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": false
+    "syncable": true
   },
   {
     "id": "mtodo-be1c6bafa2c3",
