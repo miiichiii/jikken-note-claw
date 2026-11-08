@@ -992,8 +992,8 @@
   {
     "id": "mtodo-20261102-active-peer-review",
     "title": "引受済み査読の原稿と提出期限を確認し、査読コメントをまとめて提出する",
-    "status": "todo",
-    "priority": "B",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "論文・発表・広報",
     "parentCategory": "論文・発表・広報",
