@@ -2091,7 +2091,7 @@
   },
   {
     "id": "mtodo-20261108-recorder-location-device",
-    "title": "Local Voice Recorderの実機で場所名タイトルが取得できない原因を特定し、修正後のiPhone/G2動作を確認する。2026-11-08: beta0.1.20のDetailsでも位置取得成功・Photon通信拒否。先行する国土地理院の結果が隠れる診断欠落を修正し、診断用0.1.21を配布準備中。実機の両サービスの結果を確認し原因特定へ継続。保存済み音声を保持",
+    "title": "Local Voice Recorderの実機で場所名タイトルが取得できない原因を特定し、修正後のiPhone/G2動作を確認する。2026-11-08: 診断用beta0.1.21実機で位置取得成功、GSI・PhotonともTypeErrorで即時拒否。Astra／極めて高いで共通通信処理・ホスト制約を調査し根拠ある修正へ継続。保存済み音声を保持",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
