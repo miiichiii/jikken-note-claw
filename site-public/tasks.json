@@ -2123,6 +2123,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261108-recorder-public-0123",
+    "title": "Local Voice Recorder 0.1.23の公開審査を確認し、承認後に正式公開・配布状態再確認を完了する。2026-11-08: 本人の公開指示に基づきreview9368/version136401へ提出、独立APIで審査待ち確認。位置情報の掲載説明更新済み。既存heartbeatが継続し、完了時はAppの元トピックへ一度だけ報告する",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261028-recorder-scroll-beta",
     "title": "Local Voice Recorderの保存一覧スクロールを修正し、検証・ベータ配布まで完了する。2026-10-28: beta0.1.17反映・サーバー再取得、最大1000件を含むWebKit8ケースとChrome操作確認済み。public0.1.16維持",
     "status": "done",
