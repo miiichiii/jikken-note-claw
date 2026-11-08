@@ -2102,9 +2102,20 @@
   },
   {
     "id": "mtodo-20261108-recorder-keyboard-defaults",
-    "title": "Local Voice Recorderの場所名設定を初期ONにし、キーボードに隠れるタイトル編集欄を修正、検証・ベータ配布・サーバー再確認まで行う。2026-11-08: Astra／極めて高い担当で進行中。明示OFF設定と既存録音保持、公開版は変更しない",
+    "title": "Local Voice Recorderの場所名設定を初期ONにし、キーボードに隠れるタイトル編集欄を修正、検証・ベータ配布・サーバー再確認まで行う。2026-11-08: Astra／極めて高い、beta0.1.23/build136401を親API照合。初期ON・明示OFF保持、画面上部モーダルと表示領域追従。型検査/自動51件・WebKit通過、既存音声と公開版不変。実機キーボード確認は次項へ",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20261108-recorder-keyboard-device",
+    "title": "Local Voice Recorderベータ0.1.23のEdit titleをiPhone実機で開き、キーボード表示中も入力・保存・キャンセルが操作できることを確認する。再インストール・録音消去不要",
     "status": "todo",
-    "priority": "A",
+    "priority": "B",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
