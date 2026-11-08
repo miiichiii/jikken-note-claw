@@ -2057,6 +2057,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261108-recorder-location-beta",
+    "title": "Local Voice Recorderに場所名による録音タイトル自動設定を追加し、検証・ベータ配布・サーバー再確認を完了する。2026-11-08: Astra／極めて高いで着手。位置情報取得不可時は日時、手動編集・既存録音保持",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261028-recorder-scroll-beta",
     "title": "Local Voice Recorderの保存一覧スクロールを修正し、検証・ベータ配布まで完了する。2026-10-28: beta0.1.17反映・サーバー再取得、最大1000件を含むWebKit8ケースとChrome操作確認済み。public0.1.16維持",
     "status": "done",
