@@ -2080,10 +2080,10 @@
   },
   {
     "id": "mtodo-20261108-recorder-geocoder-compact",
-    "title": "Local Voice Recorderの地名検索接続を修正し、トップ画面の長文を整理して検証・ベータ配布・サーバー再確認を行う。2026-11-08: 実機で位置取得成功・Photon接続不通。Astra／極めて高いで調査・修正中",
-    "status": "todo",
-    "priority": "A",
-    "assignee": "Bot",
+    "title": "Local Voice Recorderの国内地名取得経路と簡潔なトップ画面を実装し、検証・ベータ配布・サーバー再確認を完了する。2026-11-08: Astra／極めて高い、beta0.1.20/build136236を親API照合。国土地理院優先・Photon代替、説明/診断はSettings内。自動44・WebKit機能36/画面5/スクロール8件通過。実機は次タスク",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
@@ -2091,7 +2091,7 @@
   },
   {
     "id": "mtodo-20261108-recorder-location-device",
-    "title": "Local Voice Recorderの場所名タイトルをiPhone/G2実機で確認する。2026-11-08: 本人のCheck locationで位置取得成功・Photon接続不通を確認。接続修正後、新規タイトル保存・既存録音保持・マイク動作を確認。本人はEvenアプリ最新版利用",
+    "title": "Local Voice Recorder beta0.1.20の場所名タイトルをiPhone/G2実機で確認する。2026-11-08: 旧版で位置取得成功・Photon接続不通を本人確認。新betaは国内の国土地理院経路を追加。Settings → Check location、新規タイトル保存・既存録音保持・マイク動作を確認",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -2113,7 +2113,7 @@
   },
   {
     "id": "mtodo-20261028-recorder-scroll-device",
-    "title": "Local Voice Recorderベータ0.1.19をiPhone実機で開き直し、保存一覧の最古録音までタッチ操作で到達できることを確認する。再インストール・データ消去は不要",
+    "title": "Local Voice Recorderベータ0.1.20をiPhone実機で開き直し、保存一覧の最古録音までタッチ操作で到達できることを確認する。再インストール・データ消去は不要",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
