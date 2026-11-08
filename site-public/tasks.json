@@ -2068,6 +2068,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261108-recorder-location-repair",
+    "title": "Local Voice Recorderの場所名タイトルが日時のままになる実機報告を調査し、取得状態・位置確認操作を改善して検証・ベータ配布・サーバー再確認を行う。Astra／極めて高いで継続。実機の位置許可画面は出ていないとの本人報告、原因は未特定",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261108-recorder-location-device",
     "title": "Local Voice Recorder beta0.1.18をiPhone/G2実機で確認する。場所名設定ON・位置許可・新規タイトル・取得不可時の日時・既存録音とマイク動作",
     "status": "todo",
