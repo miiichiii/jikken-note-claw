@@ -2464,10 +2464,21 @@
     "syncable": true
   },
   {
-    "id": "mtodo-03bc3e013182",
+    "id": "meta-todo-line-378",
     "title": "G2 Telegramのメッセージ読み込み停止を調査・修正し、ベータで検証する。2026-11-09: 2.0.22診断を受領。通常チャット受信はあり、トピック取得経路を調査中。一般公開の自動昇格は一時保留。実機解消は未確認",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": false
+  },
+  {
+    "id": "mtodo-20261109-g2telegram-weak-network-device",
+    "title": "G2 Telegram beta2.0.23をiPhone/G2実機の弱い通信環境で確認する。通常グループ・トピック一覧・トピック履歴の5秒後応答待ち表示、停止後タップ再試行、再接続後読込、一覧取得を続けたままの操作を確認。Astra実装・親の独立検証・beta配布は完了、元症状の実機解消と原因は未確認。一般公開は保留維持",
     "status": "todo",
-    "priority": "A",
+    "priority": "B",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
