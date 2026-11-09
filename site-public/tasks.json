@@ -2124,7 +2124,7 @@
   },
   {
     "id": "mtodo-20261108-recorder-public-0123",
-    "title": "Local Voice Recorder 0.1.24の審査承認後に正式公開し、配布状態の再確認を完了する。2026-11-09: 出典リンク通信許可を修正、51件テスト・型検査・ビルド通過、beta0.1.24/build137236と再審査review9399/status1を親API独立確認。公開0.1.17、承認後の公開許可は有効",
+    "title": "Local Voice Recorder 0.1.25の審査承認後に正式公開し、配布状態を再確認する。2026-11-09: 本人の即時申請指示により旧0.1.24を取り下げ、施設名優先の0.1.25/build137257をreview9400/status1へ提出・独立API確認済み。公開0.1.17、承認後の公開許可を最新版へ変更",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
@@ -2135,9 +2135,20 @@
   },
   {
     "id": "mtodo-20261109-recorder-facility-priority",
-    "title": "Local Voice Recorderで建物・施設名を優先し、地名への代替を保持して検証・ベータ配布・サーバー再確認を行う。2026-11-09: Astra／極めて高いで実装中。審査中0.1.24は維持",
+    "title": "Local Voice Recorderで建物・施設名を優先し、地名への代替を保持して検証・ベータ配布・サーバー再確認を行う。2026-11-09: beta0.1.25/build137257反映・親API独立確認。自動60件・WebKit37項目・型検査・build/pack通過、本人へ配信済み。実機施設名は次項へ",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20261109-recorder-facility-device",
+    "title": "Local Voice Recorder 0.1.25のCheck locationまたは新規録音で建物・施設名の実機取得を確認する。位置が曖昧・地図未登録の場合は地名になる仕様を維持",
     "status": "todo",
-    "priority": "A",
+    "priority": "B",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
