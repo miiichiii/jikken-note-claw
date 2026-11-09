@@ -2508,15 +2508,15 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-382",
-    "title": "G2 Telegramの録音終了後に認識結果が出ないことがある症状を調査し、原因に応じて修正・検証・ベータ配布・サーバー再確認する。2026-11-09 #4081: Groq singleモード。診断は再起動後で停止した試行を含まず原因未確定。一般公開2.0.23は維持",
+    "id": "mtodo-818a368ad9ff",
+    "title": "G2 Telegramの録音終了後に認識結果が出ないことがある症状を調査し、原因に応じて修正・検証・ベータ配布・サーバー再確認する。2026-11-09 #4081: Groq singleモード。診断は再起動後で停止した試行を含まず原因未確定。一般公開2.0.23は維持。 （副作用2件・実G2入口未対応）。現行Stop順序の実在問題に絞って再修正・独立再レビュー中。配布保留、合格後のみ検証とbetaへ進む",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": false
+    "syncable": true
   },
   {
     "id": "mtodo-05021f99e397",
