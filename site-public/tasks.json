@@ -2464,7 +2464,18 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20261108-g2telegram-2022-public",
+    "id": "mtodo-03bc3e013182",
+    "title": "G2 Telegramのメッセージ読み込み停止を調査・修正し、ベータで検証する。2026-11-09: 2.0.22診断を受領。通常チャット受信はあり、トピック取得経路を調査中。一般公開の自動昇格は一時保留。実機解消は未確認",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-e5ce5d9908da",
     "title": "G2 Telegram 2.0.22を公開する（ビーグル紹介画像は元に復元）。2026-11-09: 本人希望で反転画像の旧審査9363取消・紹介画像3枚目を元に戻し、新review9378/version136168で再申請。全6元画像・他掲載情報・アプリ成果物不変を独立再取得確認。一般公開2.0.21、beta2.0.22。次: 既存heartbeatで承認後2.0.22を公開・独立再取得・App報告。画像反転機能は維持",
     "status": "todo",
     "priority": "A",
