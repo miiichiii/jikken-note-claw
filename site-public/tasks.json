@@ -2134,6 +2134,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261109-recorder-facility-priority",
+    "title": "Local Voice Recorderで建物・施設名を優先し、地名への代替を保持して検証・ベータ配布・サーバー再確認を行う。2026-11-09: Astra／極めて高いで実装中。審査中0.1.24は維持",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261028-recorder-scroll-beta",
     "title": "Local Voice Recorderの保存一覧スクロールを修正し、検証・ベータ配布まで完了する。2026-10-28: beta0.1.17反映・サーバー再取得、最大1000件を含むWebKit8ケースとChrome操作確認済み。public0.1.16維持",
     "status": "done",
