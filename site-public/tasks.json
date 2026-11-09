@@ -2508,15 +2508,15 @@
     "syncable": true
   },
   {
-    "id": "mtodo-818a368ad9ff",
-    "title": "G2 Telegramの録音終了後に認識結果が出ないことがある症状を調査し、原因に応じて修正・検証・ベータ配布・サーバー再確認する。2026-11-09 #4081: Groq singleモード。診断は再起動後で停止した試行を含まず原因未確定。一般公開2.0.23は維持。 （副作用2件・実G2入口未対応）。現行Stop順序の実在問題に絞って再修正・独立再レビュー中。配布保留、合格後のみ検証とbetaへ進む",
-    "status": "todo",
-    "priority": "A",
+    "id": "meta-todo-line-382",
+    "title": "G2 Telegramの録音終了後に認識結果が出ないことがある症状を調査し、原因に応じて修正・検証・ベータ配布・サーバー再確認する。2026-11-09 #4081: Groq singleモード。診断は再起動後で停止した試行を含まず原因未確定。一般公開2.0.23は維持。 （副作用2件・実G2入口未対応）。現行Stop順序の実在問題に絞って再修正・独立再レビュー中。配布保留、合格後のみ検証とbetaへ進む。 2026-11-09: Astra xhigh全体・独立再レビュー後、必要なStop所有権/順序と受付期限だけ修正。厳密packageQA後beta2.0.24/version137638へ反映・別API再確認。公開2.0.23維持、元事象原因と実機解消は未確認",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": true
+    "syncable": false
   },
   {
     "id": "mtodo-05021f99e397",
@@ -2534,6 +2534,17 @@
     "title": "G2 Telegramのトピック内で音声ドラフトから送信できない症状と自己投稿の未読疑惑を調査し、実機で確認する。送信前3回失敗・送信要求0回、元原因未確定。Astra Ultra確認後、G2単独の安全な下書き破棄/再試行/戻る・復帰競合3件・トピック長押し既読を修正し、beta2.0.21へ配布・サーバー再取得確認済み。自己送信の未読加算はソフト検証で再現せず、推測補正なし。次は更新後の実機確認と症状再現直後・再起動前の診断取得。2026-10-29: 本人指示により公開版も2.0.21へ昇格・API確認済み。元症状の実機確認は継続",
     "status": "todo",
     "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
+    "id": "mtodo-20261109-g2telegram-voice-stop-device",
+    "title": "G2 Telegram beta2.0.24をiPhone/G2実機で確認する。録音停止後の認識・確認、回線切断時の音声保持と再試行、画面切替後の復帰を確認。再発時は再起動前の診断を保存する。ソフト検証・Astra独立レビュー・beta配布は完了、元事象の原因は未確定",
+    "status": "todo",
+    "priority": "B",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
