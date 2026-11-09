@@ -2123,15 +2123,15 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20261108-recorder-public-0123",
+    "id": "meta-todo-line-332",
     "title": "Local Voice Recorder 0.1.25の審査承認後に正式公開し、配布状態を再確認する。2026-11-09: 本人の即時申請指示により旧0.1.24を取り下げ、施設名優先の0.1.25/build137257をreview9400/status1へ提出・独立API確認済み。公開0.1.17、承認後の公開許可を最新版へ変更",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": true
+    "syncable": false
   },
   {
     "id": "mtodo-20261109-recorder-facility-priority",
@@ -2508,15 +2508,15 @@
     "syncable": true
   },
   {
-    "id": "mtodo-e5ce5d9908da",
+    "id": "meta-todo-line-383",
     "title": "G2 Telegram 2.0.23を公開する（元のビーグル紹介画像6枚を維持）。2026-11-09 #4050: 本人が問題なく動いていると確認し公開申請を明示。旧2.0.22/review9378を取り消し、既存beta2.0.23/version137206をreview9396/status1で申請。public2.0.21維持。次: 既存heartbeatで承認後2.0.23を公開・独立API再取得・App報告。再ビルド・紹介画像変更なし",
-    "status": "todo",
-    "priority": "A",
+    "status": "done",
+    "priority": "C",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": true
+    "syncable": false
   },
   {
     "id": "mtodo-20261028-g2telegram-topic-voice-send",
