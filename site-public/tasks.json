@@ -2508,6 +2508,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261109-g2telegram-postrecord-stall",
+    "title": "G2 Telegramの録音終了後に認識結果が出ないことがある症状を調査し、原因に応じて修正・検証・ベータ配布・サーバー再確認する。2026-11-09 #4081: Groq singleモード。診断は再起動後で停止した試行を含まず原因未確定。一般公開2.0.23は維持",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-05021f99e397",
     "title": "G2 Telegram 2.0.23を公開する（元のビーグル紹介画像6枚を維持）。2026-11-09 #4050: 本人が問題なく動いていると確認し公開申請を明示。旧2.0.22/review9378を取り消し、既存beta2.0.23/version137206をreview9396/status1で申請。public2.0.21維持。次: 既存heartbeatで承認後2.0.23を公開・独立API再取得・App報告。再ビルド・紹介画像変更なし",
     "status": "done",
