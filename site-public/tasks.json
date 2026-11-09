@@ -2508,7 +2508,7 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20261109-g2telegram-postrecord-stall",
+    "id": "meta-todo-line-382",
     "title": "G2 Telegramの録音終了後に認識結果が出ないことがある症状を調査し、原因に応じて修正・検証・ベータ配布・サーバー再確認する。2026-11-09 #4081: Groq singleモード。診断は再起動後で停止した試行を含まず原因未確定。一般公開2.0.23は維持",
     "status": "todo",
     "priority": "A",
@@ -2516,7 +2516,7 @@
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": true
+    "syncable": false
   },
   {
     "id": "mtodo-05021f99e397",
