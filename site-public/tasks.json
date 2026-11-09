@@ -2464,7 +2464,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-378",
+    "id": "mtodo-984aec9da74d",
     "title": "G2 Telegramのメッセージ読み込み停止を調査・修正し、ベータで検証する。2026-11-09: 2.0.22診断を受領。通常チャット受信はあり、トピック取得経路を調査中。一般公開の自動昇格は一時保留。実機解消は未確認",
     "status": "done",
     "priority": "C",
@@ -2472,7 +2472,7 @@
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": false
+    "syncable": true
   },
   {
     "id": "mtodo-20261109-g2telegram-weak-network-device",
