@@ -2594,5 +2594,16 @@
     "parentCategory": "アプリ開発",
     "section": "",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20261111-g2telegram-2027-public",
+    "title": "G2 Telegram 2.0.27の公開審査を追跡し、承認後に同一の検証済み版を一般公開、配布先再確認・報告する。紹介画像・説明は維持",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
   }
 ]
