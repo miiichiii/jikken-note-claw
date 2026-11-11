@@ -2574,7 +2574,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-400",
+    "id": "mtodo-2128d5ad500f",
     "title": "G2 Telegramの未読マークをメッセージ単位にし、6件中1件を読むとその1件だけ印が消えるよう修正する。Astra xhigh実装・回帰検証・ベータ配布・独立API再確認まで。一般公開は維持",
     "status": "done",
     "priority": "C",
@@ -2582,6 +2582,6 @@
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": false
+    "syncable": true
   }
 ]
