@@ -2583,5 +2583,16 @@
     "parentCategory": "アプリ開発",
     "section": "",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20261111-g2telegram-browse-clock",
+    "title": "G2 Telegramのバッテリー横に現在時刻を表示し、一覧画面表示中だけ分単位で更新する。Astraで実装・検証しベータへ反映、配布先を再確認する。実機表示・消費量は別途確認",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
   }
 ]
