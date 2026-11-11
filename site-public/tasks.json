@@ -2563,8 +2563,19 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20261111-g2telegram-unread-bullet",
+    "id": "meta-todo-line-399",
     "title": "G2 Telegramの未読メッセージの吹き出し内に小さな「•」を表示する。本人指定Astra xhighで最小実装し、既読処理・操作・本文を維持して検証、ベータ配布とサーバー確認まで進める。一般公開は変更しない",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": false
+  },
+  {
+    "id": "mtodo-20261111-g2telegram-per-message-unread",
+    "title": "G2 Telegramの未読マークをメッセージ単位にし、6件中1件を読むとその1件だけ印が消えるよう修正する。Astra xhigh実装・回帰検証・ベータ配布・独立API再確認まで。一般公開は維持",
     "status": "todo",
     "priority": "A",
     "assignee": "Me",
