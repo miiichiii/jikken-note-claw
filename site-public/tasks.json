@@ -2156,6 +2156,17 @@
     "syncable": true
   },
   {
+    "id": "mtodo-20261111-recorder-location-help",
+    "title": "Local Voice Recorderのストア説明に、ロック中の場所名取得には位置情報を「常に」にする設定手順を追記し、審査承認・反映を確認する。2026-11-11: 説明のみ更新を申請・受付確認、アプリ本体は変更なし",
+    "status": "todo",
+    "priority": "A",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
+  },
+  {
     "id": "mtodo-20261028-recorder-scroll-beta",
     "title": "Local Voice Recorderの保存一覧スクロールを修正し、検証・ベータ配布まで完了する。2026-10-28: beta0.1.17反映・サーバー再取得、最大1000件を含むWebKit8ケースとChrome操作確認済み。public0.1.16維持",
     "status": "done",
