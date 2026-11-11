@@ -2563,7 +2563,7 @@
     "syncable": true
   },
   {
-    "id": "meta-todo-line-399",
+    "id": "mtodo-3cf75948399a",
     "title": "G2 Telegramの未読メッセージの吹き出し内に小さな「•」を表示する。本人指定Astra xhighで最小実装し、既読処理・操作・本文を維持して検証、ベータ配布とサーバー確認まで進める。一般公開は変更しない",
     "status": "done",
     "priority": "C",
@@ -2571,7 +2571,7 @@
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
     "section": "",
-    "syncable": false
+    "syncable": true
   },
   {
     "id": "mtodo-20261111-g2telegram-per-message-unread",
