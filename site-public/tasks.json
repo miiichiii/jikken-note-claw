@@ -2607,10 +2607,21 @@
     "syncable": true
   },
   {
-    "id": "mtodo-20261113-g2telegram-browse-double-tap",
+    "id": "meta-todo-line-418",
     "title": "G2 Telegramのグループ側ダブルタップを「メッセージ欄を閉じる→設定画面」の2段階にし、回帰検証・ベータ配布・配布先確認を行う",
+    "status": "done",
+    "priority": "C",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": false
+  },
+  {
+    "id": "mtodo-20261115-g2telegram-forum-double-back",
+    "title": "G2 Telegramのグループのみ画面で、展開済みトピックをダブルタップで閉じる。設定画面への移動先を確認し、検証・ベータ配布まで行う",
     "status": "todo",
-    "priority": "B",
+    "priority": "A",
     "assignee": "Me",
     "category": "アプリ開発",
     "parentCategory": "アプリ開発",
