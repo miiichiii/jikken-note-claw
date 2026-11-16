@@ -2627,5 +2627,16 @@
     "parentCategory": "アプリ開発",
     "section": "",
     "syncable": true
+  },
+  {
+    "id": "mtodo-20261116-g2telegram-voice-append",
+    "title": "G2 Telegramで認識結果のダブルタップによる追加音声入力を実装・検証しベータへ反映。シングルで次へ、スワイプでキャンセルを維持",
+    "status": "todo",
+    "priority": "B",
+    "assignee": "Me",
+    "category": "アプリ開発",
+    "parentCategory": "アプリ開発",
+    "section": "",
+    "syncable": true
   }
 ]
